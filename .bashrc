@@ -160,8 +160,8 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 
 
 
-echo -e "${BCyan}This is BASH ${BRed}${BASH_VERSION%.*}${BCyan}\
-- DISPLAY on ${BRed}$DISPLAY${NC}\n"
+#echo -e "${BCyan}This is BASH ${BRed}${BASH_VERSION%.*}${BCyan}\
+#- DISPLAY on ${BRed}$DISPLAY${NC}\n"
 date
 if [ -x /usr/games/fortune ]; then
     /usr/games/fortune -s     # Makes our day a bit more fun.... :-)
@@ -294,7 +294,7 @@ function job_color()
 
 # Now we construct the prompt.
 PROMPT_COMMAND="history -a"
-PS1='\[\e[1;36m\][\W]  \$ '
+PS1='\[\e[1;36m\][\W]\$\[\e[m\] '
 #case ${TERM} in
 #  *term | rxvt | linux)
 #        PS1="\[\$(load_color)\][\A\[${NC}\] "
@@ -336,6 +336,11 @@ export HOSTFILE=$HOME/.hosts    # Put a list of remote hosts in ~/.hosts
 #-------------------
 # Personnal Aliases
 #-------------------
+
+# Source aliases in alias file
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -914,7 +919,7 @@ complete -F _killall killall killps
 
 # MacPorts Path Varaibles
 export PATH="/opt/local/libexec/gnubin/:$PATH"
-
+export PATH="/Users/jjbiggins/Library/Python/3.7/bin:$PATH"
 
 # Local Variables:
 # mode:shell-script
