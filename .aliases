@@ -1,0 +1,34 @@
+#--------------------------------------------------------
+# MacOS Default Commands {{{
+#--------------------------------------------------------
+
+# Hide/Unhide Desktop Icons
+alias hdesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
+alias uhdesk="default write com.apple.finder CreateDesktop true; killall Finder"
+# }}}
+#--------------------------------------------------------
+
+#--------------------------------------------------------
+# Directory Aliases {{{
+#--------------------------------------------------------
+alias dl="cd ~/Downloads"
+alias dev="cd ~/Developer"
+alias docs="cd ~/Documents"
+alias desk="cd ~/Desktop"
+alias ~="cd ~"
+alias vols="cd /Volumes"
+# }}}
+#--------------------------------------------------------
+
+
+#-------------------------------------------------------
+# Common Aliases {{{
+#-------------------------------------------------------
+alias vbashrc="vim ~/.bashrc"
+alias vbashp="vim ~/.bash_profile"
+alias sbp="source ~/.bash_profile"
+alias vvimrc="vim ~/.vimrc"
+alias valiases="vim ~/.aliases"
+alias reload="exec $SHELL; source ~/.bash_profile"
+# }}}
+#----------------------------------------------------------
