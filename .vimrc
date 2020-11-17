@@ -114,6 +114,9 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
+" Show line nunbers
+set number
+
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
@@ -127,8 +130,11 @@ endif
 
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+set foldcolumn=0
+set foldmethod=marker
+set foldlevel=0
 
+let sh_fold_enabled=1       " sh
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -383,3 +389,6 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+
+" vim: foldmethod=marker:foldlevel=0:
