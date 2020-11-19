@@ -39,6 +39,7 @@ alias reload="exec $SHELL; source ~/.bash_profile"
 # git aliases {{{
 #---------------------------------------------------------
 #
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
 alias gcl="git clone --recursive"
 alias g=git
 alias ga='git add'
