@@ -391,4 +391,24 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 
+au BufNewFile *.py 0r ~/.vim/header/py_header.temp
+
+" ------------------------------------------------------------
+" Header {{{
+" ----------------------------------------------------------
+"
+" Source Header vim functions
+source ~/.vim/autoload/header.vim
+let g:header_auto_add_header = 0
+let g:header_field_author = 'Joe Biggins'
+
+let g:header_field_author_email = 'jjbiggins@joebiggins.io'
+let g:header_field_copyright = 1 
+let g:header_field_timestamp = 1
+let g:header_cfg_comment_char = '#'
+map <F4> :AddHeader<CR>
+" }}}
+" ----------------------------------------------------------
+"
+
 " vim: foldmethod=marker:foldlevel=0:
