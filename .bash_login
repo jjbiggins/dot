@@ -7,7 +7,7 @@
 #                                                                     #
 #######################################################################
 #   file protection
-umask 002       # all to me, read to group and others
+#umask 002       # all to me, read to group and others
 #   miscellaneous
 echo ""
 w
