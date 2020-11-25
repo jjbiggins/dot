@@ -1,0 +1,6 @@
+[submodule "lesspipe"]
+	path = lesspipe
+	url = https://github.com/wofr06/lesspipe.git
+[submodule ".bin/lesspipe"]
+	path = .bin/lesspipe
+	url = https://github.com/wofr06/lesspipe.git

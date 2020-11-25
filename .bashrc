@@ -58,6 +58,7 @@ if [ -f ~/.functions ]; then
     source  ~/.functions
 fi
 
+
 #--------------------------------------------------------------
 #  Automatic setting of $DISPLAY (if not set already).
 #  This works for me - your mileage may vary. . . .
@@ -614,6 +615,10 @@ PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 #export DISPLAY=0
 
+# Xcode Developer
+DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
+PATH=$DEVELOPER_DIR/usr/bin:$PATH
+export PATH
 
 # GNU binaries
 export PATH="/opt/local/libexec/gnubin/:$PATH"
