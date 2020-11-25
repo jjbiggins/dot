@@ -166,3 +166,9 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 alias gpfwl='git push --force-with-lease'
 # }}}
 # -------------------------------------------------------------------
+#
+# ---------------------------------------------------------------
+# Macports aliases
+# --------------------------------------------------------------
+#
+alias porti="sudo port install"
