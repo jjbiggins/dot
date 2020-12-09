@@ -612,16 +612,15 @@ complete -F _killall killall killps
 # PATH
 # MACPORTS
 PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export MANPATH="/opt/local/man:$MANPATH"
 
-#export DISPLAY=0
 
 # Xcode Developer
 DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
 PATH=$DEVELOPER_DIR/usr/bin:$PATH
-export PATH
 
 # GNU binaries
-export PATH="/opt/local/libexec/gnubin/:$PATH"
+export PATH="/opt/local/libexec/gnubin:$PATH"
 
 # ~/.dircolors/themefile
 eval $(gdircolors ~/.dircolors/dircolors.256dark)
@@ -633,12 +632,12 @@ alias ll='ls -al'
 # PYTHON
 PATH="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
 PATH="/Users/jjbiggins/Library/Python/3.8/bin:$PATH"
-export PATH
 
 # Java Home
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk8/Contents/Home"
 export JRE_HOME="/Library/Java/JavaVirtualMachines/openjdk8/Contents/Home"
 
+export PATH
 
 # Local Variables:
 # mode:shell-script
