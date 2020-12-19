@@ -418,60 +418,30 @@ function ii()   # Get current host related info.
 }
 # }}}
 
-
-#-------------------------------------------------------------
-# Misc utilities: {{{
-#-------------------------------------------------------------
-
-function repeat()       # Repeat n times command.
-{
-    local i max
-    max=$1; shift;
-    for ((i=1; i <= max ; i++)); do  # --> C-like syntax
-        eval "$@";
-    done
-}
-
-
-function ask()          # See 'killps' for example of use.
-{
-    echo -n "$@" '[y/n] ' ; read ans
-    case "$ans" in
-        y*|Y*) return 0 ;;
-        *) return 1 ;;
-    esac
-}
-
-function corename()   # Get name of app that created a corefile.
-{
-    for file ; do
-        echo -n $file : ; gdb --core=$file --batch | head -1
-    done
-}
-
-
-# }}}
-
-
 # ------------------------------------------------------------
-# git functions {{{
+# rm safe -- rms
+# create version of rm that first copys file to a trash bin 
+# then removes it. behaves like deleting  file from GUI
+function rms {
+TRASH=$HOME/.trash_bin
+    FILE=$1
+    if [[ -e $TRASH/$FILE ]]; then
+        echo "File with same is already in trash."
+        echo "please rename and rerun"
+    else
+        cp $FILE $TRASH/$FILE
+        rm $FILE
+    fi
+}
 # ------------------------------------------------------------
 #
-# git branch
-git_current_branch () {
-        local ref
-        ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null) 
-        local ret=$? 
-        if [[ $ret != 0 ]]
-        then
-                [[ $ret == 128 ]] && return
-                ref=$(command git rev-parse --short HEAD 2> /dev/null)  || return
-        fi
-        echo ${ref#refs/heads/}
-# }}}
-# ------------------------------------------------------------
+# Empty trash created from rms command stored in ~/.trash_bin
+#
+function emptytrash {
+    TRASH=$HOME/.trash_bin
+    rm $TRASH/*
+}
 
-##########################################################################
-# replace spaces with underscores in all the filesnames in the directory
-##########################################################################
+
+
 
