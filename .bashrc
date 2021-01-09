@@ -49,12 +49,11 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Source global definitions (if any)
 #-------------------------------------------------------------
 
-
 if [ -f /etc/bashrc ]; then
       . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
-if [ -f ~/.functions ]; then
+if [[ -f ~/.functions ]]; then
     source  ~/.functions
 fi
 
@@ -286,6 +285,10 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias du='du -kh'    # Makes a more readable output.
 alias df='df -kTh'
 
+# alias rm to my bash function rms. from ~/.bashrc 
+# so I don't accidentlly irreversibly delete file
+
+
 #-------------------------------------------------------------
 # The 'ls' family (this assumes you use a recent GNU ls).
 #-------------------------------------------------------------
@@ -297,7 +300,7 @@ alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
 alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 
 # The ubiquitous 'll': directories first, with alphanumeric sorting:
-alias lm='ll |more'        #  Pipe through 'more'
+alias lm='ll | more'        #  Pipe through 'more'
 alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
@@ -308,7 +311,6 @@ alias c='clear'
 #-------------------------------------------------------------
 
 alias more='less'
-export PAGER=less
 export LESSCHARSET='utf-8'
 if type lesspipe.sh >/dev/null 2>&1; then
     export LESSOPEN='|lesspipe.sh %s'
@@ -616,7 +618,7 @@ export MANPATH="/opt/local/man:$MANPATH"
 
 
 # Xcode Developer
-DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
+export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
 PATH=$DEVELOPER_DIR/usr/bin:$PATH
 
 # GNU binaries
@@ -631,11 +633,18 @@ alias ll='ls -al'
 
 # PYTHON
 PATH="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
-PATH="/Users/jjbiggins/Library/Python/3.8/bin:$PATH"
+PATH="/Users/jjbiggins/Library/Python/3.9/bin:$PATH"
+export PYTHONNOUSERSITE="/Users/jjbiggins/Library/Python/3.9/bin"
 
 # Java Home
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk8/Contents/Home"
 export JRE_HOME="/Library/Java/JavaVirtualMachines/openjdk8/Contents/Home"
+
+# node
+#PATH=$HOME/.npm-global/bin:$PATH
+#NPM_CONFIG_PREFIX=~/.npm-global
+source /opt/local/share/nvm/init-nvm.sh
+export BW_SESSION="U2iIHPjEbOykWNaJDPxWiBLmGyLtGEJnNgHWADwA5lcYcWVfdtkG1uKxk8m15LIIPrHSCe4IhbPRaVUiaO4H5g=="
 
 export PATH
 
