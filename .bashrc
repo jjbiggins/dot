@@ -104,9 +104,9 @@ shopt -s histappend histreedit histverify
 shopt -s extglob       # Necessary for programmable completion.
 
 # Disable options:
-shopt -u mailwarn
-unset MAILCHECK        # Don't want my shell to warn me of incoming mail.
-
+#shopt -u mailwarn
+#unset MAILCHECK        # Don't want my shell to warn me of incoming mail.
+export MAIL=/var/mail/jjbiggins
 
 #-------------------------------------------------------------
 # Greeting, motd etc. ...
@@ -218,7 +218,10 @@ fi
 
 # Now we construct the prompt.
 PROMPT_COMMAND="history -a"
-PS1='\[\e[1;36m\][\W]\$\[\e[m\] '
+#PS1='\[\e[1;36m\][\W]\$\[\e[m\] '
+#PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\]\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+#PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\]\$ '
 #case ${TERM} in
 #  *term | rxvt | linux)
 #        PS1="\[\$(load_color)\][\A\[${NC}\] "
@@ -261,10 +264,6 @@ export HOSTFILE=$HOME/.hosts    # Put a list of remote hosts in ~/.hosts
 # Personnal Aliases
 #-------------------
 
-# Source aliases in alias file
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -611,41 +610,25 @@ _killall()
 
 complete -F _killall killall killps
 
-# PATH
+# ====================================================================
 # MACPORTS
+# ===================================================================
 PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export MANPATH="/opt/local/man:$MANPATH"
 
-
-# Xcode Developer
-export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
-PATH=$DEVELOPER_DIR/usr/bin:$PATH
-
-# GNU binaries
-export PATH="/opt/local/libexec/gnubin:$PATH"
-
-# ~/.dircolors/themefile
-eval $(gdircolors ~/.dircolors/dircolors.256dark)
-
-# Aliases
-alias ls='gls --color=auto'
-alias ll='ls -al'
-
-# PYTHON
-PATH="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
 PATH="/Users/jjbiggins/Library/Python/3.9/bin:$PATH"
-export PYTHONNOUSERSITE="/Users/jjbiggins/Library/Python/3.9/bin"
+PATH="/opt/local/libexec/gnubin:$PATH"
+    
+# ~/.dircolors/themefile
+eval $(dircolors ~/.colors/dircolors.256dark)
+#if [[ -f ~/.dircolors/dircolors_linux ]]; then
+#    source ~/.dircolors/dircolors_linux
+#fi
+
+alias ls="ls --color=auto"
+alias ll="ls -l --color=auto"
 
 # Java Home
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk8/Contents/Home"
-export JRE_HOME="/Library/Java/JavaVirtualMachines/openjdk8/Contents/Home"
-
-# node
-#PATH=$HOME/.npm-global/bin:$PATH
-#NPM_CONFIG_PREFIX=~/.npm-global
-source /opt/local/share/nvm/init-nvm.sh
-export BW_SESSION="U2iIHPjEbOykWNaJDPxWiBLmGyLtGEJnNgHWADwA5lcYcWVfdtkG1uKxk8m15LIIPrHSCe4IhbPRaVUiaO4H5g=="
-
+export MANPATH="/opt/local/man:$MANPATH"
 export PATH
 
 # Local Variables:
