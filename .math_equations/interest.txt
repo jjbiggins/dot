@@ -1,0 +1,11 @@
+#!/bin/bash
+scale=10
+define compound_interest(r, p, t, n)
+{
+    frac = r / n
+    expon = n * t
+    a = p*((1+frac)^expon)
+    print a
+}
+
+compound_interest(0.08, 20000, 30, 1)
