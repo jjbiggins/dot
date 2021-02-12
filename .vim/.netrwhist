@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/jjbiggins/.ssh'
+let g:netrw_dirhist_6='/usr/share/zoneinfo/America'
+let g:netrw_dirhist_5='/usr/share/zoneinfo'
+let g:netrw_dirhist_4='/Users/jjbiggins/Developer/practice/ctci/arrays/is_unique/Python'
+let g:netrw_dirhist_3='/Users/jjbiggins/Developer/practice/ctci/arrays/is_unique'
+let g:netrw_dirhist_2='/Users/jjbiggins/Developer/practice/hackerrank/programs/algorithms/greedy/min_abs_diff/testcases/input'
+let g:netrw_dirhist_1='/private/etc/postfix'
+let g:netrw_dirhist_0='/Users/jjbiggins/Desktop/PYTHONPATH'
+let g:netrw_dirhist_9='/'
+let g:netrw_dirhist_8='/Users/jjbiggins/.dircolors'
