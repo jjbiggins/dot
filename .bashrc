@@ -311,13 +311,17 @@ alias c='clear'
 
 alias more='less'
 export LESSCHARSET='utf-8'
-if type lesspipe.sh >/dev/null 2>&1; then
-    export LESSOPEN='|lesspipe.sh %s'
-fi
+#if type lesspipe.sh >/dev/null 2>&1; then
+#    export LESSOPEN='|lesspipe.sh %s'
+#fi
 #export LESSOPEN='|/usr/local/bin/lesspipe.sh %s 2>&-'
                 # Use this if lesspipe.sh exists.
-export LESS='-i -N -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
-:stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
+
+# -----------------------------------------------------------
+# LESS line numbering and margin configurations
+# -----------------------------------------------------------
+#export LESS='-i -N -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
+#:stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 
 # LESS man page colors (makes Man pages more readable).
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -328,9 +332,9 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-if type pygmentize >/dev/null 2>&1; then
-  export LESSCOLORIZER='pygmentize'
-fi
+#if type pygmentize >/dev/null 2>&1; then
+#  export LESSCOLORIZER='pygmentize'
+#fi
 #-------------------------------------------------------------
 # Spelling typos - highly personnal and keyboard-dependent :-)
 #-------------------------------------------------------------
@@ -628,7 +632,10 @@ alias ls="ls --color=auto"
 alias ll="ls -l --color=auto"
 
 # Java Home
-export MANPATH="/opt/local/man:$MANPATH"
+
+# Set in /etc/man.conf
+#export MANPATH="/opt/local/man:$MANPATH"
+
 export PATH
 
 # Local Variables:

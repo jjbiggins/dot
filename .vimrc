@@ -1,13 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic — @amix3k
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
+" Owner: 
+"       Joe Biggins
 "
 " Sections:
 "    -> General
@@ -32,6 +25,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=1000
+set nocompatible
 
 " Enable filetype plugins
 filetype plugin on
@@ -64,6 +58,9 @@ let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+source $VIMRUNTIME/scripts.vim 
+source $VIMRUNTIME/indent.vim
+source $VIMRUNTIME/filetype.vim
 
 set runtimepath+='~/.vim'
 
@@ -89,10 +86,10 @@ set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+"set whichwrap+=<,>,h,l
 
-" Ignore case when searching
-set ignorecase
+" Uncomment to ignore case when searching
+" set ignorecase
 
 " When searching try to be smart about cases 
 set smartcase
@@ -111,11 +108,12 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch 
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
-" Show line nunbers
-set number
+" Uncomment to show line nunbers
+" set number
 
 
 " when set novisualbell vim made sound
@@ -139,7 +137,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " since global vim settings fold my marker
 " we override that by ignoring globals using:
-set nocompatible
 set foldenable
 set foldcolumn=0
 set foldmethod=marker
@@ -235,13 +232,14 @@ map <space> /
 map <C-space> ?
 
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+" map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -313,13 +311,13 @@ if has("mac") || has("macunix")
 endif
 
 " Delete trailing white space on save, useful for some filetypes ;)
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
+"fun! CleanExtraSpaces()
+"    let save_cursor = getpos(".")
+"    let old_query = getreg('/')
+"    silent! %s/\s\+$//e
+"    call setpos('.', save_cursor)
+"    call setreg('/', old_query)
+"endfun
 
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
@@ -411,22 +409,9 @@ endfunction
 
 au BufNewFile *.py 0r ~/.vim/header/py_header.temp
 au BufNewFile *.sh 0r ~/.vim/header/sh_header.temp
-" ------------------------------------------------------------
-" Header {{{
-" ----------------------------------------------------------
+" ================================================================
+" END OF FILE
+" =================================================================
 "
-" Source Header vim functions
-source ~/.vim/autoload/header.vim
-let g:header_auto_add_header = 0
-let g:header_field_author = 'Joe Biggins'
-
-let g:header_field_author_email = 'jjbiggins@joebiggins.io'
-let g:header_field_copyright = 1 
-let g:header_field_timestamp = 1
-let g:header_cfg_comment_char = '#'
-map <F4> :AddHeader<CR>
-" }}}
-" ----------------------------------------------------------
 "
-
 " vim: foldmethod=marker:foldlevel=0:
