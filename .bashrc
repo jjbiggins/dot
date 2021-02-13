@@ -220,8 +220,11 @@ fi
 PROMPT_COMMAND="history -a"
 #PS1='\[\e[1;36m\][\W]\$\[\e[m\] '
 #PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\]\$ '
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]\$ '
 #PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\]\$ '
+
+
 #case ${TERM} in
 #  *term | rxvt | linux)
 #        PS1="\[\$(load_color)\][\A\[${NC}\] "
@@ -240,8 +243,8 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 #        PS1="(\A \u@\h \W) > " # --> PS1="(\A \u@\h \w) > "
 #                               # --> Shows full pathname of current dir.
 #        ;;
+#
 #esac
-
 
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
 export HISTIGNORE="&:bg:fg:ll:h"
@@ -625,7 +628,7 @@ PATH="/opt/local/libexec/gnubin:$PATH"
 # ~/.dircolors/themefile
 eval $(dircolors ~/.colors/dircolors.256dark)
 #if [[ -f ~/.dircolors/dircolors_linux ]]; then
-#    source ~/.dircolors/dircolors_linux
+    #source ~/.dircolors/dircolors.256dark
 #fi
 
 alias ls="ls --color=auto"
