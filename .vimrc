@@ -58,9 +58,11 @@ let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-source $VIMRUNTIME/scripts.vim 
-source $VIMRUNTIME/indent.vim
-source $VIMRUNTIME/filetype.vim
+
+" TODO: read through these and decide what to do with them
+" source $VIMRUNTIME/scripts.vim 
+" source $VIMRUNTIME/indent.vim
+" source $VIMRUNTIME/filetype.vim
 
 set runtimepath+='~/.vim'
 
@@ -82,7 +84,7 @@ set ruler
 set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
-set hid
+set hidden
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
