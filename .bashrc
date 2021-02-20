@@ -105,7 +105,7 @@ shopt -s extglob       # Necessary for programmable completion.
 
 # Disable options:
 #shopt -u mailwarn
-#unset MAILCHECK        # Don't want my shell to warn me of incoming mail.
+set MAILCHECK        # Don't want my shell to warn me of incoming mail.
 export MAIL=/var/mail/jjbiggins
 
 #-------------------------------------------------------------
@@ -267,52 +267,11 @@ export HOSTFILE=$HOME/.hosts    # Put a list of remote hosts in ~/.hosts
 # Personnal Aliases
 #-------------------
 
+# Source aliases in alias file
+if [ -f ~/.bashrc_aliases ]; then
+    . ~/.bashrc_aliases
+fi
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-# -> Prevents accidentally clobbering files.
-alias mkdir='mkdir -p'
-
-alias h='history'
-alias j='jobs -l'
-alias which='type -a'
-alias ..='cd ..'
-
-# Pretty-print of some PATH variables:
-alias path='echo -e ${PATH//:/\\n}'
-alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
-
-
-alias du='du -kh'    # Makes a more readable output.
-alias df='df -kTh'
-
-# alias rm to my bash function rms. from ~/.bashrc 
-# so I don't accidentlly irreversibly delete file
-
-
-#-------------------------------------------------------------
-# The 'ls' family (this assumes you use a recent GNU ls).
-#-------------------------------------------------------------
-# Add colors for filetype and  human-readable sizes by default on 'ls':
-alias lx='ls -lXB'         #  Sort by extension.
-alias lk='ls -lSr'         #  Sort by size, biggest last.
-alias lt='ls -ltr'         #  Sort by date, most recent last.
-alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
-alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
-
-# The ubiquitous 'll': directories first, with alphanumeric sorting:
-alias lm='ll | more'        #  Pipe through 'more'
-alias lr='ll -R'           #  Recursive ls.
-alias la='ll -A'           #  Show hidden files.
-alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
-
-alias c='clear'
-#-------------------------------------------------------------
-# Tailoring 'less'
-#-------------------------------------------------------------
-
-alias more='less'
 export LESSCHARSET='utf-8'
 #if type lesspipe.sh >/dev/null 2>&1; then
 #    export LESSOPEN='|lesspipe.sh %s'
@@ -338,16 +297,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #if type pygmentize >/dev/null 2>&1; then
 #  export LESSCOLORIZER='pygmentize'
 #fi
-#-------------------------------------------------------------
-# Spelling typos - highly personnal and keyboard-dependent :-)
-#-------------------------------------------------------------
-
-alias xs='cd'
-alias vf='cd'
-alias moer='more'
-alias moew='more'
-alias kk='ll'
-
 #=========================================================================
 #
 #  PROGRAMMABLE COMPLETION SECTION
@@ -631,13 +580,20 @@ eval $(dircolors ~/.colors/dircolors.256dark)
     #source ~/.dircolors/dircolors.256dark
 #fi
 
-alias ls="ls --color=auto"
-alias ll="ls -l --color=auto"
+# Node
+source /opt/local/share/nvm/init-nvm.sh
 
 # Java Home
+#
+#
+#
 
-# Set in /etc/man.conf
-#export MANPATH="/opt/local/man:$MANPATH"
+# Spotify API ID and Secret
+if [ -f ~/.spotify ]; then
+    . ~/.spotify
+fi
+
+
 
 export PATH
 
