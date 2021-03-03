@@ -239,8 +239,6 @@ function te()  # wrapper around xemacs/gnuserv
     fi
 }
 
-function soffice() { command soffice "$@" & }
-function firefox() { command firefox "$@" & }
 function xpdf() { command xpdf "$@" & }
 
 # }}}
@@ -444,6 +442,34 @@ function emptytrash {
 
 
 
+# =========================================================
+# web development
+# ========================================================
+#
+# wagtail
+function wagtserver {
+    site=$1
+    cmd=$2
+    
+    if [[ "$cmd" == "stop" ]]; then
+ 
+        test=`ps -eaf | grep runserver | wc -l`
+        if  [[ "$test" -gt 1 ]]; then
+            pid=`ps -eaf | grep runserver | awk 'NR==1 { if ($10=="runserver") print $2 }'`
+            kill "$pid"
+            echo "Shutting down $1's webserver........"
+        else
+            echo "Server is not running."
+        fi
+    else
+        test=`ps -eaf | grep runserver | wc -l`
 
+        if [[ "$test" -eq 3 ]]; then
+            echo "$1 server is already running."
+        else
+            call python "/Users/jjbiggins/Sites/$1/manage.py"  runserver &
+        fi
+    fi
+}
 
 function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
