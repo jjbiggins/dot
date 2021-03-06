@@ -218,11 +218,17 @@ alias make='xtitle Making $(basename $PWD) ; make'
 # .. and functions
 function man()
 {
-    for i ; do
-        xtitle The $(basename $1|tr -d .[:digit:]) manual
-        command man -a "$i"
-    done
+    if [[ -f "/opt/local/libexec/gnubin/$1" ]]; then
+        command man g"$1"
+    else
+        command man "$1"
+    fi
 }
+
+#command man g$
+#    for i ; do
+#       xtitle The $(basename $1|tr -d .[:digit:]) manual
+#       command man -a "$i"
 # }}}
 
 
@@ -467,7 +473,7 @@ function wagtserver {
         if [[ "$test" -eq 3 ]]; then
             echo "$1 server is already running."
         else
-            call python "/Users/jjbiggins/Sites/$1/manage.py"  runserver &
+            call python "/Users/jjbiggins/Sites/practice/django/$1/manage.py"  runserver &
         fi
     fi
 }
