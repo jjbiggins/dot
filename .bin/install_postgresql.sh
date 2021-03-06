@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pass=jgb8255
+pass=`cat ~/.personal/pass | grep local | cut -d $'\t' -f 2-`
 
 echo "$pass" | sudo -S port install postgresql96-server postgresql96 &
 BACK_PID=$!
