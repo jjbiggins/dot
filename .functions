@@ -6,7 +6,7 @@
 ######################################################################
 
 # -------------------------------------------------------------------
-# function to print argument to screen and to a log file {{{
+# function to print argument to screen and to a log file
 ####################################################################
 function prinnt  
 {
@@ -33,11 +33,11 @@ function call {
     "$@" 2>&1 | tee -a $logfile
     [ ${PIPESTATUS[0]} -ne 0 ] && bad_exit "Failed!"
 }
-# }}}
+
 
 
 # ----------------------------------------------------------------
-# Directory Functions {{{
+# Directory Functions
 # ----------------------------------------------------------------
 
 # Create dir and cd into it
@@ -81,10 +81,10 @@ function remove_archive
         find . -mtime +$old_enough -type d -name "$archive_prefix*" -exec rm -rf {} \;
 }
 
-# }}}
 
 
-# function to check if 'oper' is the one who started this process {{{
+
+# function to check if 'oper' is the one who started this process
 ####################################################################
 function check_user  
 {
@@ -96,11 +96,11 @@ function check_user
                 bad_exit
         fi
 }
-# }}}
+
 
 
 #------------------------------------------------------------------
-# Prompt / Colors {{{
+# Prompt / Colors
 #------------------------------------------------------------------
 # Returns system load as percentage, i.e., '40' rather than '0.40)'.
 function load()
@@ -159,12 +159,12 @@ function job_color()
 
 # Adds some text in the terminal frame (if applicable).
 
-# }}}
+
 #---------------------------------------------------------------------
 
 
 # ------------------------------------------------------------------
-# Display {{{
+# Display
 # -----------------------------------------------------------------
 #--------------------------------------------------------------
 #  Automatic setting of $DISPLAY (if not set already).
@@ -191,12 +191,12 @@ function get_xserver ()
             ;;
     esac
 }
-# }}}
+
 # ------------------------------------------------------------------
 
 
 #-------------------------------------------------------------
-# A few fun ones {{{
+# A few fun ones
 #-------------------------------------------------------------
 
 # Adds some text in the terminal frame (if applicable).
@@ -229,11 +229,11 @@ function man()
 #    for i ; do
 #       xtitle The $(basename $1|tr -d .[:digit:]) manual
 #       command man -a "$i"
-# }}}
+
 
 
 #-------------------------------------------------------------
-# Make the following commands run in background automatically:{{{
+# Make the following commands run in background automatically
 #-------------------------------------------------------------
 
 function te()  # wrapper around xemacs/gnuserv
@@ -247,11 +247,11 @@ function te()  # wrapper around xemacs/gnuserv
 
 function xpdf() { command xpdf "$@" & }
 
-# }}}
+
 
 
 #-------------------------------------------------------------
-# File & strings related functions: {{{
+# File & strings related functions:
 #-------------------------------------------------------------
 
 
@@ -344,11 +344,11 @@ function spaces_to_underscores
         fi
     done
 }
-# }}}
+
 
 
 #-------------------------------------------------------------
-# Process/system related functions: {{{
+# Process/system related functions:
 #-------------------------------------------------------------
 
 
@@ -420,7 +420,23 @@ function ii()   # Get current host related info.
     echo -e "\n${BRed}Open connections :$NC "; netstat -pan --inet;
     echo
 }
-# }}}
+
+
+function rm() {
+	arg=$1
+	if [[ -f "$arg" && "$(basename "$arg")" == .?* ]]; then
+		unhidden=`echo "$(basename "$arg")" | cut -c 2-`
+		cp "$arg" "/tmp/$unhidden"
+	elif [[ -f "$arg" && "$(basename "$arg")" == .?* ]]; then
+		cp "$arg" "/tmp/$(basename "$arg")"
+	fi
+}
+
+
+
+
+
+
 
 # ------------------------------------------------------------
 # rm safe -- rms
@@ -478,4 +494,3 @@ function wagtserver {
     fi
 }
 
-function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
