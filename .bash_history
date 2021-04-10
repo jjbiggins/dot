@@ -14957,3 +14957,11 @@ chmod +x config_commit.sh
 which config
 #1618018508
 vim config_commit.sh 
+#1618018528
+./config_commit.sh 
+#1618018530
+c
+#1618018531
+ls
+#1618018534
+vim config_commit.sh 
