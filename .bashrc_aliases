@@ -18,6 +18,7 @@ alias docs="cd ~/Documents"
 alias desk="cd ~/Desktop"
 alias ~="cd ~"
 alias vols="cd /Volumes"
+alias sites="cd ~/Sites"
 # }}}
 #--------------------------------------------------------
 #
@@ -222,7 +223,7 @@ alias fgrep="/opt/local/bin/gfgrep"
 alias find="/opt/local/bin/gfind"
 alias fmt="/opt/local/bin/gfmt"
 alias fold="/opt/local/bin/gfold"
-alias grep="/opt/local/bin/ggrep"
+alias grep="/opt/local/bin/ggrep --color=always"
 alias groups="/opt/local/bin/ggroups"
 alias head="/opt/local/bin/ghead"
 alias hostid="/opt/local/bin/ghostid"
@@ -388,3 +389,13 @@ alias firefox='/Applications/Firefox.app/Contents/MacOS/Firefox'
 alias unloadbind="sudo port unload bind9"
 alias loadbind="sudo port load bind9"
 
+# ==============================================================
+# postgres
+# ==============================================================
+# }}}
+
+# ==============================================================
+# Spelling {{{
+# ==============================================================
+alias ks="ls --color=auto"
+alias pyhton="python"

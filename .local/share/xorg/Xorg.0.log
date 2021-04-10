@@ -1,0 +1,13 @@
+[127769.911] _XSERVTransmkdir: ERROR: euid != 0,directory /tmp/.X11-unix will not be created.
+[127769.911] _XSERVTransSocketUNIXCreateListener: mkdir(/tmp/.X11-unix) failed, errno = 2
+[127769.911] _XSERVTransMakeAllCOTSServerListeners: failed to create listener for local
+[127769.911] (EE) 
+Fatal server error:
+[127769.911] (EE) Cannot establish any listening sockets - Make sure an X server isn't already running(EE) 
+[127769.911] (EE) 
+Please consult the The X.Org Foundation support 
+	 at http://wiki.x.org
+ for help. 
+[127769.911] (EE) Please also check the log file at "/Users/jjbiggins/.local/share/xorg/Xorg.0.log" for additional information.
+[127769.911] (EE) 
+[127769.912] (EE) Server terminated with error (1). Closing log file.

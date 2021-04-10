@@ -6,11 +6,7 @@
 #   (sourced from .bash_profile)                                      #
 #                                                                     #
 #######################################################################
-#   file protection
-#umask 002       # all to me, read to group and others
-#   miscellaneous
-#
 echo ""
 w
 echo ""
-cal `date +"%m"` `date +"%Y"`
+date

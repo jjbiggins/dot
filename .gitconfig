@@ -1,3 +1,10 @@
 [user]
 	email = josephjbiggins@gmail.com
 	name = Joe Biggins
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	ignorecase = false

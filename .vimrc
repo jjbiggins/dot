@@ -27,6 +27,25 @@
 set history=1000
 set nocompatible
 
+
+"--------------------------------------------------------------
+" TABS -- 
+"--------------------------------------------------------------
+
+" TL;DR -- the following id what you want
+" see https://www.reddit.com/r/vim/wiki/tabstop for more
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+" --------------------------------------------------------------
+
+
+
+
+" Enable syntax highlighting
+syntax on
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -112,7 +131,8 @@ set magic
 set showmatch 
 
 " How many tenths of a second to blink when matching brackets
-set mat=2
+set matchtime=2
+
 
 " Uncomment to show line nunbers
 " set number
@@ -144,16 +164,9 @@ set foldcolumn=0
 set foldmethod=marker
 set foldlevel=0
 
-au FileType sh let g:sh_fold_enable=3
-au FileType sh let g:is_bash=1
-au FileType sh set foldmethod=syntax
-syntax enable
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax on
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -161,7 +174,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme peaksea
+    colorscheme ron
 catch
 endtry
 
@@ -198,23 +211,13 @@ set directory=~/.vim/swapdir
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
 
-" Be smart when using tabs ;)
-set smarttab
+" Linebreak on 78 characters
+set nolinebreak
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
-
-" Linebreak on 500 characters
-set lbr
-set tw=500
-
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+set autoindent
+set smartindent
+set wrap
 
 
 """"""""""""""""""""""""""""""
@@ -322,7 +325,7 @@ endif
 "endfun
 
 if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.c,*.cpp :call CleanExtraSpaces()
 endif
 
 

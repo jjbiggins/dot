@@ -1,0 +1,5 @@
+#!/bin/bash
+
+arg=$1
+pdftohtml -xml -nomerge -s "$1" index.xml
+pdftohtml -s "$1" index.html

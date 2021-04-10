@@ -422,75 +422,105 @@ function ii()   # Get current host related info.
 }
 
 
-function rm() {
-	arg=$1
-	if [[ -f "$arg" && "$(basename "$arg")" == .?* ]]; then
-		unhidden=`echo "$(basename "$arg")" | cut -c 2-`
-		cp "$arg" "/tmp/$unhidden"
-	elif [[ -f "$arg" && "$(basename "$arg")" == .?* ]]; then
-		cp "$arg" "/tmp/$(basename "$arg")"
-	fi
+
+
+
+#  This is a 'universal' completion function - it works when commands have
+#+ a so-called 'long options' mode , ie: 'ls --all' instead of 'ls -a'
+#  Needs the '-o' option of grep
+#+ (try the commented-out version if not available).
+
+#  First, remove '=' from completion word separators
+#+ (this will allow completions like 'ls --color=auto' to work correctly).
+
+COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
+
+
+_get_longopts()
+{
+  #$1 --help | sed  -e '/--/!d' -e 's/.*--\([^[:space:].,]*\).*/--\1/'| \
+  #grep ^"$2" |sort -u ;
+    $1 --help | grep -o -e "--[^[:space:].,]*" | grep -e "$2" |sort -u
 }
 
+_longopts()
+{
+    local cur
+    cur=${COMP_WORDS[COMP_CWORD]}
 
+    case "${cur:-*}" in
+       -*)      ;;
+        *)      return ;;
+    esac
 
+    case "$1" in
+       \~*)     eval cmd="$1" ;;
+         *)     cmd="$1" ;;
+    esac
+    COMPREPLY=( $(_get_longopts ${1} ${cur} ) )
+}
+complete  -o default -F _longopts configure bash
+complete  -o default -F _longopts wget id info a2ps ls recode
 
+_tar()
+{
+    local cur ext regex tar untar
 
+    COMPREPLY=()
+    cur=${COMP_WORDS[COMP_CWORD]}
 
+    # If we want an option, return the possible long options.
+    case "$cur" in
+        -*)     COMPREPLY=( $(_get_longopts $1 $cur ) ); return 0;;
+    esac
 
-# ------------------------------------------------------------
-# rm safe -- rms
-# create version of rm that first copys file to a trash bin 
-# then removes it. behaves like deleting  file from GUI
-function rms {
-TRASH=$HOME/.Trash
-    FILE=$1
-    if [[ -e $TRASH/$FILE ]]; then
-        echo "File with same is already in trash."
-        echo "please rename and rerun"
-    else
-        cp $FILE $TRASH/$FILE
-        rm $FILE
+    if [ $COMP_CWORD -eq 1 ]; then
+        COMPREPLY=( $( compgen -W 'c t x u r d A' -- $cur ) )
+        return 0
     fi
-}
-# ------------------------------------------------------------
-#
-# Empty trash created from rms command stored in ~/.trash_bin
-#
-function emptytrash {
-    TRASH=$HOME/.trash_bin
-    rm $TRASH/*
-}
 
+    case "${COMP_WORDS[1]}" in
+        ?(-)c*f)
+            COMPREPLY=( $( compgen -f $cur ) )
+            return 0
+            ;;
+        +([^Izjy])f)
+            ext='tar'
+            regex=$ext
+            ;;
+        *z*f)
+            ext='tar.gz'
+            regex='t\(ar\.\)\(gz\|Z\)'
+            ;;
+        *[Ijy]*f)
+            ext='t?(ar.)bz?(2)'
+            regex='t\(ar\.\)bz2\?'
+            ;;
+        *)
+            COMPREPLY=( $( compgen -f $cur ) )
+            return 0
+            ;;
 
+    esac
 
-# =========================================================
-# web development
-# ========================================================
-#
-# wagtail
-function wagtserver {
-    site=$1
-    cmd=$2
-    
-    if [[ "$cmd" == "stop" ]]; then
- 
-        test=`ps -eaf | grep runserver | wc -l`
-        if  [[ "$test" -gt 1 ]]; then
-            pid=`ps -eaf | grep runserver | awk 'NR==1 { if ($10=="runserver") print $2 }'`
-            kill "$pid"
-            echo "Shutting down $1's webserver........"
-        else
-            echo "Server is not running."
-        fi
+    if [[ "$COMP_LINE" == tar*.$ext' '* ]]; then
+        # Complete on files in tar file.
+        #
+        # Get name of tar file from command line.
+        tar=$( echo "$COMP_LINE" | \
+                        sed -e 's|^.* \([^ ]*'$regex'\) .*$|\1|' )
+        # Devise how to untar and list it.
+        untar=t${COMP_WORDS[1]//[^Izjyf]/}
+
+        COMPREPLY=( $( compgen -W "$( echo $( tar $untar $tar \
+                                2>/dev/null ) )" -- "$cur" ) )
+        return 0
+
     else
-        test=`ps -eaf | grep runserver | wc -l`
+        # File completion on relevant files.
+        COMPREPLY=( $( compgen -G $cur\*.$ext ) )
 
-        if [[ "$test" -eq 3 ]]; then
-            echo "$1 server is already running."
-        else
-            call python "/Users/jjbiggins/Sites/practice/django/$1/manage.py"  runserver &
-        fi
     fi
-}
 
+    return 0
+}
