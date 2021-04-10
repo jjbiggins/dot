@@ -1,13 +1,12 @@
-set from = "jjbiggins@biggins.tech"
+set from = "Joe Biggins"
 
-set smtp_url = "smtp://joe@biggins.tech@mail.biggins.tech:465"
-set smtp_pass = "jgb8255"
+set smtp_url = "smtp://jjbiggins@biggins.tech:993/"
+set smtp_pass = "36Joeb!gg!ns"
 set imap_user = "jjbiggins@biggins.tech"
-set imap_pass = "jgb8255"
+set imap_pass = "36Joeb!gg!ns"
 
-set folder = "imaps://joe@biggins.tech@mail.biggins.tech:993"
+set folder = "imaps://jjbiggins@biggins.tech:465/"
 set spoolfile = "+INBOX"
-set postponed = "+Drafts"
 
 set mail_check = 30
 set move = no

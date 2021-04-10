@@ -16,7 +16,7 @@ function prinnt
 
 function bad_exit  
 {
-		prinnt $*
+	prinnt $*
         prinnt "Process DID NOT complete successfully."
         prinnt "Process must be re-run."
         exit 1
@@ -25,6 +25,7 @@ function bad_exit
 function good_exit
 {
         prinnt "Process completed successfully."
+        process_mail
         exit 0
 }
 
@@ -34,7 +35,9 @@ function call {
     [ ${PIPESTATUS[0]} -ne 0 ] && bad_exit "Failed!"
 }
 
-
+function process_mail {
+    echo "process complete" | mailx 
+}
 
 # ----------------------------------------------------------------
 # Directory Functions

@@ -15312,3 +15312,211 @@ config log
 config
 #1618020864
 config status
+#1618020875
+./config_commit.sh 
+#1618020885
+c
+#1618020886
+ls
+#1618020889
+vim config_commit.sh 
+#1618020899
+cd Applications/Shell/
+#1618020904
+cd programs/
+#1618020905
+ls
+#1618020907
+cd dot 
+#1618020907
+ls
+#1618021269
+git config --get remote.origin.url
+#1618021275
+config config --get remote.origin.url
+#1618021280
+which git
+#1618021285
+which config
+#1618021369
+config log
+#1618021373
+config log -p 2
+#1618021376
+config log 
+#1618021384
+config log -p -2
+#1618021397
+config log -p -q
+#1618021402
+config log -p -1
+#1618021417
+config log --stat
+#1618021443
+q
+#1618021449
+git log --pretty=oneline
+#1618021454
+config log --pretty=oneline
+#1618021459
+git log --pretty=oneline
+#1618021462
+config log --stat
+#1618021488
+config log --shortstat
+#1618021502
+config log --name-status
+#1618021555
+config log --author
+#1618021570
+config log --pretty="%h - %s" --author
+#1618021581
+config log --pretty="%h - %s" --author="Joe Biggins"
+#1618021602
+config log -n 2
+#1618021605
+config log -n 1
+#1618021619
+which config
+#1618021645
+config log -n 1
+#1618020319
+vim config_commit.sh 
+#1618022233
+vim ~/.functions 
+#1618022395
+ls
+#1618022400
+mailq
+#1618022402
+mailx
+#1618022410
+c
+#1618022411
+ls
+#1618022431
+crontab -e
+#1618022443
+vim ~/.bin/sen
+#1618022450
+cd ~/.bin
+#1618022451
+ls
+#1618022467
+crontab -e
+#1618022478
+c
+#1618022479
+ls
+#1618022490
+vim send_mail.sh
+#1618022531
+chmod +x send_mail.sh 
+#1618022538
+mutt
+#1618022598
+mail -s "process" joe@biggins.tech
+#1618022626
+elm -s testing joe
+#1618022631
+sudo port install elm
+#1618022654
+mailq
+#1618022659
+sendmail
+#1618022671
+ c
+#1618022693
+/usr/sbin/sendmail joe@biggins.tech
+#1618022702
+/usr/sbin/sendmail jjbiggins@biggins.tech
+#1618022735
+ls
+#1618022738
+mailq
+#1618022741
+vim dead.letter 
+#1618022744
+rm dead.letter 
+#1618022533
+./send_mail.sh 
+#1618022761
+mutt
+#1618022771
+vim .muttrc
+#1618022858
+mutt
+#1618022877
+vim .muttrc
+#1618023230
+mutt
+#1618023296
+q
+#1618023301
+vim .muttrc
+#1618023536
+mutt
+#1618022932
+mutt
+#1618023998
+sudo postfix stop
+#1618024003
+mutt
+#1618024028
+c
+#1618024038
+mutt
+#1618024047
+vim .muttrc
+#1618024136
+mutt
+#1618024145
+vim .muttrc
+#1618024183
+mutt
+#1618024191
+vim .muttrc
+#1618024204
+c
+#1618024333
+mutt
+#1618024385
+muvi .muttrc
+#1618024389
+vi .muttrc
+#1618024447
+mutt
+#1618024465
+qq
+#1618024569
+vi .muttrc
+#1618024592
+mutt
+#1618024600
+vi .muttrc
+#1618024657
+cd Applications/Shell/
+#1618024657
+c
+#1618024658
+ls
+#1618024661
+cd programs/
+#1618024661
+ls
+#1618024663
+vim config_commit.sh 
+#1618024687
+c
+#1618024690
+./config_commit.sh 
+#1618024695
+pwd
+#1618024707
+ll  /Users/jjbiggins/Applications/Shell/dotfiles/data
+#1618024710
+ll  /Users/jjbiggins/Applications/Shell/dotfiles/data/
+#1618024715
+ll  /Users/jjbiggins/Applications/Shell/data/
+#1618024719
+vim config_commit.sh 
