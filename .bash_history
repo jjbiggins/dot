@@ -15104,3 +15104,211 @@ vim pro
 vim config_commit.sh 
 #1618019980
 vi config_commit.sh 
+#1618019992
+./config_commit.sh 
+#1618020000
+ls
+#1618020008
+mkdir -p Applications/Shell
+#1618020021
+mkdir -p Applications/Shell/dotfiles/
+#1618020027
+mkdir -p Applications/Shell/dotfiles/data
+#1618020031
+mkdir -p Applications/Shell/dotfiles/programs
+#1618020041
+cd Applications/Shell/dotfiles/data
+#1618020042
+;s
+#1618020043
+ls
+#1618020046
+cd ..
+#1618020047
+ls
+#1618020052
+cd ..
+#1618020053
+ls
+#1618020060
+mkdir programs
+#1618020063
+mkdir data
+#1618020064
+ls
+#1618020068
+rm dotfiles/
+#1618020071
+rm -rf dotfiles/
+#1618020074
+cdx data/
+#1618020075
+ls
+#1618020077
+cd data/
+#1618020077
+ls
+#1618020081
+mkdir dotfiles
+#1618020081
+ls
+#1618020084
+cd dotfiles/
+#1618020084
+ls
+#1618020087
+mkdir ar1000
+#1618020088
+ls
+#1618020104
+cd ~/Library/Mobile\ Documents/
+#1618020104
+ls
+#1618020129
+cd com~apple~CloudDocs 
+#1618020131
+ls
+#1618020137
+cd Documents/
+#1618020138
+ls
+#1618020174
+c
+#1618020187
+mkdir Archives
+#1618020188
+ls
+#1618020197
+mkdir Archives/dotfiles
+#1618020200
+ls
+#1618020207
+cd ~/Applications/
+#1618020213
+cd Shell/
+#1618020214
+ls
+#1618020216
+cd data/
+#1618020217
+ls
+#1618020219
+cd dotfiles/
+#1618020220
+ls
+#1618020269
+ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Archives/dotfiles archive
+#1618020270
+ls
+#1618020272
+c
+#1618020273
+ls
+#1618020280
+ln -s ar1000 data
+#1618020281
+ls
+#1618020285
+mkdir input
+#1618020285
+ls
+#1618020287
+cd ../
+#1618020288
+ls
+#1618020289
+cd ..
+#1618020290
+ls
+#1618020291
+cd programs/
+#1618020292
+ls
+#1618020296
+cp ~/config_commit.sh 
+#1618020298
+cp ~/config_commit.sh .
+#1618020303
+cp ~/dot .
+#1618020304
+ls
+#1618020304
+c
+#1618020305
+ls
+#1618020316
+cp dot ../data/dotfiles/input/
+#1618020317
+ls
+#1618019921
+vim process
+#1618020629
+cd ~
+#1618020630
+c
+#1618020630
+ls
+#1618020634
+vim .bashrc
+#1618020648
+config add .bashrc
+#1618020657
+config commit -m "basjrc"
+#1618020662
+config commit -m "bashrc"
+#1618020669
+config show
+#1618020678
+config show --pretty=""
+#1618020684
+config show --pretty="" --name-only
+#1618020689
+c
+#1618020689
+ls
+#1618020694
+vim .bashrc_aliases 
+#1618020711
+config add .bashrc_aliases
+#1618020717
+config commit -m .bashrc_aliases
+#1618020722
+config show --pretty="" --name-only
+#1618020733
+config add .bashrc
+#1618020736
+config commit -m .bashrc_aliase
+#1618020738
+config show --pretty="" --name-only
+#1618020747
+config show 
+#1618020757
+diff --git
+#1618020765
+config diff --git 
+#1618020769
+config diff-tree --git 
+#1618020776
+config diff-tree --no-commit-id
+#1618020781
+config diff-tree --no-commit-id --name-only
+#1618020786
+c
+#1618020792
+config diff-tree 
+#1618020802
+config diff-st  --tree
+#1618020808
+config diff tree
+#1618020810
+config diff
+#1618020821
+config push
+#1618020829
+config
+#1618020833
+config log
+#1618020856
+config
+#1618020864
+config status
