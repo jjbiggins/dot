@@ -14965,3 +14965,7 @@ c
 ls
 #1618018534
 vim config_commit.sh 
+#1618018629
+./config_commit.sh 
+#1618018644
+vim config_commit.sh 
