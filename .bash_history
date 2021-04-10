@@ -14973,3 +14973,134 @@ vim config_commit.sh
 ./config_commit.sh 
 #1618018680
 vim config_commit.sh 
+#1618018727
+./config_commit.sh 
+#1618018731
+c
+#1618018732
+ls
+#1618018747
+lls
+#1618018748
+c
+#1618018748
+ls
+#1618018749
+c
+#1618018750
+ls
+#1618018755
+c
+#1618018770
+mv config_commit.sh .bin/
+#1618018778
+cd .bin
+#1618018784
+vim install_postgresql.sh 
+#1618018797
+vim config_commit.sh 
+#1618018824
+call
+#1618018825
+c
+#1618018825
+ls
+#1618018830
+vim config_commit.sh 
+#1618018861
+./config_commit.sh 
+#1618018867
+mv config_commit.sh ../
+#1618018869
+cd ..
+#1618018869
+ls
+#1618018872
+./config_commit.sh 
+#1618018882
+vim config_commit.sh 
+#1618018899
+./config_commit.sh 
+#1618018905
+vim config_commit.sh 
+#1618018920
+./config_commit.sh 
+#1618018927
+vim config_commit.sh 
+#1618018944
+./config_commit.sh 
+#1618018958
+vim config_commit.sh 
+#1618018977
+./config_commit.sh 
+#1618018981
+vim config_commit.sh 
+#1618018996
+c
+#1618018996
+ls
+#1618019006
+which config
+#1618019015
+vim  config_commit.sh 
+#1618019036
+./config_commit.sh 
+#1618019041
+vim  config_commit.sh 
+#1618019072
+./config_commit.sh 
+#1618019078
+vim  config_commit.sh 
+#1618019091
+./config_commit.sh 
+#1618019095
+vim  config_commit.sh 
+#1618019117
+./config_commit.sh 
+#1618019124
+vim  config_commit.sh 
+#1618019148
+./config_commit.sh 
+#1618019163
+vim  config_commit.sh 
+#1618019179
+vim dot 
+#1618019186
+./config_commit.sh 
+#1618019198
+vim dot 
+#1618019517
+date
+#1618019525
+timestamp
+#1618019532
+date '%H
+date '%H'
+#1618019540
+date '%H'
+#1618019607
+date '+%Y/%m/%d %H:%M:%S'
+#1618019613
+date '+%Y/%m/%d-%H:%M:%S'
+#1618019619
+date '+%Y/%m/%d_%H:%M:%S'
+#1618019631
+date '+%Y-%m-%d_%H-%M-%S'
+#1618019635
+date '+%Y-%m-%d_%H%M%S'
+#1618019652
+date '+%Y-%m-%d_%H-%M%-S'
+#1618019657
+date '+%Y-%m-%d_%H-%M-%S'
+#1618019684
+vim config_commit.sh 
+#1618019915
+cd Applications/test/programs/
+#1618019915
+ls
+#1618019917
+vim pro
+#1618019203
+vim config_commit.sh 
+#1618019980
+vi config_commit.sh 
