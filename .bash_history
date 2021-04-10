@@ -15520,3 +15520,19 @@ ll  /Users/jjbiggins/Applications/Shell/dotfiles/data/
 ll  /Users/jjbiggins/Applications/Shell/data/
 #1618024719
 vim config_commit.sh 
+#1618024737
+./config_commit.sh 
+#1618024763
+c
+#1618024764
+ls
+#1618024769
+ll ../data/
+#1618024771
+ll ../data/dotfiles/
+#1618024776
+ll ../data/dotfiles/data
+#1618024778
+ll ../data/dotfiles/data/
+#1618024780
+c
