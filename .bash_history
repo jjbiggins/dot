@@ -15536,3 +15536,727 @@ ll ../data/dotfiles/data
 ll ../data/dotfiles/data/
 #1618024780
 c
+#1618024784
+./config_commit.sh 
+#1618024803
+q
+#1618024804
+c
+#1618024805
+ls
+#1618024815
+ll ../data/dotfiles/
+#1618024821
+ll ../data/dotfiles/archive
+#1618024822
+ll ../data/dotfiles/archive/
+#1618024826
+c
+#1618024826
+ls
+#1618024829
+clear
+#1618024829
+ls
+#1618024834
+c
+#1618024834
+ls
+#1618024844
+ll ~
+#1618024850
+ll ~/Developer/
+#1618024857
+ll ~/Developer/archive/
+#1618024861
+ll ~/Developer/sc
+#1618024865
+ll ~
+#1618024871
+ll ~/
+#1618024872
+c
+#1618024873
+ls
+#1618024890
+crontab -e
+#1618024894
+c
+#1618024894
+ls
+#1618024897
+c
+#1618024897
+ls
+#1618024902
+ll ~/.bin/
+#1618024912
+vim ~/.bin/send_mail.sh 
+#1618024919
+vim /usr/local/bin/
+#1618024969
+logger
+#1618024973
+man logger\
+#1618024976
+man logger
+#1618024982
+v
+#1618024982
+c
+#1618025310
+sudo vim /etc/postfix/main.cf
+#1618025436
+sudo postfix start
+#1618025443
+sudo vim /etc/postfix/main.cf
+#1618025475
+sendmail josephjbiggins@icloud.com
+#1618025508
+c
+#1618025545
+mailq
+#1618025943
+sendmail josephjbiggins@icloud.com
+#1618025966
+c
+#1618025967
+mailq
+#1618025980
+sudo postfix restart
+#1618025991
+sudo postfix flush
+#1618026004
+sudo postfix upgrade-configuration
+#1618026009
+sudo postfix status
+#1618026011
+c
+#1618026039
+# ------------------
+#1618026039
+# Create a campaign \
+#1618026039
+# ------------------
+#1618026039
+curl -H 'api-key:YOUR_API_V3_KEY' -X POST -d '{ \
+# Define the campaign settings \
+"name":"Campaign sent via the API", \
+"subject":"My subject", \
+"sender": { "name": "From name", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026040
+'https://api.sendinblue.com/v3/emailCampaigns'
+#1618026043
+curl -H 'api-key:YOUR_API_V3_KEY' -X POST -d '{ \
+# Define the campaign settings \
+"name":"Campaign sent via the API", \
+"subject":"My subject", \
+"sender": { "name": "From name", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026048
+curl -H 'api-key:YOUR_API_V3_KEY' -X POST -d '{ \
+# Define the campaign settings \
+"name":"Campaign sent via the API", \
+"subject":"My subject", \
+"sender": { "name": "From name", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026058
+curl -H 'api-key:YOUR_API_V3_KEY' -X POST -d '{ \
+# Define the campaign settings \
+"name":"Campaign sent via the API", \
+"subject":"My subject", \
+"sender": { "name": "From name", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026064
+curl
+#1618026064
+c
+#1618026132
+curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"Campaign sent via the API", \
+"subject":"My subject", \
+"sender": { "name": "Joe Biggins", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "email": "josephjbiggins@gmail.com" }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026142
+curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"Campaign sent via the API", \
+"subject":"My subject", \
+"sender": { "name": "Joe Biggins", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "email": "josephjbiggins@gmail.com" }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026143
+curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"Campaign sent via the API", \
+"subject":"My subject", \
+"sender": { "name": "Joe Biggins", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "email": "josephjbiggins@gmail.com" }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026143
+'https://api.sendinblue.com/v3/emailCampaigns'
+#1618026146
+v
+#1618026150
+c
+#1618026246
+vim send_mail.py
+#1618026289
+python send_mail.py 
+#1618026293
+vim send_mail.py
+#1618026331
+python send_mail.py 
+#1618026336
+vim send_mail.py
+#1618026346
+python send_mail.py 
+#1618026350
+vim send_mail.py
+#1618026367
+python send_mail.py 
+#1618026372
+vim send_mail.py
+#1618026381
+pip install sib_api_v3_sdk
+#1618026388
+pip install pip
+#1618026389
+c
+#1618026390
+ls
+#1618026405
+/usr/local/bin/python3 -m pip
+#1618026491
+curl -H 'api-key:YOUR_API_V3_KEY' -X POST -d '{ \
+# Define the campaign settings \
+"name":"Campaign sent via the API", \
+"subject":"My subject", \
+"sender": { "name": "From name", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026531
+'https://api.sendinblue.com/v3/emailCampaigns'curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"TEST", \
+"subject":"My subject", \
+"sender": { "name": "JB", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026543
+'https://api.sendinblue.com/v3/emailCampaigns'curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"TEST", \
+"subject":"My subject", \
+"sender": { "name": "JB", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}' 'https://api.sendinblue.com/v3/emailCampaigns'
+#1618026547
+'https://api.sendinblue.com/v3/emailCampaigns'curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"TEST", \
+"subject":"My subject", \
+"sender": { "name": "JB", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}' 
+#1618026557
+'https://api.sendinblue.com/v3/emailCampaigns'curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"TEST", \
+"subject":"My subject", \
+"sender": { "name": "JB", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026569
+curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"TEST", \
+"subject":"My subject", \
+"sender": { "name": "JB", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026592
+curl -H 'api-key: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' -X POST -d '{ \
+# Define the campaign settings \
+"name":"TEST", \
+"subject":"My subject", \
+"sender": { "name": "JB", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+# Content that will be sent \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+# Select the recipients\
+"recipients": { "listIds": [2,7] }, \
+# Schedule the sending in one hour\
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026594
+curl -H 'api-key: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' -X POST -d '{ \
+"name":"TEST", \
+"subject":"My subject", \
+"sender": { "name": "JB", "email":"vowak94194@ddwfzp.com" }, \
+"type": "classic", \
+"htmlContent": "Congratulations! You successfully sent this example campaign via the Sendinblue API.", \
+"recipients": { "listIds": [2,7] }, \
+"scheduledAt": "2018-01-01 00:00:01", \
+}'
+#1618026601
+ url --help
+#1618026606
+curl --help
+#1618026608
+c
+#1618026655
+vim muttrc
+#1618026737
+mv ~/.muttrc ~/.muttrc.org
+#1618026745
+cp muttrc ~/.muttrc
+#1618026746
+mutt
+#1618026782
+vi ~/.muttrc
+#1618026830
+mutt
+#1618026845
+vi ~/.muttrc
+#1618026854
+mutt
+#1618026863
+cd ~
+#1618026864
+ls
+#1618026871
+cat postponed 
+#1618026882
+mv .muttrc mrc
+#1618026892
+mv .muttrc.bak .muttrc
+#1618026913
+vi .muttrc
+#1618026948
+vim .mrc
+#1618026956
+vi .muttrc
+#1618027122
+mutt
+#1618027709
+ping mail.biggins.tech
+#1618027721
+vim .muttrc
+#1618027763
+mutt
+#1618027770
+v
+#1618027775
+clear
+#1618027780
+vim .muttrc
+#1618027791
+clear
+#1618027793
+mutt
+#1618027801
+vim .muttrc
+#1618027814
+mutt
+#1618027850
+vim .muttrc
+#1618027869
+mutt
+#1618017024
+python
+#1618030388
+vim .muttrc
+#1618020909
+vim config_commit.sh 
+#1618030452
+mutt
+#1618015863
+vim ~/.bashrc
+#1618030461
+vim .muttrc
+#1618030544
+ping mail.biggins.tech
+#1618030548
+c
+#1618030570
+vim .muttrc
+#1618030609
+mutt
+#1618030621
+vim .muttrc
+#1618030665
+mutt
+#1618030725
+vim .muttrc
+#1618030737
+mutt
+#1618030744
+vim .muttrc
+#1618030880
+mutt
+#1618030888
+vim .muttrc
+#1618030899
+mutt
+#1618030905
+vim .muttrc
+#1618030918
+mutt
+#1618030924
+c
+#1618030990
+mutt
+#1618030996
+q
+#1618030997
+c
+#1618031048
+vim .mutt_certificates 
+#1618031094
+mv .mutt_certificates mutt_certi
+#1618031113
+c
+#1618031114
+ls
+#1618031127
+mv mutt_certi .mutt_certificates
+#1618031128
+ls
+#1618031131
+rm mrc
+#1618031134
+mbox
+#1618031136
+rm mbox 
+#1618031139
+rm postponed 
+#1618031141
+ls
+#1618031143
+mailq
+#1618031150
+mailx
+#1618031169
+mailq
+#1618031173
+mailx
+#1618031183
+c
+#1618031189
+sudo postfix start
+#1618031195
+c
+#1618031202
+sudo postfix stop
+#1618031206
+mutt
+#1618031231
+vim mutt
+#1618031240
+c
+#1618031397
+vim .muttrc
+#1618026894
+mutt
+#1618024614
+mutt
+#1618031432
+mutt
+#1618031503
+vim .muttrc
+#1618031655
+mutt
+#1618031787
+vim .muttrc
+#1618031806
+c
+#1618031808
+ls
+#1618031813
+mutt
+#1618031822
+c
+#1618031823
+ls
+#1618031830
+rm send_mail.py 
+#1618031832
+ls
+#1618031833
+c
+#1618031834
+ls
+#1618031868
+vim .muttrc
+#1618031802
+mutt
+#1618032509
+vim .muttrc
+#1618031896
+mutt
+#1618032556
+vim .muttrc
+#1618032571
+c
+#1618032572
+ls
+#1618032574
+vim muttrc 
+#1618032564
+mutt
+#1618032617
+cp muttrc ~/.muttrc
+#1618032620
+mutt
+#1618032526
+mutt
+#1618032638
+ll .mut*
+#1618032650
+vim .muttrc.org 
+#1618032683
+cp .muttrc.org .muttrc
+#1618032685
+mutt
+#1618032711
+vim .muttrc
+#1618032723
+mutt
+#1618032728
+vim .muttrc
+#1618032736
+mutt
+#1618032741
+vim .muttrc
+#1618032752
+mutt
+#1618032761
+vim .muttrc
+#1618032784
+mutt
+#1618032788
+vim .muttrc
+#1618032805
+mutt
+#1618032886
+rm mbox 
+#1618032889
+rm postponed 
+#1618032890
+c
+#1618032891
+ls
+#1618032894
+ll .mutt*
+#1618032901
+rm .muttrc.org 
+#1618032903
+c
+#1618032904
+ls
+#1618032909
+rm dot 
+#1618032911
+c
+#1618032912
+ls
+#1618032916
+c
+#1618032916
+ls
+#1618032924
+crontab -h
+#1618032930
+crontab -e
+#1618032995
+vim  /Users/jjbiggins/Applications/Shell/programs/dotfiles/config_commit.sh
+#1618033000
+vim  /Users/jjbiggins/Applications/Shell/programs/
+#1618033012
+cd  /Users/jjbiggins/Applications/Shell/programs/
+#1618033012
+ls
+#1618033019
+mkdir dotfiles
+#1618033025
+mv config_commit.sh dotfiles
+#1618033032
+mv dot dotfiles/
+#1618033035
+mv muttrc dotfiles/
+#1618033035
+ls
+#1618033040
+cd ~
+#1618033041
+c
+#1618033043
+crontab 
+#1618033045
+crontab -e
+#1618033057
+vim /Users/jjbiggins/Applications/Shell/programs/dotfiles/config_commit.sh
+#1618033060
+c
+#1618033061
+ls
+#1618033063
+c
+#1618033068
+mv config_commit.sh .bin/
+#1618033069
+c
+#1618033070
+ls
+#1618033071
+ls -al
+#1618033095
+cat .macos.sh 
+#1618033098
+c
+#1618033099
+ls
+#1618033120
+vim Applications/Shell/data/dotfiles/input/dot 
+#1618033128
+ls
+#1618033131
+ls -al
+#1618033145
+ll .proxy-profile/
+#1618033147
+c
+#1618033148
+ls
+#1618033150
+ls -al
+#1618033160
+ll .emulator_console_auth_token
+#1618033164
+vi .emulator_console_auth_token
+#1618033170
+sudo port update
+#1618033191
+c
+#1618033175
+sudo port selfupdate
+#1618033226
+curl --ssl-reqd   --url 'smtps://smtp.gmail.com:465'   --user 'username@gmail.com:password'   --mail-from 'username@gmail.com'   --mail-rcpt 'john@example.com' \
+#1618033233
+curl --ssl-reqd   --url 'smtps://smtp.gmail.com:465'   --user 'username@gmail.com:password'   --mail-from 'username@gmail.com'   --mail-rcpt 'john@example.com'   --upload-file mail.txt
+#1618033305
+curl --ssl-reqd   --url 'smtps://mail.biggins.tech:465'   --user 'jjbiggins@biggins.tech:36Joeb!gg!ns'   --mail-from 'jjbiggins@biggins.tech'   --mail-rcpt 'joe@biggins.tech'   --upload-file birthday.swift
+#1618033307
+curl
+#1618033313
+sudo port install curl
+#1618033328
+curl
+#1618033331
+curl --ssl-reqd   --url 'smtps://mail.biggins.tech:465'   --user 'jjbiggins@biggins.tech:36Joeb!gg!ns'   --mail-from 'jjbiggins@biggins.tech'   --mail-rcpt 'joe@biggins.tech'   --upload-file birthday.swift
+#1618033347
+curl  --url 'smtps://mail.biggins.tech:465'   --user 'jjbiggins@biggins.tech:36Joeb!gg!ns'   --mail-from 'jjbiggins@biggins.tech'   --mail-rcpt 'joe@biggins.tech'   --upload-file birthday.swift
+#1618033362
+curl  --url 'smtps://mail.biggins.tech:465'   --user 'jjbiggins@biggins.tech:36Joeb!gg!ns'   --mail-from 'jjbiggins@biggins.tech'   --mail-rcpt 'joe@biggins.tech'   --upload-file '~/birthday.swift'
+#1618033365
+c
+#1618033367
+ls
+#1618033376
+curl  --url 'smtps://mail.biggins.tech:465'   --user 'jjbiggins@biggins.tech:36Joeb!gg!ns'   --mail-from 'jjbiggins@biggins.tech'   --mail-rcpt 'joe@biggins.tech'   --upload-file '/Users/jjbiggins/birthday.swift'
+#1618033383
+curl  --url 'smtps://mail.biggins.tech:465'   --user 'jjbiggins@biggins.tech:36Joeb!gg!ns'   --mail-from 'jjbiggins@biggins.tech'   --mail-rcpt 'joe@biggins.tech'   --upload-file '/Users/jjbiggins/birthdays.swift'
+#1618033394
+https://curl.se/docs/sslcerts.html
+#1618033399
+curl https://curl.se/docs/sslcerts.htmlhttps://curl.se/docs/sslcerts.html
+#1618033405
+curl https://curl.se/docs/sslcerts.html
+#1618033415
+c

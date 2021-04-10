@@ -1,11 +1,11 @@
 set from = "Joe Biggins"
 
-set smtp_url = "smtp://jjbiggins@biggins.tech:993/"
+set smtp_url = "smtp://jjbiggins@mail.biggins.tech:993/"
 set smtp_pass = "36Joeb!gg!ns"
 set imap_user = "jjbiggins@biggins.tech"
 set imap_pass = "36Joeb!gg!ns"
 
-set folder = "imaps://jjbiggins@biggins.tech:465/"
+set folder = "imaps://jjbiggins@biggins@biggins.tech:465/INBOX"
 set spoolfile = "+INBOX"
 
 set mail_check = 30

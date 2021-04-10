@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/jjbiggins/Applications/Shell/programs'
+let g:netrw_dirhist_7='/usr/local/bin'
 let g:netrw_dirhist_6='/Applications/Xcode.app/Contents/Developer/usr/share/xcs/logging'
 let g:netrw_dirhist_5='/Applications/Xcode.app/Contents/Developer/usr/share/xcs'
 let g:netrw_dirhist_4='/Users/jjbiggins/Sites/portfolio/webapp'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_2='/private/var/log/displaypolicy'
 let g:netrw_dirhist_1='/Users/jjbiggins/Applications/edgar-stocks-data/AAPL'
 let g:netrw_dirhist_0='/Users/jjbiggins/Applications/fidelity/data'
 let g:netrw_dirhist_9='/Users/jjbiggins/Applications/test/programs'
-let g:netrw_dirhist_8='/Users/jjbiggins/.proxy-profile'
-let g:netrw_dirhist_7='/Users/jjbiggins/proxy-profile'

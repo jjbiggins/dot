@@ -221,16 +221,17 @@ source /opt/local/share/nvm/init-nvm.sh
 #
 
 
+
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 PATH=$DEVELOPER_DIR/usr/bin:$PATH
 
 # Python
-export PYTHONHOME="/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9"
-export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9"
-export PYTHONUSERBASE="/Users/jjbiggins/Library/Python/3.9"
-export PYTHONNOUSERSITE="/Users/jjbiggins/Library/Python/3.9/lib/python/site-packages"
-export PYTHONCASEOK="
-PATH="/Users/jjbiggins/Library/Python/3.9/bin:$PATH"
+PYTHONPATH="/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9"
+PYTHONHOME="/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9"
+PYTHONUSERBASE="/Users/jjbiggins/Library/Python/3.9"
+PATH="/Users/jjbiggins/Library/Python/3.8/bin:$PATH"
+
+
 export PATH
 
 
