@@ -218,16 +218,6 @@ function xtitle()
 alias top='xtitle Processes on $HOST && top'
 alias make='xtitle Making $(basename $PWD) ; make'
 
-# .. and functions
-function man()
-{
-    if [[ -f "/opt/local/libexec/gnubin/$1" ]]; then
-        command man g"$1"
-    else
-        command man "$1"
-    fi
-}
-
 #command man g$
 #    for i ; do
 #       xtitle The $(basename $1|tr -d .[:digit:]) manual

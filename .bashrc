@@ -20,6 +20,17 @@ if [ -f /etc/bashrc ]; then
       . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
+
+#--------------------------------------------------------------
+#  Automatic setting of $DISPLAY (if not set already).
+#  This works for me - your mileage may vary. . . .
+#  The problem is that different types of terminals give
+#+ different answers to 'who am i' (rxvt in particular can be
+#+ troublesome) - however this code seems to work in a majority
+#+ of cases.
+#--------------------------------------------------------------
+
+
 # -------------------------------------------------------------
 # Time and History settings
 # -------------------------------------------------------------
@@ -218,8 +229,8 @@ source /opt/local/share/nvm/init-nvm.sh
 
  
 # Java Home
-#
-
+# ----------------------------------------------
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
 
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
@@ -244,3 +255,4 @@ export MANPATH=/opt/local/man:$MANPATH
 # mode:shell-script
 # sh-shell:bash
 # End:
+[ -f "/Users/jjbiggins/.ghcup/env" ] && source "/Users/jjbiggins/.ghcup/env" # ghcup-env

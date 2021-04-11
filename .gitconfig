@@ -1,5 +1,5 @@
 [user]
-	email = josephjbiggins@gmail.com
+	email = jjbiggins@biggins.tech
 	name = Joe Biggins
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -8,3 +8,6 @@
 	required = true
 [core]
 	ignorecase = false
+	excludesfile = ~/.gitignore_global
+[pull]
+	rebase = true

@@ -16260,3 +16260,4289 @@ curl https://curl.se/docs/sslcerts.htmlhttps://curl.se/docs/sslcerts.html
 curl https://curl.se/docs/sslcerts.html
 #1618033415
 c
+#1618033324
+sudo port upgrade outdated
+#1618034453
+mailq
+#1618034456
+c
+#1618034459
+mailx
+#1618034473
+c
+#1618034475
+ls
+#1618034476
+c
+#1618034476
+ls
+#1618034484
+mailx
+#1618034489
+c
+#1618034490
+ls
+#1618038364
+openssl genrsa -des3 -out rootCA.key 4096
+#1618038379
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.crt
+#1618038418
+c
+#1618038431
+openssl genrsa -out biggins.tech.key 2048
+#1618038453
+openssl req -new -key biggins.tech.key -out biggins.tech.csr
+#1618038491
+c
+#1618038510
+openssl req -in biggins.tech.csr -noout -text
+#1618038535
+openssl x509 -req -in biggins.tech.csr -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out biggins.tech.crt -days 500 -sha256
+#1618038542
+c
+#1618038554
+openssl x509 -in biggins.tech.crt -text -noout
+#1618038559
+ls
+#1618038619
+c
+#1618038619
+ls
+#1618038626
+mkdir keys
+#1618038635
+mv biggins.tech.* keys/
+#1618038636
+ls
+#1618038641
+mv rootCA.* keys/
+#1618038642
+ls
+#1618038663
+scp -r keys jjbiggins@192.168.1.82://Users/jjbiggins/Public/
+#1618038672
+scp -r keys jjbiggins@192.168.1.81://Users/jjbiggins/Public/
+#1618040712
+c
+#1618040712
+ls
+#1618040717
+rm -rf keys/
+#1618040717
+c
+#1618040780
+ls
+#1618040784
+c
+#1618040785
+ls
+#1618040791
+mv birthdays.swift Documents/
+#1618040794
+c
+#1618040795
+ls
+#1618040799
+cd Documents/
+#1618040800
+ls
+#1618040802
+mactex
+#1618040811
+sudo port install mactex
+#1618040822
+c
+#1618040930
+sudo xcode-select --install
+#1618040935
+c
+#1618040943
+sudo xcodebuild -license
+#1618040951
+c
+#1618040954
+ls
+#1618040958
+cat text.txt 
+#1618040961
+rm text.txt 
+#1618040963
+c
+#1618040963
+ls
+#1618040969
+cd ~
+#1618040970
+c
+#1618040985
+lpr
+#1618040990
+man lpr
+#1618041012
+lpadmin
+#1618041026
+lpadmin -u allow:all
+#1618041034
+lpstat
+#1618041038
+c
+#1618041224
+lpstat
+#1618041227
+c
+#1618041231
+cupsctl
+#1618041248
+cupsctl WebInterface=yes
+#1618041571
+ipstat
+#1618041578
+lpstat
+#1618041581
+lpadmin
+#1618041589
+lpadmin -u allow:all
+#1618041616
+lpadmin -d ipp://192.168.1.75/ipp/print 
+#1618041623
+lpadmin -h ipp://192.168.1.75/ipp/print 
+#1618041627
+lpadmin -v ipp://192.168.1.75/ipp/print 
+#1618041632
+lpadmin -p ipp://192.168.1.75/ipp/print 
+#1618041636
+mailx
+#1618041649
+c
+#1618041649
+ls
+#1618041655
+lpstat
+#1618041657
+lpadmin
+#1618041732
+lpadmin 
+#1618041743
+lpadmin -P ipp://192.168.1.75/ipp/print
+#1618041749
+c
+#1618041751
+lpstat
+#1618041752
+c
+#1618041846
+lpstat
+#1618041857
+lpadmin -P dnssd://HP%20Officejet%205740%20series%20%5B1AAFA3%5D._ipp._tcp.local./?uuid=1c852a4d-b800-1f08-abcd-fc3fdb1aafa3
+#1618041883
+lpadmin -v
+#1618041885
+lpadmin -e
+#1618041887
+lpadmin -a
+#1618041889
+lpadmin -A
+#1618041891
+lpadmin -E
+#1618041893
+lpadmin -l
+#1618041896
+lpadmin -L
+#1618041896
+c
+#1618041897
+ls
+#1618041906
+lpstat -A
+#1618041908
+lpstat -E
+#1618041914
+lpstat -l
+#1618041917
+lpstat -t
+#1618041923
+lpstat -r
+#1618041925
+lpstat -t
+#1618041952
+lpadmin
+#1618041957
+lpadmin -d HP_Officejet_5740_series
+#1618041960
+lpstat
+#1618041972
+lpadmin -p -d HP_Officejet_5740_series
+#1618041983
+lpstat -p -d HP_Officejet_5740_series
+#1618041987
+lpstat
+#1618041990
+lp -l
+#1618041998
+lpstat
+#1618042001
+lpadmin
+#1618042015
+lpadmin -o cupsIPPSupplies=true
+#1618042022
+lpadmin -m
+#1618042123
+lpadmin -p dnssd://HP%20Officejet%205740%20series%20%5B1AAFA3%5D._ipp._tcp.local./?uuid=1c852a4d-b800-1f08-abcd-fc3fdb1aafa
+#1618042138
+lpadmin -p HP_Officejet_5740_series
+#1618042161
+lpinfo
+#1618042161
+c
+#1618042165
+lpinfo -h
+#1618042170
+lpinfo -v
+#1618042245
+lpadmin -l
+#1618042248
+lpstat
+#1618042251
+lpstat -v
+#1618042270
+lpadmin -p  HP_Officejet_5740_series -v dnssd://HP%20Officejet%205740%20series%20%5B1AAFA3%5D._ipp._tcp.local./?uuid=1c852a4d-b800-1f08-abcd-fc3fdb1aafa3
+#1618042273
+c
+#1618042318
+lpadmin -p  HP_Officejet_5740_series -v dnssd://HP%20Officejet%205740%20series%20%5B1AAFA3%5D._ipp._tcp.local./?uuid=1c852a4d-b800-1f08-abcd-fc3fdb1aafa3 -u allow:all -u deny:none -o printer-is-shared=true
+#1618042320
+c
+#1618042327
+cupsctl --share-printers
+#1618042333
+lpadmin -p  HP_Officejet_5740_series -v dnssd://HP%20Officejet%205740%20series%20%5B1AAFA3%5D._ipp._tcp.local./?uuid=1c852a4d-b800-1f08-abcd-fc3fdb1aafa3 -u allow:all -u deny:none -o printer-is-shared=true
+#1618042351
+cupsctl --remote-any
+#1618042353
+cupsctl --remote-any -h
+#1618042368
+lpstat
+#1618042369
+c
+#1618042471
+lpstat -A
+#1618042474
+lpstat -v
+#1618042488
+lpr -P HP_Officejet_5740_series -v dnssd://HP%20Officejet%205740%20series%20%5B1AAFA3%5D._ipp._tcp.local./?uuid=1c852a4d-b800-1f08-abcd-fc3fdb1aafa3 
+#1618042489
+ls
+#1618042492
+cd Documents/
+#1618042492
+ls
+#1618042496
+cd Resume
+#1618042497
+ls
+#1618042500
+cd ..
+#1618042501
+ls
+#1618042503
+cd fidelity/
+#1618042504
+ls
+#1618042526
+lpr -P HP_Officejet_5740_series -v dnssd://HP%20Officejet%205740%20series%20%5B1AAFA3%5D._ipp._tcp.local./?uuid=1c852a4d-b800-1f08-abcd-fc3fdb1aafa3 Statement02282021.pdf 
+#1618042539
+lpr -P HP_Officejet_5740_series Statement02282021.pdf 
+#1618042542
+lpstat
+#1618042543
+c
+#1618042544
+ls
+#1618042611
+lpstat
+#1618042634
+lpinfo
+#1618042636
+lpinfo -v
+#1618042653
+lpinfo -l
+#1618042656
+lpinfo -h
+#1618042669
+lpinfo -l
+#1618042674
+lpinfo -v
+#1618042681
+lpstat -E
+#1618042683
+lpstat -v
+#1618042732
+lpinfo --include-schemes dnssd -v
+#1618042768
+ping HP_Officejet_5740_series.local
+#1618042781
+c
+#1618042791
+lpinfo -v
+#1618043044
+c
+#1618043050
+lpinfo -v
+#1618043064
+c
+#1618043065
+ls
+#1618043068
+lpstat
+#1618043113
+lpadmin -P ipp://192.168.1.70/ipp/print
+#1618043134
+lpadmin -P _192_168_1_70 ipp://192.168.1.70/ipp/print
+#1618043148
+lpadmin -E  ipp://192.168.1.70/ipp/print
+#1618043149
+c
+#1618043159
+lpadmin -E  ipp://192.168.1.70/ipp/print
+#1618043163
+lpadmin -d  ipp://192.168.1.70/ipp/print
+#1618043170
+lpadmin -d -p  ipp://192.168.1.70/ipp/print
+#1618043183
+lpadmin -p _192_168_1_70 -d  ipp://192.168.1.70/ipp/print
+#1618043187
+lpadmin -p _192_168_1_70  ipp://192.168.1.70/ipp/print
+#1618043192
+lpadmin -p   ipp://192.168.1.70/ipp/print
+#1618043193
+c
+#1618043251
+lpadmin -P _192_168_1_70 -v   ipp://192.168.1.70/ipp/print
+#1618043256
+lpadmin -P _192_168_1_70 -v  ipp://192.168.1.70/ipp/print
+#1618043259
+lpinfo
+#1618043265
+lpstat -v
+#1618043274
+lpadmin _192_168_1_70
+#1618043278
+lpadmin -P _192_168_1_70
+#1618043288
+lpadmin -r Printer _192_168_1_70
+#1618043291
+lpadmin -r Printer 
+#1618043293
+lpadmin -c Printer 
+#1618043295
+c
+#1618043306
+ls
+#1618043309
+lpinfo -v
+#1618043330
+lpr -h
+#1618043336
+lpstat
+#1618043341
+lpstat -h
+#1618043343
+lpstat -l
+#1618043347
+lpstat -h
+#1618043349
+lpstat 
+#1618043354
+lpstat -s
+#1618043408
+lpstat -t
+#1618043460
+c
+#1618043718
+lpadmin
+#1618043738
+lpadmin -h http://192.168.1.81:631
+#1618043753
+lpadmin -E
+#1618043754
+c
+#1618043962
+lpadmin -p spool2 -E -v ipp://192.168.1.70/ipp/print -m everywhere
+#1618043968
+lpstat
+#1618044004
+lpadmin -p spool2 -L Reading\ Room -E -v ipp://192.168.1.70/ipp/print -m everywhere
+#1618044022
+lpstat
+#1618044027
+lpinfo -v
+#1618044082
+lpoptions
+#1618044144
+c
+#1618044223
+lpr
+#1618044226
+lpr -h
+#1618044229
+lpr -v
+#1618044234
+man lpr
+#1618044266
+lpr
+#1618040978
+vim pr_spool.sh
+#1618044747
+mv pr_spool.sh pr_spool
+#1618044753
+chmod +x pr_spool 
+#1618044754
+ls
+#1618044763
+mv pr_spool /usr/local/bin/
+#1618044764
+ls
+#1618044765
+c
+#1618044770
+rm mbox 
+#1618044772
+c
+#1618044270
+man lpr
+#1618044910
+c
+#1618044911
+ls
+#1618044912
+c
+#1618044913
+ls
+#1618044914
+c
+#1618044932
+pdftohtml -xml -i Statement02282021.pdf 
+#1618044933
+ls
+#1618044938
+vim Statement02282021.xml 
+#1618044944
+ls
+#1618044948
+cd ..
+#1618044948
+ls
+#1618044954
+ll finance/
+#1618046781
+dl
+#1618052174
+dl
+#1618052176
+curl -O https://helidon.io/cli/latest/darwin/helidon
+#1618052180
+ls
+#1618052190
+vi helidon 
+#1618052201
+chmod +x ./helidon
+#1618052207
+sudo mv ./helidon /usr/local/bin/
+#1618052352
+c
+#1618052353
+ /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -version 
+#1618052359
+c
+#1618052442
+/usr/libexec/java_home -v 11 --exec javac -version
+#1618052455
+java -version
+#1618052464
+ /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -version 
+#1618052488
+ /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/
+#1618052491
+c
+#1618052493
+ls
+#1618052502
+java -version
+#1618052507
+which java
+#1618052524
+/usr/libexec/java_home -v 11 --exec javac -version
+#1618052537
+ll /Library/Java/JavaVirtualMachines
+#1618052545
+ll /Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/
+#1618052546
+ll /Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/
+#1618052551
+ll /Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home/
+#1618052554
+ll /Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home/bin/
+#1618052556
+c
+#1618052588
+sudo rm -rf /Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk
+#1618052613
+vim ~/.bashrc
+#1618052657
+ll  "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin"
+#1618052662
+sudo rm -rf "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin"
+#1618052671
+sudo ln -s /System/Library/Java/Support/CoreDeploy.bundle/Contents/JavaAppletPlugin.plugin "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin"
+#1618052689
+ll /Library/Internet Plug-Ins/JavaAppletPlugin.plugin
+#1618052692
+ll /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/
+#1618052703
+sudo ln -s /System/Library/Java/Support/CoreDeploy.bundle/Contents/JavaAppletPlugin.plugin "/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin"
+#1618052715
+cd /Library/Internet\ Plug-Ins
+#1618052716
+ls
+#1618052725
+unlink JavaAppletPlugin.plugin 
+#1618052731
+sudo unlink /Library/Internet\ Plug-Ins
+#1618052737
+sudo unlink JavaAppletPlugin.plugin 
+#1618052739
+ls
+#1618052744
+sudo ln -s /System/Library/Java/Support/CoreDeploy.bundle/Contents/JavaAppletPlugin.plugin "/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin"
+#1618052762
+sudo ln -s /System/Library/Java/Support/CoreDeploy.bundle/Contents/JavaAppletPlugin.plugin "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin"
+#1618052771
+ll /System/Library/Java/Support/CoreDeploy.bundle/Contents/JavaAppletPlugin.plugin
+#1618052775
+ll /System/Library/Java/Support/CoreDeploy.bundle/
+#1618052780
+ll /System/Library/Java/
+#1618052782
+ll /System/Library/
+#1618052932
+cd /Library/
+#1618052932
+ls
+#1618052936
+cd Server/
+#1618052936
+ls
+#1618052939
+cd Previous/
+#1618052940
+ls
+#1618052943
+cd Library/
+#1618052944
+ls
+#1618052946
+cd Server/
+#1618052947
+ls
+#1618052949
+cd ..
+#1618052950
+cd Preferences/
+#1618052951
+ls
+#1618052955
+cd ..
+#1618052955
+l
+#1618052963
+cd Collaboration/
+#1618052965
+..
+#1618052967
+c
+#1618052968
+..
+#1618052974
+ll private/
+#1618052979
+ll private/var/
+#1618052981
+ll private/var/spool/
+#1618052986
+ll private/var/db/
+#1618052992
+ll private/var/db/openldap/
+#1618052994
+ll private/var/db/openldap/openldap-data/
+#1618053005
+vi private/var/db/openldap/openldap-data/DB_CONFIG.example 
+#1618053014
+vi private/var/db/openldap/run/
+#1618053021
+ll usr/
+#1618053024
+ll usr/bin/
+#1618053027
+ll usr/share/
+#1618053029
+ll usr/share/squirrelmail/
+#1618053032
+c
+#1618053039
+cd Library/
+#1618053040
+ls
+#1618053041
+cd ..
+#1618053042
+ls
+#1618053045
+ll System/
+#1618053049
+ll System/Library/
+#1618053053
+ll System/Library/CoreServices/
+#1618053054
+x
+#1618053061
+c
+#1618053089
+cd ..
+#1618053090
+ls
+#1618053091
+cd ..
+#1618053092
+ls
+#1618053094
+cd Java/
+#1618053095
+ls
+#1618053096
+c
+#1618053097
+ls
+#1618053101
+ll Extensions/
+#1618053104
+ll JavaVirtualMachines/
+#1618053106
+c
+#1618053107
+ls
+#1618053108
+cd ..
+#1618053108
+ls
+#1618053114
+cd Extensions/
+#1618053119
+cd ..
+#1618053120
+ls
+#1618053123
+cd ..
+#1618053123
+c
+#1618053124
+ls
+#1618053132
+ll Applications/
+#1618053133
+c
+#1618053134
+ls
+#1618053154
+cd ~/Library/Internet\ Plug-Ins/
+#1618053156
+ls
+#1618053164
+cd /Library/Internet\ Plug-Ins/
+#1618053171
+ll disabled/
+#1618053173
+c
+#1618053787
+sudo ln -s /System/Library/Java/Support/CoreDeploy.bundle/Contents/JavaAppletPlugin.plugin "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin"
+#1618053792
+c
+#1618053796
+d
+#1618053797
+c
+#1618053798
+lw
+#1618053808
+cd /Library/Java/
+#1618053809
+ls
+#1618053811
+cd JavaVirtualMachines/
+#1618053812
+ls
+#1618053813
+cd jdk-11.0.10.jdk/
+#1618053814
+ls
+#1618053815
+cd Contents/
+#1618053816
+ls
+#1618053818
+cd Home/
+#1618053819
+ls
+#1618053822
+ll conf/
+#1618053826
+ll v
+#1618053830
+ll bin/
+#1618053834
+c
+#1618053835
+ls
+#1618053840
+open README.html 
+#1618053847
+ll jmods/
+#1618053853
+c
+#1618053857
+ll l
+#1618053859
+ll lib/
+#1618053866
+ll lib/server/
+#1618053876
+ll lib/jli/
+#1618053877
+c
+#1618053878
+ls
+#1618053880
+ll include/
+#1618053885
+ll conf/
+#1618053888
+ll conf/management/
+#1618053899
+vi conf/management/jmxremote.access 
+#1618053904
+ls
+#1618053908
+ll bin
+#1618053919
+jstat
+#1618053923
+c
+#1618053996
+ sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin 
+#1618054004
+sudo rm -fr /Library/PreferencePanes/JavaControlPanel.prefPane 
+#1618054010
+sudo rm -fr ~/Library/Application\ Support/Java
+#1618054011
+c
+#1618054043
+cd /Library/PreferencePanes
+#1618054045
+ls
+#1618054046
+kk
+#1618054176
+ /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -version 
+#1618056421
+sudo mkdir -p /usr/local
+#1618056480
+sudo mv ~/Downloads/apache-tomcat-9.0.45 /usr/local/
+#1618056496
+cd /Library/Tomcat
+#1618056497
+ls
+#1618056498
+c
+#1618056498
+ls
+#1618056501
+cd ..
+#1618056501
+ls
+#1618056567
+sudo rm -f /Library/Tomcat
+#1618056572
+sudo rm -rf /Library/Tomcat
+#1618056590
+sudo ln -s /usr/local/apache-tomcat-9.0.45 /Library/Tomcat
+#1618056605
+sudo chown -R jjbiggins /Library/Tomcat
+#1618056611
+ sudo chmod +x /Library/Tomcat/bin/*.sh
+#1618056611
+c
+#1618056612
+ls
+#1618056618
+ /Library/Tomcat/bin/startup.sh
+#1618056662
+ /Library/Tomcat/bin/shutdown.sh
+#1618056753
+msqld
+#1618056756
+msql
+#1618056757
+c
+#1618056757
+ls
+#1618058545
+https://curl-server.firebaseapp.com/__/auth/handler
+#1618058656
+https://apple-signin-gcp.firebaseapp.com/__/auth/handler
+#1618058658
+AIzaSyDMS_72UQ-lLFilgQk-u9cP3IqbEYgOogs
+#1618058664
+apple-signin-gcp.firebaseapp.com
+#1618060023
+hostname
+#1618062680
+c
+#1618062702
+node -v
+#1618062751
+echo "lts/*" > ~/.nvmrc
+#1618062758
+nvm install
+#1618062784
+nvm use
+#1618062792
+vim .nvmrc 
+#1618062925
+port install dnsmasq
+#1618062929
+sudo port install dnsmasq
+#1618063025
+ls
+#1618063036
+c
+#1618063048
+gcl https://github.com/pterm/pterm.git /tmp/pterm
+#1618063051
+c
+#1618063052
+ls
+#1618063141
+lpstat -d
+#1618063169
+tex
+#1618063241
+/Users/jjbiggins/Downloads/install-tl-20210409/install-tl ; exit;
+#1618063273
+dl
+#1618063275
+cd install-tl-20210409/
+#1618063275
+ls
+#1618063277
+./install-tl 
+#1618063316
+sudo ./install-tl 
+#1618063506
+fax2ps
+#1618063513
+which fax2ps
+#1618063521
+which a2ps
+#1618063525
+which pdf2ps
+#1618063526
+c
+#1618063556
+c
+#1618063564
+man xmllint
+#1618063577
+man -t xmllint > man-xmllint.ps
+#1618063579
+ls
+#1618063582
+vim man-xmllint.ps 
+#1618063591
+man -t xmllint >> man-xmllint.ps
+#1618063594
+ls
+#1618063598
+rm man-xmllint.ps 
+#1618063604
+which man
+#1618063645
+vim .functions 
+#1618063668
+man
+#1618063681
+man -t xmllint > man-xmllint.ps
+#1618063682
+ls
+#1618063684
+vim man-xmllint.ps 
+#1618063688
+rm man-xmllint.ps 
+#1618063692
+man grep
+#1618063698
+man ggrep
+#1618063706
+c
+#1618063717
+gv
+#1618063726
+man -t xmllint > man-xmllint.ps
+#1618063729
+gv man-xmllint.ps 
+#1618063732
+rm man-xmllint.ps 
+#1618063734
+c
+#1618063736
+xdvi
+#1618063737
+c
+#1618063745
+xpdf
+#1618063746
+c
+#1618063747
+ls
+#1618063752
+acroread
+#1618063754
+c
+#1618063756
+gpdf
+#1618063757
+c
+#1618063810
+printconf
+#1618063832
+sudo port install printconf
+#1618063927
+ fdformat
+#1618063928
+c
+#1618063997
+dd
+#1618064048
+man 7 tcp
+#1618064081
+Isdn4linux
+#1618064111
+smbd
+#1618064114
+smbd -h
+#1618064118
+smbd --help
+#1618064138
+smbd -stdout true
+#1618064145
+nmbd --help
+#1618064158
+man smb.conf
+#1618064162
+man smb
+#1618064163
+c
+#1618064246
+cardctl
+#1618064263
+locate
+#1618064276
+ll /usr/local/libexec/
+#1618064291
+ll /usr/local/libexec/inetd
+#1618064295
+man /usr/local/libexec/inetd
+#1618064304
+ll /usr/libexec/
+#1618064320
+ll /usr/libexec/xpcproxy 
+#1618064328
+ll /usr/libexec/wifip2pd
+#1618064332
+man /usr/libexec/wifip2pd
+#1618064338
+/usr/libexec/wifip2pd --help
+#1618064379
+/usr/libexec/undoServerAppDNSPrefs 
+#1618064391
+/usr/libexec/tzd
+#1618064398
+/usr/libexec/tzlinkd 
+#1618064400
+c
+#1618064410
+ll /usr/libexec/
+#1618064432
+ll /usr/libexec/timed
+#1618064436
+man /usr/libexec/timed
+#1618064443
+man /usr/libexec/swcd
+#1618064458
+snmpd
+#1618064463
+man /usr/libexec/snmpd
+#1618064467
+/usr/libexec/snmpd
+#1618064471
+/usr/libexec/snmpd --help
+#1618064489
+c
+#1618064490
+ls
+#1618064496
+ll /usr/libexec/timed
+#1618064498
+ll /usr/libexec/
+#1618064508
+ll /usr/libexec/systemstats_boot 
+#1618064511
+/usr/libexec/systemstats_boot 
+#1618064514
+/usr/libexec/systemstats_boot --help
+#1618064523
+ll /usr/libexec/
+#1618064543
+/usr/libexec/smb-sync-preferences --help
+#1618064596
+man /usr/libexec/sftp-server
+#1618064603
+ /usr/libexec/sftp-server --help
+#1618064640
+prng_seedctl
+#1618064647
+ /usr/libexec/prng_seedctl
+#1618064682
+c
+#1618064693
+/usr/libexec/networkserviceproxy 
+#1618064699
+/usr/libexec/networkserviceproxy --help
+#1618064707
+ll /usr/libexec/
+#1618064752
+femail
+#1618064764
+/usr/local/femail
+#1618064771
+/usr/libexec/femail
+#1618064776
+/usr/libexec/femail --help
+#1618064784
+man /usr/libexec/femail
+#1618064785
+c
+#1618064785
+ls
+#1618064791
+cd /usr/libexec/
+#1618064791
+c
+#1618064792
+ls
+#1618064811
+./ftp-proxy
+#1618064815
+./ftp-proxy --help
+#1618064819
+man ./ftp-proxy 
+#1618064829
+./getPPDVersion
+#1618064839
+man dp2hdmiupdater
+#1618064862
+corebrightnessd --help
+#1618064867
+./corebrightnessd --help
+#1618064895
+c
+#1618064935
+./ippusbd
+#1618064941
+./ippusbd --help
+#1618064942
+c
+#1618064945
+lw
+#1618064950
+ls
+#1618064973
+./corebrightnessdiag
+#1618064983
+./corebrightnessdiag status~-info
+#1618064986
+./corebrightnessdiag status-info
+#1618064990
+ls
+#1618064997
+./comsat 
+#1618065017
+./automation_trampoline
+#1618065031
+./atrun
+#1618065037
+man ./atrun
+#1618065047
+./attach_automation_image
+#1618065053
+c
+#1618065054
+ls
+#1618065059
+ll apache2/
+#1618065062
+c
+#1618065064
+ls
+#1618065072
+./aned
+#1618065079
+./aned --help
+#1618065084
+man ./aned
+#1618065089
+./amfid
+#1618065095
+./amsdstat 
+#1618065103
+./airportd 
+#1618065122
+c
+#1618065123
+la
+#1618065125
+c
+#1618065126
+ls
+#1618065133
+./UserEventAgent 
+#1618065145
+./ReportMemoryException 
+#1618065159
+launchd
+#1618065165
+launchctl
+#1618065172
+c
+#1618065176
+launchctl load
+#1618065178
+c
+#1618065179
+ls
+#1618065196
+./MobileStorageMounter 
+#1618065206
+./KeychainStasher 
+#1618065214
+./InternetSharing 
+#1618065218
+./InternetSharing --help
+#1618065237
+ls
+#1618065243
+./AdvancedCommandsMigrator
+#1618065249
+./AdvancedCommandsMigrator --help
+#1618065263
+./AirPlayXPCHelper
+#1618065268
+./AirPlayXPCHelper --help
+#1618065271
+c
+#1618065272
+ls
+#1618065287
+./DataDetectorsSourceAccess
+#1618065292
+./DataDetectorsSourceAccess --help
+#1618065301
+./adservicesd
+#1618065308
+./adservicesd --help
+#1618065313
+man applessdstatistics
+#1618065322
+./applessdstatistics --help
+#1618065330
+man assessmentagent
+#1618065346
+man dirhelper
+#1618065365
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.bsd.dirhelper.plist
+#1618065378
+/usr/libexec/dp2hdmiupdater ; exit;
+#1618065386
+man efi-dump-logs
+#1618065392
+man emlog.pl
+#1618065413
+emlog.pl
+#1618065416
+./emlog.pl
+#1618065434
+./emlog.pl  --help
+#1618065439
+vim emlog.pl 
+#1618065461
+man emlog.pl 
+#1618065499
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.emlog.plist
+#1618065503
+man emlog.pl 
+#1618065507
+/usr/libexec/xssendevent
+#1618065514
+man /usr/libexec/xssendevent
+#1618065517
+ls
+#1618065527
+ configureLocalKDC
+#1618065531
+./configureLocalKDC
+#1618065536
+sudo ./configureLocalKDC
+#1618065540
+sudo ./configureLocalKDC --help
+#1618065545
+man ./configureLocalKDC 
+#1618065645
+ll  cups/
+#1618065648
+ll  cups/apple/
+#1618065651
+ll  cups/apple/ipp
+#1618065659
+vi  cups/apple/ipp
+#1618065664
+vi  cups/
+#1618065667
+c
+#1618065674
+ll cups/
+#1618065677
+ll cups/backend/
+#1618065693
+ll cups/backend/bluetooth 
+#1618065698
+man cups/backend/bluetooth 
+#1618065707
+ cups/backend/bluetooth --help
+#1618065722
+ cups/backend/riousbprint --help
+#1618065737
+ cups/backend/socket --help
+#1618065747
+ll cups/
+#1618065750
+ll cups/cgi-bin/
+#1618065757
+vi cups/cgi-bin/admin.cgi 
+#1618065766
+man cups/cgi-bin/admin.cgi 
+#1618065774
+cups/cgi-bin/admin.cgi --help
+#1618065794
+c
+#1618065796
+ls
+#1618065804
+cups/cgi-bin/printers.cgi 
+#1618065823
+c
+#1618065824
+ls
+#1618065828
+ll cups/
+#1618065831
+ll cups/command/
+#1618065841
+man cups/command/ippevepcl 
+#1618065846
+cups/command/ippevepcl --help
+#1618065864
+cups/command/ippeveps --help
+#1618065874
+c
+#1618065878
+cups/
+#1618065883
+ll cups/
+#1618065886
+ll cups/daemon/
+#1618065892
+ll cups/daemon/cups-lpd 
+#1618065896
+man cups/daemon/cups-lpd 
+#1618065901
+man cups/daemon/
+#1618065903
+man cups/
+#1618065909
+ll cups/
+#1618065913
+ll cups/driver/
+#1618065917
+ll cups/filter/
+#1618065938
+ll cups/filter/pstoappleps
+#1618065942
+man cups/filter/pstoappleps
+#1618065943
+c
+#1618065945
+ll cups/filter/pstoappleps
+#1618065948
+ll cups/filter/
+#1618065975
+cups/filter/rastertohp --help
+#1618065981
+ll cups/filter/
+#1618065984
+ll cups
+#1618065988
+ll cups/monitor/
+#1618065991
+ll cups/monitor/bcp 
+#1618065994
+man cups/monitor/bcp 
+#1618065996
+c
+#1618066001
+ cups/monitor/bcp --help
+#1618066006
+ cups/monitor/bcp 
+#1618066010
+ll cups/monitor/bcp 
+#1618066014
+ll cups/monitor/tbcp 
+#1618066016
+ cups/monitor/tbcp 
+#1618066020
+ll cups/
+#1618066023
+ll cups/notifier/
+#1618066026
+ll cups/notifier/rss 
+#1618066029
+man cups/notifier/rss 
+#1618066035
+ cups/notifier/rss --help
+#1618066050
+ cups/notifier/rss cat 
+#1618066064
+cat cups/notifier/rss 
+#1618066066
+c
+#1618066067
+ls
+#1618066072
+vi cups/notifier/rss 
+#1618066088
+c
+#1618066091
+vi cups/notifier/
+#1618066101
+ cups/notifier/rss
+#1618066113
+man cups/notifier/rss
+#1618066120
+man cups/notifier/mailto
+#1618066126
+ cups/notifier/mailto
+#1618066140
+ cups/notifier/mailto -h
+#1618066144
+ cups/notifier/mailto --help
+#1618066148
+ls
+#1618066157
+./dasd
+#1618066187
+c
+#1618066188
+ls
+#1618066198
+./diagnosticd
+#1618066206
+./dmd
+#1618066210
+./dmd --help
+#1618066221
+./dp2hdmiupdater 
+#1618066224
+./dp2hdmiupdater --help
+#1618066228
+man ./dp2hdmiupdater 
+#1618066229
+c
+#1618066230
+ls
+#1618066235
+dpaudiothru
+#1618066238
+dpaudiothru --help
+#1618066242
+./dpd
+#1618066246
+./dpd --help
+#1618066252
+./efi-dump-logs
+#1618066261
+c
+#1618066263
+ls
+#1618066269
+./efiupdater
+#1618066279
+ll dtrace/
+#1618066282
+ll dtrace/log_unnest_badness.d 
+#1618066285
+dtrace/log_unnest_badness.d 
+#1618066291
+dtrace/smbtrace.d 
+#1618066293
+ls
+#1618066300
+./endpointsecurityd 
+#1618066304
+./eoshostd 
+#1618066308
+./eoshostd --help
+#1618066313
+ll fax
+#1618066319
+vi fax/coverpage.py 
+#1618066357
+vi feedback/
+#1618066364
+ll feedback/
+#1618066370
+vi feedback/appearance.py 
+#1618066387
+vi feedback/fb_collect 
+#1618066398
+vi feedback/filevault.py 
+#1618066412
+vi feedback/systriage.rb 
+#1618066435
+cat feedback/sleepwake.sh 
+#1618066443
+vim feedback/sleepwake.sh 
+#1618066448
+ls
+#1618066454
+cat femail 
+#1618066462
+c
+#1618066462
+ls
+#1618066468
+chkpasswd
+#1618066471
+./chkpasswd
+#1618066479
+./chkpasswd --help
+#1618066502
+./cloudconfigurationd
+#1618066505
+./cloudconfigurationd man
+#1618066510
+./cloudconfigurationd --help
+#1618066516
+man ./cloudconfigurationd 
+#1618066517
+c
+#1618066518
+ls
+#1618066532
+./firmwaresyncd 
+#1618066536
+man ./firmwaresyncd 
+#1618066540
+./fmfs
+#1618066544
+./fmfd
+#1618066553
+./fmfd --help
+#1618066570
+man ./fmfd
+#1618066571
+c
+#1618066572
+ls
+#1618066578
+man ./ftp-proxy
+#1618066585
+ ./ftp-proxy --help
+#1618066588
+ ./ftp-proxy -h
+#1618066590
+ ./ftp-proxy 
+#1618066599
+./getPPDVersion 
+#1618066602
+./getPPDVersion --help
+#1618066608
+cat ./getPPDVersion
+#1618066611
+c
+#1618066612
+ls
+#1618066619
+man getty
+#1618066636
+man getPPDVersion 
+#1618066640
+man gkreport 
+#1618066646
+gkreport --help
+#1618066647
+gkreport 
+#1618066652
+cat gkreport 
+#1618066665
+./gkreport 
+#1618066676
+man ./hidd
+#1618066682
+ ./hidd --help
+#1618066687
+man hidd
+#1618066699
+c
+#1618066700
+ls
+#1618066709
+man ifcstart
+#1618066718
+man ioupsd
+#1618066732
+ioupsd
+#1618066741
+sudo launchctl load 
+#1618066743
+man ioupsd
+#1618066753
+man ippusbd
+#1618066758
+ippusbd
+#1618066761
+ippusbd --help
+#1618066769
+kcgend
+#1618066772
+./kcgend
+#1618066782
+man kcgend
+#1618066791
+./ippusbd 
+#1618066793
+./ippusbd --help
+#1618066801
+man kernelmanagerd
+#1618066826
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.kernelmanagerd.plist
+#1618066832
+c
+#1618066833
+ls
+#1618066839
+./keyboardservicesd
+#1618066845
+man keyboardservicesd
+#1618066852
+man knowledge-agent
+#1618066857
+./knowledge-agent
+#1618066866
+cat ./knowledge-agent
+#1618066868
+c
+#1618066868
+ls
+#1618066874
+./kuncd
+#1618066879
+man kuncd
+#1618066889
+man lightsoutmanagementd
+#1618066899
+man locate.code
+#1618066911
+cat locate.code
+#1618066913
+c
+#1618066914
+ls
+#1618066919
+man locate.concatdb
+#1618066945
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.locate.plist
+#1618066963
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+#1618066977
+man locate.mklocatedb
+#1618066990
+man locate.updatedb
+#1618067000
+man locate.concatdb
+#1618067009
+vim /etc/locate.rc 
+#1618067019
+man locationd
+#1618067024
+c
+#1618067024
+ls
+#1618067028
+cat locationd
+#1618067032
+c
+#1618067037
+ls
+#1618067044
+man logd
+#1618067059
+mn logd_helper
+#1618067063
+man logd_helper
+#1618067070
+man loginitemregisterd
+#1618067081
+man lsd
+#1618067092
+man makewhatis
+#1618067109
+man makewhatis.local 
+#1618067125
+man mcxalr 
+#1618067139
+man metrickitd 
+#1618067147
+man microstackshot 
+#1618067162
+man migrateLocalKDC 
+#1618067170
+vim /var/db/krb5kdc/kdc.conf
+#1618067178
+migrateLocalKDC 
+#1618067182
+./migrateLocalKDC 
+#1618067185
+./migrateLocalKDC --help
+#1618067191
+man misagent
+#1618067198
+ misagent --help
+#1618067203
+man mobile_obliterator
+#1618067209
+./mobile_obliterator
+#1618067217
+./mobile_obliterator --help
+#1618067228
+cat mobile_obliterator
+#1618067229
+c
+#1618067230
+ls
+#1618067238
+man mobile_storage_proxy
+#1618067244
+man morphunassetsupdaterd
+#1618067248
+man mount_url
+#1618067289
+man ./msutil 
+#1618067293
+ ./msutil --help
+#1618067295
+ ./msutil 
+#1618067302
+./natpmpd
+#1618067307
+man ./natpmpd
+#1618067313
+ ./natpmpd -h
+#1618067316
+ ./natpmpd --help
+#1618067318
+cat natpmpd
+#1618067320
+c
+#1618067321
+ls
+#1618067329
+nehelper
+#1618067332
+./nehelper
+#1618067340
+man networkserviceproxy
+#1618067352
+networkserviceproxy
+#1618067355
+./networkserviceproxy
+#1618067365
+./nexusd
+#1618067370
+man ./nexusd
+#1618067377
+man nfcd
+#1618067383
+man nfrestore_service 
+#1618067389
+man nlcd 
+#1618067398
+man ntalkd 
+#1618067413
+sudo            launchctl load -w /System/Library/LaunchDaemons/ntalk.plist
+#1618067418
+man ntalkd 
+#1618067436
+man od_user_homes 
+#1618067463
+cat od_user_homes 
+#1618067465
+c
+#1618067466
+ls
+#1618067473
+man odproxyd
+#1618067480
+c
+#1618067481
+ls
+#1618067486
+man online-authd
+#1618067492
+ online-authd --help
+#1618067496
+ ./online-authd --help
+#1618067506
+cat ./online-authd 
+#1618067507
+c
+#1618067508
+ls
+#1618067513
+man osaapplet
+#1618067552
+man otherbsd
+#1618067560
+man pboard
+#1618067569
+man pfd
+#1618067578
+man ./periodic-wrapper 
+#1618067585
+./pcsstatus 
+#1618067601
+c
+#1618067602
+ls
+#1618067606
+./pkreporter
+#1618067610
+man pkreporter
+#1618067619
+pkreporter -v
+#1618067622
+./pkreporter -v
+#1618067628
+ll postfix/
+#1618067633
+man postfix/anvil 
+#1618067637
+cat postfix/anvil 
+#1618067640
+c
+#1618067646
+ postfix/anvil -h
+#1618067652
+ postfix/anvil 
+#1618067655
+ls
+#1618067660
+ll postfix/
+#1618067666
+postfix/dnsblog 
+#1618067674
+postfix/greylist.pl 
+#1618067681
+vi postfix/greylist.pl 
+#1618067694
+postfix/lmtp 
+#1618067699
+postfix/local 
+#1618067704
+postfix/master 
+#1618067709
+man postfix/master 
+#1618067716
+man postfix/mk_postfix_spool.sh 
+#1618067722
+vi postfix/mk_postfix_spool.sh 
+#1618067770
+vi postfix/nqmgr 
+#1618067773
+c
+#1618067774
+ls
+#1618067776
+ll postfix/
+#1618067791
+man postfix/pipe 
+#1618067796
+ postfix/pipe -h
+#1618067805
+ postfix/pickup 
+#1618067811
+ postfix/post-install 
+#1618067828
+ postfix/postfix-script 
+#1618067834
+vi postfix/postfix-script 
+#1618067849
+vi postfix/postfix-tls-script 
+#1618067856
+vi postfix/postfix-wrapper 
+#1618067868
+vi postfix/postfixsetup 
+#1618067884
+vi postfix/postmulti-script 
+#1618067894
+c
+#1618067895
+ls
+#1618067900
+ll postfix/
+#1618067907
+vi postfix/postscreen 
+#1618067912
+man postfix/postscreen 
+#1618067921
+man postfix/proxymap 
+#1618067929
+man postfix/qmgr 
+#1618067939
+vi postfix/set_credentials.sh 
+#1618067960
+vi postfix/smtp
+#1618067966
+man postfix/smtp
+#1618067968
+postfix/smtp
+#1618067972
+postfix/smtpd
+#1618067978
+postfix/tlsproxy 
+#1618067984
+postfix/virtual 
+#1618067989
+postfix/showq 
+#1618067995
+postfix/scripts/
+#1618067999
+ll postfix/scripts/
+#1618068026
+cp postfix/mk_postfix_spool.sh ~/
+#1618068032
+cp postfix/set_credentials.sh ~/
+#1618068033
+ls
+#1618068042
+man powerdatad 
+#1618068047
+man prng_seedctl 
+#1618068060
+man productutil 
+#1618068067
+man psfupdater 
+#1618068071
+man rapportd 
+#1618068080
+man remindd 
+#1618068106
+man remoted
+#1618068112
+man replayd 
+#1618068118
+man rootless-init 
+#1618068122
+man routined 
+#1618068132
+man rpc.rquotad 
+#1618068142
+man rtcreportingd 
+#1618068147
+man runningboardd 
+#1618068154
+man scsid 
+#1618068158
+man sdfwupdater 
+#1618068164
+man secd
+#1618068169
+man secinitd 
+#1618068176
+man securityd_service
+#1618068180
+man seputil 
+#1618068185
+man seld
+#1618068192
+man sharingd 
+#1618068199
+sharingd 
+#1618068203
+./sharingd -h
+#1618068214
+man silhouette
+#1618068218
+man siriknowledged 
+#1618068226
+man smcDiagnose
+#1618068230
+man smd
+#1618068234
+man snmpd 
+#1618068253
+man spindump_agent 
+#1618068257
+c
+#1618068258
+ls
+#1618068264
+man swcd
+#1618068270
+man sysmond 
+#1618068275
+sysmond
+#1618068285
+man tailspind 
+#1618068292
+man testmanagerd 
+#1618068299
+man ucupdate 
+#1618068306
+man usbd
+#1618068311
+man usermanagerhelper 
+#1618068316
+man videosubscriptionsd 
+#1618068319
+man vndevice 
+#1618068325
+man warmd_agent 
+#1618068330
+man warmd
+#1618068338
+man wifiFirmwareLoader
+#1618068343
+wifiFirmwareLoader
+#1618068346
+./wifiFirmwareLoader
+#1618068356
+man wifianalyticsd
+#1618068360
+./wifianalyticsd
+#1618068370
+./wifip2pd
+#1618068374
+man wifip2pd
+#1618068383
+cat wifip2pd
+#1618068386
+c
+#1618068387
+ls
+#1618068393
+man wifivelocityd
+#1618068400
+man wps
+#1618068405
+man wpsd
+#1618068410
+man x11-select 
+#1618068416
+ x11-select 
+#1618068420
+./x11-select 
+#1618068424
+./x11-select -h
+#1618068435
+./xartstorageremoted 
+#1618068438
+man ./xartstorageremoted 
+#1618068443
+man xpcproxy 
+#1618068459
+man watchdogd 
+#1618068465
+ll wfs/
+#1618068474
+man wfs/webdavsharing_mapper 
+#1618068477
+cat wfs/webdavsharing_mapper 
+#1618068484
+ wfs/webdavsharing_mapper -h
+#1618068493
+ wfs/webdavsharing_mapper
+#1618068524
+c
+#1618068525
+ls
+#1618068532
+ll WiFiStallDetect.mlmodelc/
+#1618068539
+vi WiFiStallDetect.mlmodelc/coremldata.bin 
+#1618068546
+vi WiFiStallDetect.mlmodelc/model0/
+#1618068554
+ll SmartCardServices/
+#1618068555
+ll SmartCardServices/drivers/
+#1618068557
+ll SmartCardServices/drivers/ifd-ccid.bundle/
+#1618068558
+ll SmartCardServices/drivers/ifd-ccid.bundle/Contents/
+#1618068562
+c
+#1618068562
+ls
+#1618068567
+ll DuetActivityScheduler.momd/
+#1618068573
+ll DuetActivityScheduler.momd/DuetActivityScheduler.mom 
+#1618068577
+vi DuetActivityScheduler.momd/DuetActivityScheduler.mom 
+#1618068581
+c
+#1618068581
+ls
+#1618068589
+ll DeveloperTools/
+#1618068593
+c
+#1618068594
+ls
+#1618068603
+ll AssetCache
+#1618068613
+ll AppSandbox/
+#1618068616
+ll AppSandbox/container_check.rb 
+#1618068621
+vim AppSandbox/container_check.rb 
+#1618068634
+./
+#1618068637
+./PerfPowerServices
+#1618068640
+c
+#1618063395
+     sudo ./install-tl --gui=text
+#1618069538
+vim ~/screen_brightness.py
+#1618069555
+python ~/screen_brightness.py 
+#1618069622
+vim objc_util.py
+#1618069644
+vim ~/objc_util.py
+#1618069655
+python ~/screen_brightness.py 
+#1618069671
+vim ~/screen_brightness.py
+#1618069689
+python ~/screen_brightness.py 
+#1618069694
+vim ~/screen_brightness.py
+#1618069858
+rcs
+#1618069859
+c
+#1618069926
+logger
+#1618069934
+man logger
+#1618069942
+c
+#1618069944
+talk
+#1618069946
+man talk
+#1618069956
+man tftp
+#1618069963
+man wall
+#1618070066
+python2.7
+#1618070083
+cd /usr/lib
+#1618070084
+ls
+#1618070087
+cd python2.7/
+#1618070088
+ls
+#1618070092
+cd site.py
+#1618070104
+ll plat-mac/
+#1618070110
+ll plat-mac/lib-scriptpackages/
+#1618070112
+ll plat-mac/lib-scriptpackages/CodeWarrior/
+#1618070121
+vi plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py
+#1618070133
+c
+#1618070133
+ls
+#1618070140
+vi plat-mac/lib-scriptpackages/
+#1618070154
+c
+#1618070154
+ls
+#1618070171
+ll smtpd.py
+#1618070176
+vi smtpd.py
+#1618070191
+ll wsgiref
+#1618070200
+vim wsgiref/headers.py
+#1618070223
+vim xml
+#1618070229
+c
+#1618070230
+ls
+#1618070234
+ll email/
+#1618070242
+vi email/message.py
+#1618070245
+ls
+#1618070300
+vi macpath.py
+#1618070315
+ll plat-mac/
+#1618070328
+vim plat-mac/videoreader.py
+#1618070339
+ls
+#1618070342
+cd compiler/
+#1618070344
+ls
+#1618070351
+vim syntax.py
+#1618070357
+cd ..
+#1618070359
+ls
+#1618070366
+ll curses/
+#1618070372
+ll ctypes/
+#1618070374
+c
+#1618070375
+ls
+#1618070381
+cd plat-darwin/
+#1618070381
+ls
+#1618070386
+vim IN.py
+#1618070422
+vim 
+#1618070425
+c
+#1618070425
+ls
+#1618070428
+cd ..
+#1618070428
+ls
+#1618070430
+cd config/
+#1618070431
+ls
+#1618070434
+vim Makefile 
+#1618070452
+ls
+#1618070455
+vim Setup
+#1618070523
+vim Setup.local 
+#1618070530
+vim Setup.config 
+#1618070537
+ls
+#1618070540
+vim config.c
+#1618070547
+c
+#1618070547
+ls
+#1618070557
+vim install-sh 
+#1618070609
+cd ..
+#1618070610
+ls
+#1618070628
+cd  distutils/
+#1618070651
+ll command/
+#1618070659
+c
+#1618070659
+ls
+#1618070664
+cd ..
+#1618070665
+ls
+#1618070675
+vim UserString.py
+#1618070690
+c
+#1618070692
+ls
+#1618070696
+cd plat-mac/
+#1618070696
+c
+#1618070697
+ls
+#1618070704
+vim Audio_mac.py
+#1618070717
+vim findertools.py
+#1618070761
+cd /Library/
+#1618070762
+ls
+#1618070765
+cd Python/
+#1618070765
+ls
+#1618070767
+cd 2.7/
+#1618070768
+ls
+#1618070769
+cd site-packages/
+#1618070770
+ls
+#1618070773
+vim README 
+#1618070779
+cd /Applications/Xcode.app/
+#1618070780
+ls
+#1618070787
+cd Contents/Developer/
+#1618070787
+ls
+#1618070791
+cd Library/
+#1618070791
+ls
+#1618070793
+cd Frameworks/
+#1618070794
+ls
+#1618070795
+cd Python3.framework/
+#1618070796
+ls
+#1618070798
+cd Versions/
+#1618070799
+ls
+#1618070801
+cd 3.8/
+#1618070801
+c
+#1618070802
+ls
+#1618070804
+cd Headers/
+#1618070805
+ls
+#1618070809
+cd ..
+#1618070810
+c
+#1618070811
+ls
+#1618070813
+cd Resources/
+#1618070814
+ls
+#1618070820
+cd Python.app/
+#1618070821
+ls
+#1618070823
+cd Contents/
+#1618070823
+ls
+#1618070825
+cd Resources/
+#1618070826
+ls
+#1618070829
+cd ../../..
+#1618070830
+ls
+#1618070831
+cd ..
+#1618070832
+ls
+#1618070835
+ll bin/
+#1618070839
+cd share/
+#1618070840
+ls
+#1618070842
+cd ..
+#1618070843
+cd lib/
+#1618070844
+c
+#1618070845
+ls
+#1618070848
+cd python3.8/
+#1618070849
+ls
+#1618070856
+ll site-packages/
+#1618070862
+ll site-packages/README.txt 
+#1618070866
+vi site-packages/README.txt 
+#1618070878
+vi site-packages/bin/
+#1618070886
+vi site-packages/pkg_resources/
+#1618070914
+cd config-3.8-darwin
+#1618070923
+vim python-config.py 
+#1618070958
+vim Setup.local 
+#1618070965
+vim Setup
+#1618071505
+mslutil
+#1618071506
+c
+#1618071510
+gcore
+#1618071518
+base
+#1618071519
+c
+#1618071527
+dmesg
+#1618071533
+accton
+#1618071535
+c
+#1618071543
+hostinfo
+#1618071556
+iosim
+#1618071560
+iostat
+#1618071568
+getconf
+#1618071575
+kpgo
+#1618071579
+latency
+#1618071585
+man latency
+#1618071595
+mean
+#1618071606
+nvram
+#1618071607
+c
+#1618071612
+pagesize
+#1618071613
+c
+#1618071621
+purge
+#1618071625
+sa
+#1618071637
+proc_uuid_policy
+#1618071645
+pwd_mkdb
+#1618071653
+sc_usage
+#1618071657
+man sc_usage
+#1618071666
+sync
+#1618071715
+xccov 
+#1618071738
+zprint
+#1618071740
+c
+#1618071747
+vipw
+#1618071751
+man vipw
+#1618071754
+c
+#1618071816
+pip install pyobjc
+#1618072044
+c
+#1618072044
+ls
+#1618072051
+rm objc_util.pyc 
+#1618072066
+mv *.sh .bin/
+#1618072067
+ls
+#1618072081
+mv screen_brightness.py Developer/
+#1618072084
+ls
+#1618072091
+mv objc_util.py Developer/
+#1618072092
+ls
+#1618072094
+rm objc_util.pyc 
+#1618072096
+c
+#1618072143
+netstat -nr
+#1618072155
+c
+#1618072179
+ps auxw | grep ftp
+#1618075539
+c
+#1618079979
+autoconf
+#1618079980
+c
+#1618080020
+sudo port install autoconf
+#1618080042
+sudo port install m4
+#1618080047
+sudo port install gm4
+#1618080059
+open /Applications/MacPorts/AquaTerm.app
+#1618080078
+sudo port uninstall AquaTerm
+#1618080098
+sudo port uninstall gnuplot@5.4.1_2
+#1618080101
+sudo port uninstall gnuplot5.4.1_2
+#1618080104
+sudo port uninstall gnuplot5
+#1618080105
+sudo port uninstall gnuplot
+#1618080119
+sudo port -v selfupdate
+#1618080158
+sudo  port upgrade outdated
+#1618080203
+port -f activate python39
+#1618080208
+sudo port -f activate python39
+#1618080232
+c
+#1618080234
+python
+#1618080237
+c
+#1618080241
+gm4
+#1618080252
+sudo port install make
+#1618080255
+sudo port install gmake
+#1618080277
+sudo port install gfortran
+#1618080299
+sudo port install fortran
+#1618080308
+sudo port search gfortran
+#1618080359
+gcc48
+#1618080453
+ll /usr/local/
+#1618080472
+sudo port install gcc48
+#1618080492
+xcode-select --install
+#1618080495
+sudo xcode-select --install
+#1618080557
+c
+#1618080574
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+#1618080982
+c
+#1618080988
+sudo port install openmpi
+#1618081000
+sudo port install gls
+#1618081012
+sudo port install gsl
+#1618081025
+sudo port selfupdate
+#1618081110
+ls
+#1618081137
+vim show_perl_packages.pl
+#1618081144
+which perl
+#1618081148
+vim show_perl_packages.pl
+#1618081159
+perl show_perl_packages.pl 
+#1618081179
+c
+#1618081062
+sudo   port upgrade outdated
+#1618081197
+uname -p
+#1618081248
+vim helloworld.c
+#1618081277
+uname -a
+#1618081318
+gcc -Wall helloworld.c -o helloworld-64-dynamic
+#1618081336
+gcc -Wall -static helloworld.c -o helloworld-64-static
+#1618081349
+gcc -Wall -static -m32 helloworld.c -o helloworld-64-static
+#1618081350
+c
+#1618081351
+ls
+#1618081416
+ lspci
+#1618081422
+ssh ubuntu
+#1618081851
+c
+#1618081855
+xmodmap
+#1618081865
+xrdb
+#1618081866
+c
+#1618081885
+vim  ~/.bashrc
+#1618081968
+echo $DISPLAY
+#1618081971
+vim .bashrc
+#1618081989
+get_xserver
+#1618081991
+get_xserver()
+#1618082002
+c
+#1618082005
+vim .bashrc
+#1618082019
+echo $TERM
+#1618082022
+vim .bashrc
+#1618082048
+echo $TERM
+#1618082054
+echo $DISPLAY
+#1618082057
+c
+#1618082072
+vim .bashrc
+#1618082116
+get_xserver
+#1618082128
+vim .bashrc
+#1618082188
+vim display.sh
+#1618082200
+chmod +x display.sh 
+#1618082201
+./display.sh 
+#1618082205
+vim display.sh 
+#1618082215
+./display.sh 
+#1618082216
+vim display.sh 
+#1618082229
+./display.sh 
+#1618082284
+vim display.sh 
+#1618082293
+who am i
+#1618082309
+who am i | awk '{print $NF }'
+#1618082353
+man who
+#1618082366
+who am i 
+#1618082369
+who am i -h
+#1618082374
+who am i 
+#1618082379
+/bin/who
+#1618082383
+/usr/bin/who
+#1618082386
+/usr/bin/who am i
+#1618082390
+who am i 
+#1618082395
+c
+#1618082398
+ls
+#1618082423
+man whoami
+#1618082435
+whoami
+#1618082442
+whoami -un
+#1618082443
+whoami -u
+#1618082446
+whoami -h
+#1618082449
+whoami --help
+#1618082457
+id
+#1618082459
+id -un
+#1618082461
+c
+#1618082487
+who am i 
+#1618082583
+man who am i
+#1618082648
+sudo vim /var/run/utmpx
+#1618082657
+who -m
+#1618082660
+c
+#1618082663
+man who am i
+#1618082673
+cd //var/log/
+#1618082674
+ls
+#1618082686
+vim wtmp
+#1618082696
+vim displaypolicyd.stdout.log
+#1618082715
+who 0m
+#1618082721
+who -m
+#1618082726
+man who
+#1618082735
+which who
+#1618082743
+/usr/bin/who -m
+#1618082752
+man /usr/bin/who
+#1618082757
+/opt
+#1618082757
+ls
+#1618082763
+cd /opt/local/
+#1618082764
+ls
+#1618082766
+cd var/
+#1618082767
+ls
+#1618082770
+cd run/
+#1618082771
+ls
+#1618082775
+ls -al
+#1618082776
+cd ..
+#1618082777
+ls
+#1618082779
+ll db/
+#1618082786
+ll log/
+#1618082788
+c
+#1618082790
+ll spool/
+#1618082791
+c
+#1618082794
+cd /
+#1618082795
+ls
+#1618082803
+man who
+#1618081426
+ssh bronx
+#1618082915
+c
+#1618082958
+cd /var/
+#1618082958
+ls
+#1618082966
+ll rwho
+#1618082967
+ls
+#1618082968
+cd /
+#1618082969
+c
+#1618082970
+ls
+#1618083012
+whoami -m
+#1618083016
+whoami m
+#1618083017
+whoami 
+#1618083044
+who
+#1618083059
+who -H
+#1618083100
+who -r
+#1618083102
+who -d
+#1618083112
+who -q
+#1618083145
+id
+#1618083152
+id -h
+#1618083154
+c
+#1618083163
+ifonconfig
+#1618083165
+ifconfig
+#1618083172
+ifconfig eth0
+#1618083175
+ifconfig en0
+#1618083184
+ifconfig -h
+#1618083189
+ifconfig --help
+#1618083216
+ifconfig -A en0
+#1618083219
+ifconfig -A etg0
+#1618083221
+ifconfig -A eth0
+#1618083227
+c
+#1618083228
+ls
+#1618083230
+ip
+#1618083236
+netstat
+#1618083242
+ipinfo
+#1618083244
+ioinfo
+#1618083248
+cpuinfo
+#1618083249
+c
+#1618083252
+hostinfo
+#1618083258
+c
+#1618083289
+hostname
+#1618083292
+hostname -l
+#1618083296
+hostname --help
+#1618083300
+hostname -i
+#1618083312
+vim /etc/hosts
+#1618083332
+c
+#1618083347
+hostname -I
+#1618083349
+hostname -i
+#1618083461
+ls
+#1618083464
+cd ~
+#1618083465
+c
+#1618083466
+ls
+#1618083471
+mv birthdays.swift Documents/
+#1618083476
+ls
+#1618083478
+vim display.sh 
+#1618083483
+rm helloworld*
+#1618083492
+mkdir scripts
+#1618083497
+mv show_perl_packages.pl scripts/
+#1618083498
+c
+#1618083498
+ls
+#1618083502
+ll Documents/
+#1618083508
+ll Documents/TLDP/
+#1618083511
+ll Documents/TLDP/abs-guide.pdf 
+#1618083518
+ll Documents/Iowa/
+#1618083520
+ll Documents/Iowa/admin/
+#1618083526
+ll Documents/fidelity/
+#1618083542
+pdf2ps Documents/fidelity/Fidelity-GuidedPortfolioSummary.pdf 
+#1618083559
+ll Documents/fidelity/Fidelity-GuidedPortfolioSummary.pdf 
+#1618083563
+ls
+#1618083570
+vim Fidelity-GuidedPortfolioSummary.ps 
+#1618083576
+rm Fidelity-GuidedPortfolioSummary.ps 
+#1618083578
+c
+#1618083579
+ls
+#1618083585
+ll Downloads/
+#1618083590
+c
+#1618083591
+ls
+#1618083595
+cd scripts/
+#1618083596
+ls
+#1618083598
+cd ..
+#1618083599
+ls
+#1618083635
+cd ~/Documents/
+#1618083635
+ls
+#1618083641
+cd Resume
+#1618083642
+ls
+#1618083644
+cd LaTeX-Resume/
+#1618083645
+ls
+#1618083648
+ll *.ps
+#1618083656
+vi cv.fdb_latexmk
+#1618083677
+textutil
+#1618083683
+c
+#1618083683
+ls
+#1618083709
+tex
+#1618083727
+tex2pdf coverletter.tex 
+#1618083729
+ls
+#1618083737
+texi2pdf coverletter.pdf 
+#1618083743
+ls
+#1618083750
+c
+#1618083750
+ls
+#1618083777
+pdf2ps resume.pdf 
+#1618083778
+ls
+#1618083787
+pr_spool resume.ps 
+#1618083789
+ls
+#1618083791
+lpstat
+#1618083794
+lpinfo
+#1618083795
+c
+#1618083795
+ls
+#1618083806
+lpr -P 
+#1618083810
+lpr -v
+#1618083816
+lpinfo -v
+#1618083825
+lpinfo -E
+#1618083827
+lpinfo -a
+#1618083829
+lpinfo -e
+#1618083834
+lpstat -e
+#1618083856
+lpr -P spool2 resume.ps
+#1618083860
+vim resume.out 
+#1618083863
+c
+#1618083878
+rxvt
+#1618083882
+cd /Library/Appl
+#1618083883
+cd /Library/Apple
+#1618083885
+ls
+#1618083887
+ll usr/
+#1618083889
+ll usr/bin/
+#1618083894
+man usr/bin/rvictl 
+#1618083899
+ usr/bin/rvictl 
+#1618083908
+ usr/bin/rvictl -l
+#1618083911
+ usr/bin/rvictl -L
+#1618083913
+c
+#1618083913
+;s
+#1618083914
+ls
+#1618083917
+ll usr/
+#1618083919
+ll usr/libexec/
+#1618083922
+ll usr/libexec/rpmuxd 
+#1618083925
+ usr/libexec/rpmuxd 
+#1618083936
+ll usr/share/
+#1618083938
+ll usr/share/man/
+#1618083948
+mq
+#1618083950
+c
+#1618083950
+ls
+#1618083954
+ll System/
+#1618083956
+ll System/Library/
+#1618083960
+ll System/Library/Accounts/
+#1618083961
+ll System/Library/Accounts/Notification/
+#1618083963
+ll System/Library/Accounts/Notification/CloudBookmarksAccountsNotifier.bundle/
+#1618083964
+ll System/Library/Accounts/Notification/CloudBookmarksAccountsNotifier.bundle/Contents/
+#1618083974
+ll System/Library/Extensions/
+#1618083979
+ll System/Library/Extensions/AppleMobileDevice.kext/
+#1618083981
+ll System/Library/Extensions/AppleMobileDevice.kext/Contents/
+#1618083991
+ll System/Library/CoreServices/
+#1618083995
+ll System/Library/CoreServices/CoreTypes.bundle/
+#1618083996
+ll System/Library/CoreServices/CoreTypes.bundle/Contents/
+#1618083998
+ll System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/
+#1618084000
+c
+#1618084001
+ls
+#1618084003
+cd Library/
+#1618084004
+ls
+#1618084006
+cd Bundles/
+#1618084007
+ls
+#1618084012
+cd IncompatibleAppsList.bundle/
+#1618084012
+ls
+#1618084015
+cd Contents/
+#1618084016
+ls
+#1618084019
+cd ../..
+#1618084019
+ls
+#1618084020
+cd ..
+#1618084021
+ls
+#1618084022
+cd ..
+#1618084023
+ls
+#1618084024
+cd ..
+#1618084025
+ls
+#1618084035
+ll /opt/X11
+#1618084038
+ll /opt/X11/bin/
+#1618084050
+ll /opt/X11/bin/xwinfo
+#1618084055
+ll /opt/X11/bin/xvinfo
+#1618084058
+ /opt/X11/bin/xvinfo
+#1618084080
+ /opt/X11/bin/x11perf
+#1618084097
+ll /opt/X11/bin/
+#1618084103
+ll /opt/X11/bin/Xorg 
+#1618084106
+ /opt/X11/bin/Xorg 
+#1618084121
+ll /tmp
+#1618084128
+ls -al /tmp
+#1618084130
+ls -al /tmp/
+#1618084134
+c
+#1618084135
+ls
+#1618084144
+who am i
+#1618084150
+ifconfig
+#1618084167
+vim ~/display.sh 
+#1618084217
+c
+#1618084228
+I_AM=$(who am i)
+#1618084247
+SERVER=${SERVER%*)}
+#1618084253
+I_AM=$(who am i)
+#1618084269
+SERVER=${I_AM#*(}
+#1618084276
+echo $SERVER
+#1618084293
+SERVER=${SERVER%*)}
+#1618084297
+echo $SERVER
+#1618084299
+c
+#1618083158
+vim .bashrc
+#1618084335
+ls
+#1618084563
+hostname
+#1618084564
+c
+#1618084341
+vim .bashrc
+#1618084589
+echo $DISPLAY
+#1618084590
+c
+#1618087437
+mailx
+#1618087438
+c
+#1618087665
+sudo mkdir -p /srv/files/ftp
+#1618087673
+ssh bronz
+#1618087745
+c
+#1618089392
+printf \a
+#1618089397
+printf "\a"
+#1618089417
+printf "\d"
+#1618089441
+printf "\h"
+#1618089504
+man printf
+#1618089533
+echo -e "\s"
+#1618089556
+echo -e "\t"
+#1618089665
+ls --author
+#1618089679
+ls --author display.sh 
+#1618089741
+file display.sh 
+#1618089753
+stat display.sh 
+#1618089943
+printenv
+#1618090015
+vim ~/.bashrc
+#1618090119
+printenv
+#1618090203
+vim ~/.bashrc
+#1618090227
+c
+#1618090964
+lsof
+#1618090973
+c
+#1618091007
+defaults write com.knollsoft.Rectangle alternateDefaultShortcuts -bool true
+#1618091038
+defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 1
+#1618091050
+defaults write com.knollsoft.Rectangle centerHalfCycles -int 1
+#1618091060
+defaults write com.knollsoft.Rectangle snapModifiers -int 1048576
+#1618091113
+killall Rectangle
+#1618091145
+lsof -a -p $$ -d 0,1,2
+#1618091162
+lsof -a -p $$ -d 0,1,2,3,6,7
+#1618092301
+c
+#1618092303
+ls
+#1618092303
+c
+#1618092381
+du -s /var/log/*
+#1618096235
+c
+#1618092763
+ssh oper@hub
+#1618096400
+cd Sites/
+#1618096401
+c
+#1618096401
+ls
+#1618096404
+gcl https://github.com/h5bp/html5-boilerplate.git
+#1618096615
+ssh oper@hub
+#1618097120
+c
+#1618097257
+youtube-dl
+#1618097283
+youtube-dl https://www.youtube.com/watch?v=TBuIGBCF9jc
+#1618097317
+spaces_to_underscores Admiral\ McRaven\ Leaves\ the\ Audience\ SPEECHLESS\ _\ One\ of\ the\ Best\ Motivational\ Speeches-TBuIGBCF9jc.webm 
+#1618097318
+ls
+#1618097328
+ffmepg
+#1618097332
+ffmepeg
+#1618097334
+c
+#1618097346
+vlc
+#1618097353
+vlc --help
+#1618097419
+sudo port install ffmpeg
+#1618097445
+ffmepeg
+#1618097447
+ffmpeg
+#1618097520
+defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 3
+#1618097534
+defaults write com.knollsoft.Rectangle centerHalfCycles -int 1
+#1618097548
+killall Rectangle.app
+#1618097553
+ps -aux
+#1618097555
+ps -aue
+#1618097556
+ps -au
+#1618097559
+ps -af
+#1618097562
+ps -auf
+#1618097564
+c
+#1618097579
+ps -eux
+#1618097580
+ps -eu
+#1618097583
+ps -euf
+#1618097585
+ps -eua
+#1618097591
+ps -ea
+#1618097599
+ps -ea | grep Rectangle
+#1618097613
+kill -h
+#1618097616
+kill --help
+#1618097625
+kill -p
+#1618097629
+kill -pid
+#1618097632
+kill 4232
+#1618097636
+ps -ea | grep Rectangle
+#1618097646
+c
+#1618097654
+defaults write com.knollsoft.Rectangle resizeOnDirectionalMove -bool true
+#1618097660
+c
+#1618097661
+ls
+#1618097661
+c
+#1618097680
+youtube-dl
+#1618097685
+youtube-dl --help
+#1618097691
+youtube-dl --help | format
+#1618097695
+youtube-dl --help | grep format
+#1618097725
+youtube-dl -f mp4 https://www.youtube.com/watch?v=TBuIGBCF9jc 
+#1618097799
+defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 2
+#1618097834
+defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 0
+#1618097852
+defaults write com.knollsoft.Rectangle resizeOnDirectionalMove -bool true
+#1618097863
+ps -eau
+#1618097865
+ps -eaf
+#1618097873
+ps -eaf | grep Rectangle
+#1618097887
+lsof 7016
+#1618097894
+ps -eaf | grep 7016
+#1618097902
+kill 7016
+#1618097904
+ps -eaf | grep 7016
+#1618097906
+c
+#1618097907
+ls
+#1618097925
+spaces_to_underscores Admiral\ McRaven\ Leaves\ the\ Audience\ SPEECHLESS\ _\ One\ of\ the\ Best\ Motivational\ Speeches-TBuIGBCF9jc.mp4 
+#1618097926
+ls
+#1618097935
+ssh oper@vostro
+#1618097464
+ffmpeg -i Admiral_McRaven_Leaves_the_Audience_SPEECHLESS___One_of_the_Best_Motivational_Speeches-TBuIGBCF9jc.webm Admiral_McRaven_Leaves_the_Audience_SPEECHLESS___One_of_the_Best_Motivational_Speeches-TBuIGBCF9jc.mp4
+#1618097958
+c
+#1618097959
+ls
+#1618098090
+scp Admiral_McRaven_Leaves_the_Audience_SPEECHLESS___One_of_the_Best_Motivational_Speeches-TBuIGBCF9jc.mp4 oper@192.168.1.84://home/oper/Videos/
+#1618099590
+c
+#1618099594
+dev
+#1618099596
+cd archive/
+#1618099597
+cd iowa/
+#1618099598
+ls
+#1618099602
+cd cs3620/
+#1618099603
+ls
+#1618099607
+cd mp/
+#1618099607
+ls
+#1618099611
+cd ..
+#1618099612
+ls
+#1618099616
+cd mp/
+#1618099616
+ls
+#1618099619
+cd mp2/
+#1618099619
+ls
+#1618099624
+vim README.txt 
+#1618099635
+c
+#1618099636
+ls
+#1618099639
+ll src/
+#1618099642
+cd src
+#1618099644
+ls
+#1618099649
+vim mush.c
+#1618099653
+c
+#1618099853
+ls
+#1618099856
+dev
+#1618099857
+c
+#1618099857
+ls
+#1618099868
+c
+#1618099869
+ls
+#1618099900
+c
+#1618099901
+ls
+#1618099905
+cd ~
+#1618099906
+ls
+#1618099913
+rm Admiral_McRaven_Leaves_the_Audience_SPEECHLESS___One_of_the_Best_Motivational_Speeches-TBuIGBCF9jc.mp4 
+#1618099916
+c
+#1618099917
+ls
+#1618099921
+cd Applications/
+#1618099922
+ls
+#1618099928
+ll Chrome\ Apps.localized/
+#1618099930
+c
+#1618099930
+ls
+#1618099975
+mkdir daily
+#1618099976
+ls
+#1618099978
+cd daily/
+#1618099978
+ls
+#1618099995
+gcl https://github.com/jjbiggins/today.git
+#1618100036
+git remote
+#1618100038
+git remote -h
+#1618100050
+git remote -v
+#1618100054
+ls
+#1618100056
+cd today/
+#1618100058
+git remote -v
+#1618100069
+git remote -v show 
+#1618100119
+clear
+#1618100120
+ls
+#1618100144
+vim daily_work_git.sh
+#1618100446
+git ls-files | wc -l
+#1618100448
+ls
+#1618100455
+git ls-files 
+#1618100467
+git ls
+#1618100492
+git ls-files --directory
+#1618100500
+git --directory ls-files
+#1618100505
+git ls-files
+#1618100515
+ls
+#1618100518
+vim daily_work_git.sh 
+#1618100582
+git remote get-url
+#1618100588
+git remote get-url --all
+#1618100591
+git remote get-url --all .
+#1618100592
+ls
+#1618100598
+pwd
+#1618100604
+git remote
+#1618100607
+git remote 
+#1618100609
+git
+#1618100619
+git remote -v
+#1618100625
+git remote -h
+#1618100635
+git remote -l
+#1618100638
+git remote -v
+#1618101121
+cd Applications/daily/
+#1618101122
+ls
+#1618101123
+cd today/
+#1618101124
+ls
+#1618101128
+cd ..
+#1618101128
+ls
+#1618101130
+cd ..
+#1618101132
+cd Shell/
+#1618101134
+ls
+#1618101135
+cd programs/
+#1618101136
+ls
+#1618101138
+cd dotfiles/
+#1618101138
+ls
+#1618100641
+vim daily_work_git.sh 
+#1618101433
+ls
+#1618101441
+mv daily_work_git.sh ../
+#1618101442
+cd ..
+#1618101443
+ls
+#1618101452
+cp -r today ../today
+#1618101453
+ls
+#1618101458
+mv daily_work_git.sh ../
+#1618101459
+ls
+#1618101464
+ll today/
+#1618101466
+cd ..
+#1618101466
+ls
+#1618101475
+rm -rf daily/today
+#1618101477
+ll daily
+#1618101486
+chmod +x daily_work_git.sh 
+#1618101489
+./daily_work_git.sh 
+#1618101494
+call
+#1618101502
+vi daily_work_git.sh 
+#1618101515
+./daily_work_git.sh 
+#1618101520
+ls
+#1618101524
+vim daily_work_git.sh 
+#1618101559
+ls
+#1618101560
+clear
+#1618101562
+cd daily/
+#1618101563
+ls
+#1618101570
+mkdir ar1000
+#1618101576
+ln -s ar1000 data
+#1618101580
+cd ..
+#1618101581
+ls
+#1618101588
+ll Shell/data/dotfiles/
+#1618101597
+cd daily/
+#1618101598
+ls
+#1618101624
+ln -s /Users/jjbiggins/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Archives/daily archive
+#1618101625
+ls
+#1618101635
+mkdir  /Users/jjbiggins/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Archives/daily
+#1618101638
+ls
+#1618101641
+clea
+#1618101642
+ls
+#1618101645
+cd ..
+#1618101648
+./daily_work_git.sh 
+#1618101670
+ll daily
+#1618101673
+c
+#1618101674
+ls
+#1618101678
+vim daily_work_git.sh 
+#1618101752
+./daily_work_git.sh 
+#1618101764
+ll daily
+#1618101770
+vim daily_work_git.sh 
+#1618101854
+./daily_work_git.sh 
+#1618101869
+ll daily
+#1618101874
+vim daily_work_git.sh 
+#1618101948
+ll daily
+#1618101951
+./daily_work_git.sh 
+#1618101959
+vim daily_work_git.sh 
+#1618101983
+./daily_work_git.sh 
+#1618101988
+vim daily_work_git.sh 
+#1618101997
+./daily_work_git.sh 
+#1618102009
+ll /Users/jjbiggins/Applications/daily/today/
+#1618102013
+ll /Users/jjbiggins/Applications/daily/
+#1618102017
+cd daily/
+#1618102018
+ls
+#1618102022
+unlink data
+#1618102024
+ls
+#1618102034
+ln -s ar1000 today
+#1618102037
+cd ..
+#1618102040
+./daily_work_git.sh 
+#1618102052
+ll daily
+#1618102054
+ll daily/
+#1618102057
+c
+#1618102058
+ls
+#1618102073
+vim daily_work_git.sh 
+#1618102397
+./daily_work_git.sh 
+#1618102412
+ll /Users/jjbiggins/Applications/daily/archive/ar_2021-04-10_19-53-17/process.lst
+#1618102420
+ll daily
+#1618102427
+cd daily/
+#1618102432
+ln -s ar1000
+#1618102436
+ln -s ar1000 today
+#1618102436
+ls
+#1618102437
+cd ..
+#1618102438
+ls
+#1618102441
+./daily_work_git.sh 
+#1618102445
+ll daily
+#1618102457
+ll daily/archive
+#1618102460
+ll daily/archive/
+#1618102461
+c
+#1618102462
+ls
+#1618102471
+ll daily
+#1618102478
+vim daily_work_git.sh 
+#1618102971
+./daily_work_git.sh 
+#1618102982
+ll daily
+#1618102988
+c
+#1618102994
+vim daily_work_git.sh 
+#1618103049
+./daily_work_git.sh 
+#1618103052
+ll daily
+#1618103055
+cd daily/
+#1618103065
+ln -s ar1000 today
+#1618103068
+cd ..
+#1618103072
+./daily_work_git.sh 
+#1618103075
+ll daily
+#1618103088
+ll daily/archive
+#1618103090
+ll daily/archive/
+#1618103094
+c
+#1618103095
+ls
+#1618103098
+c
+#1618103099
+ls
+#1618103109
+vim daily_work_git.sh 
+#1618103143
+./daily_work_git.sh 
+#1618103150
+/Users/jjbiggins/Applications/daily/archive/ar_2021-04-10_20-05-43/
+#1618103153
+ll /Users/jjbiggins/Applications/daily/archive/ar_2021-04-10_20-05-43/
+#1618103166
+vim daily_work_git.sh 
+#1618103270
+./daily_work_git.sh 
+#1618103274
+ll daily
+#1618103279
+ll daily/archive
+#1618103281
+ll daily/archive/
+#1618103321
+vim daily_work_git.sh 
+#1618103359
+./daily_work_git.sh 
+#1618103369
+ls
+#1618103373
+vi daily_work_git.sh 
+#1618103380
+./daily_work_git.sh 
+#1618103392
+vi daily_work_git.sh 
+#1618103406
+./daily_work_git.sh 
+#1618103436
+vi daily_work_git.sh 
+#1618103451
+./daily_work_git.sh 
+#1618103465
+ls
+#1618103472
+vim daily_work_git.sh 
+#1618103539
+./daily_work_git.sh 
+#1618103555
+url=https://github.com/jjbiggins/today.git/
+#1618103560
+echo "$url"
+#1618103596
+./daily_work_git.sh 
+#1618103608
+ls
+#1618103611
+ll daily/
+#1618103618
+cd daily/
+#1618103620
+ls
+#1618103632
+ll /Users/jjbiggins/Applications/daily/archive/ar_2021-04-10_20-13-16/process.lst
+#1618103661
+ld
+#1618103665
+ls
+#1618103681
+ln -s ar1000 today
+#1618103682
+ls
+#1618103688
+vim ../daily_work_git.sh 
+#1618103753
+./daily_work_git.sh 
+#1618103756
+../daily_work_git.sh 
+#1618103793
+vim ../daily_work_git.sh 
+#1618103920
+../daily_work_git.sh 
+#1618103933
+cd today/
+#1618103934
+ls
+#1618103947
+git -r rm *
+#1618103957
+git rm
+#1618103968
+git rm -r *
+#1618103970
+ls
+#1618103995
+echo process.lst >> .gitingore
+#1618103995
+ls
+#1618104005
+cd ..
+#1618104006
+ls
+#1618104010
+vim ../daily_work_git.sh 
+#1618104090
+../daily_work_git.sh 
+#1618104124
+ls
+#1618104125
+c
+#1618104126
+ls
+#1618104128
+clear
+#1618104129
+ls
+#1618104134
+cd today/
+#1618104134
+ls
+#1618104137
+git info
+#1618104145
+bim .gitignore 
+#1618104150
+vim .gitignore
+#1618104169
+git commit -m "ignore process file"
+#1618104182
+git add .gitignore
+#1618104184
+git commit -m "ignore process file"
+#1618104187
+git push
+#1618104196
+cd ..
+#1618104200
+../daily_work_git.sh 
+#1618104226
+cd today/
+#1618104226
+ls
+#1618104230
+git
+#1618104234
+git status
+#1618104245
+vim .gitignore 
+#1618104255
+vim .gitignore
+#1618104263
+cd ..
+#1618104267
+vim ../daily_work_git.sh 
+#1618104278
+../daily_work_git.sh 
+#1618104305
+ls
+#1618104307
+cd today/
+#1618104310
+git rm -r *
+#1618104314
+ls
+#1618104345
+git rm -rf *
+#1618104347
+ls
+#1618104352
+git 
+#1618104355
+git ignore
+#1618104361
+git ignore --help
+#1618104393
+git ls-files --others -i --exclude-standard
+#1618104409
+git add .
+#1618104415
+git rm -r *
+#1618104424
+c
+#1618104426
+;s
+#1618104427
+c
+#1618104429
+ls
+#1618104430
+c
+#1618104468
+git rebase --skip
+#1618104475
+git rebase --continue
+#1618104478
+git rebase 
+#1618104485
+git rm -r *
+#1618104509
+git stash
+#1618104510
+ls
+#1618104515
+git stash -h
+#1618104520
+git stash show
+#1618104524
+git stash list
+#1618104539
+git stash -a
+#1618104547
+git rm -rf *
+#1618104567
+c
+#1618104568
+ls
+#1618104574
+cd ..
+#1618104582
+vim ../daily_work_git.sh 
+#1618104603
+../daily_work_git.sh 
+#1618104638
+c
+#1618104647
+cat archive/
+#1618104650
+ls
+#1618104653
+cd archive/
+#1618104653
+ls
+#1618104668
+rm -rf ar_2021-04-10_20-13-16
+#1618104673
+rm -rf ar_2021-04-10_20-15-56
+#1618104683
+rm -rf ar_2021-04-10_20-18-40
+#1618104685
+ls
+#1618104687
+ls -lt
+#1618104698
+rm -rf  ar_2021-04-10_20-21-30
+#1618104703
+rm -rf ar_2021-04-10_20-23-20
+#1618104709
+rm -rf  ar_2021-04-10_20-24-38
+#1618104710
+ls
+#1618104713
+ls -lt
+#1618104714
+c
+#1618104716
+ll ar_2021-04-10_20-30-03/
+#1618104718
+c
+#1618104720
+ls
+#1618104726
+cd ..
+#1618104726
+ls
+#1618104731
+ll today
+#1618104735
+cd today
+#1618104736
+ls
+#1618104738
+c
+#1618104739
+ls
+#1618104753
+..
+#1618104758
+ls
+#1618104765
+mv daily_work_git.sh daily
+#1618104765
+ls
+#1618104767
+c
+#1618101141
+vim config_commit.sh 
+#1618105601
+ls
+#1618105613
+mkdir FIN
+#1618105619
+mv edgar FIN/
+#1618105624
+mv edgar-stocks-data/ FIN/
+#1618105630
+rm -rf finviz/
+#1618105631
+ls
+#1618105633
+ll lib/
+#1618105641
+mv lib hawk
+#1618105642
+l
+#1618105644
+ls
+#1618105650
+ll hawk.bak/
+#1618105653
+rm hawk.bak/
+#1618105657
+rm -rf hawk.bak/
+#1618105658
+ls
+#1618105662
+ll myql/
+#1618105674
+vi myql/README.md 
+#1618105694
+c
+#1618105695
+ls
+#1618105700
+rm -rf newsboat/
+#1618105701
+ls
+#1618105704
+ll today/
+#1618105718
+mv today/ daily/
+#1618105723
+ls
+#1618105739
+mv today/* daily/archive/ar_2021-04-10_20-30-03/
+#1618105740
+ls
+#1618105744
+ll today/
+#1618105748
+rm -rf today/
+#1618105748
+c
+#1618105749
+ls
+#1618105754
+rm -rf myql
+#1618105756
+ls
+#1618105765
+rm -rf Chrome\ Apps.localized/
+#1618105766
+c
+#1618105766
+ls
+#1618105770
+ll test/
+#1618105773
+ll test/data/
+#1618105774
+c
+#1618105775
+ls
+#1618105788
+mv test Sebis
+#1618105788
+ls
+#1618105804
+~
+#1618105806
+cd Sites/
+#1618105807
+c
+#1618105808
+ls
+#1618105815
+rm *mp4
+#1618105820
+rm *webm
+#1618105823
+c
+#1618105823
+ls
+#1618105826
+gcl https://github.com/sahat/hackathon-starter.git
+#1618105836
+c
+#1618105836
+ls
+#1618106210
+c
+#1618106210
+ls
+#1618106214
+cd hackathon-starter/
+#1618106214
+ls
+#1618106219
+vim README.md 
+#1618106261
+c
+#1618106250
+npm install
+#1618097976
+ssh oper@192.168.1.84
+#1618106838
+c
+#1618107422
+cd Sites/
+#1618107436
+git clone https://github.com/jjbiggins/biggins.git biggins
+#1618107445
+cd biggins
+#1618107449
+npm install -g @ionic/cli cordova-res
+#1618107718
+cd ..
+#1618107724
+c
+#1618107725
+ls
+#1618107726
+cd ..
+#1618107718
+npm install -g @ionic/cli cordova-res
+#1618107728
+ls
+#1618107729
+dev
+#1618107730
+ls
+#1618107730
+c
+#1618107731
+ls
+#1618107739
+ mkdir apis
+#1618107742
+cd apis/
+#1618107745
+gcl npm install -g @ionic/cli cordova-res
+#1618107759
+]c
+#1618107756
+gcl https://github.com/alexgolec/tda-api.git
+#1618107761
+cd biggins/
+#1618107762
+c
+#1618107769
+cd biggins && npm install && ionic serve
+#1618107779
+c
+#1618107781
+cd tda-api/
+#1618107782
+ls
+#1618107803
+pip install tda-api
+#1618107813
+c
+#1618107899
+ls -al
+#1618107908
+vim README.rst 
+#1618107941
+grep -rnw "." -e "token_path"
+#1618107943
+c
+#1618107949
+vim tda/auth.py 
+#1618107974
+ls
+#1618108080
+c
+#1618108511
+..
+#1618108521
+cd ~/Sites/
+#1618108524
+gcl git clone https://github.com/voodooattack/nexusjs.git nexusjs
+#1618108528
+git clone https://github.com/voodooattack/nexusjs.git nexusjs
+#1618108830
+c
+#1618108993
+ls
+#1618109029
+c
+#1618107776
+ npm install && ionic serve
+#1618109071
+c
+#1618109082
+ls
+#1618109086
+c
+#1618109087
+ls
+#1618113459
+pbcopy < ~/.ssh/id_rsa.pub 
+#1618114111
+vim apache_install.sh
+#1618118007
+git --global config user.email "jjbiggins@biggins.tech"
+#1618118014
+git --global config user.email jjbiggins@biggins.tech
+#1618118026
+git config --global user.email jjbiggins@biggins.tech
+#1618118033
+git config --global user.email "jjbiggins@biggins.tech"
+#1618118068
+c
+#1618119427
+cd Sites/
+#1618119431
+gcl https://github.com/serverless/serverless.git
+#1618119456
+cd serverless/
+#1618119457
+ls
+#1618119471
+npm install -g serverless
+#1618119555
+cd ..
+#1618119560
+rm -rf serverless/
+#1618119561
+c
+#1618120373
+ssh treesen1
+#1618120393
+ssh treesen1@treesentertainment.com -p 7822
