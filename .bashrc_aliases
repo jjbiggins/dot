@@ -28,6 +28,7 @@ alias sites="cd ~/Sites"
 alias lh="ls -lt | head"
 alias lt="ls -lt"
 alias ls="gls --color=auto"
+alias l="gls --color=auto"
 alias ll="gls -lG --color=auto"
 #}}}
 #--------------------------------------------------------

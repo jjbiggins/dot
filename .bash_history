@@ -20546,3 +20546,2317 @@ c
 ssh treesen1
 #1618120393
 ssh treesen1@treesentertainment.com -p 7822
+#1618121346
+sftp ftpuser@biggins.com@ftp.treesentertainment.com
+#1618121387
+sftp treesen1@ftp.treesentertainment.com
+#1618121414
+sftp -p 21 treesen1@ftp.treesentertainment.com 
+#1618121428
+c
+#1618122133
+ping biggins.com
+#1618122189
+dig biggins.com
+#1618122281
+c
+#1618122282
+ls
+#1618122299
+c
+#1618122425
+cd /Library/
+#1618122427
+cd WebServer/
+#1618122430
+cd Documents/
+#1618122431
+ls
+#1618122438
+cd ~
+#1618122439
+cl
+#1618122443
+cd ~/Sites/
+#1618122444
+ls
+#1618122446
+cd wikis/
+#1618122446
+ls
+#1618122449
+cd iowa/
+#1618122450
+ls
+#1618122452
+cd swd/
+#1618122453
+ls
+#1618122472
+pdf2ps 2017_Homework_Grid.pdf 
+#1618122473
+ls
+#1618122486
+pr_spool 2017_Homework_Grid.ps
+#1618122490
+lpstat
+#1618122841
+ll /Library/Preferences/com.google.drivefs.settings
+#1618122849
+sudo defaults write /Library/Preferences/com.google.drivefs.settings DefaultMountPoint '/Volumes/Google Drive'
+#1618122864
+sudo defaults write /Library/Preferences/com.google.drivefs.settings TrustedRootCertsFile /Library/MyCompany/DriveFileStream/MyProxyCert.pem
+#1618122870
+defaults write com.google.drivefs.settings BandwidthRxKBPS -int 100
+#1618122875
+defaults write com.google.drivefs.settings ForceBrowserAuth -bool true
+#1618122950
+c
+#1618114051
+ssh bronx
+#1618120413
+ssh treesen1@mi3-ss55.a2hosting.com -p 7822
+#1618115275
+ssh oper@hub
+#1618123128
+c
+#1618123619
+ll /tmp
+#1618123624
+ll /tmp/
+#1618123634
+ll /tmp/drivefs_ipc.501
+#1618123713
+vim /Library/Managed Preferences/com.google.drivefs.settings.plist
+#1618123726
+vim /Library/Managed\ Preferences/com.google.drivefs.settings.plist
+#1618123745
+ll /Library/Managed\ Preferences/
+#1618123749
+ll /Library/Managed\ Preferences/jjbiggins/
+#1618123762
+vi /Library/Managed\ Preferences/jjbiggins/com.apple.mail.managed.plist 
+#1618123773
+vi /Library/Managed\ Preferences/jjbiggins/complete.plist 
+#1618124044
+cd /
+#1618124044
+c
+#1618124045
+ls
+#1618124048
+cd /tmp/
+#1618124049
+ls
+#1618124066
+rm -rf drivefs_ipc.501
+#1618124068
+ls
+#1618124071
+rm -rf drivefs_ipc.501_shell 
+#1618124094
+c
+#1618124109
+vi /Library/Preferences/com.google.drivefs.settings
+#1618124115
+vi ~/Library/Preferences/com.google.drivefs.settings
+#1618124133
+sudo defaults write /Library/Preferences/com.google.drivefs.settings DefaultMountPoint '/Volumes/Google Drive'
+#1618124144
+sudo defaults read /Library/Preferences/com.google.drivefs.settings 
+#1618124185
+ll /Library/Preferences/com.google.drivefs.settings 
+#1618124190
+ll /Library/Preferences/
+#1618124192
+cd sudo defaults write /Library/Preferences/com.google.drivefs.settings DefaultMountPoint '/Volumes/Google Drive'
+#1618124203
+cd /Library/Preferences/
+#1618124204
+ls
+#1618124205
+c
+#1618124205
+ls
+#1618124213
+ll *google*
+#1618124220
+cat *google*
+#1618124226
+vi *google*
+#1618124246
+rm -rf com.google.drivefs.settings.plist 
+#1618124250
+sudo rm -rf com.google.drivefs.settings.plist 
+#1618124257
+cd /tmp/
+#1618124258
+ls
+#1618124266
+sudo rm drivefs_ipc.501*
+#1618124267
+ls
+#1618124286
+c
+#1618124287
+ls
+#1618124298
+cat 00000000088d3a18
+#1618124303
+sudo cat 00000000088d3a18
+#1618124305
+ls
+#1618124310
+vim  00000000088d3a18
+#1618124322
+s
+#1618087675
+ssh bronx
+#1618126053
+ls
+#1618126056
+vim README 
+#1618126064
+vim INSTALL 
+#1618126082
+./configure 
+#1618126154
+make
+#1618126623
+c
+#1618127282
+cd templates/
+#1618127433
+mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Project\ Templates/AA\ Testing
+#1618127447
+ll ~/Library/Application\ Support/Developer/Shared/Xcode/Project\ Templates/AA\ Testing
+#1618127451
+ll ~/Library/Application\ Support/Developer/Shared/Xcode/Project\ Templates/
+#1618127454
+c
+#1618127290
+vi project-tool.py 
+#1618127472
+project-tool.py -k -v --template Cocoa-Python\ Application/CocoaApp.xcodeproj/TemplateInfo.plist     Cocoa-Python\ Application     ~/Library/Application\ Support/Developer/Shared/Xcode/Project\ Templates/AA\ Testing/Cocoa-Python\ Application
+#1618127490
+./project-tool.py -k -v --template Cocoa-Python\ Application/CocoaApp.xcodeproj/TemplateInfo.plist     Cocoa-Python\ Application     ~/Library/Application\ Support/Developer/Shared/Xcode/Project\ Templates/AA\ Testing/Cocoa-Python\ Application
+#1618127523
+virtualenv
+#1618127555
+python2.7 -m venv venv27
+#1618127566
+/usr/bin/python2.7 -m venv venv27
+#1618127574
+/usr/bin/python2.7 -m env venv27
+#1618127578
+/usr/bin/python2.7 -m 
+#1618127581
+/usr/bin/python2.7 -m -h
+#1618127588
+/usr/bin/python2.7 -m -l
+#1618127659
+virtualenv -p /usr/bin/python2.7 venv27
+#1618127672
+source venv27/bin/activate
+#1618127679
+./project-tool.py -k -v --template Cocoa-Python\ Application/CocoaApp.xcodeproj/TemplateInfo.plist     Cocoa-Python\ Application     ~/Library/Application\ Support/Developer/Shared/Xcode/Project\ Templates/AA\ Testing/Cocoa-Python\ Application
+#1618127723
+pip install pyobjc
+#1618127747
+/usr/bin/python2.7 -m pip install pyobjc
+#1618127759
+ pip2.7 install pyobjc
+#1618127781
+ pip2.7 -V
+#1618127787
+./project-tool.py -k -v --template Cocoa-Python\ Application/CocoaApp.xcodeproj/TemplateInfo.plist     Cocoa-Python\ Application     ~/Library/Application\ Support/Developer/Shared/Xcode/Project\ Templates/AA\ Testing/Cocoa-Python\ Application
+#1618127825
+./project-tool.py -k -v --template Cocoa-Python\ Document-based\ Application/CocoaDocApp.xcodeproj/TemplateInfo.plist     Cocoa-Python\ Document-based\ Application/     ~/Library/Application\ Support/Developer/Shared/Xcode/Project\ Templates/AA\ Testing/Cocoa-Python\ Document-based\ Application
+#1618127847
+./project-tool.py -r -w -k /Developer/Library/Xcode/Project\ Templates/Application/Core\ Data\ Application     Cocoa-Python\ Core\ Data\ Application
+#1618127901
+./project-tool.py -r -w -k ~/Library/Xcode/Project\ Templates/Application/Core\ Data\ Application     Cocoa-Python\ Core\ Data\ Application
+#1618127912
+ll /Library/
+#1618127922
+ll /Library/Developer/
+#1618127928
+ll /Library/Developer/XcodeServer/
+#1618127943
+c
+#1618127944
+ls
+#1618127950
+cd /Library/
+#1618127951
+ls
+#1618127954
+cd Developer/
+#1618127955
+ls
+#1618127959
+ll CommandLineTools/
+#1618127964
+ll CommandLineTools/usr/
+#1618127967
+ll CommandLineTools/usr/share/
+#1618127973
+ll CommandLineTools/usr/share/bison/
+#1618127978
+ll CommandLineTools/usr/share/doc/
+#1618127980
+ll CommandLineTools/usr/share/doc/swift/
+#1618127981
+ll CommandLineTools/usr/share/doc/swift/diagnostics/
+#1618127991
+ll CommandLineTools/usr/share/git-core/
+#1618127995
+ll CommandLineTools/usr/share/git-core/perl/
+#1618128001
+ll CommandLineTools/usr/share/git-core/perl/Git
+#1618128006
+ll CommandLineTools/usr/share/git-core/templates/
+#1618128009
+ll CommandLineTools/usr/share/git-core/templates/info/
+#1618128010
+c
+#1618128011
+ls
+#1618128016
+ll CommandLineTools/
+#1618128020
+ll CommandLineTools/usr/
+#1618128023
+ll CommandLineTools/usr/libexec/
+#1618128026
+ll CommandLineTools/usr/libexec/as/
+#1618128030
+ll CommandLineTools/usr/libexec/as/i386/
+#1618128037
+ll CommandLineTools/usr/libexec/
+#1618128041
+ll CommandLineTools/usr/libexec/git-core/
+#1618128045
+ll CommandLineTools/usr/libexec/migcom 
+#1618128050
+ll CommandLineTools/usr/libexec/swift/
+#1618128052
+ll CommandLineTools/usr/libexec/swift/pm/
+#1618128054
+c
+#1618128055
+ls
+#1618128058
+ll CommandLineTools/
+#1618128060
+ll CommandLineTools/usr/
+#1618128064
+ll CommandLineTools/usr/bin/
+#1618128111
+c
+#1618128112
+ls
+#1618128117
+cd CommandLineTools/
+#1618128118
+ls
+#1618128121
+cd SDKs/
+#1618128122
+ls
+#1618128142
+cd cd MacOSX11.1.sdk
+#1618128146
+cd MacOSX11.1.sdk
+#1618128339
+cd /Volumes/
+#1618128340
+ls
+#1618128343
+cd Additional\ Tools/
+#1618128344
+ls
+#1618128354
+mkdir Applications
+#1618128360
+sudo mkdir Applications
+#1618128370
+cd ~
+#1618128375
+cd ../Shared/
+#1618128376
+ls
+#1618128383
+mkdir Applications
+#1618128400
+mv /Volumes/Additional\ Tools/* Applications/
+#1618128488
+sudo Application /Library/Developer/CommandLineTools/
+#1618128495
+sudo mv Application /Library/Developer/CommandLineTools/
+#1618128500
+sudo mv Applications /Library/Developer/CommandLineTools/
+#1618128504
+c
+#1618128740
+cd /Library/Developer/CommandLineTools/Library/
+#1618128742
+ls
+#1618128745
+cd Developer/
+#1618128747
+ls
+#1618128751
+cd ..
+#1618128752
+ls
+#1618128755
+cd ..
+#1618128756
+ls
+#1618128764
+cd u`
+#1618128772
+ll SDKs/
+#1618128777
+cd ..
+#1618128780
+c
+#1618128783
+ll XcodeServer/
+#1618128792
+cd XcodeServer/
+#1618128808
+ll Certificates/
+#1618128823
+ll Certificates/ClientCertificateAuthority/
+#1618128830
+ll Certificates/ServerCertificateAuthority/
+#1618128837
+ll Certificates/apache.crt 
+#1618128842
+./Certificates/apache.crt 
+#1618128844
+ls
+#1618128846
+c
+#1618128852
+ll Configuration
+#1618128860
+ll Configuration/httpd_os_xcs.conf 
+#1618128866
+vi Configuration/httpd_os_xcs.conf 
+#1618128876
+sudo vi Configuration/BuildServiceUserName 
+#1618128885
+ls
+#1618128893
+ll ConfigurationProfiles/
+#1618128899
+sudo ll ConfigurationProfiles/
+#1618128904
+sudo ls ConfigurationProfiles/
+#1618128922
+sudo ls Database/
+#1618128931
+sudo ls IntegrationAssets/
+#1618128938
+sudo ls Keychains/
+#1618128945
+c
+#1618128946
+ls
+#1618128951
+ll Logs/
+#1618128955
+c
+#1618128956
+ls
+#1618128961
+ll ManagedProfiles/
+#1618128965
+sudo ll ManagedProfiles/
+#1618128970
+sudo ls ManagedProfiles/
+#1618128992
+sudo ls ProvisioningProfiles/
+#1618129000
+sudo ls SharedSecrets/
+#1618129018
+sudo ls Database/
+#1618129031
+sudo ls CurrentXcodeSymlink
+#1618129033
+sudo ls CurrentXcodeSymlink/
+#1618129034
+sudo ls CurrentXcodeSymlink/Contents/
+#1618129038
+sudo ls CurrentXcodeSymlink/Contents/Developer/
+#1618129041
+sudo ls CurrentXcodeSymlink/Contents/Developer/usr/
+#1618129044
+c
+#1618129045
+ls
+#1618129071
+.. 
+#1618129085
+ll PrivateFrameworks/
+#1618129239
+ps -eu 
+#1618129244
+ps -ue 
+#1618129246
+ps -uae 
+#1618129250
+ps -aue 
+#1618129252
+ps -auf
+#1618129255
+ps -euf
+#1618129265
+ps 
+#1618129271
+man ps
+#1618129302
+ps -q
+#1618129305
+ps -a
+#1618129312
+man ps
+#1618129344
+ps -eaf
+#1618129350
+ps -ef
+#1618129365
+ps -ef | Dock
+#1618129380
+ps -ef | Finder
+#1618129404
+ps Dock
+#1618129418
+ps -L Dock
+#1618129427
+ps -p
+#1618129438
+man Dock
+#1618129458
+which Dock
+#1618129475
+defaults
+#1618129482
+defaults read
+#1618129523
+defaults read | grep Brightness
+#1618129549
+defaults read | grep Screen
+#1618129592
+defaults read | grep Display
+#1618129826
+c
+#1618130466
+pwd
+#1618130473
+cd ..
+#1618130478
+..
+#1618130499
+ll spool/
+#1618130506
+c
+#1618130509
+pwd
+#1618130516
+ls
+#1618130523
+ll spool
+#1618130528
+ll spool/mqueue/
+#1618130534
+sudo ls spool/mqueue/
+#1618130554
+sudo ls spool/uucp/
+#1618130557
+sudo ls spool/cups/
+#1618130569
+sudo ls spool/postfix/
+#1618130583
+sudo ls spool/postfix/pid/
+#1618130598
+sudo ls spool/postfix/pid/unix.smtp 
+#1618130606
+sudo vi spool/postfix/pid/unix.smtp 
+#1618130619
+sudo cd spool/postfix/
+#1618130621
+c
+#1618130621
+ls
+#1618130625
+cd spool/
+#1618130626
+ld
+#1618130627
+ls
+#1618130629
+cd postfix/
+#1618130630
+ls
+#1618130636
+ll incoming/
+#1618130639
+cd ..
+#1618130640
+ls
+#1618130642
+cd ..
+#1618130643
+ls
+#1618130644
+c
+#1618130644
+ls
+#1618130649
+ll agentx/
+#1618130652
+ll at
+#1618130659
+ll at/jobs/
+#1618130662
+ll at/spool/
+#1618130667
+ll at/tabs/
+#1618130671
+ll at/tmp/
+#1618130673
+c
+#1618130673
+ls
+#1618130680
+ll audit
+#1618130682
+a
+#1618130688
+mailx
+#1618131048
+vim send_sms.sh
+#1618131086
+vim ~/send_sms.sh
+#1618131113
+xhmod +x ~/send_sms.sh
+#1618131118
+chmod +x ~/send_sms.sh
+#1618131125
+bash ~/send_sms.sh
+#1618131132
+vim ~/send_sms.sh
+#1618131146
+bash ~/send_sms.sh
+#1618131169
+python
+#1618131201
+pip install compat
+#1618131212
+bash ~/send_sms.sh
+#1618131215
+vim ~/send_sms.sh
+#1618131236
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618131490
+vim ~/send_sms.sh
+#1618131676
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618131712
+bash ~/send_sms.sh
+#1618131727
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618131781
+bash ~/send_sms.sh
+#1618131787
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618131810
+bash ~/send_sms.sh
+#1618131826
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618131869
+bash ~/send_sms.sh
+#1618131873
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618131975
+bash ~/send_sms.sh
+#1618131991
+bash ~/.functions 
+#1618131998
+vi ~/.functions 
+#1618132037
+bash ~/send_sms.sh
+#1618132054
+vi ~/.functions 
+#1618132063
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618132087
+bash ~/send_sms.sh
+#1618132099
+vim ~/send_sms.sh
+#1618132117
+bash ~/send_sms.sh
+#1618132121
+vim ~/send_sms.sh
+#1618132129
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618132149
+bash ~/send_sms.sh
+#1618132152
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618132161
+bash ~/send_sms.sh
+#1618132164
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618132228
+bash ~/send_sms.sh
+#1618132231
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618132252
+bash ~/send_sms.sh
+#1618132319
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618132439
+bash ~/send_sms.sh
+#1618132445
+vim /Users/jjbiggins/Library/Scripts/Python/PythonScripts/scripts/27_send_sms.py 
+#1618132456
+bash ~/send_sms.sh
+#1618132460
+c
+#1618132731
+mailx -S smtp=smtp.mail.me.com -v jjbiggins@localhost -s "test" josephjbiggins@icloud.com
+#1618132757
+mailx -S smtp=smtp.mail.me.com -v jjbiggins@localhost -s "test" josephjbiggins@icloud.com ~/mbox 
+#1618132768
+mailx -S smtp=smtp.mail.me.com -v jjbiggins@localhost -s "test" josephjbiggins@icloud.com < ~/mbox 
+#1618132799
+mailx -E smtp=smtp.mail.me.com -v jjbiggins@localhost -s "test" josephjbiggins@icloud.com < ~/mbox 
+#1618132816
+mailx
+#1618132822
+man mailx
+#1618132876
+man mail
+#1618132926
+c
+#1618132931
+mailx
+#1618132936
+man mailx
+#1618132989
+c
+#1618132999
+ll /var/mail/
+#1618133002
+ll /var/mail/jjbiggins 
+#1618133007
+vi /var/mail/jjbiggins 
+#1618133017
+man mailx
+#1618133080
+sudo port install mail-utils
+#1618133087
+sudo port install mailutils
+#1618133185
+virtualenv /usr/local/bin/python2.7venv2.7
+#1618133190
+virtualenv /usr/local/bin/python2.7 venv2.7
+#1618133194
+virtualenv /usr/local/bin/python2.7 venv27
+#1618133202
+virtualenv /usr/local/bin/python2.7 
+#1618133217
+/usr/local/bin/python2.7 -m venv
+#1618133225
+/usr/local/bin/python2.7 
+#1618133230
+ll /usr/local/bin/python2.7 
+#1618133234
+ll /usr/local/bin/
+#1618133255
+rm python2.7venv2.7
+#1618133263
+rm -rf python2.7venv2.7
+#1618133265
+;;
+#1618133273
+cd /usr/local/
+#1618133276
+cd bin/
+#1618133288
+rm -rf python2.7venv2.7
+#1618133308
+rm vpnkit
+#1618133332
+which python2
+#1618133341
+where /opt/local/bin/python2
+#1618133347
+where /usr/bin/python2
+#1618133351
+whereis /usr/bin/python2
+#1618133355
+whereis
+#1618133360
+man whereis
+#1618133374
+rm -rf python2.7
+#1618133375
+c
+#1618133383
+activate
+#1618133423
+/usr/bin/python2 -m venv
+#1618133430
+/usr/bin/python2 -m pyenv
+#1618133437
+/usr/bin/pyenv2
+#1618133438
+/usr/bin/pyenv
+#1618133443
+pyenv
+#1618133444
+ls
+#1618133461
+virtual python2
+#1618133464
+virtualenv python2
+#1618133468
+virtualenv python2 v
+#1618133504
+rm docker*
+#1618133519
+clear
+#1618133531
+rm kubectl
+#1618133533
+c
+#1618133592
+ls
+#1618133595
+find -L . -name . -o -type d -prune -o -type l -exec rm {} +
+#1618133597
+ls
+#1618133604
+c
+#1618133609
+ls
+#1618133640
+vi file
+#1618133664
+vi notify 
+#1618133874
+c
+#1618133877
+sshfs
+#1618133895
+man sshfs
+#1618134704
+bash <(curl -s -S -L https://git.io/install-gam)
+#1618135740
+function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
+#1618135747
+vim ~/.functions 
+#1618135336
+ssh bronx
+#1618135789
+gam
+#1618135792
+c
+#1618137563
+ls
+#1618137578
+mv send_sms.sh scripts/
+#1618137579
+c
+#1618137581
+rm mbox 
+#1618137584
+c
+#1618139385
+dl
+#1618139415
+scp lpg-0.4.examples.tar.gz cvsroot@bronx
+#1618139449
+scp lpg-0.4.examples.tar.gz ubuntu@bronx://home/ubuntu/
+#1618140607
+c
+#1618140612
+cd ../Documents/
+#1618140615
+ls -al
+#1618140620
+ll .Apple\ Keys/
+#1618140626
+ll .Apple\ Keys/mdm_profile.mobileconfig 
+#1618140631
+open .Apple\ Keys/mdm_profile.mobileconfig 
+#1618140643
+jgb8255
+#1618140654
+open .Apple\ Keys/mdm_profile.mobileconfig 
+#1618140668
+ll .Apple\ Keys/new-certs/
+#1618140681
+open .Apple\ Keys/*
+#1618140702
+open .Apple\ Keys/new-certs/developerID_installer.cer 
+#1618140709
+open .Apple\ Keys/new-certs/mac_development.cer 
+#1618140714
+open .Apple\ Keys/new-certs/1.txt 
+#1618140718
+c
+#1618140719
+ls
+#1618140728
+open .Apple\ Keys/other/
+#1618140808
+curl -v -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhIQVVDUFNXWEcifQ.eyJpYXQiOjE1OTQxODI3NTMsImV4cCI6MTYwOTczNDc1MywiaXNzIjoiVlg2NUMyVU00RiJ9.5j7TN0GM5bYZG7HdSoWsL5xxGDjOf-_i6fGgs8UIPaNW0CFZNLAeuo3ksOwdq6yyFk_quRxGBVrO956M8qz6Eg' "https://api.music.apple.com/v1/catalog/us/artists/178834"
+#1618141106
+c
+#1618141108
+curl -v -H 'Authorization: Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhIQVVDUFNXWEcifQ.eyJpYXQiOjE1OTQxODI3NTMsImV4cCI6MTYwOTczNDc1MywiaXNzIjoiVlg2NUMyVU00RiJ9.5j7TN0GM5bYZG7HdSoWsL5xxGDjOf-_i6fGgs8UIPaNW0CFZNLAeuo3ksOwdq6yyFk_quRxGBVrO956M8qz6Eg' "https://api.music.apple.com/v1/catalog/us/artists/178834"
+#1618141165
+c
+#1618141167
+dev
+#1618141168
+ls
+#1618141195
+gcl https://github.com/jjbiggins/SoundVillage
+#1618141218
+ls
+#1618141219
+c
+#1618141219
+ls
+#1618141222
+cd SoundVillage/
+#1618141223
+ls
+#1618141228
+vim README.md 
+#1618141232
+c
+#1618141233
+ls
+#1618141234
+cd SoundVillage/
+#1618141235
+ls
+#1618141240
+npm install
+#1618141280
+npm install -g npm@7.9.0
+#1618141300
+npm -h
+#1618141351
+npm update
+#1618141367
+npm update --all
+#1618141391
+npm install -g react react-native-cli
+#1618141399
+npm update --all
+#1618141417
+..
+#1618141421
+npm install
+#1618141426
+npm install -g react react-native-cli
+#1618141433
+cd SoundVillage/
+#1618141438
+npm install
+#1618141475
+vim  /Users/jjbiggins/.npm/_logs/2021-04-11T11_44_22_040Z-debug.log
+#1618141600
+yarn add react-native-screens
+#1618141638
+yarn add react-native-gesture-handler
+#1618141648
+yarn add react-native-reanimated
+#1618141657
+yarn add react-native-react-native-safe-area-context
+#1618141683
+npm install react-native-react-native-safe-area-context
+#1618141714
+vi /Users/jjbiggins/.npm/eresolve-report.txt
+#1618141759
+npm install --lagacy-peer-deps react-native-react-native-safe-area-context
+#1618141767
+npm install --legacy-peer-deps react-native-react-native-safe-area-context
+#1618141804
+npm install  react-native-react-native-safe-area-context --legacy-peer-deps
+#1618141810
+npm install  react-native-react-native-safe-area-context
+#1618141834
+npm install  react-native-react-native-safe-area-context --force
+#1618141851
+yarn add react-native-react-native-safe-area-context
+#1618141897
+npx pod-install
+#1618141908
+react-native link react-native-safe-area-context
+#1618141929
+yarn add react-native-webview
+#1618141938
+cd ios && pod install && cd .. 
+#1618141947
+cd ..
+#1618141953
+yarn add /react-native-search-bar
+#1618141958
+yarn add react-native-search-bar
+#1618141966
+cd ios && pod install && cd .. 
+#1618141978
+cd ..
+#1618141985
+npm install
+#1618142021
+npm install react-native-reanimated
+#1618142028
+npm uninstall react-native-reanimated
+#1618142033
+npm install
+#1618142042
+npm uninstall react-native-reanimated --legacy-peer-deps
+#1618142053
+  npm audit fix
+#1618142069
+  npm audit react-native-router-flux
+#1618142084
+  npm audit fix
+#1618142101
+  npm audit react-native-router-flux --legacy-peer-deps
+#1618142180
+npm install y18n
+#1618142200
+npm install xmlfom
+#1618142206
+npm install xmldom
+#1618142229
+npm install @react-native-community/cli
+#1618142243
+npm install --global @react-native-community/cli
+#1618142312
+npm install
+#1618142336
+npm install semver
+#1618142349
+npm insrall
+#1618142361
+npm install
+#1618142383
+npm install npm outdated
+#1618142424
+npx npm install natives code-js
+#1618142434
+npx npm install natives core-js
+#1618142467
+npx npm install  graceful-fs
+#1618142486
+vi /Users/jjbiggins/.npm/_logs/2021-04-11T12_01_10_364Z-debug.log
+#1618142523
+npm
+#1618142535
+npm prune
+#1618142559
+npm deprecated
+#1618142561
+npm deprecate
+#1618142584
+npm list outdated
+#1618142604
+npx outdated
+#1618142633
+npx uninstall outdated
+#1618142663
+npx doctor
+#1618142671
+npx npm doctor
+#1618142747
+npx npm install -g npm
+#1618142758
+npx npm update
+#1618142766
+npx npm install -g node
+#1618142793
+sudo port uninstall node
+#1618142806
+sudo port clean node
+#1618142813
+rm -rf  /Users/jjbiggins/.nvm/
+#1618142850
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+#1618142860
+ls
+#1618142862
+clear
+#1618142864
+~
+#1618142864
+c
+#1618142870
+ls
+#1618142376
+npx
+#1618142876
+c
+#1618142878
+nvm
+#1618142900
+dev
+#1618142902
+cd SoundVillage/
+#1618142903
+ls
+#1618142909
+node -v
+#1618142912
+cd SoundVillage/
+#1618142912
+ls
+#1618142922
+node info
+#1618142928
+ls
+#1618142932
+vim package.json 
+#1618142943
+nvm install
+#1618142964
+npx npm install --global npx
+#1618142985
+npx npm install --global npx --force
+#1618142996
+npx npm install --global npm
+#1618143007
+npx npm install
+#1618143191
+c
+#1618149034
+youtube-dl https://www.att.tv/discover/movies/program/d4a48adc-585a-3541-89ff-a81c25eb7137
+#1618149484
+clear
+#1618149623
+npm audit fix
+#1618149802
+idea &
+#1618150087
+ls
+#1618150090
+dev
+#1618150091
+ls
+#1618150099
+cd practice
+#1618150101
+ls
+#1618150103
+cd ctci/
+#1618150104
+ls
+#1618150675
+c
+#1618160473
+tcl
+#1618163750
+dl
+#1618163751
+c
+#1618163751
+ls
+#1618163809
+scp *.jar oper@hub://Users/oper/Public/
+#1618164488
+c
+#1618164514
+sudo cp -r jackrabbit-2.20.2 /Library/WebServer/Documents/
+#1618164524
+cd /Library/WebServer/Documents/
+#1618164525
+ls
+#1618164584
+cd jackrabbit-2.20.2/jackrabbit-standalone/
+#1618164585
+c
+#1618164586
+ls
+#1618164588
+cd ..
+#1618164589
+ls
+#1618164601
+cd jackrabbit-standalone-components/
+#1618164602
+ls
+#1618164606
+ll src/
+#1618164608
+ll src/main/
+#1618164610
+ll src/main/java/
+#1618164613
+ll src/main/java/org/
+#1618164614
+ll src/main/java/org/apache/jackrabbit/
+#1618164616
+ll src/main/java/org/apache/jackrabbit/standalone/
+#1618164620
+ll src/main/java/org/apache/jackrabbit/standalone/cli/
+#1618164628
+ 
+#1618164629
+c
+#1618164683
+../..
+#1618164684
+..
+#1618164691
+rm -rf jackrabbit-2.20.2/
+#1618164697
+sudo rm -rf jackrabbit-2.20.2/
+#1618164700
+dl
+#1618164701
+c
+#1618164724
+sudo cp -r jackrabbit-standalone-2.14.9.jar /Library/WebServer/Documents/
+#1618164730
+cd /Library/WebServer/Documents/
+#1618164731
+c
+#1618164744
+java -jar jackrabbit-standalone-2.14.9.jar 
+#1618164773
+ls
+#1618164828
+vim jackrabbit-standalone-2.14.9.jar 
+#1618164857
+c
+#1618164860
+cd ~
+#1618164866
+cd /Library/WebServer/Documents/
+#1618164868
+ls
+#1618164880
+sudo java -jar jackrabbit-standalone-2.14.9.jar 
+#1618165052
+c
+#1618165054
+ls
+#1618165058
+cd jackrabbit/
+#1618165060
+ls
+#1618165066
+cd workspaces/
+#1618165067
+ls
+#1618165071
+cd default/
+#1618165072
+ls
+#1618165077
+cd index/
+#1618165083
+cd ../..
+#1618165084
+..
+#1618165086
+ls
+#1618165097
+java -Xmx256m -jar jackrabbit-standalone-1.6.0.jar
+#1618165110
+sudo java -Xmx256m -jar jackrabbit-standalone-2.14.9.jar 
+#1618165678
+ll jackrabbit/
+#1618165683
+ll jackrabbit/workspaces/
+#1618165689
+ll jackrabbit/repository/
+#1618165696
+ll jackrabbit/repository/index/
+#1618165703
+ll jackrabbit/repository/namespaces/
+#1618165707
+ll jackrabbit/repository/datastore/
+#1618165713
+ll jackrabbit/repository/privileges/
+#1618165718
+ll jackrabbit/
+#1618165723
+ll jackrabbit/workspaces/
+#1618165726
+ll jackrabbit/workspaces/default/
+#1618165729
+ll jackrabbit/workspaces/default/index/
+#1618165735
+c
+#1618165736
+ls
+#1618165748
+ll include/
+#1618165750
+ls
+#1618165760
+dl
+#1618165761
+ls
+#1618165779
+java -jar jackrabbit-standalone-2.12.11.jar 
+#1618165824
+c
+#1618165825
+ls
+#1618165840
+cd /etc/
+#1618165840
+c
+#1618165841
+ls
+#1618166445
+c
+#1618166450
+c
+#1618166453
+dl
+#1618166455
+ls
+#1618166495
+mv  the-linux-command-line.pdf ~/Documents/
+#1618166500
+ls
+#1618166501
+c
+#1618166502
+ls
+#1618166512
+..
+#1618166545
+Downloads/kwrite/
+#1618166551
+ll Downloads/kwrite/
+#1618166554
+c
+#1618166555
+ls
+#1618166562
+c
+#1618165884
+ssh oper@hub
+#1618166914
+sudo port selfupdate
+#1618169785
+top
+#1618169795
+htop
+#1618169907
+clear
+#1618169913
+ps aux
+#1618169916
+ps -aux
+#1618169921
+ps -eux
+#1618169925
+ps aux
+#1618169933
+clear
+#1618169934
+ps aux
+#1618169957
+clear
+#1618169978
+ps aux 
+#1618169997
+ps aux | awk '{ print $11 }'
+#1618170045
+ps aux | awk '{ print $11 }' | grep '/Applications/*.app/' 
+#1618170051
+ps aux | awk '{ print $11 }' | grep "/Applications/*.app/"
+#1618170057
+ps aux | awk '{ print $11 }' | grep /Applications/*.app/
+#1618170102
+ps aux | awk '{ print $11 }' | grep /Applications/*.app
+#1618170114
+ps aux | awk '{ print $11 }' | grep \"/Applications/*.app\"
+#1618170122
+ps aux | awk '{ print $11 }' | grep /Applications/*.app
+#1618170139
+ps aux | awk '{ print $11 }' | grep *.app
+#1618170142
+ps aux | awk '{ print $11 }' | grep .app
+#1618170156
+ps aux | awk '{ print $11 }' | grep /Applications/
+#1618170165
+ps aux | awk '{ print $11 }' | grep ^/Applications/
+#1618170207
+clear
+#1618170234
+vim quit_everything.sh
+#1618170314
+cd ~
+#1618170315
+c
+#1618170318
+vim quit_everything.sh
+#1618170338
+chmod +x ./quit_everything.sh 
+#1618170340
+ls
+#1618170343
+./quit_everything.sh 
+#1618170348
+vim quit_everything.sh 
+#1618170428
+./quit_everything.sh 
+#1618170439
+vim quit_everything.sh 
+#1618170456
+ps aux
+#1618170499
+vim quit_everything.sh 
+#1618170514
+./quit_everything.sh 
+#1618170516
+vim quit_everything.sh 
+#1618170531
+./quit_everything.sh 
+#1618170545
+vim quit_everything.sh 
+#1618170576
+c
+#1618170578
+ls
+#1618154912
+ssh bronx
+#1618143202
+ssh bronx
+#1618269587
+;s
+#1618269598
+ssh jjbiggins@192.168.1.81
+#1618269623
+vim .ssh/known_hosts 
+#1618269930
+python
+#1618270098
+c
+#1618270113
+python
+#1618270336
+c
+#1618270343
+python -V
+#1618270346
+python3 -V
+#1618270352
+which python3
+#1618270390
+clear
+#1618270393
+python3
+#1618270836
+c
+#1618270841
+which python
+#1618270862
+sudo port list python
+#1618270879
+sudo port reinstall
+#1618270884
+sudo port reinstall python
+#1618270888
+sudo port 
+#1618270943
+sudo port uninstall python
+#1618270947
+sudo port uninstall python39
+#1618270971
+sudo port clean python@3.9.3_0
+#1618270974
+sudo port clean python3.9.3_0
+#1618270978
+sudo port clean python\ @3.9.3_0
+#1618270984
+sudo port clean python
+#1618270987
+sudo port clean python39
+#1618270994
+sudo port uninstall python39
+#1618271005
+sudo port clean python39
+#1618271016
+which python
+#1618271020
+python
+#1618271027
+c
+#1618271031
+python3 -V
+#1618271038
+which python3
+#1618271098
+vim .bashrc
+#1618271143
+python3 -V
+#1618271323
+c
+#1618274235
+ping bronx
+#1618274238
+ping bronx.local
+#1618274470
+clear
+#1618269650
+ssh jjbiggins@192.168.1.81
+#1618274720
+domainname
+#1618274722
+domain
+#1618274724
+clear
+#1618275115
+sftp ftpuser@70.134.200.98
+#1618275125
+ftp ftpuser@70.134.200.98
+#1618275129
+clear
+#1618275380
+ssh oper@vostro
+#1618275387
+ssh oper@192.168.1.84
+#1618275547
+ls
+#1618275548
+clear
+#1618276255
+xcode-select --install
+#1618276260
+clear
+#1618276265
+xcrun
+#1618276272
+xcrun --show-sdk-path
+#1618276278
+xcrun --show-sdk-version
+#1618276286
+clear
+#1618276604
+cd Applications/
+#1618276605
+ls
+#1618276611
+gcl https://github.com/REUMTech/social-manager-tools.git
+#1618277089
+cd ..
+#1618277090
+ls
+#1618277092
+cd Sites/
+#1618277093
+ls
+#1618277094
+cd quickstart/
+#1618277095
+c
+#1618277218
+jgb8255
+#1618277468
+c
+#1618277469
+cd ..
+#1618277470
+c
+#1618277471
+ls
+#1618277483
+rm -rf html5-boilerplate/
+#1618277485
+ll wikis/
+#1618277488
+ll wikis/iowa/
+#1618277492
+ll wikis/iowa/cs1210/
+#1618277493
+c
+#1618277494
+ls
+#1618277497
+ll biggins/
+#1618277501
+c
+#1618277502
+ls
+#1618277505
+ll WebstormProjects/
+#1618277506
+c
+#1618277507
+ls
+#1618277517
+ll nexusjs/
+#1618277522
+rm -ed nexusjs/
+#1618277526
+rm -rf nexusjs/
+#1618277531
+rm -rf biggins/
+#1618277541
+ls
+#1618277543
+rm -rf biggins
+#1618277545
+ls
+#1618277548
+ll finances/
+#1618277549
+ll finances/fidelity/
+#1618277550
+c
+#1618277556
+open finances/fidelity/statement02-28-2021.html 
+#1618277561
+c
+#1618277561
+ls
+#1618277564
+ll portfolio/
+#1618277566
+ll portfolio/webapp/
+#1618277571
+c
+#1618277575
+rm -rf portfolio/
+#1618277578
+rm -rf portfolio
+#1618277585
+ls
+#1618277590
+ll practice/
+#1618277592
+ll practice/cs1210/
+#1618277600
+rm -rf practice
+#1618277603
+ls
+#1618277655
+c
+#1618277659
+cd ../Applications/
+#1618277659
+ls
+#1618277672
+ll FIN/
+#1618277675
+ls
+#1618277682
+mv FIN edgar
+#1618277683
+ls
+#1618277689
+ll hawk/
+#1618277690
+c
+#1618277709
+ll ~/Developer/archive/iowa/cs2630/
+#1618277710
+ll ~/Developer/archive/iowa/cs2630/hawk/
+#1618277713
+ls
+#1618277716
+rm -rf hawk
+#1618277717
+ls
+#1618277721
+ll daily/
+#1618277726
+c
+#1618277727
+ls
+#1618277766
+mv daily Daily_Sebis_Work_Archive
+#1618277767
+ls
+#1618277989
+cd /etc/postfix/
+#1618277989
+ls
+#1618277999
+ll postfix-files.d/
+#1618278000
+c
+#1618278000
+ls
+#1618278673
+sudo vim /etc/postfix/sasl_passwd
+#1618278721
+c
+#1618278739
+sudo postmap /etc/postfix/sasl_passwd
+#1618278744
+sudo vim /etc/postfix/main.cf
+#1618278854
+c
+#1618278859
+sudo postfix start
+#1618278875
+sudo vim /etc/postfix/main.cf
+#1618278886
+sudo postfix start
+#1618278890
+sudo vim /etc/postfix/main.cf
+#1618278898
+sudo postfix restart
+#1618278904
+sudo postfix stop
+#1618278907
+sudo postfix start
+#1618278914
+c
+#1618278925
+ls
+#1618278978
+ll /System/Library/LaunchDaemons/
+#1618278984
+ll /System/Library/LaunchDaemons/com.apple*
+#1618278989
+ll /System/Library/LaunchDaemons/com.apple.postfix*
+#1618279027
+sudo cp /System/Library/LaunchDaemons/com.apple.postfix.master.plist /Library/LaunchDaemons/com.apple.postfix.master.plist
+#1618279029
+c
+#1618279039
+sudo vim /Library/LaunchDaemons/com.apple.postfix.master.plist 
+#1618279131
+sudo launchctl unload /System/Library/LaunchDaemons/com.apple.postfix.master.plist
+#1618279151
+sudo postfix stop
+#1618279172
+sudo launchctl load /Library/LaunchDaemons/com.apple.postfix.master.plist 
+#1618279182
+sudo postfix start
+#1618279186
+c
+#1618279328
+ mailx
+#1618279330
+mailq
+#1618279354
+sudo vim sasl_passwd
+#1618279369
+sudo postfix stop
+#1618279421
+sudo postfix start
+#1618279449
+ls
+#1618279451
+clear
+#1618279453
+mailq
+#1618279457
+mailx
+#1618279460
+mailq
+#1618279461
+c
+#1618279462
+ls
+#1618279473
+sudo postfix reload
+#1618279478
+mailq
+#1618279479
+c
+#1618279744
+cd Desktop/
+#1618279745
+ls
+#1618279747
+cd Xcode/
+#1618279747
+ls
+#1618279751
+cd Birthdays/
+#1618279751
+ls
+#1618279755
+cd Birthdays/
+#1618279756
+ls
+#1618279759
+c
+#1618279770
+ls
+#1618279771
+cd ..
+#1618279771
+ls
+#1618279788
+mv ../Birthdays ../Birthdays_tmp
+#1618279793
+mv Birthdays ../
+#1618279794
+cd ..
+#1618279795
+ls
+#1618279802
+rm -rf Birthdays_tmp
+#1618279802
+c
+#1618279851
+rm -rf Birthdays
+#1618279852
+ls
+#1618279897
+cd Birthdays
+#1618279898
+ls
+#1618279903
+git init
+#1618279916
+git add .
+#1618279923
+git remote add origin https://github.com/jjbiggins/birthdays.git
+#1618279932
+git branch -M main
+#1618279938
+git commit -m "first commit"
+#1618279942
+git push -u origin main
+#1618279964
+c
+#1618280185
+mailq
+#1618280212
+sudo postfix status
+#1618280218
+ls
+#1618280247
+echo "My message" | mail -s subject joe@biggins.tech
+#1618280250
+mailq
+#1618280256
+c
+#1618280257
+ls
+#1618280258
+c
+#1618280259
+mailq
+#1618280261
+c
+#1618280306
+mailq
+#1618280412
+sudo port install libsasl2-modules
+#1618280414
+c
+#1618280443
+sudo vim /etc/postfix/sasl_passwd
+#1618280456
+sudo vim /etc/postfix/main.cf
+#1618280595
+c
+#1618280599
+sudo service postfix restart
+#1618280605
+sudo postfix stop
+#1618280608
+sudo postfix start
+#1618280612
+sudo postfix flush
+#1618280615
+sudo postfix reload
+#1618280616
+c
+#1618280622
+mailq
+#1618280637
+x
+#1618280648
+c
+#1618280649
+ls
+#1618280650
+mailq
+#1618280660
+echo "My message" | mail -s subject joe@biggins.tech
+#1618280662
+mailq
+#1618280664
+c
+#1618280712
+mailq
+#1618280722
+sudo postfix stop
+#1618280732
+sudo vim /etc/postfix/main.cf
+#1618280762
+sudo postfix start
+#1618280766
+mailq
+#1618280786
+mailq --help
+#1618280793
+man mailq
+#1618280903
+mailx
+#1618280942
+c
+#1618280945
+mail
+#1618280959
+c
+#1618280961
+mail
+#1618281041
+mailq
+#1618281047
+mailq -d
+#1618281050
+c
+#1618281050
+ls
+#1618281101
+cd /etc/
+#1618281178
+cd mail
+#1618281180
+ls
+#1618281186
+vim mail.rc
+#1618281211
+cd postfix/
+#1618281211
+ls
+#1618281212
+c
+#1618281214
+vim aliases 
+#1618281344
+postconf
+#1618281351
+postconf alias_maps
+#1618281357
+c
+#1618281591
+ls
+#1618281595
+vim access
+#1618281637
+vim makedefs.out 
+#1618281650
+vim transport 
+#1618281666
+vim virtual 
+#1618281690
+ls
+#1618281695
+vim postfix-files
+#1618281715
+vim custom_header_checks 
+#1618281721
+vim canonical 
+#1618281731
+vim relocated 
+#1618281737
+vim master.cf
+#1618281761
+vim aliases
+#1618281773
+sudo vim aliases 
+#1618281804
+newaliases
+#1618281809
+sudi newaliases
+#1618281814
+sudo newaliases
+#1618281818
+sudo postfix start
+#1618281823
+sudo postfix stop
+#1618281827
+sudo postfix start
+#1618281832
+sudo postfix flush
+#1618281835
+sudo postfix reloasd
+#1618281837
+sudo postfix reload
+#1618281839
+c
+#1618281839
+ls
+#1618281842
+mailq
+#1618281844
+c
+#1618281844
+ls
+#1618281847
+mailq
+#1618281853
+echo "My message" | mail -s subject joe@biggins.tech
+#1618281855
+mailq
+#1618281862
+c
+#1618281864
+mailq
+#1618281918
+mailx
+#1618281969
+c
+#1618281971
+ls
+#1618281994
+echo "My message" | mail -s subject josephjbiggins@icloud.com
+#1618281996
+mailq
+#1618281999
+c
+#1618282115
+sudo vim aliases 
+#1618282182
+sudo vim main.cf
+#1618282212
+sudo postfix stop
+#1618282231
+sudo newalias
+#1618282233
+sudo newaliases
+#1618282245
+sudo postfix start
+#1618282248
+sudo postfix flush
+#1618282251
+sudo postfix reload
+#1618282252
+c
+#1618282258
+echo "This is the body of the email" | mail -s "This is the subject line" root
+#1618282261
+mailq
+#1618282292
+c
+#1618282293
+ls
+#1618282295
+mailx
+#1618282341
+c
+#1618282390
+sudo port install mailutils
+#1618282484
+c
+#1618282485
+ls
+#1618282486
+mailq
+#1618282488
+mailx
+#1618282497
+c
+#1618282498
+ls
+#1618282501
+mailx
+#1618282501
+c
+#1618282504
+ls
+#1618282507
+rm ~/mbox 
+#1618282509
+c
+#1618282510
+ls
+#1618282524
+sudo rm -rf sasl_passwd
+#1618282525
+ls
+#1618282532
+vim generic 
+#1618282543
+postconf
+#1618282553
+c
+#1618282554
+ls
+#1618282565
+vim master.cf.default 
+#1618282582
+vim main.cf.default 
+#1618282603
+vim main.cf
+#1618282635
+sudo vim main.cf
+#1618282785
+c
+#1618282806
+ls
+#1618282808
+cd ..
+#1618282809
+ls
+#1618282820
+sudo postfix stop
+#1618282851
+ping 192.30.252.154
+#1618282857
+whois 192.30.252.154
+#1618282864
+c
+#1618282836
+vim resolv.conf 
+#1618282987
+vim resolv.conf c
+#1618282996
+c
+#1618282996
+ls
+#1618283218
+ncurses
+#1618283218
+c
+#1618283289
+l
+#1618283299
+vim ~/.bashrc_aliases 
+#1618283349
+exec $SHELL
+#1618283351
+l
+#1618283352
+c
+#1618283356
+l
+#1618283362
+vim .bashrc_aliases 
+#1618283382
+exec $SHELL
+#1618283384
+l
+#1618283386
+cl
+#1618283391
+vim .bashrc_aliases 
+#1618283406
+l
+#1618283411
+vim .bashrc_aliases 
+#1618283428
+l
+#1618283429
+c
+#1618283433
+cd /var/
+#1618283434
+ls
+#1618283437
+ll run/
+#1618283448
+pppconfd
+#1618283516
+c
+#1618283523
+ll run/
+#1618283530
+c
+#1618283537
+ls
+#1618283537
+c
+#1618283795
+cd /etc/
+#1618283795
+ls
+#1618283801
+vim services 
+#1618283872
+c
+#1618284228
+ssh bronx
+#1618287167
+mutt
+#1618287213
+ls
+#1618287218
+rm -rf .muttrc
+#1618287218
+ls
+#1618287224
+sudo port uninstall mutt
+#1618287234
+vim quit_everything.sh 
+#1618287240
+rm quit_everything.sh 
+#1618287241
+c
+#1618287878
+sudo port -v selfupdate
+#1618287950
+sudo port upgrade outdated
+#1618288046
+c
+#1618288057
+dev
+#1618288062
+cd archive/iowa/cs1210/
+#1618288063
+ls
+#1618288064
+cd hw10/
+#1618288065
+ls
+#1618288069
+python hw10start.py 
+#1618288079
+vim hw10start.py 
+#1618288371
+python hw10start.py 
+#1618288384
+vim hw10start.py 
+#1618288434
+python hw10start.py 
+#1618288436
+vim hw10start.py 
+#1618288446
+python hw10start.py 
+#1618288462
+c
+#1618288463
+ls
+#1618288466
+vi key.json 
+#1618288478
+ls
+#1618288482
+vim oauth2/
+#1618288488
+vim hw10start.py 
+#1618288541
+python hw10start.py 
+#1618288566
+ll /Library/WebServer/Documents/
+#1618288574
+ll /Library/WebServer/Documents/cs1210/
+#1618288579
+ll /Library/WebServer/Documents/cs1210/~cremer/
+#1618288581
+ll /Library/WebServer/Documents/cs1210/~cremer/courses/
+#1618288582
+ll /Library/WebServer/Documents/cs1210/~cremer/courses/cs1210-s17/
+#1618288584
+ll /Library/WebServer/Documents/cs1210/~cremer/courses/cs1210-s17/hw/
+#1618288591
+ll /Library/WebServer/Documents/cs1210/~cremer/courses/cs1210-s17/hw/hw10/
+#1618288610
+ll /Library/WebServer/Documents/index.html 
+#1618288615
+vim /Library/WebServer/Documents/index.html 
+#1618288710
+sudo vim /Library/WebServer/Documents/index.html 
+#1618288728
+sudo apachectl restart
+#1618288729
+c
+#1618288747
+sudo vim /Library/WebServer/Documents/index.html 
+#1618288760
+sudo apachectl restart
+#1618288772
+ll /Library/WebServer/Documents/index.html 
+#1618288777
+ll /Library/WebServer/Documents/cs1210/
+#1618288779
+ll /Library/WebServer/Documents/cs1210/~cremer/
+#1618288781
+ll /Library/WebServer/Documents/cs1210/~cremer/courses/
+#1618288782
+ll /Library/WebServer/Documents/cs1210/~cremer/courses/cs1210-s17/
+#1618288799
+sudo vim /Library/WebServer/Documents/index.html 
+#1618288815
+sudo apachectl restart
+#1618289161
+ls
+#1618289163
+vim hw10start.py 
+#1618289415
+python hw10start.py 
+#1618289425
+vim hw10start.py 
+#1618289431
+python hw10start.py 
+#1618289476
+which python
+#1618289485
+/opt/local/bin/python -V
+#1618289491
+python3 hw10start.py 
+#1618289515
+vim hw10start.py 
+#1618289591
+python3 hw10start.py 
+#1618289597
+vim hw10start.py 
+#1618289612
+python3 hw10start.py 
+#1618289761
+vim hw10start.py 
+#1618289913
+python3 hw10start.py 
+#1618289920
+vim hw10start.py 
+#1618289935
+python3 hw10start.py 
+#1618289997
+vim hw10start.py 
+#1618290114
+python3 hw10start.py 
+#1618290273
+vim hw10start.py 
+#1618290292
+python3 hw10start.py 
+#1618290310
+c
+#1618290313
+vim hw10start.py 
+#1618290370
+python3 hw10start.py 
+#1618290378
+ls
+#1618290380
+vim hw10start.py 
+#1618291085
+..
+#1618291091
+l
+#1618291097
+ll bin/
+#1618291102
+ll bin/gam/
+#1618291102
+c
+#1618291104
+ls
+#1618291112
+cp .bin/* bin/
+#1618291114
+ll bin/
+#1618291115
+c
+#1618275337
+ssh ubuntu@bronx

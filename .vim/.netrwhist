@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/Users/jjbiggins/Developer/archive/iowa/cs1210/hw10/oauth2'
 let g:netrw_dirhist_8='/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/site-packages/pkg_resources'
 let g:netrw_dirhist_7='/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/site-packages/bin'
 let g:netrw_dirhist_6='/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/xml'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_3='/usr/libexec/WiFiStallDetect.mlmodelc/model0'
 let g:netrw_dirhist_2='/usr/libexec/feedback'
 let g:netrw_dirhist_1='/usr/libexec/cups/notifier'
 let g:netrw_dirhist_0='/usr/libexec/cups'
-let g:netrw_dirhist_9='/Library/Server/Previous/private/var/db/openldap/run'

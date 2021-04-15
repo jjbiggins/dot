@@ -1,4 +1,4 @@
-# Common recent settings file for Wireshark 3.4.3.
+# Common recent settings file for Wireshark 3.4.4.
 #
 # This file is regenerated each time Wireshark is quit
 # and when changing configuration profile.
@@ -9,6 +9,7 @@
 recent.capture_file: /Users/jjbiggins/Public/Drop Box/vlan.pcapng
 recent.capture_file: /Users/jjbiggins/Public/Drop Box/LinksysRangeExt-Issue-Resolved.pcapng
 recent.capture_file: /Users/jjbiggins/Public/Drop Box/wireshark.pcapng
+recent.capture_file: /Users/jjbiggins/Public/Drop Box/today.pcapng
 
 ######## Recent capture filters (latest last), cannot be altered through command line ########
 
