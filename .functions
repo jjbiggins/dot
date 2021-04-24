@@ -415,8 +415,8 @@ function ii()   # Get current host related info.
 }
 
 
-function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
 
+function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
 
 #  This is a 'universal' completion function - it works when commands have
 #+ a so-called 'long options' mode , ie: 'ls --all' instead of 'ls -a'

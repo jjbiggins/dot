@@ -206,36 +206,18 @@ asf|vob|VOB|bin|dat|vcd|ps|pes|fli|viv|rm|ram|yuv|mov|MOV|qt|\
 QT|wmv|mp3|MP3|ogg|OGG|ogm|OGM|mp4|MP4|wav|WAV|asx|ASX)' xine
 complete -f -o default -X '!*.pl'  perl perl5
 
-# ====================================================================
-# User PATH Settings
-# ===================================================================
-PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
-PATH="/Users/jjbiggins/Library/Python/3.9/bin:$PATH"
-PATH="/opt/local/libexec/gnubin:$PATH"
-
-# Personal Script Binaries
-#----------------------------------------
-PATH="/Users/jjbiggins/.bin:$PATH"
-
 # ~/.dircolors/themefile
 #eval $(dircolors ~/.colors/dircolors.256dark)
 if [[ -f ~/.colors/dircolors_linux ]]; then
     eval $(dircolors ~/.colors/dircolors.256dark)
 fi
 
-# Node
-source /opt/local/share/nvm/init-nvm.sh
-
  
 # Java Home
 # ----------------------------------------------
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
-
 export PREVIEW="/Users/jjbiggins/Library/Mobile Documents/com~apple~Preview/Documents"
 
-#export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
-#PATH=$DEVELOPER_DIR/usr/bin:$PATH
 
 # Python
 #PYTHONPATH="/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9"
@@ -243,15 +225,12 @@ export PREVIEW="/Users/jjbiggins/Library/Mobile Documents/com~apple~Preview/Docu
 #PYTHONUSERBASE="/Users/jjbiggins/Library/Python/3.9"
 #PATH="/Users/jjbiggins/Library/Python/3.8/bin:$PATH"
 
-[ -f "/Users/jjbiggins/.ghcup/env" ] && source "/Users/jjbiggins/.ghcup/env" # ghcup-env
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH
-
-
 
 # MANPATH
 export MANPATH=/opt/local/man:$MANPATH

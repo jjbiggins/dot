@@ -6,6 +6,17 @@
 #                                                               #
 #################################################################
 
+# ====================================================================
+# User PATH Settings
+# ===================================================================
+PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+PATH="/Users/jjbiggins/Library/Python/3.9/bin:$PATH"
+PATH="/opt/local/libexec/gnubin:$PATH"
+
+# Personal Script Binaries
+PATH="/Users/jjbiggins/bin:$PATH"
+
 
 
 # ----------------------------------------------------------------
