@@ -232,6 +232,7 @@ source /opt/local/share/nvm/init-nvm.sh
 # ----------------------------------------------
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
+export PREVIEW="/Users/jjbiggins/Library/Mobile Documents/com~apple~Preview/Documents"
 
 #export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 #PATH=$DEVELOPER_DIR/usr/bin:$PATH
@@ -242,6 +243,11 @@ export JAVA_HOME=`/usr/libexec/java_home -v 11`
 #PYTHONUSERBASE="/Users/jjbiggins/Library/Python/3.9"
 #PATH="/Users/jjbiggins/Library/Python/3.8/bin:$PATH"
 
+[ -f "/Users/jjbiggins/.ghcup/env" ] && source "/Users/jjbiggins/.ghcup/env" # ghcup-env
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH
 
@@ -255,8 +261,3 @@ export MANPATH=/opt/local/man:$MANPATH
 # mode:shell-script
 # sh-shell:bash
 # End:
-[ -f "/Users/jjbiggins/.ghcup/env" ] && source "/Users/jjbiggins/.ghcup/env" # ghcup-env
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

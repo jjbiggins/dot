@@ -1,5 +1,5 @@
 [user]
-	email = jjbiggins@biggins.tech
+	email = joe@biggins.tech
 	name = Joe Biggins
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -11,3 +11,5 @@
 	excludesfile = ~/.gitignore_global
 [pull]
 	rebase = true
+[credential]
+	helper = osxkeychain

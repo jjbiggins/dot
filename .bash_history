@@ -22860,3 +22860,1641 @@ ll bin/
 c
 #1618275337
 ssh ubuntu@bronx
+#1618533007
+ls
+#1618533012
+ll bin/
+#1618533014
+ls
+#1618615077
+c
+#1618615077
+ls
+#1618615078
+c
+#1618615080
+ll bin/
+#1618615080
+c
+#1618615753
+ld
+#1618615755
+ls
+#1618615759
+clear bin/
+#1618615760
+clear
+#1618616442
+ls
+#1618616444
+ls -al
+#1618616445
+clear
+#1618616449
+cd .mutt_certificates 
+#1618616450
+clear
+#1618616724
+c
+#1618616726
+ls
+#1618616728
+ls -al
+#1618616730
+clear
+#1618616733
+ls 
+#1618616735
+clear
+#1618616761
+ls -al
+#1618616763
+clear
+#1618616768
+ls
+#1618616769
+ 
+#1618616770
+clear
+#1618616772
+ls bin/
+#1618616774
+c
+#1618616781
+ls bin/screenshot_action.sh 
+#1618616782
+ls
+#1618616783
+clear
+#1618616829
+ll Applications/
+#1618616830
+clear
+#1618616836
+ll Applications/
+#1618616837
+clear
+#1618616864
+ll Applications/
+#1618616865
+clear
+#1618616871
+ll Applications/finance
+#1618616872
+c
+#1618616873
+ls
+#1618616874
+c
+#1618617011
+ls -al
+#1618617012
+clear
+#1618617016
+vim .macos.sh 
+#1618617020
+clear
+#1618617127
+ls
+#1618617130
+clear
+#1618617133
+cd Library/
+#1618617134
+clear
+#1618617135
+ls
+#1618617140
+clear 
+#1618617143
+cd ~
+#1618617144
+c
+#1618617155
+ls
+#1618617156
+clear
+#1618617198
+ls
+#1618617200
+clear
+#1618617202
+ll bin/
+#1618617204
+clear
+#1618617205
+ls
+#1618617207
+cd Sites/
+#1618617208
+c
+#1618617208
+ls
+#1618617209
+cd ..
+#1618617210
+clear
+#1618617257
+ls Documents/
+#1618617258
+clear
+#1618617265
+vim Documents/the-linux-command-line.pdf 
+#1618617268
+c
+#1618617269
+ls
+#1618617270
+c
+#1618617301
+ls -al
+#1618617302
+clear
+#1618617309
+vim .macosx_env 
+#1618617409
+ls -al
+#1618617410
+clear
+#1618617411
+ls
+#1618617412
+clear
+#1618617498
+ls
+#1618617499
+c
+#1618617503
+ll scripts/
+#1618617504
+c
+#1618617505
+ls
+#1618617507
+ll scripts/
+#1618617508
+c
+#1618617508
+ls
+#1618617509
+c
+#1618617526
+ls -al
+#1618617527
+c
+#1618617528
+l
+#1618617530
+c
+#1618617609
+ls -al
+#1618617611
+clear
+#1618617616
+vim .lesshst 
+#1618617620
+clear
+#1618617706
+ls
+#1618617707
+c
+#1618617709
+ls -alc
+#1618617711
+clear
+#1618617713
+ls -al
+#1618617714
+clear
+#1618617830
+ls -al
+#1618617831
+clear
+#1618617835
+vim .zshrc
+#1618617838
+clear
+#1618617864
+ls -al
+#1618617866
+clear
+#1618617876
+ls -al
+#1618617878
+clear
+#1618617879
+ls -al
+#1618617880
+clear
+#1618617882
+ls -al
+#1618617883
+clear
+#1618617969
+ls -al
+#1618617970
+clear
+#1618617989
+ls -al
+#1618617990
+clear
+#1618617991
+ls -al
+#1618617993
+clear
+#1618618057
+ls -al
+#1618618058
+clear
+#1618618059
+ls -al
+#1618618060
+clear
+#1618618065
+vim bin/screenshot_action.sh 
+#1618618072
+clear
+#1618618073
+c
+#1618618073
+ls
+#1618618075
+clear
+#1618618140
+ls -al
+#1618618141
+clear
+#1618618143
+ls -al
+#1618618144
+clear
+#1618618329
+ls -al
+#1618618330
+clear
+#1618618443
+ls
+#1618618445
+clear
+#1618618449
+ls bin/
+#1618618449
+c
+#1618618452
+cd
+#1618618452
+ 
+#1618618454
+gam
+#1618618457
+clear
+#1618618463
+gam info
+#1618618466
+clear
+#1618618585
+ls
+#1618618588
+cd Downloads/
+#1618618589
+ls
+#1618618591
+cd ~
+#1618618592
+c
+#1618618592
+ls
+#1618618599
+rm Downloads/*
+#1618618616
+y
+#1618618619
+ll Downloads/
+#1618618621
+c
+#1618618749
+ls -al
+#1618618750
+clear
+#1618618756
+c
+#1618618757
+ls
+#1618618844
+ls Downloads/
+#1618618845
+c
+#1618618985
+ls Downloads/
+#1618618985
+c
+#1618618986
+ls
+#1618618986
+c
+#1618618994
+ls
+#1618618998
+cd Documents/
+#1618618999
+c
+#1618619085
+ls
+#1618619087
+clear
+#1618619089
+cd ~
+#1618619089
+c
+#1618619090
+ls
+#1618619091
+c
+#1618619093
+ls -al
+#1618619094
+clear
+#1618619178
+cd Sites/
+#1618619181
+cd ..
+#1618619183
+clear
+#1618619338
+c
+#1618619365
+ls
+#1618619369
+cd Documents/
+#1618619369
+c
+#1619047416
+mailx
+#1619047499
+c
+#1619047501
+mailq
+#1619047503
+mailx
+#1619047508
+c
+#1619047547
+ls
+#1619047548
+c
+#1619047550
+vim mbox 
+#1619047581
+c
+#1619047582
+l
+#1619047583
+c
+#1619047598
+cat mbox 
+#1619047599
+c
+#1619047600
+ls
+#1619047603
+ll scripts/
+#1619047666
+c
+#1619047669
+ll scripts/
+#1619047670
+c
+#1619047673
+cat 
+#1619047677
+c
+#1619047711
+vim ~/scripts/show_perl_packages.pl 
+#1619047719
+perl scripts/show_perl_packages.pl 
+#1619047733
+c
+#1619047735
+ls
+#1619047742
+c
+#1619047757
+ls
+#1619047764
+cd Applications/
+#1619047764
+ls
+#1619047768
+cd edgar/
+#1619047769
+ls
+#1619047771
+cd edgar
+#1619047771
+ls
+#1619047779
+vim tickers.cc 
+#1619047784
+ls
+#1619047791
+wc -l tickers.txt 
+#1619047800
+wc -m tickers.txt 
+#1619047809
+cat tickers.txt | grep aapl
+#1619047819
+vim tickers.txt 
+#1619047853
+cat tickers.txt | grep aapl
+#1619047863
+cat tickers.txt | grep nvda
+#1619047884
+cat tickers.txt | grep nvda | cut -d " " -f2
+#1619047892
+cat tickers.txt | grep nvda | cut -d$"\t" -f2
+#1619047896
+cat tickers.txt | grep nvda | cut -d "\t" -f2
+#1619047901
+cat tickers.txt | grep nvda | cut -d '\t' -f2
+#1619047903
+cat tickers.txt | grep nvda | cut -d '\s' -f2
+#1619047909
+cat tickers.txt | grep nvda | cut -d '   ' -f2
+#1619047913
+cat tickers.txt | grep nvda | cut -d ' ' -f2
+#1619047935
+cat tickers.txt | grep nvda | tr $'\t' ' '
+#1619047943
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2
+#1619047947
+c
+#1619047950
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2
+#1619048036
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args
+#1619048043
+c
+#1619048062
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args
+#1619048078
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args wc -l
+#1619048082
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  wc -l
+#1619048092
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  wc -m
+#1619048107
+c
+#1619048125
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr '   ' ' '
+#1619048134
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' '
+#1619048162
+c
+#1619048195
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if ($1=='NVIDIA CORP') print $1, $5 }'
+#1619048214
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if ($1=="NVIDIA CORP") print $1, $5 }'
+#1619048229
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ print $1 }'
+#1619048262
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA") print $1, $5 }'
+#1619048268
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA") print $1, $9 }'
+#1619048271
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA") print $1, $7 }'
+#1619048280
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA") print $1, $8 }'
+#1619048284
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA") print $1, $6 }'
+#1619048289
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA") print $1, $7 }'
+#1619048295
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA") print $1, $7||$6 }'
+#1619048304
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA") print $1, $6, $7 }'
+#1619048323
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }'
+#1619048340
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk 'NR==1 { if($1=="NVIDIA" ) print $1, $6  }'
+#1619048384
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{NR==1} { if($1=="NVIDIA" ) print $1, $6  }'
+#1619048399
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }'
+#1619048405
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1
+#1619048414
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1 | cut -d ' ' -f2
+#1619048419
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1 | cut -d ' ' -f2 | open 
+#1619048440
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1 | cut -d ' ' -f2 | xargs -n 1 bash -c 'open $1' args 
+#1619048449
+c
+#1619048458
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1 | cut -d ' ' -f2 | xargs -n 1 bash -c 'open $1' args 
+#1619048461
+c
+#1619048552
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1 | cut -d ' ' -f2 | xargs -n 1 bash -c 'open $1' args 
+#1619048561
+c
+#1619048577
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1 | cut -d ' ' -f2 | xargs -n 1 bash -c 'firefox $1' args 
+#1619048581
+firefox
+#1619048605
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1 | cut -d ' ' -f2 | xargs -n 1 bash -c 'open $1' args 
+#1619048651
+c
+#1619048657
+cat tickers.txt | grep nvda | tr $'\t' ' ' | cut -d ' ' -f2 | xargs -n 1 bash -c 'cat crawler.idx  | grep $1' args |  tr $'\t' ' ' |  awk '{ if($1=="NVIDIA" ) print $1, $6  }' | head -n 1 | cut -d ' ' -f2 | xargs -n 1 bash -c 'open $1' args 
+#1619048702
+vim search_symbol.sh
+#1619048796
+ls
+#1619048806
+chmod +xnsearch_symbol.sh
+#1619048811
+chmod +x search_symbol.sh
+#1619048820
+./search_symbol.sh aapl
+#1619048841
+./search_symbol.sh nvda
+#1619048853
+./search_symbol.sh msft
+#1619048867
+c
+#1619048875
+ls
+#1619048939
+ssh ubuntu
+#1619048979
+c
+#1619048991
+ssh oper@test
+#1619048995
+ssh oper@hub
+#1619049018
+ssh jjbiggins@hub
+#1619049359
+clear
+#1619049364
+printf '\a'
+#1619049393
+c
+#1619049399
+printf '\a'
+#1619049400
+c
+#1619049406
+ls
+#1619049408
+cd ~
+#1619049408
+c
+#1619049409
+ls
+#1619049414
+printf '\a'
+#1619049424
+mutt 
+#1619049425
+mutt
+#1619049433
+sudo port -v selfupdate
+#1619049571
+ls
+#1619049574
+vim  bin/
+#1619049577
+hawk
+#1619049588
+ls
+#1619049497
+sudo   port upgrade outdated
+#1619049604
+hawk 
+#1619049609
+hawk lib
+#1619049610
+clear
+#1619049614
+vim .bin/hawk 
+#1619049621
+ls
+#1619049632
+which  python
+#1619049639
+which  python3
+#1619049651
+which cpython
+#1619049652
+which cpython2
+#1619049653
+which cpython3
+#1619049657
+    port select --set cython cython39
+#1619049667
+sudo    port select --set cython cython39
+#1619049670
+c
+#1619049671
+ls
+#1619049671
+c
+#1619049674
+vim mbox 
+#1619049727
+git config --global user.name "Joe Biggins"
+#1619049748
+git config --global user.email "joe@biggins.tech
+#1619049751
+git config --global user.email "joe@biggins.tech"
+#1619049777
+git config --global credential.helper osxkeychain
+#1619049783
+ls
+#1619049786
+ll bin/
+#1619049799
+config_commit.sh 
+#1619049819
+vim .functions 
+#1619049831
+config_commit.sh 
+#1619049833
+c
+#1619051455
+ssh jjbiggs
+#1619051458
+uname
+#1619051520
+hostname
+#1619051546
+c
+#1619051549
+hostname
+#1619051550
+c
+#1619051551
+ls
+#1619051554
+vim mbox 
+#1619051563
+c
+#1619051581
+cat 
+#1619051588
+c
+#1619051592
+cat mbox 
+#1619051594
+c
+#1619051618
+cat mbox 
+#1619051619
+c
+#1619051626
+config_commit.sh 
+#1619051628
+c
+#1619052118
+fjl \ ibdjiuliwk bigginszjnfer giefnvjkfvkln,kdnfnfnfkc fjdovkjhjifjkfjngrasserfzds6y66yifed44rf4ffdfxxxdxdxxdxdxd6gxhgyhx6ljx6vmjuelwicnjdbuiwj
+#1619052123
+red
+#1619052530
+scp oper@bronx://home/oper/Documents/*.docx | xargs -n 1 bash -c 'open $1' args
+#1619052543
+scp oper@bronx://home/oper/Documents/*.docx . \| xargs -n 1 bash -c 'open $1' args
+#1619052547
+scp oper@bronx://home/oper/Documents/*.docx . 
+#1619052557
+open clinical\ paper.docx 
+#1619052579
+clear
+#1619052590
+sftp oper@bronx
+#1619052624
+clear
+#1619052634
+spaces_to_underscores 
+#1619052635
+ls
+#1619052665
+which spaces_to_underscores
+#1619052739
+ls
+#1619052751
+spaces_to_underscores 
+#1619052752
+ls
+#1619052762
+clear
+#1619052762
+ls
+#1619052769
+ll Pictures/
+#1619052777
+ll Pictures/Screenshots/
+#1619052811
+ll Pictures/Screenshots/ar_2021-04-21/
+#1619052820
+open Pictures/Screenshots/ar_2021-04-21/Screen\ Shot\ 2021-04-21\ at\ 7.53.07\ PM.png 
+#1619052834
+ll Pictures/Screenshots/ar_2021-04-21/
+#1619052836
+ll Pictures/Screenshots/
+#1619052847
+ll Pictures/Screenshots/ar_2021-04-21/
+#1619052861
+c
+#1619052862
+ls
+#1619052886
+vim screenshot.sh
+#1619052894
+vim bin/screenshot_action.sh 
+#1619052933
+clear
+#1619052934
+;ls
+#1619052934
+s
+#1619052934
+d
+#1619052934
+sd
+#1619052935
+c
+#1619052936
+l;s
+#1619052937
+;s
+#1619052937
+s
+#1619053014
+cd bin/
+#1619053014
+ls
+#1619053021
+sftp oper@bronx
+#1619053125
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#1619053125
+c
+#1619053128
+ls
+#1619053128
+clear
+#1619048944
+ssh bronx
+#1619053656
+c
+#1619053672
+ssh bronx
+#1619054076
+clear
+#1619054081
+gam
+#1619054089
+c
+#1619054090
+ls
+#1619054101
+sendmail 
+#1619054112
+serverdiagnose
+#1619054275
+c
+#1619054276
+ls
+#1619054277
+clear
+#1619054278
+cd ..
+#1619054279
+c
+#1619054280
+ls
+#1619054281
+c
+#1619054387
+git
+#1619054391
+svn
+#1619054396
+ls
+#1619054400
+cd scripts/
+#1619054400
+ls
+#1619054411
+c
+#1619054412
+ls
+#1619054425
+ssh csvroot@bronx
+#1619054453
+ssh bronx
+#1619054868
+c
+#1619054871
+vim send_sms.sh 
+#1619054888
+./send_sms.sh 
+#1619054898
+c
+#1619054910
+vim send_sms.sh 
+#1619054925
+cd /Users/jjbiggins/Library/Python/
+#1619054926
+ls
+#1619054932
+cd 3.8/
+#1619054932
+ls
+#1619054935
+cd bin/
+#1619054936
+ls
+#1619054940
+srptools
+#1619054948
+clear
+#1619054955
+atvscript
+#1619054959
+c
+#1619054960
+cd ~
+#1619054960
+c
+#1619054961
+ls
+#1619054984
+c
+#1619054986
+ls
+#1619054994
+mkdir Julie
+#1619054998
+mv clinical_paper.docx Julie/
+#1619054998
+ls
+#1619055004
+mv Julie/ Documents/
+#1619055005
+ls
+#1619055008
+ll Documents/
+#1619055019
+c
+#1619055020
+ks
+#1619055025
+ls
+#1619055026
+c
+#1619055039
+sftp oper@bronx
+#1619055125
+open clinical\ paper.docx 
+#1619055151
+sftp oper@bronx
+#1619055181
+ls
+#1619055185
+sftp oper@bronx
+#1619055213
+ls
+#1619055215
+clear
+#1619055216
+ls
+#1619055218
+clear
+#1619055370
+ssh ubuntu@bronx
+#1619057152
+say
+#1619057158
+clear
+#1619057164
+say siri
+#1619057172
+say fine, mom.
+#1619057211
+man hello
+#1619057215
+man say
+#1619057231
+ls
+#1619057232
+c
+#1619057235
+ma lpr
+#1619057254
+vim /usr/local/bin/pr_spool 
+#1619057299
+man -t bash > man-bash.ps
+#1619057300
+ls
+#1619057304
+lp man-bash.ps 
+#1619057309
+lpq
+#1619057314
+lpc
+#1619057327
+lprm 11
+#1619057331
+lpq
+#1619057335
+c
+#1619057339
+lpq
+#1619057340
+c
+#1619057344
+lpq
+#1619057350
+lpstat
+#1619057352
+lpinfo
+#1619057354
+ls
+#1619057361
+cd Sites/
+#1619057364
+cd ;.
+#1619057367
+cd Documents/
+#1619057367
+ls
+#1619057373
+vim the-linux-command-line.pdf 
+#1619057387
+pdfinfo the-linux-command-line.pdf 
+#1619057395
+open the-linux-command-line.pdf 
+#1619057405
+c
+#1619057406
+ls
+#1619057417
+cd finance/
+#1619057417
+ls
+#1619057422
+vim XSL-ReadMe.txt 
+#1619057427
+ls
+#1619057429
+vim Financial_Report.xlsx 
+#1619057434
+ls
+#1619057436
+cd ..
+#1619057437
+ls
+#1619057440
+cd fidelity/
+#1619057441
+ls
+#1619057458
+open Fidelity-GuidedPortfolioSummary.pdf 
+#1619057480
+c
+#1619057491
+l
+#1619057495
+clear
+#1619057508
+c
+#1619057508
+ls
+#1619057521
+clear
+#1619057525
+c
+#1619057533
+vim pr_spool
+#1619057536
+ls
+#1619057547
+which pr_spool
+#1619057566
+cp /usr/local/bin/pr_spool /usr/local/bin/
+#1619057573
+c
+#1619057587
+cd /usr/local/bin/
+#1619057588
+c
+#1619057589
+ls -a
+#1619057592
+pin6
+#1619057594
+c
+#1619057595
+ls
+#1619057598
+clear
+#1619057602
+vacuumdb
+#1619057603
+c
+#1619057604
+ls
+#1619057605
+c
+#1619057629
+vim remote_runadmail 
+#1619057661
+vim rekey.py 
+#1619057690
+vim tsrecompressor 
+#1619057695
+tsrecompressor 
+#1619057705
+vim upload_xml.sh 
+#1619057715
+man tsrecompressor 
+#1619057733
+c
+#1619138156
+clear
+#1619271910
+ls
+#1619271915
+rm clinical*
+#1619271919
+clear
+#1619271922
+rm man-bash.ps 
+#1619271924
+clear
+#1619271924
+ls
+#1619271927
+cd Documents/
+#1619271928
+ls
+#1619271947
+c
+#1619271947
+ls
+#1619271956
+c
+#1619271963
+cp the-linux-command-line.pdf dl
+#1619271965
+ll dl 
+#1619271971
+ls
+#1619271974
+rm dl 
+#1619271976
+ls
+#1619271983
+vim ~/.bashrc
+#1619272007
+ls
+#1619272017
+cd .
+#1619272017
+ls
+#1619272020
+cd ~
+#1619272021
+ls -al
+#1619272025
+ll *env*
+#1619272027
+ll *env
+#1619272040
+clear
+#1619272043
+vim .profile 
+#1619272112
+cd ~/Library/Mobile\ Documents/
+#1619272113
+ls
+#1619272126
+cd iCloud~com~
+#1619272154
+cd *CloudDocs*
+#1619272156
+ls
+#1619272159
+cd Documents/
+#1619272159
+ls
+#1619272162
+cd ..
+#1619272163
+ls
+#1619272164
+cd ..
+#1619272168
+cd *Preview*
+#1619272169
+ls
+#1619272171
+cd Documents/
+#1619272171
+ls
+#1619272180
+mkdir Linux
+#1619272181
+ls
+#1619272182
+c
+#1619272184
+pwd
+#1619272070
+vim .bashrc
+#1619272201
+ls
+#1619272207
+cd Documents/
+#1619272208
+ls
+#1619272221
+cp the-linux-command-line.pdf /Users/jjbiggins/Library/Mobile\ Documents/com~apple~Preview/Documents/Linux/
+#1619272222
+ls
+#1619272229
+ll /Users/jjbiggins/Library/Mobile\ Documents/com~apple~Preview/Documents/Linux
+#1619272230
+c
+#1619272230
+ls
+#1619272233
+c
+#1619272235
+c
+#1619272389
+dl
+#1619272390
+c
+#1619272392
+ls
+#1619272526
+c
+#1619272528
+c
+#1619272662
+ls
+#1619272665
+cd ~
+#1619272666
+ls
+#1619272668
+cd Google\ Drive/
+#1619272669
+ls
+#1619272671
+cd My\ Drive/
+#1619272671
+ls
+#1619272682
+pwd
+#1619272691
+cp -r Fidelity /Volumes/GoogleDrive/My\ Drive/
+#1619272693
+ls
+#1619272703
+mkdir Misc
+#1619272712
+mv *.* Misc/
+#1619272713
+ls
+#1619272727
+rm 'Icon'$'\r'
+#1619272730
+ls
+#1619272732
+ls -al
+#1619272734
+c
+#1619272734
+ls
+#1619272737
+c
+#1619272739
+ls
+#1619272740
+clear
+#1619272742
+cd /
+#1619272743
+clear
+#1619272743
+ls
+#1619272745
+cd ~
+#1619272746
+cl
+#1619272747
+clear
+#1619272748
+c
+#1619272750
+ls
+#1619272760
+rm -rf *
+#1619272762
+ls
+#1619272765
+clear
+#1619272768
+rm -rf eul-master/
+#1619272768
+ls
+#1619272769
+cd ..
+#1619273981
+dev
+#1619273984
+cd practice/
+#1619273984
+ls
+#1619273984
+c
+#1619273985
+ls
+#1619273988
+cd lin
+#1619273990
+cd linkedin_learing/
+#1619273991
+ls
+#1619273995
+ll Exercise\ Files/
+#1619274012
+rm -rf Exercise\ Files/
+#1619274013
+ls
+#1619274017
+gcl https://github.com/LinkedInLearning/javascript-essential-training-2832077.git
+#1619274018
+ls
+#1619274019
+c
+#1619274020
+ls
+#1619274022
+cd javascript-essential-training-2832077/
+#1619274022
+c
+#1619274023
+ls
+#1619274025
+c
+#1619277816
+ls
+#1619277817
+cd ..
+#1619277817
+c
+#1619277818
+ls
+#1619277819
+cd ..
+#1619277819
+ls
+#1619277824
+cd ctci
+#1619277824
+ls
+#1619277825
+c
+#1619277826
+ls
+#1619277826
+c
+#1619277827
+ls
+#1619277868
+sudo port install mactex
+#1619277879
+sudo port search mactex
+#1619277882
+sudo port search tex
+#1619277887
+mactex
+#1619277888
+tex
+#1619277891
+c
+#1619278024
+cd /Library/TeX/
+#1619278025
+ls
+#1619278032
+ll Documentation
+#1619278034
+ll Documentation/
+#1619278041
+ll Documentation/texmf-doc/
+#1619278048
+ll Documentation/texmf-doc/pdftex/
+#1619278052
+ll Documentation/texmf-doc/pdftex/manual/
+#1619278059
+vim Documentation/texmf-doc/pdftex/manual/makefiles.cmd 
+#1619278068
+c
+#1619278069
+ls
+#1619278074
+cd Distributions/
+#1619278074
+ls
+#1619278079
+cd Programs/
+#1619278079
+ls
+#1619278084
+texbin
+#1619278090
+ll texbin/
+#1619278108
+ll /usr/texbin
+#1619278117
+ll /usr/local/texlive
+#1619278121
+ll /usr/local/texlive/2021/
+#1619278128
+ll /usr/local/texlive/2021/install-tl
+#1619278138
+vim /usr/local/texlive/2021/README
+#1619278149
+vim /usr/local/bin/
+#1619278157
+c
+#1619278158
+ls
+#1619278159
+c
+#1619278166
+pdflatex
+#1619278169
+c
+#1619278170
+ls
+#1619278175
+cd ~/Documents/
+#1619278176
+ls
+#1619278179
+cd Resume
+#1619278179
+ls
+#1619278184
+cd ../ResumeApp/
+#1619278185
+ls
+#1619278187
+cd LaTeX-Resume/
+#1619278187
+ls
+#1619278208
+cp resume.tex resume.tex.bak
+#1619278216
+pdflatex resume.tex
+#1619278222
+ls
+#1619278234
+mv resume.pdf resume.pdf.bak
+#1619278235
+ls
+#1619278238
+pdflatex resume.tex
+#1619278240
+ls
+#1619278257
+xelatex resume.tex
+#1619278403
+ls
+#1619278408
+open resume.pdf
+#1619278425
+gcl https://github.com/FortAwesome/Font-Awesome.git
+#1619278434
+ll fonts/
+#1619278444
+open fonts/FontAwesome.ttf 
+#1619278452
+open fonts
+#1619278653
+mv /Users/jjbiggins/Downloads/FontAwesome.ttf .
+#1619278653
+ls
+#1619278660
+mv FontAwesome.ttf fonts/
+#1619278663
+clear
+#1619278670
+xelatex resume.tex
+#1619278688
+open resume.pdf
+#1619278692
+c
+#1619278693
+ls
+#1619278696
+c
+#1619278697
+ls
+#1619278699
+vim missfont.log 
+#1619278710
+clear
+#1619278711
+ls
+#1619278721
+ll Font-Awesome/
+#1619278724
+ll Font-Awesome/otfs/
+#1619278725
+c
+#1619278823
+pwd
+#1619278835
+mv ~/Downloads/FontAwesome.ttf fonts/
+#1619278840
+rm resume.pdf
+#1619278854
+luatex resume.tex
+#1619278870
+xelatex resume.tex
+#1619278876
+ls
+#1619278880
+open resume.pdf
+#1619278998
+c
+#1619278999
+ls
+#1619279000
+pwd
+#1619279007
+cd resume/
+#1619279008
+ls
+#1619279011
+cd ..
+#1619279012
+ls
+#1619279018
+clear
+#1619279019
+cd ..
+#1619279019
+ls
+#1619279021
+cd ..
+#1619279022
+ls
+#1619279026
+cd ResumeApp/
+#1619279027
+c
+#1619279027
+ls
+#1619279040
+vim prot.py
+#1619279788
+vim Applications/
+#1619279937
+clear
+#1619279940
+c
+#1619280382
+gam
+#1619280386
+c
+#1619280387
+ls
+#1619280478
+rm bin/gam/oauth2service.json 
+#1619280496
+rm bin/gam/client_secrets.json 
+#1619280523
+c
+#1619280523
+ls
+#1619280525
+c
+#1619280526
+ls
+#1619280527
+c
+#1619280530
+mailq
+#1619280531
+mailx
+#1619280548
+c
+#1619280548
+ls
+#1619280551
+cron -e
+#1619280554
+crontab -e
+#1619280570
+ll /Users/jjbiggins/Applications/Shell/programs/dotfiles/config_commit.sh
+#1619280584
+cp /Users/jjbiggins/Applications/Shell/programs/dotfiles/config_commit.sh bin/config_commit.sh
+#1619280587
+c
+#1619280587
+ls
+#1619280593
+sudo crontab -e
+#1619280600
+crontab -e
+#1619280652
+c
+#1619280652
+ls
+#1619280653
+c
+#1619280424
+bash <(curl -s -S -L https://git.io/install-gam)
+#1619281212
+gan
+#1619281214
+gam
+#1619281228
+gam info
+#1619281237
+gam info domain
+#1619281273
+ls
+#1619281278
+which gam
+#1619281353
+rm bin/gam/oauth2service.json 
+#1619281358
+rm bin/gam/client_secrets.json 
+#1619281306
+bash <(curl -s -S -L https://git.io/install-gam)
+#1619281368
+c
+#1619281377
+rm -rf bin/gam
+#1619281378
+c
+#1619281434
+google-cloud-sdk
+#1619281441
+gcloud
+#1619281459
+sudo port install google-cloud-sdk
+#1619281382
+bash <(curl -s -S -L https://git.io/install-gam)
+#1619281564
+c
+#1619281570
+rm -rf bin/gam
+#1619281571
+c
+#1619281656
+ls
+#1619281660
+psql
+#1619281672
+vim ~/.bashrc
+#1619281679
+c
+#1619281682
+cd ~
+#1619281687
+vim .bashrc_aliases 
+#1619281704
+c
+#1619281708
+ll /usr/local/bin/
+#1619281742
+sudo port load -w postgresql96-server
+#1619281749
+sudo port load -w postgresql23-server
+#1619281753
+sudo port load -w postgresql13-server
+#1619281758
+sudo port load -w postgresql96-server
+#1619281765
+sudo port load postgresql96-server
+#1619281782
+sudo port postgres13-server
+#1619281786
+sudo port status postgres13-server
+#1619281792
+sudo port help
+#1619281799
+sudo port active
