@@ -25104,3 +25104,19 @@ ll /Users/jjbiggins/Applications/Shell/data/dotfiles/data/
 vim bin/config_commit.sh 
 #1619287060
 ll /Users/jjbiggins/Applications/Shell/data/dotfiles/data/
+#1619287062
+./bin/config_commit.sh 
+#1619287068
+c
+#1619287071
+crontab -e
+#1619287077
+c
+#1619287077
+ls
+#1619287078
+c
+#1619287078
+ls
+#1619287079
+c
