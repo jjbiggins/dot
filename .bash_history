@@ -24498,3 +24498,205 @@ sudo port status postgres13-server
 sudo port help
 #1619281799
 sudo port active
+#1619281804
+sudo port installed
+#1619281810
+sudo port installed | grep postgres
+#1619281828
+sudo port status postgresql96-server
+#1619281833
+sudo port load postgresql96-server
+#1619281837
+sudo port load postgresql13-server
+#1619281852
+sudo su postgres -c '/opt/local/lib/postgresql96/bin/initdb -D /opt/local/var/db/postgresql96/defaultdb'
+#1619281875
+pg_ctl -D /usr/local/var/postgres start
+#1619281887
+c
+#1619281888
+ls
+#1619281889
+c
+#1619281889
+ls
+#1619281894
+pg_ctl -D /usr/local/var/postgres start
+#1619281904
+/usr/local/var/postgres/
+#1619281906
+cd /usr/local/var/postgres/
+#1619281907
+ls
+#1619281919
+pg_ctl -D /var/postgres start
+#1619281923
+cd /var/
+#1619281923
+ls
+#1619281925
+cd db/
+#1619281925
+ls
+#1619281928
+cd postgresql96/
+#1619281929
+ls
+#1619281958
+pg_ctl -D /var/db/postgresql96/defaultdb start
+#1619281964
+sudo pg_ctl -D /var/db/postgresql96/defaultdb start
+#1619281975
+sudo -u postgres -i
+#1619282029
+c
+#1619282031
+psql
+#1619282045
+psql crystal_lake
+#1619282052
+psql -U chuckjones crystal_lake
+#1619282067
+clear
+#1619282068
+ls
+#1619282070
+c
+#1619282074
+cd ~
+#1619282075
+c
+#1619282083
+ssh oper@192.168.1.81
+#1619282171
+c
+#1619282172
+ls
+#1619282172
+c
+#1619282274
+ssh oper@192.168.1.81
+#1619282310
+ssh jjbiggins@192.168.1.81
+#1619282452
+c
+#1619283151
+psql -h 192.168.1.81 -p 5432 -d remote_test -U chuckjones 
+#1619283217
+psql -h 192.168.1.81 -p 5432 -U postgres
+#1619283224
+psql -h 192.168.1.81 -p 63333 -U postgres
+#1619283267
+sudo lsof -i -n -P | grep TCP
+#1619283317
+psql -h 192.168.1.81 -p 54312 -U postgres
+#1619283341
+psql -h 192.168.1.81 -p 5432 -U postgres
+#1619283360
+psql -h 192.168.1.81 -p 86436 -U postgres
+#1619284109
+c
+#1619282411
+ssh oper@192.168.1.81
+#1619284484
+c
+#1619284493
+mailx
+#1619284533
+vim bin/config_commit.sh
+#1619284667
+config_commit.sh 
+#1619284675
+config push
+#1619284679
+config_commit.sh 
+#1619284694
+config commit -m "bash_history"
+#1619284697
+config push
+#1619284700
+config_commit.sh 
+#1619284720
+vim bin/config_commit.sh 
+#1619284747
+config_commit.sh 
+#1619284750
+vim bin/config_commit.sh 
+#1619284761
+config_commit.sh 
+#1619284764
+vim bin/config_commit.sh 
+#1619284784
+config_commit.sh 
+#1619284786
+vim bin/config_commit.sh 
+#1619284837
+config_commit.sh 
+#1619284851
+vim bin/config_commit.sh 
+#1619284886
+c
+#1619284887
+ls
+#1619284891
+ll Library/Sharing/
+#1619284896
+ll Applications/Shell/
+#1619284898
+ll Applications/Shell/data/
+#1619284899
+ll Applications/Shell/data/dotfiles/
+#1619284905
+ll Applications/Shell/data/dotfiles/data
+#1619284906
+ll Applications/Shell/data/dotfiles/data/
+#1619284910
+ll Applications/Shell/data/dotfiles/data/dotfile_files 
+#1619284913
+vim Applications/Shell/data/dotfiles/data/dotfile_files 
+#1619284919
+vim Applications/Shell/data/dotfiles/data/input.raw 
+#1619284924
+vim Applications/Shell/data/dotfiles/data/process.lst 
+#1619284955
+vim bin/config_commit.sh 
+#1619285014
+config_commit.sh 
+#1619285025
+vim bin/config_commit.sh 
+#1619285038
+config_commit.sh 
+#1619285042
+vim bin/config_commit.sh 
+#1619285049
+config_commit.sh 
+#1619285051
+vim bin/config_commit.sh 
+#1619285063
+config_commit.sh 
+#1619285065
+vim bin/config_commit.sh 
+#1619285084
+config_commit.sh 
+#1619285140
+vim bin/config_commit.sh 
+#1619285154
+config_commit.sh 
+#1619285156
+vim bin/config_commit.sh 
+#1619285169
+config_commit.sh 
+#1619285183
+vim bin/config_commit.sh 
+#1619285199
+./bin/config_commit.sh 
+#1619285211
+vim bin/config_commit.sh 
+#1619285219
+./bin/config_commit.sh 
+#1619285226
+vim bin/config_commit.sh 
+#1619285234
+./bin/config_commit.sh 
+#1619285238
+vim bin/config_commit.sh 
