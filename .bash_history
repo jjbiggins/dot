@@ -25050,3 +25050,47 @@ crontab -e
 c
 #1619286775
 date
+#1619286781
+c
+#1619286796
+mailx
+#1619286843
+vim  /Users/jjbiggins/Applications/Shell/data/dotfiles/data/process.lst
+#1619286849
+cd  /Users/jjbiggins/Applications/Shell/data/dotfiles/
+#1619286849
+ls
+#1619286852
+c
+#1619286853
+ls
+#1619286858
+ls -al
+#1619286861
+ls -lt
+#1619286870
+ls -lt archive/
+#1619286884
+unlink data 
+#1619286897
+ln -s archive/ar_2021-04-24_12-53-00 data
+#1619286898
+ls
+#1619286900
+ll data
+#1619286904
+ll data/
+#1619286909
+vim data/process.lst 
+#1619286922
+c
+#1619286922
+ls
+#1619286929
+cd ~
+#1619286933
+vim bin/config_commit.sh 
+#1619286945
+which ln
+#1619286955
+vim bin/config_commit.sh 
