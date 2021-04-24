@@ -24956,3 +24956,97 @@ vim bin/config_commit.sh
 crontab -e
 #1619286372
 c
+#1619286481
+c
+#1619286482
+ls
+#1619286483
+clear
+#1619286506
+c
+#1619286508
+cd ..
+#1619286508
+c
+#1619286509
+ls
+#1619286585
+gcl git@github.com:jjbiggins/dot.git
+#1619286591
+rm -rf dot
+#1619286592
+c
+#1619286516
+mailx
+#1619286600
+vim bin/config_commit.sh 
+#1619286610
+c
+#1619286611
+ls
+#1619286619
+cd .cfg
+#1619286620
+ls
+#1619286624
+vim index 
+#1619286628
+vim hooks/
+#1619286634
+cd hooks/
+#1619286635
+ls
+#1619286641
+vim commit-msg.sample 
+#1619286657
+vim  push-to-checkout.sample
+#1619286666
+cd ..
+#1619286667
+ls
+#1619286669
+cd info/
+#1619286670
+ls
+#1619286673
+vim exclude 
+#1619286678
+cd ../logs/
+#1619286679
+ls
+#1619286681
+vim HEAD 
+#1619286690
+ll refs/
+#1619286692
+ll refs/heads/
+#1619286696
+vim refs/heads/master 
+#1619286700
+c
+#1619286700
+ls
+#1619286702
+cd ..
+#1619286702
+ls
+#1619286709
+ll refs/
+#1619286715
+vim HEAD 
+#1619286718
+vim ORIG_HEAD 
+#1619286722
+vim config 
+#1619286740
+c
+#1619286742
+ cd ..
+#1619286743
+ls
+#1619286747
+crontab -e
+#1619286753
+c
+#1619286775
+date
