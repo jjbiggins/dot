@@ -25094,3 +25094,13 @@ vim bin/config_commit.sh
 which ln
 #1619286955
 vim bin/config_commit.sh 
+#1619287025
+./bin/config_commit.sh 
+#1619287042
+ll /Users/jjbiggins/Applications/Shell/data/dotfiles/data
+#1619287043
+ll /Users/jjbiggins/Applications/Shell/data/dotfiles/data/
+#1619287050
+vim bin/config_commit.sh 
+#1619287060
+ll /Users/jjbiggins/Applications/Shell/data/dotfiles/data/
