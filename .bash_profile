@@ -10,14 +10,14 @@
 # User PATH Settings
 # ===================================================================
 PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
-PATH="/Users/jjbiggins/Library/Python/3.9/bin:$PATH"
 PATH="/opt/local/libexec/gnubin:$PATH"
 
 # Personal Script Binaries
 PATH="/Users/jjbiggins/bin:$PATH"
 
-
+# Setting PATH for Python 3.9
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
 
 # ----------------------------------------------------------------
 # Silences macOS warning about zsh not being shell
@@ -78,18 +78,10 @@ if [ -f ~/.bashrc_aliases ]; then
 fi
 
 
-#source ~/.functions
-# local usr bin dir, use only for user currently logged in
-#PATH=$HOME/.bin:$PATH
-#export $PATH
-
 function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash" || true
 
-
-# Setting PATH for Python 3.9
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
 export PATH
-[[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env
+
+export PATH

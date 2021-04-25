@@ -212,12 +212,10 @@ if [[ -f ~/.colors/dircolors_linux ]]; then
     eval $(dircolors ~/.colors/dircolors.256dark)
 fi
 
- 
+export JAVA_HOME="/Library/Java/JavaVirtualMachine/openjdk8/Contents/Home"
+export PATH=$JAVA_HOME/bin:$PATH
 # Java Home
 # ----------------------------------------------
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
-export PREVIEW="/Users/jjbiggins/Library/Mobile Documents/com~apple~Preview/Documents"
-
 
 # Python
 #PYTHONPATH="/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9"
@@ -235,7 +233,9 @@ export PATH
 # MANPATH
 export MANPATH=/opt/local/man:$MANPATH
 
-
+export CERT_PATH=$(python3 -m certifi)
+export SSL_CERT_FILE=${CERT_PATH}
+export REQUESTS_CA_BUNDLE=${CERT_PATH}
 # Local Variables:
 # mode:shell-script
 # sh-shell:bash
