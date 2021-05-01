@@ -3514,3 +3514,111 @@ ls
 clear
 #1619902766
 ls
+#1619896615
+ssh bronx
+#1619902805
+c
+#1619902807
+ls
+#1619902762
+sudo port uninstall openjdk11
+#1619902815
+cd c
+#1619903057
+crontab -e
+#1619903061
+mailq
+#1619903063
+mailx
+#1619903094
+mail
+#1619903099
+ls
+#1619903100
+clear
+#1619903100
+ls
+#1619903675
+ssh bronx
+#1619903714
+clear
+#1619903738
+irssi
+#1619905086
+mkdir openssl
+#1619905089
+cd openssl/
+#1619905090
+openssl req -x509 -new -newkey rsa:4096 -sha256 -days 1096 -nodes -out freenode.pem -keyout freenode.pem
+#1619905141
+openssl x509 -in freenode.pem -noout -enddate
+#1619905150
+openssl x509 -in freenode.pem -outform der | sha1sum -b | cut -d' ' -f1
+#1619905156
+mkdir ~/.irssi/certs
+#1619905159
+mv freenode.pem ~/.irssi/certs
+#1619905171
+irssi
+#1619905842
+cd ~/.irssi/
+#1619905843
+ls
+#1619905845
+vim default.theme 
+#1619905855
+ll certs/
+#1619905858
+vim config 
+#1619905930
+ls
+#1619905933
+vim default.theme 
+#1619905938
+clear
+#1619906396
+sudo port seach irc
+#1619906405
+sudo port search irc
+#1619906412
+sudo port search weechat
+#1619906453
+sudo port install weechat3.1
+#1619906485
+c
+#1619908337
+ls
+#1619908340
+cd Movies/
+#1619908340
+ls
+#1619908343
+cd TV/
+#1619908343
+ls
+#1619908348
+cd Media.localized/
+#1619908349
+ls
+#1619908352
+cd Downloads-TV/
+#1619908352
+ls
+#1619908356
+cd ../Movies/
+#1619908356
+ls
+#1619908358
+cd The\ Big\ Short/
+#1619908359
+ls
+#1619908380
+scp 04\ The\ Big\ Short\ \(1080p\ HD\).m4v jjbiggins@gauss://Users/jjbiggins/Public/
+#1619908391
+scp 04\ The\ Big\ Short\ \(1080p\ HD\).m4v jjbiggins@gauss.local://Users/jjbiggins/Public/
+#1619908418
+scp 04\ The\ Big\ Short\ \(1080p\ HD\).m4v jjbiggins@s@192.168.1.81://Users/jjbiggins/Public/
+#1619909973
+locate
+#1619909977
+which locate
