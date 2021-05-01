@@ -3254,3 +3254,263 @@ c
 ls
 #1619892618
 sudo apachectl configtest
+#1619889305
+thoughts
+#1619896361
+c
+#1619896362
+ls
+#1619896365
+cd /etc
+#1619896366
+ls
+#1619896371
+vi rc.server 
+#1619896613
+ssh brxon
+#1619897349
+cd /
+#1619897351
+cd Library/
+#1619897351
+l
+#1619897356
+cd ~
+#1619897356
+c
+#1619896489
+ssh bronx
+#1619897368
+dev
+#1619897369
+ls
+#1619897371
+clear
+#1619897374
+cd IdeaProjects/
+#1619897377
+idea &
+#1619897378
+ls
+#1619897646
+echo $JAVA_HOME
+#1619898626
+System.out.println("INPUT ERROR: No command line argument supplied...");
+#1619898650
+defaults write key.repeat
+#1619899827
+sudo port install openjfx
+#1619899907
+sudo port install openjfx11
+#1619899956
+sudo port install openjdk11
+#1619900008
+sudo vim .bashrc
+#1619900030
+echo $JAVA_HOME
+#1619900036
+ll /Library/Java/JavaVirtualMachines/openjdk11/Contents/Home
+#1619900038
+ll /Library/Java/JavaVirtualMachines/openjdk11/
+#1619900043
+ll /Library/Java/JavaVirtualMachines/
+#1619900053
+java -version
+#1619900259
+cd /opt/
+#1619900260
+ls
+#1619900262
+cd local/
+#1619900262
+ls
+#1619900264
+ll Library/
+#1619900265
+c
+#1619900267
+ll Library/Frameworks/
+#1619900269
+ls
+#1619900271
+ll share/
+#1619900278
+ll share/java/
+#1619899977
+sudo port install netbeans
+#1619900280
+ls
+#1619900287
+ll bin/
+#1619900292
+which java
+#1619900352
+sudo port 
+#1619900404
+sudo port active
+#1619900408
+sudo port installed
+#1619900419
+sudo port installed | grep openjfx
+#1619900429
+cd /Library/Java/
+#1619900430
+ls
+#1619900431
+cd JavaVirtualMachines/
+#1619900432
+ls
+#1619900435
+cd openjdk11
+#1619900435
+ls
+#1619900437
+ll Contents/
+#1619900440
+cd Contents/
+#1619900441
+cd Home/
+#1619900442
+ls
+#1619900444
+ll conf/
+#1619900447
+ll jmods/
+#1619900455
+ll include/
+#1619900460
+ll lib/
+#1619900467
+pwd
+#1619901134
+echo $JAVA_HOME
+#1619901698
+c
+#1619902172
+ vim ~/.bashrc
+#1619902217
+javac --module-path $PATH_TO_FX --add-modules javafx.controls HelloFX.java
+#1619902224
+c
+#1619902227
+dev
+#1619902228
+ls
+#1619902229
+cd IdeaProjects/
+#1619902230
+ls
+#1619902234
+cd NetworkHTTP/
+#1619902234
+ls
+#1619902236
+cd src/
+#1619902237
+ls
+#1619902238
+cd tech/
+#1619902239
+ls
+#1619902240
+cd biggins/
+#1619902240
+ls
+#1619902241
+cd java21days/
+#1619902241
+l
+#1619902252
+javac --module-path $PATH_TO_FX --add-modules javafx.controls NetworkDriver.java 
+#1619902258
+javac --module-path $PATH_TO_FX --add-modules javafx.controls WebReader.java 
+#1619902270
+javac --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml NetworkDriver.java 
+#1619902274
+javac --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml WebReader.java 
+#1619902277
+ls
+#1619902285
+echo "$PATH_TO_FX"
+#1619902290
+ll /Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/lib
+#1619902309
+sudo rm -rf /Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/lib/openjfx-11.0.2-javadoc/
+#1619902326
+sudo rm -rf /Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/lib/javafx-sdk-11.0.2\ 2/
+#1619902332
+vim ~/.bashrc
+#1619902369
+javac --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml NetworkDriver.java 
+#1619902375
+idea
+#1619902378
+dev
+#1619902379
+cd IdeaProjects/
+#1619902384
+cd NetworkHTTP/
+#1619902392
+cd src/tech/biggins/java21days/
+#1619902393
+ls
+#1619902397
+javac --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml NetworkDriver.java 
+#1619902407
+echo "$PATH_TO_FX"
+#1619902412
+ll /Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/lib/javafx-sdk-11.0.2
+#1619902416
+ll /Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/lib/javafx-sdk-11.0.2/lib
+#1619902422
+vim ~/.bashrc
+#1619902433
+exec $SHELL
+#1619902436
+ls
+#1619902441
+source ~/.bash_profile
+#1619902441
+c
+#1619902443
+ls
+#1619902447
+javac --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.fxml NetworkDriver.java 
+#1619902461
+javac --module-path $PATH_TO_FX --add-modules javafx.controls NetworkDriver.java 
+#1619902471
+javac --module-path $PATH_TO_FX --add-modules javafx.controls WebReader.java 
+#1619902482
+javac --module-path $PATH_TO_FX --add-modules javafx.controls NetworkDriver.java 
+#1619902492
+javac --module-path $PATH_TO_FX --add-modules javafx.controls WebReader.java 
+#1619902495
+c
+#1619902495
+ls
+#1619902497
+javac --module-path $PATH_TO_FX --add-modules javafx.controls WebReader.java 
+#1619902684
+c
+#1619902685
+ls
+#1619902713
+cd /Library/
+#1619902718
+du -sh *
+#1619902727
+sudo du -sh *
+#1619902738
+sudo du -sh * | sort -rn
+#1619902747
+cd Java/
+#1619902748
+ls
+#1619902750
+cd JavaVirtualMachines/
+#1619902750
+ls
+#1619902766
+clear
+#1619902766
+ls

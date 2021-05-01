@@ -99,7 +99,8 @@ if [[ -f ~/.colors/dircolors_linux ]]; then
     eval $(dircolors ~/.colors/DIR_COLORS)
 fi
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_292)
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export PATH_TO_FX="$JAVA_HOME/lib/javafx-sdk-11.0.2/lib"
 export PATH=$JAVA_HOME/bin:$PATH
 
 
