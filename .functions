@@ -49,6 +49,11 @@ function mkcdir {
       cd -P -- "$1"
 }
 
+function mkpub {
+    mkdir -p -- "$1";
+    chmod 777 -R "$1";
+}
+
 # Create Archive
 function create_archive
 {

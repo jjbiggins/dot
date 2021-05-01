@@ -1,5 +1,5 @@
 [user]
-	email = joe@biggins.tech
+	email = 39013135+jjbiggins@users.noreply.github.com
 	name = Joe Biggins
 [filter "lfs"]
 	clean = git-lfs clean -- %f

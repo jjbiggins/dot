@@ -5,8 +5,8 @@ if [ "${PS1-}" ]; then
   if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
     # The file bash.bashrc already sets the default PS1.
     # PS1='\h:\w\$ '
-    if [ -f /etc/bash.bashrc ]; then
-      . /etc/bash.bashrc
+    if [ -f ~/.bashrc ]; then
+      . ~/.bashrc
     fi
   else
     if [ "`id -u`" -eq 0 ]; then
@@ -17,6 +17,7 @@ if [ "${PS1-}" ]; then
   fi
 fi
 
+
 if [ -d /etc/profile.d ]; then
   for i in /etc/profile.d/*.sh; do
     if [ -r $i ]; then
@@ -24,7 +25,15 @@ if [ -d /etc/profile.d ]; then
     fi
   done
   unset i
+elif [ -d /opt/local/etc/profile.d ]; then
+    for i in /opt/local/etc/profile.d/*.sh ; do
+        if [ -r $i ]; then
+            . $i
+        fi
+    done
+    unset i
 fi
+
 # System-wide .bashrc file for interactive bash(1) shells.
 
 # To enable the settings / commands in this file for login shells as well,
@@ -37,15 +46,12 @@ fi
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
 
 # set a fancy prompt (non-color, overwrite the one in /etc/profile)
 # but only if not SUDOing and have SUDO_PS1 set; then assume smart user.
 if ! [ -n "${SUDO_USER}" -a -n "${SUDO_PS1}" ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 
 # Commented out, don't overwrite xterm -T "title" -n "icontitle" by default.
@@ -59,13 +65,15 @@ fi
 #esac
 
 # enable bash completion in interactive shells
-#if ! shopt -oq posix; then
-#  if [ -f /usr/share/bash-completion/bash_completion ]; then
-#    . /usr/share/bash-completion/bash_completion
-#  elif [ -f /etc/bash_completion ]; then
-#    . /etc/bash_completion
-#  fi
-#fi
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    elif [ -f /opt/local/share/bash-completion/completions ]; then
+        . /opt/local/share/bash-completion/completions
+    fi
+fi
 
 # sudo hint
 if [ ! -e "$HOME/.sudo_as_admin_successful" ] && [ ! -e "$HOME/.hushlogin" ] ; then

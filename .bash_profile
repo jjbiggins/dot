@@ -18,6 +18,7 @@ PATH="/Users/jjbiggins/bin:$PATH"
 # Setting PATH for Python 3.9
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages"
 
 # ----------------------------------------------------------------
 # Silences macOS warning about zsh not being shell
@@ -34,9 +35,9 @@ if [[ -f ~/.profile ]]; then
 fi
 
 
-if [[ -f ~/.bashrc ]]; then
-    . ~/.bashrc
-fi
+#if [[ -f ~/.bashrc ]]; then
+#    . ~/.bashrc
+#fi
 
 
 if [[ -f  ~/.bash_login ]]; then
@@ -76,6 +77,10 @@ export MAIL=/var/mail/jjbiggins
 if [ -f ~/.bashrc_aliases ]; then
     . ~/.bashrc_aliases
 fi
+
+
+# MANPATH
+export MANPATH=/opt/local/man:$MANPATH
 
 
 function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
