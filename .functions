@@ -29,6 +29,14 @@ function good_exit
         exit 0
 }
 
+function thoughts
+{
+    today=today=`date +"%Y-%m-%d"`
+    filename="thoughts-${today}.txt"
+    touch "$filename"
+    vim "$filename"
+}
+
 function call {
     echo "`date +'%a %D %T'` --> $@" | tee -a $logfile
     "$@" 2>&1 | tee -a $logfile

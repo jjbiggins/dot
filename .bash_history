@@ -2144,3 +2144,1113 @@ vim pimage.py
 c
 #1619841600
 ls
+#1619841606
+c
+#1619841607
+ls
+#1619841609
+mailq
+#1619841613
+c
+#1619841616
+mailx
+#1619841626
+c
+#1619842271
+sudo vim /etc/postfix/sasl_passwd
+#1619842300
+ls
+#1619842306
+sudo vim /etc/postfix/main.cf
+#1619842324
+sudo postmap /etc/postfix/sasl_passwd
+#1619842329
+sudo postfix reload
+#1619842334
+sudo postfix start
+#1619842380
+echo "test email" | mail -s joe@treesentertainment.com josephjbiggins@icloud.com
+#1619842382
+mailq
+#1619842475
+sudo vim /etc/postfix/main.cf
+#1619842581
+sudo vim /etc/postfix/sasl_passwd
+#1619842590
+echo "test email" | mail -s joe@treesentertainment.com josephjbiggins@icloud.com
+#1619842592
+mailq
+#1619842599
+sudo postfix reload
+#1619842601
+echo "test email" | mail -s joe@treesentertainment.com josephjbiggins@icloud.com
+#1619842603
+mailq
+#1619842640
+sudo vim /etc/postfix/sasl_passwd
+#1619842756
+sudo postfix reload
+#1619842759
+sudo postfix stop
+#1619842761
+sudo postfix start
+#1619842762
+c
+#1619842766
+echo "test email" | mail -s joe@treesentertainment.com josephjbiggins@icloud.com
+#1619842767
+mailq
+#1619842840
+echo "test email" | mail -s joe@treesentertainment.com josephjbiggins@gmail.com
+#1619842842
+mailq
+#1619842850
+mail -d
+#1619842853
+mailq -d
+#1619842876
+sudo postsuper -d ALL
+#1619842877
+c
+#1619842893
+dig mx biggins.tech
+#1619842983
+dig dns5.name-services.com
+#1619842986
+dig dns1.name-services.com
+#1619843141
+ssh gauss.biggins.tech
+#1619843184
+c
+#1619843197
+sudo scutil --dns
+#1619843215
+nslookup host1
+#1619843226
+nslookup host2
+#1619843230
+nslookup host1
+#1619843235
+nslookup ns1
+#1619843237
+nslookup ns2
+#1619843244
+nslookup 192.168.1.81
+#1619843249
+nslookup 192.168.1.254
+#1619843158
+ssh gauss.local
+#1619843650
+c
+#1619843660
+sudo vim /etc/hosts
+#1619843786
+curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts | sudo tee -a /etc/hosts.deny
+#1619843790
+cd /etc
+#1619843791
+ls
+#1619843795
+ll hosts*
+#1619843801
+ wc -l /etc/hosts
+#1619843804
+ wc -l /etc/hosts.deny 
+#1619843808
+vim hosts.allow 
+#1619843814
+vim hosts.equiv 
+#1619843837
+egrep -ve "^#|^255.255.255.255|^127.|^0.|^::1|^ff..::|^fe80::" /etc/hosts.deny | sort | uniq | egrep -e "[1,2]|::"
+#1619843838
+c
+#1619843861
+sudo port install dnscrypt-proxy
+#1619843872
+        sudo port load dnscrypt-proxy
+#1619843922
+cd /opt/local/etc/
+#1619843922
+ls
+#1619843933
+cd ../
+#1619843935
+ls
+#1619843937
+cd var/
+#1619843937
+ls
+#1619843940
+cd ..
+#1619844042
+dl
+#1619844042
+c
+#1619844048
+ld
+#1619844051
+ls
+#1619844053
+cd dnscrypt-proxy-macos_x86_64-2.0.45
+#1619844054
+c
+#1619844054
+ls
+#1619844059
+dnscrypt-proxy 
+#1619844061
+cd ..
+#1619844064
+dnscrypt-proxy 
+#1619844068
+which dnscrypt-proxy-macos_x86_64-2.0.45
+#1619844073
+which dnscrypt-proxy
+#1619844082
+cd /opt/local/sbin/dnscrypt-proxy
+#1619844085
+/opt/local/sbin/dnscrypt-proxy
+#1619844090
+/opt/local/sbin/dnscrypt-proxy --config
+#1619844100
+/opt/local/sbin/dnscrypt-proxy -check
+#1619844106
+/opt/local/sbin/dnscrypt-proxy -config command-line
+#1619844112
+/opt/local/sbin/dnscrypt-proxy -config command-line switch
+#1619844114
+cd ~
+#1619844114
+c
+#1619844120
+dnscrypt-proxy
+#1619844123
+ls
+#1619844128
+dnscrypt-proxy -config
+#1619844140
+dnscrypt-proxy -list
+#1619844142
+dnscrypt-proxy -list-all
+#1619844176
+sudo port uninstall dnscrypt-proxy
+#1619844182
+dl
+#1619844185
+cd dnscrypt-proxy-macos_x86_64-2.0.45
+#1619844185
+ls
+#1619844186
+c
+#1619844186
+l
+#1619844216
+cp example-dnscrypt-proxy.toml dnscrypt-proxy.toml
+#1619844222
+./dnscrypt-proxy 
+#1619844339
+dl
+#1619844340
+cd dnscrypt-proxy-macos_x86_64-2.0.45
+#1619844341
+c
+#1619844354
+sudo ./dnscrypt-proxy -resolve biggins.tech
+#1619844375
+sudo ./dnscrypt-proxy -resolve google.com
+#1619844270
+sudo ./dnscrypt-proxy 
+#1619844467
+c
+#1619844560
+ls
+#1619845085
+cd dl
+#1619845086
+dl
+#1619845089
+cd dnscrypt-proxy-macos_x86_64-2.0.45
+#1619845089
+ls
+#1619845097
+./dnscrypt-proxy -service install
+#1619845101
+sudo ./dnscrypt-proxy -service install
+#1619845122
+dnscrypt-proxy -service start
+#1619845131
+cp dnscrypt-proxy /usr/local/bin/
+#1619845133
+dnscrypt-proxy -service start
+#1619845140
+ls
+#1619845173
+c
+#1619845175
+dnscript
+#1619845178
+dnscrypt
+#1619845180
+dnscrypt-proxy 
+#1619845213
+c
+#1619845215
+cd ~
+#1619845215
+c
+#1619845227
+sudo port install dnsmasq 
+#1619845247
+ sudo networksetup 
+#1619845251
+c
+#1619845288
+$ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist Active -bool false
+#1619845297
+ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist Active -bool false
+#1619845297
+c
+#1619849134
+ioctl
+#1619849150
+ssh bronx
+#1619845201
+sudo  tcpdump -qtni en0
+#1619852788
+c
+#1619852791
+cd ~
+#1619852792
+c
+#1619852792
+ls
+#1619852799
+nslookup bronx
+#1619852805
+nslookup bronx.biggins.tech
+#1619852813
+ssh 162.241.253.129
+#1619852822
+c
+#1619852823
+ls
+#1619854961
+vim Applications/NetBeans/Apache NetBeans 12.1.app/Contents/Resources/NetBeans/netbeans/etc/netbeans.conf
+#1619854967
+c
+#1619854968
+ls
+#1619854973
+cd /Volumes/
+#1619854973
+ls
+#1619854975
+cd Apache\ NetBeans\ 12.0/
+#1619854976
+ls
+#1619854978
+cd Apache\ NetBeans\ 12.0.pkg 
+#1619854978
+ls
+#1619854989
+echo $JAVA_HOME
+#1619854999
+cd /Library/Java/
+#1619855000
+ls
+#1619855001
+cd JavaVirtualMachines/
+#1619855002
+ls
+#1619855076
+sudo port install openjdk11
+#1619852827
+ssh bronx
+#1619859491
+ssh bronx
+#1619862430
+cat /etc/passwd 
+#1619862445
+cat /etc/passwd | awk -F : '{print $1}'
+#1619862457
+cat /etc/passwd | awk -F : '{print $1}' | grep *mail*
+#1619862458
+cat /etc/passwd | awk -F : '{print $1}' | grep *mail
+#1619862460
+cat /etc/passwd | awk -F : '{print $1}' | grep _mail
+#1619862463
+cat /etc/passwd | awk -F : '{print $1}' | grep _mailman
+#1619862467
+cat /etc/passwd | awk -F : '{print $1}' | grep _wwwproxy
+#1619862471
+clear
+#1619862474
+cat /etc/passwd | awk -F : '{print $1}' 
+#1619862483
+cat /etc/passwd | awk -F : '{print $1}' | _cvs
+#1619862489
+cat /etc/passwd | awk -F : '{print $1}' | grep _cvs
+#1619862491
+vim /
+#1619862496
+clear
+#1619862497
+cd /
+#1619862498
+ls
+#1619862499
+cd etc
+#1619862499
+ls
+#1619862508
+sudo vim ssh/sshd_config 
+#1619862715
+clear
+#1619862716
+cd /
+#1619862717
+ls
+#1619862725
+sudo vim /etc/autofs.conf 
+#1619862731
+sudo vim /etc/auto_master 
+#1619862832
+sudo /etc/auto_smb
+#1619862855
+cd /Library/
+#1619862855
+ls
+#1619862860
+cd Services
+#1619862863
+ls
+#1619862874
+cd LaunchAgents/
+#1619862875
+ls
+#1619862879
+clear
+#1619862880
+cd ..
+#1619862881
+ls
+#1619862884
+cd Server/
+#1619862884
+ls
+#1619862887
+cd Previous/
+#1619862887
+ls
+#1619862891
+cd Library
+#1619862892
+ls
+#1619862894
+cd Server/
+#1619862894
+ls
+#1619862897
+cd ..
+#1619862899
+cd Preferences/
+#1619862900
+ls
+#1619862943
+cd ..
+#1619862944
+cd Server/
+#1619862946
+ls
+#1619862947
+cd ..
+#1619862947
+ls
+#1619862950
+cd ..
+#1619862950
+ls
+#1619862952
+cd System/
+#1619862953
+ls
+#1619862954
+cd Library/
+#1619862955
+ls
+#1619862957
+cd LaunchDaemons/
+#1619862957
+ls
+#1619862960
+cd ../CoreServices/
+#1619862960
+ls
+#1619862961
+c
+#1619862961
+ls
+#1619862962
+cd /
+#1619862963
+ls
+#1619862978
+cd ~/Library/Services/
+#1619862978
+ls
+#1619862981
+cd /Library/
+#1619862982
+ls
+#1619862988
+sudo mkdir Services
+#1619862992
+ls
+#1619862994
+cd DirectoryServices/
+#1619862994
+ls
+#1619862997
+cd PlugIns/
+#1619862997
+ls
+#1619862999
+cd ..
+#1619862999
+ls
+#1619863001
+cd ..
+#1619863002
+ls
+#1619863012
+cd /
+#1619863021
+sudo vim /etc/auto_smb
+#1619863108
+sudo automount -cv
+#1619863109
+ls
+#1619863116
+clear
+#1619863116
+ls
+#1619863124
+clear
+#1619863219
+ls
+#1619863230
+cat /etc/passwd | grep _server
+#1619863233
+cat /etc/passwd 
+#1619862835
+sudo vim /etc/auto_smb
+#1619863398
+sudo automount -cv
+#1619863405
+clear
+#1619863406
+ls
+#1619863423
+clear
+#1619863424
+ls
+#1619863553
+cd /Applications/
+#1619863554
+ls
+#1619863561
+cd /Library/
+#1619863562
+ls
+#1619863562
+c
+#1619863744
+c
+#1619863745
+ls
+#1619863746
+cd /
+#1619863746
+ls
+#1619867077
+..
+#1619869172
+sudo  port install nautilus-share
+#1619869185
+sudo  port search nautilus
+#1619869191
+sudo  port install nautilus
+#1619869211
+sudo groupadd samba
+#1619869220
+ssh bronx
+#1619875871
+mount_smbfs -d 777 -f 777 //cs210037ffe90061872:jH02a17AgZr+3c+CF0s/ZQOf42C2WyIO2EK2N6XgcEsWhjK4d1vDabkS2mALhyVYL9/dDKw+SQEUKv5UmxHLGQ==@cs210037ffe90061872.file.core.windows.net cs-jjbiggins-uiowa-edu-10037ffe90061872
+#1619877049
+sudo port install azure
+#1619877079
+sudo port install azure-cli
+#1619877097
+az login
+#1619869268
+ssh bronx
+#1619877291
+ls
+#1619877292
+clear
+#1619877297
+ssh azure
+#1619879798
+[D[D[D[C
+#1619879803
+[D
+#1619879988
+ssh bronx
+#1619888589
+c
+#1619888589
+ls
+#1619888591
+clear
+#1619888597
+cle
+#1619888600
+date
+#1619888611
+vim bin/screenshot_action.sh 
+#1619888631
+vim .functions 
+#1619888913
+today=`date`
+#1619888918
+echo "$today"
+#1619888932
+echo "$IFS"
+#1619888974
+vim Applications/Sebis/programs/process
+#1619888982
+ls
+#1619888996
+spaces_to_underscores 
+#1619888998
+ls
+#1619889003
+rm -rf __pycache__/
+#1619889003
+ls
+#1619889012
+which spaces_to_underscores
+#1619889049
+set -- "path/to/some/important file which/im/interested/in"
+#1619889053
+IFS='/' read -a FILEPATH_ARRAY <<< "$1"
+#1619889059
+echo "$IFS"
+#1619889061
+clear
+#1619889062
+ls
+#1619889068
+printf "%s\n" ${FILEPATH_ARRAY[@]}
+#1619889083
+IFS=' ' read -a FILEPATH_ARRAY <<< "$1"
+#1619889114
+for IFS in "$today" IFS='_';  ;
+#1619889129
+for IFS in "$today" IFS='_';  echo "$@"
+#1619889157
+echo "$today"
+#1619889163
+IFS="_"
+#1619889179
+echo "${today[*]}"
+#1619889190
+IFS="_"
+#1619889191
+echo "${today[*]}"
+#1619889205
+clear
+#1619889205
+ls
+#1619889229
+today=`date %Y_%M_%d`
+#1619889236
+today=`date '+%Y_%M_%d'`
+#1619889243
+echo "$today"
+#1619889254
+today=`date '+%Y_%m_%d'`
+#1619889255
+echo "$today"
+#1619889272
+vim .functions 
+#1619889282
+clear
+#1619889291
+thoughts
+#1619889293
+vim .functions 
+#1619889563
+mail
+#1619889567
+crontab -e
+#1619889714
+clear
+#1619889725
+sudo peroidic daily monthly weekly
+#1619889811
+sudo periodic daily monthly weekly
+#1619889836
+cd /etc
+#1619889836
+ls
+#1619889838
+cd periodic/
+#1619889838
+ls
+#1619889841
+cd daily/
+#1619889841
+ls
+#1619889885
+cd ../..
+#1619889886
+ls
+#1619889891
+c
+#1619889938
+ls -al /var/log/*.out
+#1619890013
+man periodic
+#1619890052
+cd /etc/defaults/
+#1619890052
+ls
+#1619890056
+sudo vim periodic.conf 
+#1619890126
+ls
+#1619890172
+cd /etc
+#1619890173
+ls
+#1619890179
+ll cron
+#1619890181
+c
+#1619890187
+man cron
+#1619890348
+sudo launchctl load  /System/Library/LaunchDaemons/com.vix.cron.plist
+#1619890349
+ls
+#1619890353
+mkdir cron
+#1619890355
+sudo mkdir cron
+#1619890356
+ls
+#1619890358
+cd cron/
+#1619890361
+man cron
+#1619890366
+cd ..
+#1619890373
+sudo mv cron crontab
+#1619890374
+ls
+#1619890378
+cd crontab/
+#1619890380
+man cron
+#1619890392
+man 5 cron
+#1619890394
+man 5 crontab
+#1619890468
+man crontab
+#1619890485
+man 2 crontab
+#1619890488
+man 3 crontab
+#1619890491
+man 4 crontab
+#1619890493
+man 5 crontab
+#1619890497
+man 6 crontab
+#1619890500
+man 7 crontab
+#1619890502
+man 8 crontab
+#1619890505
+man 9 crontab
+#1619890509
+man 8 cron
+#1619890529
+c
+#1619890769
+ls
+#1619890770
+clear
+#1619890771
+l
+#1619890772
+cd ..
+#1619890773
+ls
+#1619890775
+ll periodic/
+#1619890776
+ll periodic/daily/
+#1619890790
+vim periodic/daily/420.status-network 
+#1619890801
+vim periodic/daily/999.local 
+#1619890805
+clear
+#1619890806
+ls
+#1619890810
+ll certificates/
+#1619890815
+ll certificates/default_certificate 
+#1619890820
+c
+#1619890821
+ls
+#1619890828
+vim com.apple.screensharing.agent.launchd 
+#1619890887
+sudo launchctl print system
+#1619890897
+c
+#1619890898
+ls
+#1619890917
+c
+#1619890917
+ls
+#1619890920
+vim rmtab 
+#1619890939
+vim rpc 
+#1619890946
+vim rtadvd.conf 
+#1619890953
+vim services 
+#1619890958
+vim shells 
+#1619890963
+vim sudo_lecture 
+#1619890968
+sudi sudo_lecture 
+#1619890974
+sudo vim sudo_lecture 
+#1619891011
+ls
+#1619891014
+cat sudo_lecture 
+#1619891018
+vim syslog.conf 
+#1619891024
+vim ttys 
+#1619891093
+vim xtab 
+#1619891097
+cat xtab 
+#1619891099
+clear
+#1619891099
+ls
+#1619891105
+cat pf.oo
+#1619891107
+cat pf.os
+#1619891115
+c
+#1619891115
+ls
+#1619891119
+cat pf.conf 
+#1619891122
+q
+#1619891124
+ls
+#1619891132
+vim paths
+#1619891137
+cat ntp.conf 
+#1619891139
+c
+#1619891180
+ls
+#1619891185
+cat ntp_opendirectory.conf 
+#1619891189
+cat notify.conf 
+#1619891195
+at nfs.conf 
+#1619891200
+cat newsyslog.conf 
+#1619891202
+clear
+#1619891203
+ls
+#1619891206
+cat networks 
+#1619891209
+cat nanorc 
+#1619891212
+cat master.passwd 
+#1619891216
+sudo cat master.passwd 
+#1619891229
+sudo diff master.passwd passwd 
+#1619891230
+c
+#1619891230
+ls
+#1619891234
+cat manpaths
+#1619891238
+cat man.conf 
+#1619891249
+man cat
+#1619891252
+man gcat
+#1619891254
+c
+#1619891255
+ls
+#1619891258
+cat mail.rc 
+#1619891276
+cat krb5.keytab 
+#1619891279
+sudo krb5.keytab 
+#1619891284
+sudo cat krb5.keytab 
+#1619891287
+c
+#1619891287
+ls
+#1619891290
+cat kern_loader.conf 
+#1619891294
+cat irbrc 
+#1619891298
+c
+#1619891298
+ls
+#1619891304
+cat hosts.allow 
+#1619891308
+cat group 
+#1619891308
+c
+#1619891309
+ls
+#1619891311
+cat gettytab 
+#1619891312
+c
+#1619891313
+ls
+#1619891315
+cat find.codes 
+#1619891318
+vim find.codes 
+#1619891326
+man find.codes 
+#1619891328
+man find
+#1619891405
+ll emond.d/
+#1619891410
+cat emond.d/emond.plist 
+#1619891412
+c
+#1619891412
+ls
+#1619891417
+ll emond.d/state/
+#1619891421
+sudo ll emond.d/state/
+#1619891427
+sudo ls emond.d/state/
+#1619891435
+sudo ls emond.d/rules/
+#1619891438
+sudo ls emond.d/rules/SampleRules.plist 
+#1619891442
+cd ..
+#1619891443
+c
+#1619891444
+ls
+#1619891447
+cd /etc
+#1619891448
+ls
+#1619891451
+cd cups/
+#1619891452
+c
+#1619891452
+ls
+#1619891455
+vim classes.conf
+#1619891462
+sudo snmp.conf
+#1619891466
+sudo vim snmp.conf
+#1619891472
+sudo vim classes.conf
+#1619891481
+sudo vim cups-files.conf
+#1619891484
+ls
+#1619891490
+sudo vim cupsd.conf
+#1619891502
+sudo vim cupsd.conf.default 
+#1619891507
+c
+#1619891508
+ls
+#1619891511
+cat printers.conf
+#1619891514
+sudo cat printers.conf
+#1619891516
+c
+#1619891516
+ls
+#1619891523
+sudo cat printers.conf.O
+#1619891525
+q
+#1619891527
+c
+#1619891528
+ls
+#1619891530
+ll certs/
+#1619891534
+sudo ls certs/
+#1619891535
+ls
+#1619891538
+sudo ppd/
+#1619891541
+sudo ls ppd/
+#1619891544
+c
+#1619891544
+ls
+#1619891546
+cd ..
+#1619891546
+ls
+#1619891557
+cat autofs.conf 
+#1619891558
+c
+#1619891558
+ls
+#1619891564
+sudo vim at.deny 
+#1619891567
+ls
+#1619891574
+sudo vim asl.conf 
+#1619891583
+sudo ls asl
+#1619891601
+sudo vim asl/com.apple.clouddocs 
+#1619891608
+sudo vim asl/com.apple.coreduetd 
+#1619891612
+ls
+#1619891613
+c
+#1619891613
+ls
+#1619891616
+ll apache2/
+#1619891618
+cd apache2/
+#1619891618
+ls
+#1619891619
+c
+#1619891619
+ls
+#1619891621
+vim mime.types 
+#1619891623
+ls
+#1619891627
+sudo vim magic 
+#1619891629
+ls
+#1619891632
+sudo vim env.plist 
+#1619891635
+ls
+#1619891639
+sudo vim httpd.conf 
+#1619891775
+sudo apachectl restart
+#1619891776
+ls
+#1619891780
+sudo vim httpd.conf 
+#1619891983
+sudo apachectl restart
+#1619891992
+sudo apachectl configtest
+#1619892145
+sudo vim /usr/libexec/apache2/mod_proxy_ftp.so
+#1619892165
+ls
+#1619892195
+sudo vim httpd.conf 
+#1619892224
+sudo apachectl configtest
+#1619892240
+sudo vim httpd.conf 
+#1619892254
+sudo apachectl configtest
+#1619892267
+sudo vim httpd.conf 
+#1619892274
+ls
+#1619892295
+cd /etc/apache2/
+#1619892303
+sudo vim httpd.conf 
+#1619892409
+htdigest -c "/etc/apache2/user.passwd" DAV-upload admin
+#1619892412
+sudo htdigest -c "/etc/apache2/user.passwd" DAV-upload admin
+#1619892281
+sudo vim extra/httpd-dav.conf 
+#1619892530
+ls
+#1619892532
+sudo vim httpd.conf 
+#1619892559
+sudo chown _www:_www /usr/var/DavLock
+#1619892593
+sudo apachectl restart
+#1619892602
+sudo apachectl configtest
+#1619892614
+c
+#1619892615
+ls
+#1619892618
+sudo apachectl configtest

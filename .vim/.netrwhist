@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
-let g:netrw_dirhist_9='/Users/jjbiggins/Applications/Shell/programs/dotfiles'
+let g:netrw_dirhistcnt =8
 let g:netrw_dirhist_8='/Users/jjbiggins/Applications/Shell/programs'
 let g:netrw_dirhist_7='/Users/jjbiggins/Applications/Shell'
 let g:netrw_dirhist_6='/private/etc/postfix'
@@ -9,4 +8,5 @@ let g:netrw_dirhist_4='/Users/jjbiggins/Applications/Sebis/programs'
 let g:netrw_dirhist_3='/Users/jjbiggins/Applications/Sebis'
 let g:netrw_dirhist_2='/Users/jjbiggins/Applications'
 let g:netrw_dirhist_1='/usr/local/bin'
-let g:netrw_dirhist_0='/Users/jjbiggins/bin'
+let g:netrw_dirhist_0='/'
+let g:netrw_dirhist_9='/Users/jjbiggins/Applications/Shell/programs/dotfiles'
