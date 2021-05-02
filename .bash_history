@@ -3622,3 +3622,225 @@ scp 04\ The\ Big\ Short\ \(1080p\ HD\).m4v jjbiggins@s@192.168.1.81://Users/jjbi
 locate
 #1619909977
 which locate
+#1619910097
+ll /var/containers/
+#1619910098
+ll /var/containers/Bundle/
+#1619910099
+ll /var/containers/Bundle/Application/
+#1619910103
+cd /
+#1619910103
+ls
+#1619910108
+kk /var
+#1619910110
+kk /var/
+#1619910117
+kk /var/log
+#1619910120
+clear
+#1619910124
+ls
+#1619910128
+kk /var/lib/
+#1619910129
+kk /var/lib/postfix/
+#1619910132
+c
+#1619910134
+cd var
+#1619910135
+ls
+#1619910157
+cd locate
+#1619910157
+ls
+#1619910160
+cd lib/
+#1619910161
+ls
+#1619910165
+mkdir mlocate
+#1619910168
+sudo mkdir mlocate
+#1619910176
+ls
+#1619910177
+c
+#1619910216
+sysctl
+#1619910225
+locate sysctl.conf
+#1619910233
+sudo locate sysctl.conf
+#1619910271
+updatedb
+#1619910284
+man authserver
+#1619910286
+ls
+#1619910293
+authserver 
+#1619910296
+authserver --help
+#1619910297
+clear
+#1619910298
+ls
+#1619910299
+cd /
+#1619910300
+ls
+#1619910304
+updatedb
+#1619910320
+/Library/Preferences/OpenDirectory/
+#1619910322
+cd /Library/Preferences/OpenDirectory/
+#1619910323
+ls
+#1619910328
+cat opendirectoryd.plist 
+#1619910332
+ll Configurations/
+#1619910334
+ll Configurations/Search.plist 
+#1619910337
+vim Configurations/Search.plist 
+#1619910343
+sudo vim Configurations/Search.plist 
+#1619910350
+clear
+#1619910350
+l
+#1619910456
+mand
+#1619910458
+man -d
+#1619910461
+c
+#1619910481
+echo "$PRUNE_BIND_MOUNTS"
+#1619910482
+c
+#1619910508
+sudo port install findutils
+#1619906456
+sudo port install weechat@3.1
+#1619910530
+crontab -ew
+#1619910532
+crontab -ee
+#1619910533
+crontab -e
+#1619910536
+ls
+#1619910547
+sudo port install weechat@3.1
+#1619910550
+clear
+#1619910555
+ruby -V
+#1619910558
+ruby --version
+#1619910566
+whereis ruby 
+#1619910572
+which ruby
+#1619910600
+cat /etc/passwd 
+#1619910615
+cat /etc/passwd  | awk -F : '{print $1}'
+#1619910707
+uux
+#1619910710
+uux --help
+#1619910871
+named
+#1619910875
+man named
+#1619910877
+c
+#1619910889
+uucp
+#1619910892
+man uucp 
+#1619910922
+c
+#1619911009
+domainname
+#1619911012
+domain
+#1619911013
+clear
+#1619911021
+mutt
+#1619911033
+c
+#1619911041
+sudo postfix start
+#1619911046
+mailq
+#1619911076
+echo "test run postfix" | mail -s "postfix" josephjbiggins@gmail.com
+#1619911078
+mailq
+#1619911080
+c
+#1619911214
+docs
+#1619911215
+ls
+#1619911217
+cd Resume
+#1619911218
+lls
+#1619911219
+ls
+#1619911220
+c
+#1619911221
+l
+#1619911224
+cd tmp/
+#1619911224
+ls
+#1619911341
+clear
+#1619912190
+ng serve
+#1619912205
+ng
+#1619912440
+ng generate
+#1619913240
+cd Sites/
+#1619913242
+cd wikis/
+#1619913242
+ls
+#1619913243
+cd stanford/
+#1619913244
+ls
+#1619913245
+cd cs142/
+#1619913247
+cd projects/
+#1619913247
+ls
+#1619913250
+cd project01
+#1619913250
+ls
+#1619913251
+c
+#1619913251
+ls
+#1619913254
+ll style/
+#1619915198
+ng generate component heroes
+#1619916397
+date
