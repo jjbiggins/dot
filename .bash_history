@@ -3844,3 +3844,143 @@ ll style/
 ng generate component heroes
 #1619916397
 date
+#1619917797
+ls
+#1619917799
+cd ~
+#1619917809
+vim app.component.html.bak
+#1619917935
+clear
+#1619917995
+ng --help
+#1619918004
+ng help
+#1619918020
+ls
+#1619918022
+clear
+#1619918024
+cd src
+#1619918025
+ls
+#1619918032
+cd app
+#1619918034
+clear
+#1619918034
+ls
+#1619918052
+vim mock-heroes.ts
+#1619918059
+clear
+#1619912235
+ng serve
+#1619913256
+vim index.html 
+#1619918124
+dev
+#1619918125
+cd IdeaProjects/
+#1619918125
+c
+#1619918131
+cd static-site/
+#1619918131
+c
+#1619918132
+ls
+#1619918133
+cd src/
+#1619918133
+c
+#1619918134
+ls
+#1619918135
+cd app/
+#1619918135
+ls
+#1619918140
+vim mock-heroes.ts 
+#1619918346
+clear
+#1619918346
+ls
+#1619918355
+cd heros
+#1619918356
+ls
+#1619918370
+vim heroes.component.ts 
+#1619918460
+vim heroes.component.html 
+#1619918644
+vim heroes.component.css 
+#1619918694
+vim *.html
+#1619918732
+vim heroes.component.ts 
+#1619918824
+vim heroes.component.html 
+#1619919124
+cd ../..
+#1619919125
+..
+#1619919129
+idea . &
+#1619919222
+ng generate
+#1619919236
+ng
+#1619919207
+ng serve
+#1619919383
+ng build
+#1619919719
+vim objc_util.py
+#1619919821
+python
+#1619919880
+pip install antchain_sdk_appex
+#1619919888
+python -m pip install antchain_sdk_appex
+#1619920170
+dev
+#1619920176
+mkdir finance
+#1619920178
+cd finance/
+#1619920180
+git clone https://github.com/jef/streetmerchant.git
+#1619920188
+cd streetmerchant && npm i && npm run start
+#1619920315
+pm run start:dev
+#1619920321
+npx npm run start:dev
+#1619920709
+gcl https://github.com/tlinnet/voxwifi.git
+#1619920727
+gcl https://github.com/tlinnet/hotspotsystem.git
+#1619920745
+gcl https://github.com/hubotio/hubot.git
+#1619920783
+gcll https://github.com/howdyai/botkit.git
+#1619920789
+gcl https://github.com/howdyai/botkit.git
+#1619920769
+gcl https://github.com/RasaHQ/rasa.git
+#1619922136
+c
+#1619926034
+telnet 192.168.1.254
+#1619926035
+telnet 192.168.1.255
+#1619926047
+telnet 255.255.255.254
+#1619926437
+telnet 192.168.1.96
+#1619926439
+clear
+#1619926717
+telnet 192.168.1.96
