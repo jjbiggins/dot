@@ -3984,3 +3984,729 @@ telnet 192.168.1.96
 clear
 #1619926717
 telnet 192.168.1.96
+#1619931907
+clear
+#1619931908
+ls
+#1619931913
+mail
+#1619931918
+telnet
+#1619927508
+ssh  bronx
+#1619933237
+c
+#1619933237
+ls
+#1619934037
+cd /
+#1619934203
+cd Volumes/
+#1619934203
+ls
+#1619934206
+ls -al
+#1619934215
+du -sh *
+#1619934221
+du -sh .*
+#1619934256
+du -ash 
+#1619934266
+du -a -ssh 
+#1619934268
+du -a -sh 
+#1619934271
+du -a
+#1619934286
+ll .timemachine/
+#1619934291
+ll .timemachine/iMac._smb._tcp.local/6C3C0880-DEBC-4491-8CAE-B7758C6DBA44/
+#1619934299
+ls com.apple.TimeMachine.localsnapshots/
+#1619934303
+ls com.apple.TimeMachine.localsnapshots/Backups.backupdb/macbook/
+#1619934305
+ls com.apple.TimeMachine.localsnapshots/Backups.backupdb/macbook/2021-04-11-045730/Macintosh\ HD\ -\ Data/
+#1619934308
+ls
+#1619934309
+c
+#1619934359
+tmutil
+#1619934373
+tmutil deletelocalsnapshots
+#1619934381
+tmutil deletelocalsnapshots .
+#1619934383
+ls
+#1619934417
+ls -al
+#1619934426
+ls -al .timemachine/
+#1619934428
+ls -al .timemachine/iMac._smb._tcp.local/
+#1619934429
+ls -al .timemachine/iMac._smb._tcp.local/6C3C0880-DEBC-4491-8CAE-B7758C6DBA44/
+#1619934437
+sudo rm -rf .timemachine/iMac._smb._tcp.local/6C3C0880-DEBC-4491-8CAE-B7758C6DBA44/
+#1619934446
+sudo tmutil disable
+#1619934447
+c
+#1619934592
+cd ~/Library/Group\ Containers/
+#1619934593
+ls
+#1619934602
+ll group.cubox
+#1619934633
+sudo rm -rf group.com.userscripts.macos
+#1619934640
+sudo rm -rf group.com.docker
+#1619934645
+sudo rm -rf group.com.bountylabs.periscope
+#1619934654
+sudo rm -rf group.LittleFin.Directive
+#1619934661
+sudo rm -rf fr.handbrake.HandBrake
+#1619934672
+sudo rm -rf cookies
+#1619934681
+ll UBF8T346G9.ms
+#1619934686
+sudo rm -rf UBF8T346G9.ms
+#1619934689
+c
+#1619934692
+clear
+#1619934693
+ls
+#1619934701
+sudo rm -rf 2BUA8C4S2C.com.agilebits
+#1619934707
+sudo rm -rf 3L68KQB4HG.group.com.readdle.beta.Spark-Mac
+#1619934713
+sudo rm -rf 3L68KQB4HG.group.com.readdle.smartemail
+#1619934728
+sudo rm -rf 9K33E3U3T4.group.net.shinyfrog.image2icon
+#1619934737
+sudo rm -rf 9PTGMPNXZ2.com.symantec.group.safeweb
+#1619934747
+sudo rm -rf *symantec*
+#1619934753
+sudo rm -rf BJ4HAAB9B3.ZoomClient3rd
+#1619934755
+clear
+#1619934756
+ls
+#1619934763
+sudo rm -rf CSMA55Q8Q5.de.t7n.apps.mqtt-explorer
+#1619934766
+clear
+#1619934766
+ls
+#1619934775
+sudo rm -rf BQR82RBBHL.com.tinyspeck.slackmacgap
+#1619934776
+clear
+#1619934777
+ls
+#1619934783
+sudo rm -rf BQR82RBBHL.slack
+#1619934784
+clear
+#1619934785
+ls
+#1619934793
+sudo rm -rf D3Y7QS482H.group.me.damir.dropover-mac
+#1619934795
+ls
+#1619934803
+sudo rm -rf E398N47F4R.com.atlassian.trello
+#1619934804
+ls
+#1619934811
+ll FR56JRH4F8.shm
+#1619934812
+ll FR56JRH4F8.shm/
+#1619934815
+ll FR56JRH4F8.shm/Library/
+#1619934818
+ll FR56JRH4F8.shm/Library/Preferences/
+#1619934819
+c
+#1619934820
+ls
+#1619934840
+sudo rm -rf QFL3YR6JR6.app.dependencies.dependencies.preferences
+#1619934852
+sudo rm -rf *Todoist*
+#1619934854
+ls
+#1619934864
+sudo rm -rf UBF8T346G9.Office
+#1619934874
+sudo rm -rf UBF8T346G9.OfficeOneDriveSyncIntegration
+#1619934883
+clear
+#1619934884
+ls
+#1619934901
+sudo rm -rf group.io.robbie.homeassistant
+#1619934902
+clear
+#1619934902
+ls
+#1619935183
+cd ..
+#1619936550
+ls -al
+#1619936557
+vim app.js 
+#1619936576
+ls
+#1619936578
+c
+#1619936578
+ls
+#1619936594
+vim bin/www
+#1619936610
+c
+#1619936611
+ls
+#1619936788
+c
+#1619936788
+ls
+#1619936791
+cd ~
+#1619936791
+c
+#1619936793
+cd ~
+#1619936793
+c
+#1619936794
+ls
+#1619936803
+ll Workspace/
+#1619936807
+ll Workspace/practice/
+#1619936811
+c
+#1619936812
+ls
+#1619936825
+ls
+#1619936826
+dev
+#1619936827
+ls
+#1619936830
+cd IdeaProjects/
+#1619936831
+ls
+#1619936832
+c
+#1619936835
+cd  ,,
+#1619936837
+cd ..
+#1619936838
+..
+#1619936840
+cd Applications/
+#1619936840
+ls
+#1619936845
+ll IdeaProjects/
+#1619936847
+c
+#1619936853
+dev
+#1619936854
+ls
+#1619936857
+ll IdeaProjects/
+#1619936861
+rm -rf IdeaProjects/
+#1619936861
+ls
+#1619936862
+c
+#1619936872
+mv IdeaProjects ~/Developer/
+#1619936874
+ls
+#1619936878
+c
+#1619936879
+ls
+#1619936883
+cd IdeaProjects/
+#1619936883
+ls
+#1619936887
+ll senior_design/
+#1619936891
+ll senior_design/SoundVillage/
+#1619936893
+c
+#1619936894
+ks
+#1619936895
+ls
+#1619936899
+ll senior_design/
+#1619936901
+c
+#1619936901
+ls
+#1619936907
+cd
+#1619936908
+ls
+#1619936915
+cd Workspace/
+#1619936916
+ls
+#1619936917
+cd archive/
+#1619936918
+ls
+#1619936946
+clear
+#1619936947
+ls
+#1619936958
+cd iowa/
+#1619936959
+ls
+#1619936962
+clear
+#1619936963
+ls
+#1619936969
+ll swd/
+#1619936971
+ls
+#1619936996
+spell
+#1619937000
+aspell
+#1619937006
+aspell original
+#1619937013
+aspell -c original
+#1619937067
+echo "original" | aspell
+#1619937084
+echo "original" -a | aspell
+#1619937085
+c
+#1619937135
+mv swd/
+#1619937137
+ls
+#1619937148
+mv swd original
+#1619937149
+ls
+#1619937153
+mkdir swd
+#1619937154
+c
+#1619937154
+ls
+#1619937197
+mv original swd
+#1619937198
+ls
+#1619937201
+clear
+#1619937201
+ls
+#1619937212
+ls
+#1619937212
+c
+#1619937232
+ls
+#1619937234
+ll senior_design/
+#1619937235
+c
+#1619937242
+ls
+#1619937284
+clear
+#1619937285
+cd ..
+#1619937286
+ls
+#1619937287
+cd 
+#1619937289
+ls
+#1619937296
+cd Workspace/
+#1619937296
+ls
+#1619937298
+cd archive/
+#1619937412
+ls
+#1619937430
+svn import http://bronx/svn/archive
+#1619937440
+export EDITOR=vim
+#1619937672
+c
+#1619937673
+ls
+#1619937693
+diff scripts/* Workspace/scripts/*
+#1619937696
+ls
+#1619937699
+ll scripts/
+#1619937703
+ll Workspace/scripts/
+#1619937706
+ll Workspace/scripts/swift/
+#1619937710
+ll scripts/swift/
+#1619937723
+ll Workspace/scripts/shell/* | wc -l
+#1619937728
+ll scripts/shell/* | wc -l
+#1619937735
+ll scripts/shell/* 
+#1619937752
+cp scripts/shell/* Workspace/scripts/shell/
+#1619937763
+,ls
+#1619937764
+ls
+#1619937769
+ll scripts/perl/
+#1619937774
+ll Workspace/scripts/perl/
+#1619937775
+c
+#1619937776
+ls
+#1619937788
+cd scripts/
+#1619937794
+svn status
+#1619937796
+ls
+#1619937800
+cd ..
+#1619937801
+cd Workspace/
+#1619937802
+ls
+#1619937806
+cd scripts/
+#1619937807
+ls
+#1619937810
+svn status
+#1619937819
+svn ci shell/install_gmail_mutt.sh 
+#1619937828
+svn add shell/install_gmail_mutt.sh 
+#1619937834
+svn ci shell/install_gmail_mutt.sh 
+#1619937843
+export EDITOR=vim
+#1619937844
+svn ci shell/install_gmail_mutt.sh 
+#1619937862
+svn update
+#1619937885
+ks
+#1619937887
+svn status
+#1619937891
+rm shell/svn-commit.tmp 
+#1619937893
+ls
+#1619937895
+cd ..
+#1619937896
+ls
+#1619937897
+c
+#1619937898
+ls
+#1619937902
+ls -al
+#1619937904
+cd ..
+#1619937904
+ls
+#1619937908
+ll bin/
+#1619937912
+clear
+#1619937912
+ls
+#1619937920
+ll scripts/
+#1619937923
+ll scripts/shell/
+#1619937928
+c
+#1619937929
+ls
+#1619937940
+cp bin/* Workspace/scripts/shell/
+#1619937953
+ls
+#1619937957
+rm -rf bin
+#1619937958
+ls
+#1619937963
+rm -rf .bin/
+#1619937964
+ls
+#1619937964
+c
+#1619937965
+ls
+#1619937967
+ls -al
+#1619937982
+cd .Box_EngineServer 
+#1619937987
+vim .Box_EngineServer 
+#1619937992
+sudo vim .Box_EngineServer 
+#1619938003
+sudo rm .Box*
+#1619938005
+ls
+#1619938008
+ls -al
+#1619938017
+ll .ServiceHub/
+#1619938020
+ll .ServiceHub/2d438ce98f/
+#1619938023
+ll .ServiceHub/2d438ce98f/2d438ce98f 
+#1619938028
+cat .ServiceHub/2d438ce98f/2d438ce98f 
+#1619938036
+ls
+#1619938039
+ll .ServiceHub/
+#1619938042
+ll .ServiceHub/logs/
+#1619938048
+ll .ServiceHub/logs/StorageUtilitiesSingleton-13222-llsivy44-1.log 
+#1619938051
+cat .ServiceHub/logs/StorageUtilitiesSingleton-13222-llsivy44-1.log 
+#1619938053
+c
+#1619938054
+ls
+#1619938057
+ls 0al
+#1619938058
+ls
+#1619938059
+ls -al
+#1619938082
+rm .zshrc 
+#1619938085
+ls
+#1619938087
+clear
+#1619938087
+ls
+#1619938091
+clear
+#1619938092
+ls
+#1619938093
+clear
+#1619938095
+ls -al
+#1619938105
+rm -rf .ipfs*
+#1619938114
+ll .ghcup/
+#1619938117
+ll .ghcup/bin/
+#1619938118
+c
+#1619938118
+ls
+#1619938124
+sudo -rf .ghcup
+#1619938125
+ls
+#1619938126
+clear
+#1619938127
+ls
+#1619938149
+clear
+#1619938150
+ls
+#1619938156
+crontab -e
+#1619938171
+mail
+#1619938203
+c
+#1619938204
+ls
+#1619938205
+c
+#1619938205
+ls
+#1619938210
+clear
+#1619938210
+ls
+#1619938214
+clear
+#1619938215
+ls
+#1619938220
+clear
+#1619938221
+ls
+#1619938226
+clear
+#1619938227
+ls
+#1619938238
+cd Applications/
+#1619938240
+ls
+#1619938243
+cd Shell/
+#1619938244
+ls
+#1619938245
+cd programs/
+#1619938246
+ls
+#1619938247
+cd macports/
+#1619938248
+ls
+#1619938250
+clear
+#1619938251
+cd update/
+#1619938252
+ls
+#1619938255
+cd ..
+#1619938256
+..
+#1619938257
+ls
+#1619938259
+cd ..
+#1619938260
+ls
+#1619938262
+cd programs/dotfiles/
+#1619938263
+ls
+#1619938265
+clea
+#1619938269
+cat d
+#1619938271
+cat dot 
+#1619938275
+clear
+#1619938292
+cd ~
+#1619938294
+ls -al
+#1619938303
+ll .apis/
+#1619938306
+ll .apis/capital-one/
+#1619938308
+c
+#1619938309
+ls
+#1619938312
+ls -al
+#1619938336
+rm -rf .eclipse/
+#1619938337
+ls
+#1619938346
+ll .w3m/
+#1619938360
+ls
+#1619938363
+ll .p2
+#1619938364
+c
+#1619938365
+ls
+#1619938368
+ll .p2/
+#1619938382
+cat .p2/profiles.info 
+#1619938387
+rm -rf .p2/
+#1619938388
+ls
+#1619938389
+ls -al
+#1619938412
+ll .jmc
+#1619938415
+ll .jmc/
+#1619938416
+ll .jmc/8.0.0/
+#1619938421
+rm -rf .jmc
+#1619938430
+rm -rf .jssc/
+#1619938436
+rm -rf .ionic/
+#1619938449
+ll .gists
+#1619938464
+rm -rf  .docker
+#1619938487
+c
+#1619938490
+clear
+#1619938491
+ls
+#1619938499
+vim move_dotfiles.sh
+#1619938548
+chmod +x move_dotfiles.sh 
+#1619938550
+./move_dotfiles.sh 
+#1619938557
+vim move_dotfiles.sh
+#1619938579
+./move_dotfiles.sh 
+#1619938582
+clear
+#1619938583
+ls
+#1619938585
+./move_dotfiles.sh 
+#1619937441
+svn import http://bronx/svn/archive
