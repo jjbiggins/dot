@@ -1,9 +1,0 @@
-#!/bin/bash
-
-define quadratic( a, b, c  ) {
-    x_plus = (-b + sqrt(b^2 - 4*a*c)) / (2*a)
-    x_minus = (-b - sqrt(b^2 - 4*a*c)) / (2*a)
-    print x_minus, " ", x_plus, "\n"
-}
-
-quadratic(1,7,12)
