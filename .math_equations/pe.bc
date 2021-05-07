@@ -1,0 +1,15 @@
+# pe.bc written by Joe Biggins, 2021
+# script in the bc programming language to quickly calculate the P/E ratio given EPS and current share price as inputs
+
+define pe(eps, price)
+{
+    t_eps = eps
+    t_price = price
+
+
+
+# NOTES:
+#   - EPS (earnings per share) is widely used metric to estimate corporate value. It indicates a companies earning power
+#     on a per share basis. How it is calculated can vary
+
+#   - P/E ratio (price-to-earnings ratio) 

@@ -1,18 +1,20 @@
-######################################################################
-#
-# .functions: shell functions common to all process scripts 
-#       loaded into oper's environment
-#
-######################################################################
+#!/bin/bash
 
-# -------------------------------------------------------------------
-# function to print argument to screen and to a log file
-####################################################################
 function prinnt  
 {
-        echo $1
-        echo "`date +'%a %D %T'`: $1" >> $logfile
+        echo "$1"
+        if [[ -f "$logfile" ]]; then
+            echo "`date +'%a %D %T'`: $1" >> $logfile
+        else
+            process="${FUNCNAME[@]}"
+            mkdir -p "${PWD}/logs"
+            logfile="$PWD/logs/${process}.lst"
+            echo "$PWD"
+            touch "$logfile"
+            #echo "`date + '%a %D %T'`: $1" >> $logfile
+        fi
 }
+
 
 function bad_exit  
 {
@@ -212,24 +214,11 @@ function xtitle()
 
 
 # Aliases that use xtitle
-alias top='xtitle Processes on $HOST && top'
-alias make='xtitle Making $(basename $PWD) ; make'
 
-# .. and functions
-function man()
+function mant()
 {
-    if [[ -f "/opt/local/libexec/gnubin/$1" ]]; then
-        command man g"$1"
-    else
-        command man "$1"
-    fi
+    man -t "$1" > "man-${1}.ps"
 }
-
-#command man g$
-#    for i ; do
-#       xtitle The $(basename $1|tr -d .[:digit:]) manual
-#       command man -a "$i"
-
 
 
 #-------------------------------------------------------------
@@ -333,17 +322,6 @@ function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 # Make your directories and files access rights sane.
 function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 
-# Replace spaces with underscore in file/dir name
-function spaces_to_underscores
-{
-    for x in *; do
-        new_name=`echo "$x" | tr "[:blank:]" "_"`
-    
-        if [ "$x" != "$new_name" ]; then
-            mv "$x" $new_name $2
-        fi
-    done
-}
 
 
 
@@ -419,78 +397,5 @@ function ii()   # Get current host related info.
     echo -e "\n${BRed}Local IP Address :$NC" ; my_ip
     echo -e "\n${BRed}Open connections :$NC "; netstat -pan --inet;
     echo
-}
-
-
-function rm() {
-	arg=$1
-	if [[ -f "$arg" && "$(basename "$arg")" == .?* ]]; then
-		unhidden=`echo "$(basename "$arg")" | cut -c 2-`
-		cp "$arg" "/tmp/$unhidden"
-	elif [[ -f "$arg" && "$(basename "$arg")" == .?* ]]; then
-		cp "$arg" "/tmp/$(basename "$arg")"
-	fi
-}
-
-
-
-
-
-
-
-# ------------------------------------------------------------
-# rm safe -- rms
-# create version of rm that first copys file to a trash bin 
-# then removes it. behaves like deleting  file from GUI
-function rms {
-TRASH=$HOME/.Trash
-    FILE=$1
-    if [[ -e $TRASH/$FILE ]]; then
-        echo "File with same is already in trash."
-        echo "please rename and rerun"
-    else
-        cp $FILE $TRASH/$FILE
-        rm $FILE
-    fi
-}
-# ------------------------------------------------------------
-#
-# Empty trash created from rms command stored in ~/.trash_bin
-#
-function emptytrash {
-    TRASH=$HOME/.trash_bin
-    rm $TRASH/*
-}
-
-
-
-# =========================================================
-# web development
-# ========================================================
-#
-# wagtail
-function wagtserver {
-    site=$1
-    cmd=$2
-    
-    if [[ "$cmd" == "stop" ]]; then
- 
-        test=`ps -eaf | grep runserver | wc -l`
-        if  [[ "$test" -gt 1 ]]; then
-            pid=`ps -eaf | grep runserver | awk 'NR==1 { if ($10=="runserver") print $2 }'`
-            kill "$pid"
-            echo "Shutting down $1's webserver........"
-        else
-            echo "Server is not running."
-        fi
-    else
-        test=`ps -eaf | grep runserver | wc -l`
-
-        if [[ "$test" -eq 3 ]]; then
-            echo "$1 server is already running."
-        else
-            call python "/Users/jjbiggins/Sites/practice/django/$1/manage.py"  runserver &
-        fi
-    fi
 }
 

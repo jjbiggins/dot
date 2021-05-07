@@ -1,0 +1,17 @@
+# cdf.bc written by Joe Biggins, 2021 
+# cumulative distribution function (CDF) for standard normal distribution, also known as the cumulative normal distibution
+
+# set the number of descimal palces to display 
+scale=10
+
+# CDF of the standard normal distribution, usually denoted with the capital Greek letter Φ (phi),
+define phi(x) {
+    auto s,t,b,q,i,const
+    s=x; t=0; b=x; q=x*x; i=1
+    while(s!=t)
+        s=(t=s)+(b*=q/(i+=2))
+    const=0.5*l(8*a(1))   # 0.91893...
+    return .5+s*e(-.5*q-const)
+}
+
+# TODO: determine what variable x is (i.e. float or array of floats), and make easily executable

@@ -197,12 +197,12 @@ fi
 
 # Now we construct the prompt.
 PROMPT_COMMAND="history -a"
-#PS1='\[\e[1;36m\][\W]\$\[\e[m\] '
-#PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\]\$ '
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]\$ '
-#PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\]\$ '
+# laptop bash prompt
+#PS1='${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]\$ '
 
+# work bash prompt
+PS1='[\u@\h \W]\$ '
 
 #case ${TERM} in
 #  *term | rxvt | linux)
@@ -548,29 +548,6 @@ complete -F _killall killall killps
 # ====================================================================
 # MACPORTS
 # ===================================================================
-PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
-PATH="/Users/jjbiggins/Library/Python/3.9/bin:$PATH"
-PATH="/opt/local/libexec/gnubin:$PATH"
-    
-# ~/.dircolors/themefile
-eval $(dircolors ~/.colors/dircolors.256dark)
-#if [[ -f ~/.dircolors/dircolors_linux ]]; then
-    #source ~/.dircolors/dircolors.256dark
-#fi
-
-# Node
-source /opt/local/share/nvm/init-nvm.sh
-
-# Java Home
-#
-#
-#
-
-# Spotify API ID and Secret
-if [ -f ~/.spotify ]; then
-    . ~/.spotify
-fi
 
 
 
