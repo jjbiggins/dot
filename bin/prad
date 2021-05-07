@@ -1,0 +1,17 @@
+#!/bin/bash
+# try to get some application settings
+
+. ./pr_conf.sh
+
+datadir=$ADDATADIR
+appdir=$ADAPPDIR
+srids=$srid-$max_srid 
+#srids=1-5
+segment=main
+batch=01
+pdf=$branch_name
+
+echo $pdf
+echo $srids
+
+j8xep425 -DTMPDIR=$datadir -quiet -xml $datadir/$segment.$batch.xml -xsl $appdir/xsl/root.xsl -param image.location=$appdir/xsl/images -param pod.image.location=$datadir -param srids="$srids" -param segment=$segment -param output-mode='screen' -pdf /var/www/html/pdfs/$pdf.pdf

@@ -1,0 +1,4 @@
+alias psql='psql -h test.sebis.com -U chuckjones'
+alias psq='psql -h dbase -U chuckjones'
+alias fox='echo Get with the program!'
+
