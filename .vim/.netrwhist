@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/Headers/internal'
+let g:netrw_dirhist_5='/usr/standalone/firmware/iBridge1_1Customer.bundle/Contents/Resources'
+let g:netrw_dirhist_4='/usr/share/snmp/mibs'
+let g:netrw_dirhist_3='/usr/share/snmp/mib2c-data'
+let g:netrw_dirhist_2='/usr/share/morphun/dictionary'
+let g:netrw_dirhist_1='/Library/Server/Web/Config/apache2'
+let g:netrw_dirhist_0='/Library/Server/Web/Config/apache2/services/extra'
+let g:netrw_dirhist_9='/Library/Server/Web/Config/apache2/services'
+let g:netrw_dirhist_8='/Library/Server/Web/Config/apache2'
+let g:netrw_dirhist_7='/Library/Server/Web/Config/apache2/services/extra'

@@ -1,0 +1,57 @@
+2021-05-02 08:17:06,753 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2021-05-02 08:17:06,831 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'ssh']
+2021-05-02 08:17:06,834 DEBUG    root            Running [gcloud.compute.ssh] with arguments: [--zone: "us-central1-a", [USER@]INSTANCE: "instance-1"]
+2021-05-02 08:17:07,181 WARNING  root            The private SSH key file for gcloud does not exist.
+2021-05-02 08:17:07,181 WARNING  root            The public SSH key file for gcloud does not exist.
+2021-05-02 08:17:07,181 WARNING  root            You do not have an SSH key for gcloud.
+2021-05-02 08:17:07,181 WARNING  root            SSH keygen will be executed to generate a key.
+2021-05-02 08:17:07,181 DEBUG    root            Running command [/usr/bin/ssh-keygen -t rsa -f /Users/jjbiggins/.ssh/google_compute_engine].
+2021-05-02 08:17:07,181 DEBUG    root            Executing command: ['/usr/bin/ssh-keygen', '-t', 'rsa', '-f', '/Users/jjbiggins/.ssh/google_compute_engine']
+2021-05-02 08:17:16,532 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2021-05-02 08:17:16,756 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /batch/compute/v1 HTTP/1.1" 200 None
+2021-05-02 08:17:16,904 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /batch/compute/v1 HTTP/1.1" 200 None
+2021-05-02 08:17:16,910 DEBUG    root            SSH Known Hosts File [/Users/jjbiggins/.ssh/google_compute_known_hosts] could not be opened: Unable to read file [/Users/jjbiggins/.ssh/google_compute_known_hosts]: [Errno 2] No such file or directory: '/Users/jjbiggins/.ssh/google_compute_known_hosts'
+2021-05-02 08:17:16,911 DEBUG    root            Current SSH keys in project: ['oper:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCdf/nXtLYwBaCwZhFRwrMJhTl32Wd1gKdjbxjLN6Rbp3E9pJDQcVbqtkZY5AgQ71Gb5iQDfIxB72ZphMyYMjdIvRvUVcwem7J7UwH2vc0tT/zR0E1Y/mOllDN0dUAXa2Gh6XVMAq7MoIpiA3MYTgmIDzvMz7kO1CHhSNA8X/o3TvWRFuqmPxolY3bsqm9DlBuuaXJqvo8TIartx4WQAnGaSZ4LSTYi8sKV8dmar+PJWHB1RGSRhS/xqDWr1eaEvQzu+z4YYPmxgeNYXSUyUZ66NSQI31zPunR0QRVRgDONPFzKNYI59F97vkZpgq40YlGrufRk+LIfIqkyxMZCuAOcpYOujd3GHoBBzUXX0PhkQJMGmek1PCui2jgBw4L4BFUp1rZCkkdz4HEvntizd9KaMGQxiER329OQQ7L5/GbVriTzsmHo6lS/1eGcz/+GxFk1D/LDO62Fqd3mwiJs8aShb/7OMdW57VKVcidLb40gqFenPs0a0fA71gP8WgxS8ayHAcyzEmbdG6XrMBCjg80JykJXltT/qTNLJjWYY7Mo9t7aOzFRUmztb9oQOI6Tif2jLLSKSI/PfMlOmD/s8ry2W6wI2n8UPrPkZbYarSHsNWqYrJnFlv4GxtpfaSyRHqnEM0quRWMfzAkGXXOLq/Al2aZPn8noJmhxW4X5gIANBw== oper@bronx', 'jjbiggins:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEJBalxef8YKuaO/28S4N2WQ4tBfrDBtPLLcLsSMUgU3fyCXPv5193IaPthd6C9t2/DA8pc0rtrcoRiJ5fLe0UhnjewSd1fTZ3XaBZ9LKua27MTL61QFxfF3mkqqKHLTN+rFLxmDmsiiOUaD71mhUy2j22DblN0jzR3HsTK+asu4+r+1hX7X+YLOKYyX4/GgFwJE0vWcnJP12HtK3WsCNibBL0x27NgAy5t7p7xJ9XGe8cdImh53n/oTzOc6o8Y7k9LQM6dUjlf+kIecS+0rw8UiNlNhJw9ve2NzZuaWuFPfr7Dna9fahMnLPYBCmJqi7h5Xjaw3ghLS2j50FoNp2qKCxRSNG7XUJuuNHNZgOu0JHeV08cy3OhNsqY4mlSqEH/4/rPRR1nm5O7bDXZrxZ8I7qa0Pua72mDGadn1KRGZAWUdJaG2Om/B5j0hGM/w3TNwagRl8fAUXUxQDj59iYrkAetEdMK2j2LvAP07hca0oU+anmrN7W8NYwbLVKgGLYLWlDV19hGHrWjckMI8ZrQs+p4GSxyYljUSxVZ3niXh3b34birzUCHZikv83XFTIL9ujQZGZzaFgYHWOjv5RGntJ0yhZAJYEBCLBq7aUlz6ki96kZALSR7Q2hRQ1Z9whUgNFhPcX9MHj/PsSmpedcFvpSlLoXawdEHv84JBXxmfQ== jjbiggins@biggins.tect']
+2021-05-02 08:17:16,911 INFO     ___FILE_ONLY___ Updating instance ssh metadata...
+2021-05-02 08:17:17,481 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /batch/compute/v1 HTTP/1.1" 200 None
+2021-05-02 08:17:17,483 DEBUG    root            Operations to inspect: [<Operation
+ id: 7922260866507151538
+ insertTime: '2021-05-02T06:17:17.232-07:00'
+ kind: 'compute#operation'
+ name: 'operation-1619961436960-5c158a9fff84c-3deee0fd-4411be7d'
+ operationType: 'setMetadata'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/gauss-biggins/zones/us-central1-a/operations/operation-1619961436960-5c158a9fff84c-3deee0fd-4411be7d'
+ startTime: '2021-05-02T06:17:17.242-07:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 3385116256064710541
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/gauss-biggins/zones/us-central1-a/instances/instance-1'
+ user: 'admin@treesentertainment.com'
+ warnings: []
+ zone: 'https://www.googleapis.com/compute/v1/projects/gauss-biggins/zones/us-central1-a'>]
+2021-05-02 08:17:20,963 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /batch/compute/v1 HTTP/1.1" 200 None
+2021-05-02 08:17:20,965 DEBUG    root            Operations to inspect: [<Operation
+ endTime: '2021-05-02T06:17:20.721-07:00'
+ id: 7922260866507151538
+ insertTime: '2021-05-02T06:17:17.232-07:00'
+ kind: 'compute#operation'
+ name: 'operation-1619961436960-5c158a9fff84c-3deee0fd-4411be7d'
+ operationType: 'setMetadata'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/gauss-biggins/zones/us-central1-a/operations/operation-1619961436960-5c158a9fff84c-3deee0fd-4411be7d'
+ startTime: '2021-05-02T06:17:17.242-07:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 3385116256064710541
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/gauss-biggins/zones/us-central1-a/instances/instance-1'
+ user: 'admin@treesentertainment.com'
+ warnings: []
+ zone: 'https://www.googleapis.com/compute/v1/projects/gauss-biggins/zones/us-central1-a'>]
+2021-05-02 08:17:20,965 INFO     ___FILE_ONLY___ Updated [https://www.googleapis.com/compute/v1/projects/gauss-biggins/zones/us-central1-a/instances/instance-1].
+
+2021-05-02 08:17:21,097 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /batch/compute/v1 HTTP/1.1" 200 None
+2021-05-02 08:17:21,203 INFO     ___FILE_ONLY___ Waiting for SSH key to propagate.
+
+2021-05-02 08:17:21,204 DEBUG    root            Running command [/usr/bin/ssh -T -i /Users/jjbiggins/.ssh/google_compute_engine -o CheckHostIP=no -o HostKeyAlias=compute.3385116256064710541 -o IdentitiesOnly=yes -o StrictHostKeyChecking=no -o UserKnownHostsFile=/Users/jjbiggins/.ssh/google_compute_known_hosts jjbiggins@35.208.42.86 -- true].
+2021-05-02 08:17:21,204 DEBUG    root            Executing command: ['/usr/bin/ssh', '-T', '-i', '/Users/jjbiggins/.ssh/google_compute_engine', '-o', 'CheckHostIP=no', '-o', 'HostKeyAlias=compute.3385116256064710541', '-o', 'IdentitiesOnly=yes', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/Users/jjbiggins/.ssh/google_compute_known_hosts', 'jjbiggins@35.208.42.86', '--', 'true']
+2021-05-02 08:17:21,677 DEBUG    root            Running command [/usr/bin/ssh -t -i /Users/jjbiggins/.ssh/google_compute_engine -o CheckHostIP=no -o HostKeyAlias=compute.3385116256064710541 -o IdentitiesOnly=yes -o StrictHostKeyChecking=no -o UserKnownHostsFile=/Users/jjbiggins/.ssh/google_compute_known_hosts jjbiggins@35.208.42.86].
+2021-05-02 08:17:21,678 DEBUG    root            Executing command: ['/usr/bin/ssh', '-t', '-i', '/Users/jjbiggins/.ssh/google_compute_engine', '-o', 'CheckHostIP=no', '-o', 'HostKeyAlias=compute.3385116256064710541', '-o', 'IdentitiesOnly=yes', '-o', 'StrictHostKeyChecking=no', '-o', 'UserKnownHostsFile=/Users/jjbiggins/.ssh/google_compute_known_hosts', 'jjbiggins@35.208.42.86']

@@ -1,0 +1,69 @@
+2021-05-02 07:29:26,150 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2021-05-02 07:29:26,154 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'instances']
+2021-05-02 07:29:26,194 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'instances', 'get_serial_port_output']
+2021-05-02 07:29:26,196 DEBUG    root            Running [gcloud.compute.instances.get-serial-port-output] with arguments: [--port: "2", --project: "gauss-biggins", --zone: "us-central1-a", INSTANCE_NAME: "instance-1"]
+2021-05-02 07:29:26,217 DEBUG    root            (gcloud.compute.instances.get-serial-port-output) You do not currently have an active account selected.
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Traceback (most recent call last):
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 982, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/opt/local/libexec/google-cloud-sdk/lib/surface/compute/instances/get_serial_port_output.py", line 76, in Run
+    client = holder.client
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/base_classes.py", line 67, in client
+    self._client = client_adapter.ClientAdapter(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py", line 55, in __init__
+    self._client = client or core_apis.GetClientInstance(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis.py", line 313, in GetClientInstance
+    return apis_internal._GetClientInstance(api_name, api_version, no_http, None,
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis_internal.py", line 166, in _GetClientInstance
+    http_client = transports.GetApitoolsTransport(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/transports.py", line 81, in GetApitoolsTransport
+    session = requests.GetSession(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/requests.py", line 78, in GetSession
+    session = request_wrapper.WrapQuota(session, enable_resource_quota,
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/requests.py", line 112, in WrapQuota
+    quota_project = self.QuotaProject(enable_resource_quota,
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/transport.py", line 53, in QuotaProject
+    creds = store.LoadIfEnabled(allow_account_impersonation, use_google_auth)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 562, in LoadIfEnabled
+    return Load(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 667, in Load
+    cred = _Load(account, scopes, prevent_refresh, use_google_auth)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 750, in _Load
+    raise NoActiveAccountException(
+googlecloudsdk.core.credentials.store.NoActiveAccountException: You do not currently have an active account selected.
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+2021-05-02 07:29:26,219 ERROR    root            (gcloud.compute.instances.get-serial-port-output) You do not currently have an active account selected.
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+If you have already logged in with a different account:
+
+    $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.

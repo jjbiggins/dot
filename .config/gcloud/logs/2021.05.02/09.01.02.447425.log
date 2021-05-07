@@ -1,0 +1,46 @@
+2021-05-02 09:01:02,449 INFO     ___FILE_ONLY___ You do not currently have this command group installed.  Using it 
+requires the installation of components: [beta]
+
+2021-05-02 09:01:02,449 DEBUG    root            (gcloud) You cannot perform this action because this Cloud SDK installation is managed by an external package manager.
+Please consider using a separate installation of the Cloud SDK created through the default mechanism described at: https://cloud.google.com/sdk/
+Traceback (most recent call last):
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 951, in Execute
+    args = self.__parser.parse_args(_ApplyFlagsFile(argv))
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/parser_extensions.py", line 712, in parse_args
+    namespace, unknown_args, _ = self._ParseKnownArgs(args, namespace)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/parser_extensions.py", line 499, in _ParseKnownArgs
+    parser.parse_known_args(args, namespace) or (namespace, []))
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/parser_extensions.py", line 676, in parse_known_args
+    namespace, unknown_args, error_context = self._ParseKnownArgs(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/parser_extensions.py", line 499, in _ParseKnownArgs
+    parser.parse_known_args(args, namespace) or (namespace, []))
+  File "/opt/local/bin/../libexec/google-cloud-sdk/lib/third_party/argparse/__init__.py", line 1735, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+  File "/opt/local/bin/../libexec/google-cloud-sdk/lib/third_party/argparse/__init__.py", line 1923, in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+  File "/opt/local/bin/../libexec/google-cloud-sdk/lib/third_party/argparse/__init__.py", line 1900, in consume_positionals
+    take_action(action, args)
+  File "/opt/local/bin/../libexec/google-cloud-sdk/lib/third_party/argparse/__init__.py", line 1793, in take_action
+    argument_values = self._get_values(action, argument_strings)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/parser_extensions.py", line 1161, in _get_values
+    return super(ArgumentParser, self)._get_values(action, arg_strings)
+  File "/opt/local/bin/../libexec/google-cloud-sdk/lib/third_party/argparse/__init__.py", line 2229, in _get_values
+    self._check_value(action, value[0])
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/parser_extensions.py", line 803, in _check_value
+    update_manager.UpdateManager.EnsureInstalledAndRestart(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 228, in EnsureInstalledAndRestart
+    return manager._EnsureInstalledAndRestart(components, msg, command)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 1485, in _EnsureInstalledAndRestart
+    if not self.Install(components, throw_if_unattended=True,
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 892, in Install
+    return self.Update(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 928, in Update
+    self._CheckIfDisabledAndThrowError(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 553, in _CheckIfDisabledAndThrowError
+    raise UpdaterDisabledError(default_message)
+googlecloudsdk.core.updater.update_manager.UpdaterDisabledError: You cannot perform this action because this Cloud SDK installation is managed by an external package manager.
+Please consider using a separate installation of the Cloud SDK created through the default mechanism described at: https://cloud.google.com/sdk/
+
+2021-05-02 09:01:02,451 ERROR    root            (gcloud) You cannot perform this action because this Cloud SDK installation is managed by an external package manager.
+Please consider using a separate installation of the Cloud SDK created through the default mechanism described at: https://cloud.google.com/sdk/
+

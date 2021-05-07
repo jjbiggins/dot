@@ -1,0 +1,62 @@
+2021-05-02 08:16:05,259 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2021-05-02 08:16:05,319 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'ssh']
+2021-05-02 08:16:05,322 DEBUG    root            Running [gcloud.compute.ssh] with arguments: [--zone: "us-central1-a", [USER@]INSTANCE: "gauss"]
+2021-05-02 08:16:05,335 DEBUG    root            (gcloud.compute.ssh) Your current active account [admin@treesentertainment.com] does not have any valid credentials
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+For service account, please activate it first:
+
+  $ gcloud auth activate-service-account ACCOUNT
+Traceback (most recent call last):
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 982, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/opt/local/libexec/google-cloud-sdk/lib/surface/compute/ssh.py", line 158, in Run
+    client = holder.client
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/base_classes.py", line 67, in client
+    self._client = client_adapter.ClientAdapter(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py", line 55, in __init__
+    self._client = client or core_apis.GetClientInstance(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis.py", line 313, in GetClientInstance
+    return apis_internal._GetClientInstance(api_name, api_version, no_http, None,
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis_internal.py", line 166, in _GetClientInstance
+    http_client = transports.GetApitoolsTransport(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/transports.py", line 81, in GetApitoolsTransport
+    session = requests.GetSession(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/requests.py", line 78, in GetSession
+    session = request_wrapper.WrapQuota(session, enable_resource_quota,
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/requests.py", line 112, in WrapQuota
+    quota_project = self.QuotaProject(enable_resource_quota,
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/transport.py", line 53, in QuotaProject
+    creds = store.LoadIfEnabled(allow_account_impersonation, use_google_auth)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 562, in LoadIfEnabled
+    return Load(
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 667, in Load
+    cred = _Load(account, scopes, prevent_refresh, use_google_auth)
+  File "/opt/local/libexec/google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py", line 760, in _Load
+    raise NoCredentialsForAccountException(account)
+googlecloudsdk.core.credentials.store.NoCredentialsForAccountException: Your current active account [admin@treesentertainment.com] does not have any valid credentials
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+For service account, please activate it first:
+
+  $ gcloud auth activate-service-account ACCOUNT
+2021-05-02 08:16:05,338 ERROR    root            (gcloud.compute.ssh) Your current active account [admin@treesentertainment.com] does not have any valid credentials
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials.
+
+For service account, please activate it first:
+
+  $ gcloud auth activate-service-account ACCOUNT

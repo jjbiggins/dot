@@ -1,0 +1,8 @@
+2021-05-02 07:31:30,175 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2021-05-02 07:31:30,179 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses']
+2021-05-02 07:31:30,181 ERROR    root            (gcloud.compute.addresses) Command name argument expected.
+2021-05-02 07:31:30,218 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses', 'create']
+2021-05-02 07:31:30,222 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses', 'delete']
+2021-05-02 07:31:30,224 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses', 'list']
+2021-05-02 07:31:30,227 DEBUG    root            No implementation for release track [GA] for element: [/opt/local/libexec/google-cloud-sdk/lib/surface/compute/addresses/update]
+2021-05-02 07:31:30,229 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses', 'describe']

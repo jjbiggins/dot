@@ -1,0 +1,85 @@
+2021-05-02 07:39:23,041 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2021-05-02 07:39:23,045 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'activate_service_account']
+2021-05-02 07:39:23,045 DEBUG    root            Running [gcloud.auth.activate-service-account] with arguments: [--help: "None"]
+2021-05-02 07:39:23,058 DEBUG    root            Loaded Command Group: ['gcloud', 'help']
+2021-05-02 07:39:23,137 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'login']
+2021-05-02 07:39:23,139 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'list']
+2021-05-02 07:39:23,141 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'revoke']
+2021-05-02 07:39:23,146 INFO     ___FILE_ONLY___ [m[1mNAME[m
+    gcloud auth activate-service-account - authorize access to Google Cloud
+        Platform with a service account
+
+[m[1mSYNOPSIS[m
+    [1mgcloud auth activate-service-account[m [[4mACCOUNT[m] [1m--key-file[m=[4mKEY_FILE[m
+        [[1m--password-file[m=[4mPASSWORD_FILE[m | [1m--prompt-for-password[m]
+        [[4mGCLOUD_WIDE_FLAG ...[m]
+
+[m[1mDESCRIPTION[m
+    To allow [1mgcloud[m (and other tools in Cloud SDK) to use service account
+    credentials to make requests, use this command to import these credentials
+    from a file that contains a private authorization key, and activate them
+    for use in [1mgcloud[m. gcloud auth activate-service-account serves the same
+    function as [1mgcloud auth login[m but uses a service account rather than Google
+    user credentials.
+
+    For more information on authorization and credential types, see:
+    https://cloud.google.com/sdk/docs/authorizing.
+
+    [4mKey File[m
+
+    To obtain the key file for this command, use either the Google Cloud
+    Platform Console (https://console.cloud.google.com) or [1mgcloud iam
+    service-accounts keys create[m. The key file can be .json (preferred) or .p12
+    (legacy) format. In the case of legacy .p12 files, a separate password
+    might be required and is displayed in the Console when you create the key.
+
+    [4mCredentials[m
+
+    Credentials will also be activated (similar to running [1mgcloud config set
+    account [ACCOUNT_NAME][m).
+
+    If a project is specified using the [1m--project[m flag, the project is set in
+    active configuration, which is the same as running [1mgcloud config set
+    project [PROJECT_NAME][m. Any previously active credentials, will be retained
+    (though no longer default) and can be displayed by running [1mgcloud auth
+    list[m.
+
+    If you want to delete previous credentials, see [1mgcloud auth revoke[m.
+
+    [4mNote:[m Service accounts use client quotas for tracking usage.
+
+[m[1mEXAMPLES[m
+    To authorize [1mgcloud[m to access Google Cloud Platform using an existing
+    service account while also specifying a project, run:
+
+        $ gcloud auth activate-service-account \
+        test-service-account@google.com \
+                --key-file=/path/key.json --project=testproject
+
+[m[1mPOSITIONAL ARGUMENTS[m
+     [[4mACCOUNT[m]
+        E-mail address of the service account.
+
+[m[1mREQUIRED FLAGS[m
+     [1m--key-file[m=[4mKEY_FILE[m
+        Path to the private key file.
+
+[m[1mOPTIONAL FLAGS[m
+     At most one of these may be specified:
+
+       [1m--password-file[m=[4mPASSWORD_FILE[m
+          Path to a file containing the password for the service account
+          private key (only for a .p12 file).
+
+       [1m--prompt-for-password[m
+          Prompt for the password for the service account private key (only for
+          a .p12 file).
+
+[m[1mGCLOUD WIDE FLAGS[m
+    These flags are available to all commands: --account, --billing-project,
+    --configuration, --flags-file, --flatten, --format, --help,
+    --impersonate-service-account, --log-http, --project, --quiet,
+    --trace-token, --user-output-enabled, --verbosity.
+
+    Run [1m$ gcloud help[m for details.
+[m
