@@ -199,10 +199,10 @@ fi
 PROMPT_COMMAND="history -a"
 
 # laptop bash prompt
-PS1='${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]\$ '
+#PS1='${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]\$ '
 
 # work bash prompt
-#PS1='[\u@\h \W]\$ '
+PS1='[\u@\h \W]\$ '
 
 #case ${TERM} in
 #  *term | rxvt | linux)
