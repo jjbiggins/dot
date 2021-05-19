@@ -161,7 +161,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme peaksea
+    colorscheme default
 catch
 endtry
 
@@ -411,6 +411,12 @@ endfunction
 
 au BufNewFile *.py 0r ~/.vim/header/py_header.temp
 au BufNewFile *.sh 0r ~/.vim/header/sh_header.temp
+au BufNewFile *.c so ~/.vim/header/c_header.temp
+autocmd BufNewFile *.c execute "g/FILENAME: /s/$/".expand("%")
+autocmd BufNewFile *.c execute  "g/DATE: /s/$/".strftime("%d-%m-%Y")
+autocmd Bufwritepre,filewritepre *.c execute "normal ma"
+autocmd Bufwritepre,filewritepre *.c execute "g/MODIFIED: /s/MODIFIED:.*/MODIFIED:" .strftime("%c")
+autocmd bufwritepost,filewritepost *.c execute "normal `a"
 " ================================================================
 " END OF FILE
 " =================================================================
