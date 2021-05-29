@@ -8,6 +8,7 @@ if [ -f /etc/bashrc ]; then
       . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
+export EDITOR=vim
 
 
 # -------------------------------------------------------------
@@ -37,9 +38,7 @@ shopt -s extglob        # Necessary.
 
 set MAILCHECK        				# warn me of incoming mail.
 
-
 PROMPT_COMMAND="history -a"
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]\$ '
 
 export LESSCHARSET='utf-8'
 if type lesspipe.sh >/dev/null 2>&1; then
@@ -91,12 +90,15 @@ if [ "${BASH_VERSION%.*}" \< "3.0" ]; then
 fi
 
 
+if [[ -f ~/.functions ]]; then
+    source  ~/.functions
+fi
 
 
 
 #eval $(dircolors ~/.colors/dircolors.256dark)
 if [[ -f ~/.colors/dircolors_linux ]]; then
-    eval $(dircolors ~/.colors/DIR_COLORS)
+    eval $(gdircolors ~/.colors/DIR_COLORS)
 fi
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
@@ -109,12 +111,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-export PATH
+export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages"
 export CERT_PATH=$(python3 -m certifi)
 export SSL_CERT_FILE=${CERT_PATH}
 export REQUESTS_CA_BUNDLE=${CERT_PATH}
 
+export PATH
 # Local Variables:
 # mode:shell-script
 # sh-shell:bash

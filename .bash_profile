@@ -10,14 +10,10 @@
 # User PATH Settings
 # ===================================================================
 PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-PATH="/opt/local/libexec/gnubin:$PATH"
+PATH="/opt/local/bin:$PATH"
 
 # Personal Script Binaries
 PATH="/Users/jjbiggins/bin:$PATH"
-
-# Setting PATH for Python 3.9
-# The original version is saved in .bash_profile.pysave
-
 
 # ----------------------------------------------------------------
 # Silences macOS warning about zsh not being shell
@@ -43,9 +39,6 @@ if [[ -f  ~/.bash_login ]]; then
     . ~/.bash_login
 fi
 
-if [[ -f ~/.functions ]]; then
-    source  ~/.functions
-fi
 
 if [[ -f ~/.iterm2_shell_integration.bash ]]; then
 	source ~/.iterm2_shell_integration.bash
@@ -85,9 +78,19 @@ function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash" || true
 
 
-export PATH
-
 # Setting PATH for Python 3.9
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+PATH="/usr/local/bin/python3:$PATH"
+export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/lib/python3.9/site-packages"
+
+PATH="$PYTHONPATH/bin:$PATH"
 export PATH
+
+
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then . '/usr/local/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/google-cloud-sdk/completion.bash.inc' ]; then . '/usr/local/google-cloud-sdk/completion.bash.inc'; fi

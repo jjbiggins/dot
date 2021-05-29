@@ -1,9 +1,13 @@
+#!/bin/bash
 ######################################################################
 #
 # .functions: shell functions common to all process scripts 
 #       loaded into oper's environment
 #
 ######################################################################
+
+
+
 
 # -------------------------------------------------------------------
 # function to print argument to screen and to a log file
