@@ -1,0 +1,8 @@
+.Trash
+.bash_history
+.zsh*
+.DS_Store
+.viminfo
+.cfg
+.bash_session/
+.cfg
