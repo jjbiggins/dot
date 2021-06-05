@@ -1,9 +1,0 @@
-2021-05-02 08:16:49,661 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
-2021-05-02 08:16:49,748 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
-2021-05-02 08:16:49,750 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "project", VALUE: "gauss-biggins"]
-2021-05-02 08:16:49,751 INFO     ___FILE_ONLY___ Updated property [core/project].
-
-2021-05-02 08:16:49,790 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
-2021-05-02 08:16:49,981 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/gauss-biggins?alt=json HTTP/1.1" 200 None
-2021-05-02 08:16:49,983 INFO     root            Display format: "default"
-2021-05-02 08:16:49,984 DEBUG    root            SDK update checks are disabled.
