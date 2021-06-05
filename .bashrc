@@ -36,7 +36,7 @@ shopt -s extglob					# Enables globbing
 shopt -u mailwarn					# show Got mail warning 
 shopt -s extglob        # Necessary.
 
-set MAILCHECK        				# warn me of incoming mail.
+
 
 PROMPT_COMMAND="history -a"
 
@@ -94,7 +94,8 @@ if [[ -f ~/.functions ]]; then
     source  ~/.functions
 fi
 
-
+# bash auto completions
+#terraform -install-autocomplete
 
 #eval $(dircolors ~/.colors/dircolors.256dark)
 if [[ -f ~/.colors/dircolors_linux ]]; then
@@ -121,3 +122,5 @@ export PATH
 # mode:shell-script
 # sh-shell:bash
 # End:
+
+complete -C /usr/local/bin/terraform terraform

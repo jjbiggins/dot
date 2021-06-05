@@ -14,13 +14,20 @@
 ####################################################################
 function prinnt  
 {
-        echo $1
+        #echo $1 
+        
+        if [[ -f "$HOME/logs/$1" ]]; then
+            logfile="$HOME/logs/$1"
+        else
+            touch $HOME/logs/${1}.log
+        fi
+
         echo "`date +'%a %D %T'`: $1" >> $logfile
 }
 
 function bad_exit  
 {
-	prinnt $*
+	#prinnt $*
         prinnt "Process DID NOT complete successfully."
         prinnt "Process must be re-run."
         exit 1
@@ -435,6 +442,41 @@ function ii()   # Get current host related info.
 
 function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
 
+flushdns ()
+{
+    cat $HOME/.passwd | grep $USER | cut -d ':' -f2 | sudo -S dscacheutil -flushcache; 
+    cat $HOME/.passwd | grep $USER | cut -d ':' -f2 | sudo -S killall -HUP mDNSResponder;
+}
+
+
+update_macports ()
+{
+    sudo_pass=`cat $HOME/.passwd | grep $USER | cut -d ':' -f2`;
+
+    echo "$sudo_pass" | sudo -S port -v selfupdate &
+    BACK_PID=$!;
+    prinnt "Starting macports selfupdate...";
+    wait $BACK_PID;
+    
+
+    echo "$sudo_pass" | sudo -S port upgrade outdated > /dev/null &
+    BACK_PID=$!;
+    prinnt "Updating outdated ports....";
+    wait $BACK_PID;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 #  This is a 'universal' completion function - it works when commands have
 #+ a so-called 'long options' mode , ie: 'ls --all' instead of 'ls -a'
 #  Needs the '-o' option of grep
@@ -444,7 +486,6 @@ function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
 #+ (this will allow completions like 'ls --color=auto' to work correctly).
 
 COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
-
 
 _get_longopts()
 {

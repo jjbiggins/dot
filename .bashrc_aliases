@@ -209,7 +209,7 @@ alias date="/opt/local/bin/gdate"
 alias dd="/opt/local/bin/gdd"
 alias df="/opt/local/bin/gdf"
 alias dir="/opt/local/bin/gdir"
-#alias dircolors="/opt/local/bin/gdircolors"
+alias dircolors="/opt/local/bin/gdircolors"
 alias dirname="/opt/local/bin/gdirname"
 alias du="/opt/local/bin/gdu"
 alias echo="/opt/local/bin/gecho"
@@ -237,7 +237,7 @@ alias link="/opt/local/bin/glink"
 alias ln="/opt/local/bin/gln"
 alias locate="/opt/local/bin/glocate"
 alias logname="/opt/local/bin/glogname"
-alias ls="/opt/local/bin/gls"
+alias ls="/opt/local/bin/gls --color=auto"
 alias m4="/opt/local/bin/gm4"
 alias md5sum="/opt/local/bin/gmd5sum"
 alias mkdir="/opt/local/bin/gmkdir"
@@ -310,7 +310,6 @@ alias sed="/opt/local/bin/gsed"
 #
 #
 #
-alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 # -> Prevents accidentally clobbering files.
@@ -337,11 +336,12 @@ alias df='df -kTh'
 # The 'ls' family (this assumes you use a recent GNU ls).
 #-------------------------------------------------------------
 # Add colors for filetype and  human-readable sizes by default on 'ls':
-alias lx='ls -lXB'         #  Sort by extension.
-alias lk='ls -lSr'         #  Sort by size, biggest last.
-alias lt='ls -ltr'         #  Sort by date, most recent last.
-alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
-alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
+alias ll='/opt/local/bin/gls -lG --color=auto'
+alias lx='/opt/local/bin/gls -lXB'         #  Sort by extension.
+alias lk='/opt/local/bin/gls -lSr'         #  Sort by size, biggest last.
+alias lt='/opt/local/bin/gls -ltr'         #  Sort by date, most recent last.
+alias lc='/opt/local/bin/gls -ltcr'        #  Sort by/show change time,most recent last.
+alias lu='/opt/local/bin/gls -ltur'        #  Sort by/show access time,most recent last.
 
 # The ubiquitous 'll': directories first, with alphanumeric sorting:
 alias lm='ll | more'        #  Pipe through 'more'
@@ -356,7 +356,7 @@ alias c='clear'
 #-------------------------------------------------------------
 
 alias more='less'
-
+alias sudo='sudo '
 
 #-------------------------------------------------------------
 # Spelling typos - highly personnal and keyboard-dependent :-)
@@ -368,15 +368,12 @@ alias moer='more'
 alias moew='more'
 alias kk='ll'
 
-
-alias ls="ls --color=auto"
-alias ll="ls -l --color=auto"
-
 # --------------------------------------------------------------
 # App aliases
 # ==============================================================
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-alias firefox='/Applications/Firefox.app/Contents/MacOS/Firefox'
+alias firefox='/Applications/Firefox\ Developer\ Edition.app/Contents/MacOS/firefox-bin'
+
 
 # ==============================================================
 # bind9
@@ -394,3 +391,4 @@ alias loadbind="sudo port load bind9"
 # ==============================================================
 alias ks="ls --color=auto"
 alias pyhton="python"
+alias npm="npx npm"

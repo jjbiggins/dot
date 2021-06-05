@@ -80,10 +80,10 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 # Setting PATH for Python 3.9
 # The original version is saved in .bash_profile.pysave
-PATH="/usr/local/bin/python3:$PATH"
+PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH"
 export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/lib/python3.9/site-packages"
-
 PATH="$PYTHONPATH/bin:$PATH"
+
 export PATH
 
 
@@ -94,3 +94,4 @@ if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then . '/usr/local/google
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/google-cloud-sdk/completion.bash.inc' ]; then . '/usr/local/google-cloud-sdk/completion.bash.inc'; fi
+

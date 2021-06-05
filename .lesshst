@@ -1,3 +1,12 @@
 .less-history-file:
 .search
 "clean
+"meta
+"bind
+"mount
+"comment
+"note
+"tag
+"-H
+"raw
+"D
