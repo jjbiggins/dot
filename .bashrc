@@ -102,22 +102,16 @@ if [[ -f ~/.colors/dircolors_linux ]]; then
     eval $(gdircolors ~/.colors/DIR_COLORS)
 fi
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
-export PATH_TO_FX="$JAVA_HOME/lib/javafx-sdk-11.0.2/lib"
-export PATH=$JAVA_HOME/bin:$PATH
-
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages"
-export CERT_PATH=$(python3 -m certifi)
-export SSL_CERT_FILE=${CERT_PATH}
-export REQUESTS_CA_BUNDLE=${CERT_PATH}
+export GOPATH="/usr/local/go"
 
-export PATH
+#export CERT_PATH=$(python3 -m certifi)
+#export SSL_CERT_FILE=${CERT_PATH}
+#export REQUESTS_CA_BUNDLE=${CERT_PATH}
 # Local Variables:
 # mode:shell-script
 # sh-shell:bash
