@@ -91,14 +91,39 @@ if [ -f '/usr/local/google-cloud-sdk/completion.bash.inc' ]; then . '/usr/local/
 
 
 
-# Setting PATH for Python 3.9
+# Setting PATH for Python 3.8
+PATH="/Users/jjbiggins/Library/Python/3.8/bin:$PATH"
+
 # The original version is saved in .bash_profile.pysave
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home"
+export CATALINA_HOME="/Library/Tomcat"
 export PATH_TO_FX="$JAVA_HOME/lib/javafx-sdk-11.0.2/lib"
-export DEVELOPER_DIR="/Library/Developer/CommandLineTools"
+#export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
+#export JBOSS_HOME="/Library/JBoss"
+export ANT_HOME="/usr/local/apache-ant-latest"
+export PGDATA="/Library/PostgreSQL/13/data"
+#export CLASSPATH="${CLASSPATH}:/opt/mysql-connector-java-8.0.17/mysql-connector-java-8.0.17.jar:/opt/tomcat/lib/websocket-api.jar"
 
-PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
-PATH="/usr/local/apache-maven-3.8.1/bin:$PATH" 
+
+#PATH="/Libaray/Frameworks/Python.framework/Versions/3.9/bin:$PATH"
+#PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
+PATH="/Library/PostgreSQL/13/bin:$PATH"
+PATH="/usr/local/apache-maven-latest/bin:$PATH"
+PATH="${ANT_HOME}/bin:$PATH"
+PATH="/opt/gradle/gradle-7.1.1/bin:$PATH"
 PATH=$JAVA_HOME/bin:$PATH
 export PATH
+
+
+# Setting PATH for Python 3.9
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+export PYTHONPATH="/Library/Python/3.9/site-packages"
+export PATH
+
+
+# source bash completeions
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
 

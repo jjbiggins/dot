@@ -34,3 +34,24 @@
 "anon
 "pass
 "port
+"title
+"permission
+"AppleTV
+"0
+"usb
+"screen 
+"usbmo
+"tty.us
+"\"/dev/cu.*\"
+"bind ^k
+"bind k
+"\\
+"\/\
+"\\\
+"quit
+"ls
+"user
+"pathinfo
+"info
+"force
+"d

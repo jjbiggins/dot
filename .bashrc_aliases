@@ -3,9 +3,16 @@
 #--------------------------------------------------------
 
 # Hide/Unhide Desktop Icons
-alias hdesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
-alias uhdesk="default write com.apple.finder CreateDesktop true; killall Finder"
+alias hidedesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
+alias unhidedesk="default write com.apple.finder CreateDesktop true; killall Finder"
 # }}}
+
+# Show/Hide Hidden files and directories in Finder
+alias showhidden="defaults write com.apple.Finder AppleShowAllFiles true; killall Finder"
+alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles false; killall Finder"
+# GCC Compile
+#alias gcc="gcc --prefix=/opt/local"
+
 #--------------------------------------------------------
 #
 #
@@ -237,7 +244,6 @@ alias link="/opt/local/bin/glink"
 alias ln="/opt/local/bin/gln"
 alias locate="/opt/local/bin/glocate"
 alias logname="/opt/local/bin/glogname"
-alias ls="/opt/local/bin/gls --color=auto"
 alias m4="/opt/local/bin/gm4"
 alias md5sum="/opt/local/bin/gmd5sum"
 alias mkdir="/opt/local/bin/gmkdir"
@@ -309,6 +315,9 @@ alias sed="/opt/local/bin/gsed"
 #
 #
 #
+# mysql
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 #
 alias cp='cp -i'
 alias mv='mv -i'
@@ -326,7 +335,7 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 
 alias du='du -kh'    # Makes a more readable output.
-alias df='df -kTh'
+#alias df='df -kTh'
 
 # alias rm to my bash function rms. from ~/.bashrc 
 # so I don't accidentlly irreversibly delete file
@@ -392,3 +401,4 @@ alias loadbind="sudo port load bind9"
 alias ks="ls --color=auto"
 alias pyhton="python"
 alias npm="npx npm"
+alias fop='fop2'

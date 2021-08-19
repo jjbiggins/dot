@@ -83,6 +83,10 @@ export GREP_OPTIONS='--color=always'
 #  so I kept those here as examples.
 #=========================================================================
 
+if [[ -f ~/.direnvvars ]]; then
+    source ~/.direnvvars
+fi
+
 if [ "${BASH_VERSION%.*}" \< "3.0" ]; then
     echo "You will need to upgrade to version 3.0 for full \
           programmable completion features"

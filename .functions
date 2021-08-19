@@ -24,6 +24,14 @@
 #    fi
 #}
 
+Arduino () {
+    Arduino=/Users/jjbiggins/Documents/Arduino
+    echo $Arduino
+}
+
+Documents ()
+
+
 cpfollow () {
     src=$1
     dest=$2
@@ -38,10 +46,20 @@ cpfollow () {
     else
         opt=
     fi
-
-
     cp "$opt" "$src" "$dest" && cd "$abs"
 }
+
+mvfllw () {
+    src=$1
+    dest=$2
+    case $dest in
+        /*) abs=$dest;;
+        *) abs=$PWD/$dest;;
+    esac
+    
+    mv "$src" "$dest" && cd "$abs"
+}
+
 
 # -------------------------------------------------------------------
 # function to print argument to screen and to a log file
