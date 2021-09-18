@@ -6,67 +6,18 @@
 #
 ######################################################################
 
-#mkmv () {
-#    arg1=$1
-#    mkdir misc
-#    if [[ "$arg1" == "-not" ]]; then
-#        excluded=($(`ls $2`))
-#        for x in *
-#        do
-#            if [[ "${excluded[@]}" =~ "${x}" ]]; then
-#                continue
-#            else
-#                mv "${x}" misc/
-#            fi
-#        done
-#    else
-#        mv "$arg1" misc/
-#    fi
-#}
 
 Arduino () {
     Arduino=/Users/jjbiggins/Documents/Arduino
     echo $Arduino
 }
 
-Documents ()
-
-
-cpfollow () {
-    src=$1
-    dest=$2
-    case $dest in
-        /*) abs=$dest;;
-        *) abs=$PWD/$dest;;
-    esac
-
-    ftype=`file "$src" | cut -d ':' -f2 | tr -d ' '`
-    if [[ "$ftype" == "directory" ]]; then
-        opt="-r"
-    else
-        opt=
-    fi
-    cp "$opt" "$src" "$dest" && cd "$abs"
-}
-
-mvfllw () {
-    src=$1
-    dest=$2
-    case $dest in
-        /*) abs=$dest;;
-        *) abs=$PWD/$dest;;
-    esac
-    
-    mv "$src" "$dest" && cd "$abs"
-}
-
 
 # -------------------------------------------------------------------
 # function to print argument to screen and to a log file
 ####################################################################
-function prinnt  
+prinnt () 
 {
-        #echo $1 
         
         if [[ -f "$HOME/logs/$1" ]]; then
             logfile="$HOME/logs/$1"
