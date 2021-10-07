@@ -7,63 +7,47 @@
 #################################################################
 
 
-# ====================================================================
-# User PATH Settings
+
+
+
+
 # ===================================================================
-PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
-# Personal Script Binaries
-#PATH="/Users/jjbiggins/bin:$PATH"
-
-# ----------------------------------------------------------------
-# Silences macOS warning about zsh not being shell
-# ----------------------------------------------------------------
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
-
-
-
-# ===============================================================
-# Source other bash files
-# ===============================================================
-
-
-#if [[ -f ~/.bashrc ]]; then
-#    . ~/.bashrc
-#fi
+# BASH SHELL FILES 
+# -------------------------------------------------------------------
+# SOURCES:
+#   1. ~/.bash_profile sources ~/.profile
+#   2. ~/.profile sources ~/.bashrc
+# 
+# ABOUT:
+#   ~/.bash_profile -- the driver, source all other shell init file
+#   ~/.profile -- sources ~/.bashrc if interactive, sets envvars
+#   ~/.bashrc -- sets PS1, shell options (shopts), etc.
+# ====================================================================
 
 
 
-if [[ -f ~/.profile ]]; then
-	. ~/.profile
-fi
+if [ -r ~/.profile ]; then . ~/.profile; fi
+
+
+# Added by install_latest_perl_osx.pl
+#case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
+
 
 if [[ -f  ~/.bash_login ]]; then
     . ~/.bash_login
 fi
 
+
 if [[ -f ~/.iterm2_shell_integration.bash ]]; then
 	source ~/.iterm2_shell_integration.bash
 fi
 
-# --------------------------------------------------------------
-# Set Mail Directory
-# --------------------------------------------------------------
-export MAIL=/var/mail/jjbiggins		
-export MBOX="$HOME/Mail/mbox"
 
-# ----------------------------------------------------------
-# Set EDITOR ENV
-# 
-export EDITOR=vim
-export VISUAL=vim
-export PAGER=less
+# source bash completeions
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
 
-
-# --------------------------------------------------------------
-# X11 window system
-# --------------------------------------------------------------
-export DISPLAY=:0.0
 
 #============================================================
 #
@@ -80,50 +64,9 @@ if [ -f ~/.bashrc_aliases ]; then
     . ~/.bashrc_aliases
 fi
 
-
-export MANPATH=/opt/local/share/man:$MANPATH
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then . '/usr/local/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/google-cloud-sdk/completion.bash.inc' ]; then . '/usr/local/google-cloud-sdk/completion.bash.inc'; fi
-
-
-
-# Setting PATH for Python 3.8
-PATH="/Users/jjbiggins/Library/Python/3.8/bin:$PATH"
-
-# The original version is saved in .bash_profile.pysave
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home"
-export CATALINA_HOME="/Library/Tomcat"
-export PATH_TO_FX="$JAVA_HOME/lib/javafx-sdk-11.0.2/lib"
-#export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
-#export JBOSS_HOME="/Library/JBoss"
-export ANT_HOME="/usr/local/apache-ant-latest"
-export PGDATA="/Library/PostgreSQL/13/data"
-#export CLASSPATH="${CLASSPATH}:/opt/mysql-connector-java-8.0.17/mysql-connector-java-8.0.17.jar:/opt/tomcat/lib/websocket-api.jar"
-
-
-#PATH="/Libaray/Frameworks/Python.framework/Versions/3.9/bin:$PATH"
-#PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
-PATH="/Library/PostgreSQL/13/bin:$PATH"
-PATH="/usr/local/apache-maven-latest/bin:$PATH"
-PATH="${ANT_HOME}/bin:$PATH"
-PATH="/opt/gradle/gradle-7.1.1/bin:$PATH"
-PATH=$JAVA_HOME/bin:$PATH
 export PATH
+#export PATH=$HOME/bin:$PATH
+#export PATH=$HOME/bin:$PATH
+#export PATH=/Volumes/mnt/bin:$PATH
 
-
-# Setting PATH for Python 3.9
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
-export PYTHONPATH="/Library/Python/3.9/site-packages"
-export PATH
-
-
-# source bash completeions
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
-fi
-
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

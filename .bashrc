@@ -20,6 +20,7 @@ export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000000
 
+
 #-------------------------------------------------------------
 # The Shopt Builtin
 #-------------------------------------------------------------
@@ -102,7 +103,9 @@ fi
 #terraform -install-autocomplete
 
 #eval $(dircolors ~/.colors/dircolors.256dark)
-if [[ -f ~/.colors/dircolors_linux ]]; then
+if [[ -f /etc/DIR_COLORS ]]; then
+    eval $(gdircolors /etc/DIR_COLORS)
+elif [[ -f ~/.colors/dircolors_linux ]]; then
     eval $(gdircolors ~/.colors/DIR_COLORS)
 fi
 
@@ -122,3 +125,6 @@ export GOPATH="/usr/local/go"
 # End:
 
 complete -C /usr/local/bin/terraform terraform
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
