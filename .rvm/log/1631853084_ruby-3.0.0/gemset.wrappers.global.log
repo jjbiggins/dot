@@ -1,0 +1,84 @@
+[2021-09-16 23:33:39] run_gem_wrappers
+run_gem_wrappers () 
+{ 
+    gem_install gem-wrappers > /dev/null && gem_wrappers_pristine && gem wrappers "$@" || return $?
+}
+current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/opt/local/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+command(2): run_gem_wrappers regenerate
+++ /scripts/functions/gemset : run_gem_wrappers()  357 > gem_install gem-wrappers
+++ /scripts/functions/gemset : gem_install()  146 > typeset gem_name gem_version version_check
+++ /scripts/functions/gemset : gem_install()  148 > gem_version=
+++ /scripts/functions/gemset : gem_install()  149 > __rvm_parse_gems_args gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  102 > typeset gem=gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  104 > __rvm_string_match gem-wrappers '*.gem$'
+++ /scripts/functions/support : __rvm_string_match()  35 > typeset _string
+++ /scripts/functions/support : __rvm_string_match()  36 > _string=gem-wrappers
+++ /scripts/functions/support : __rvm_string_match()  37 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  1  ))
+++ /scripts/functions/support : __rvm_string_match()  40 > case "${_string}" in
+++ /scripts/functions/support : __rvm_string_match()  43 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  0  ))
+++ /scripts/functions/support : __rvm_string_match()  45 > return 1
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  109 > gem_name=gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  110 > case "$gem" in
+++ /scripts/functions/gemset : gem_install()  151 > [[ -z '' ]]
+++ /scripts/functions/gemset : gem_install()  152 > __rvm_db gem_gem-wrappers_version gem_version
+++ /scripts/functions/db : __rvm_db()  27 > typeset value key variable
+++ /scripts/functions/db : __rvm_db()  28 > key=gem_gem-wrappers_version
+++ /scripts/functions/db : __rvm_db()  29 > variable=gem_version
+++ /scripts/functions/db : __rvm_db()  30 > value=
+++ /scripts/functions/db : __rvm_db()  32 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db()  33 > __rvm_db_ /Users/jjbiggins/.rvm/user/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/user/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/user/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_gem-wrappers_version=# { s#^gem_gem-wrappers_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_gem-wrappers_version=# { s#^gem_gem-wrappers_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  33 > value=
+++ /scripts/functions/db : __rvm_db()  35 > [[ -z '' ]]
+++ /scripts/functions/db : __rvm_db()  35 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db()  36 > __rvm_db_ /Users/jjbiggins/.rvm/config/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/config/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/config/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_gem-wrappers_version=# { s#^gem_gem-wrappers_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_gem-wrappers_version=# { s#^gem_gem-wrappers_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  36 > value='>=1.4.0'
+++ /scripts/functions/db : __rvm_db()  38 > [[ -n >=1.4.0 ]]
+++ /scripts/functions/db : __rvm_db()  39 > [[ -n gem_version ]]
+++ /scripts/functions/db : __rvm_db()  40 > eval 'gem_version='\''>=1.4.0'\'''
++++ /scripts/functions/db : __rvm_db()  40 > gem_version='>=1.4.0'
+++ /scripts/functions/db : __rvm_db()  43 > true
+++ /scripts/functions/gemset : gem_install()  156 > ((  0 == 0  ))
+++ /scripts/functions/gemset : gem_install()  156 > is_gem_installed
+++ /scripts/functions/gemset : is_gem_installed()  127 > typeset gem_spec
+++ /scripts/functions/gemset : is_gem_installed()  128 > gem_spec='gem '\''gem-wrappers'\'''
+++ /scripts/functions/gemset : is_gem_installed()  130 > [[ -n >=1.4.0 ]]
+++ /scripts/functions/gemset : is_gem_installed()  132 > gem_spec+=', '\''>=1.4.0'\'''
+++ /scripts/functions/gemset : is_gem_installed()  133 > version_check=1.4.0
+++ /scripts/functions/gemset : is_gem_installed()  138 > __rvm_ls -ld /Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/gems/gem-wrappers-1.4.0
+++ /scripts/functions/gemset : gem_install()  158 > rvm_log 'gem gem-wrappers >=1.4.0 is already installed'
+++ /scripts/functions/logging : rvm_log()  208 > [[ '' == 1 ]]
+++ /scripts/functions/logging : rvm_log()  210 > printf %b 'gem gem-wrappers >=1.4.0 is already installed\n'
+++ /scripts/functions/gemset : gem_install()  159 > return 0
+++ /scripts/functions/gemset : run_gem_wrappers()  358 > gem_wrappers_pristine
++++ /scripts/functions/gemset : gem_wrappers_pristine()  365 > sort -V
++++ /scripts/functions/gemset : gem_wrappers_pristine()  365 > head -n1
+++++ /scripts/functions/gemset : gem_wrappers_pristine()  365 > gem -v
++++ /scripts/functions/gemset : gem_wrappers_pristine()  365 > printf '%s\n' 3.2.0 3.2.3
+++ /scripts/functions/gemset : gem_wrappers_pristine()  365 > '[' 3.2.0 == 3.2.0 ']'
+++ /scripts/functions/gemset : gem_wrappers_pristine()  366 > gem pristine gem-wrappers --only-plugins
+++ /scripts/functions/gemset : run_gem_wrappers()  359 > gem wrappers regenerate

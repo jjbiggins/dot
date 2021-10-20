@@ -1,0 +1,16 @@
+[2021-09-16 23:32:29] __rvm_post_configure_ruby
+__rvm_post_configure_ruby () 
+{ 
+    __rvm_post_configure_ruby_fix_athlon_sse2;
+    __rvm_post_configure_ruby_update_setup
+}
+current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0
+PATH=/opt/local/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/jjbiggins/.rvm/bin:/Users/jjbiggins/.rvm/bin
+command(1): __rvm_post_configure_ruby
+++ /scripts/functions/manage/ruby : __rvm_post_configure_ruby()  122 > __rvm_post_configure_ruby_fix_athlon_sse2
+++ /scripts/functions/manage/ruby : __rvm_post_configure_ruby_fix_athlon_sse2()  129 > [[ -f /proc/cpuinfo ]]
+++ /scripts/functions/manage/ruby : __rvm_post_configure_ruby()  123 > __rvm_post_configure_ruby_update_setup
+++ /scripts/functions/manage/ruby : __rvm_post_configure_ruby_update_setup()  139 > typeset option
+++ /scripts/functions/manage/ruby : __rvm_post_configure_ruby_update_setup()  141 > ((  0 == 1  ))

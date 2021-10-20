@@ -1,0 +1,45 @@
+[2021-09-16 23:33:41] alias_create_execute
+alias_create_execute () 
+{ 
+    for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path";
+    do
+        if [[ -L "$_path/$alias_name" ]]; then
+            \command \rm -fv "$_path/$alias_name" || return $?;
+        fi;
+        \command \ln -fs "$_path/$rvm_ruby_string" "$_path/$alias_name" || return $?;
+    done;
+    __rvm_db_ "$rvm_path/config/alias" "$alias_name" "$rvm_ruby_string"
+}
+current path: /Users/jjbiggins/.rvm/src/rvm
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0
+PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/bin:/opt/local/sbin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+command(1): alias_create_execute
++ /scripts/alias : alias_create_execute()  27 > for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path"
++ /scripts/alias : alias_create_execute()  29 > [[ -L /Users/jjbiggins/.rvm/rubies/default ]]
++ /scripts/alias : alias_create_execute()  32 > command ln -fs /Users/jjbiggins/.rvm/rubies/ruby-3.0.0 /Users/jjbiggins/.rvm/rubies/default
++ /scripts/alias : alias_create_execute()  27 > for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path"
++ /scripts/alias : alias_create_execute()  29 > [[ -L /Users/jjbiggins/.rvm/gems/default ]]
++ /scripts/alias : alias_create_execute()  32 > command ln -fs /Users/jjbiggins/.rvm/gems/ruby-3.0.0 /Users/jjbiggins/.rvm/gems/default
++ /scripts/alias : alias_create_execute()  27 > for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path"
++ /scripts/alias : alias_create_execute()  29 > [[ -L /Users/jjbiggins/.rvm/environments/default ]]
++ /scripts/alias : alias_create_execute()  32 > command ln -fs /Users/jjbiggins/.rvm/environments/ruby-3.0.0 /Users/jjbiggins/.rvm/environments/default
++ /scripts/alias : alias_create_execute()  27 > for _path in "$rvm_rubies_path" "$rvm_gems_path" "$rvm_environments_path" "$rvm_wrappers_path"
++ /scripts/alias : alias_create_execute()  29 > [[ -L /Users/jjbiggins/.rvm/wrappers/default ]]
++ /scripts/alias : alias_create_execute()  32 > command ln -fs /Users/jjbiggins/.rvm/wrappers/ruby-3.0.0 /Users/jjbiggins/.rvm/wrappers/default
++ /scripts/alias : alias_create_execute()  35 > __rvm_db_ /Users/jjbiggins/.rvm/config/alias default ruby-3.0.0
++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/config/alias
++ /scripts/functions/db : __rvm_db_()  79 > __key=default
++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++ /scripts/functions/db : __rvm_db_()  81 > __value=ruby-3.0.0
++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++ /scripts/functions/db : __rvm_db_()  90 > __rvm_db_add /Users/jjbiggins/.rvm/config/alias default ruby-3.0.0
++ /scripts/functions/db : __rvm_db_add()  58 > typeset __dir=/Users/jjbiggins/.rvm/config
++ /scripts/functions/db : __rvm_db_add()  59 > [[ -f /Users/jjbiggins/.rvm/config/alias ]]
++ /scripts/functions/db : __rvm_db_add()  60 > __rvm_db_remove /Users/jjbiggins/.rvm/config/alias default
++ /scripts/functions/db : __rvm_db_remove()  49 > [[ -f /Users/jjbiggins/.rvm/config/alias ]]
++ /scripts/functions/db : __rvm_db_remove()  51 > __rvm_sed -e '\#^default=# d' -e '/^$/d' /Users/jjbiggins/.rvm/config/alias
++ /scripts/functions/support : __rvm_sed()  277 > sed -e '\#^default=# d' -e '/^$/d' /Users/jjbiggins/.rvm/config/alias
++ /scripts/functions/db : __rvm_db_remove()  52 > command mv -f /Users/jjbiggins/.rvm/config/alias.new /Users/jjbiggins/.rvm/config/alias
++ /scripts/functions/db : __rvm_db_add()  64 > printf '%b=%b\n' default ruby-3.0.0

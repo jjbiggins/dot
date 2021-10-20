@@ -1,0 +1,152 @@
+[2021-09-16 23:33:29] __rvm_make
+__rvm_make () 
+{ 
+    \make "$@" || return $?
+}
+current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0
+PATH=/opt/local/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/jjbiggins/.rvm/bin:/Users/jjbiggins/.rvm/bin
+command(2): __rvm_make install
+++ /scripts/functions/support : __rvm_make()  383 > make install
+	BASERUBY = /opt/local/bin/ruby --disable=gems
+	CC = gcc -fdeclspec
+	LD = ld
+	LDSHARED = gcc -fdeclspec -dynamiclib
+	CFLAGS = -O3 -I/opt/local/include -fno-common -pipe 
+	XCFLAGS = -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fno-strict-overflow -fvisibility=hidden -DRUBY_EXPORT -I. -I.ext/include/x86_64-darwin20 -I./include -I. -I./enc/unicode/12.1.0
+	CPPFLAGS = -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   
+	DLDFLAGS = -L/opt/local/lib -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress -install_name /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/libruby.3.0.dylib -compatibility_version 3.0 -current_version 3.0.0  -fstack-protector-strong -framework Security -framework Foundation  -fstack-protector-strong -framework Security -framework Foundation  
+	SOLIBS = -lpthread -lgmp -ldl -lobjc
+	LANG = en_US.UTF-8
+	LC_ALL = 
+	LC_CTYPE = 
+	MFLAGS = 
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+Target: x86_64-apple-darwin20.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+generating enc.mk
+making srcs under enc
+make[1]: Nothing to be done for `srcs'.
+generating transdb.h
+transdb.h unchanged
+generating makefiles ext/configure-ext.mk
+ext/configure-ext.mk updated
+generating makefile exts.mk
+exts.mk unchanged
+./revision.h unchanged
+make[1]: Nothing to be done for `note'.
+making enc
+make[1]: Nothing to be done for `enc'.
+making trans
+make[1]: Nothing to be done for `./enc/trans'.
+making encs
+make[1]: Nothing to be done for `encs'.
+./miniruby -I./lib -I. -I.ext/common  ./tool/runruby.rb --extout=.ext  -- --disable-gems -r./x86_64-darwin20-fake ./tool/rbinstall.rb --make="/Applications/Xcode.app/Contents/Developer/usr/bin/make" --dest-dir="" --extout=".ext" --mflags="" --make-flags="" --data-mode=0644 --prog-mode=0755 --installed-list .installed.list --mantype="doc" --exclude=doc
+installing binary commands:         /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin
+installing base libraries:          /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib
+installing arch files:              /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0/x86_64-darwin20
+installing pkgconfig data:          /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/pkgconfig
+installing extension objects:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0/x86_64-darwin20
+installing extension objects:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/site_ruby/3.0.0/x86_64-darwin20
+installing extension objects:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/vendor_ruby/3.0.0/x86_64-darwin20
+installing extension headers:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/x86_64-darwin20
+installing extension scripts:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0
+installing extension scripts:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/site_ruby/3.0.0
+installing extension scripts:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/vendor_ruby/3.0.0
+installing extension headers:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0/ruby
+installing command scripts:         /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin
+installing library scripts:         /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0
+installing common headers:          /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/include/ruby-3.0.0
+installing manpages:                /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/share/man (man1, man5)
+installing default gems from lib:   /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0
+                                    abbrev 0.1.0
+                                    base64 0.1.0
+                                    benchmark 0.1.1
+                                    bundler 2.2.3
+                                    cgi 0.2.0
+                                    csv 3.1.9
+                                    debug 0.1.0
+                                    delegate 0.2.0
+                                    did_you_mean 1.5.0
+                                    drb 2.0.4
+                                    english 0.7.1
+                                    erb 2.2.0
+                                    fileutils 1.5.0
+                                    find 0.1.0
+                                    forwardable 1.3.2
+                                    getoptlong 0.1.1
+                                    ipaddr 1.2.2
+                                    irb 1.3.0
+                                    logger 1.4.3
+                                    matrix 0.3.1
+                                    mutex_m 0.1.1
+                                    net-ftp 0.1.1
+                                    net-http 0.1.1
+                                    net-imap 0.1.1
+                                    net-pop 0.1.1
+                                    net-protocol 0.1.0
+                                    net-smtp 0.2.1
+                                    observer 0.1.1
+                                    open-uri 0.1.0
+                                    open3 0.1.1
+                                    optparse 0.1.0
+                                    ostruct 0.3.1
+                                    pp 0.1.0
+                                    prettyprint 0.1.0
+                                    prime 0.1.2
+                                    pstore 0.1.1
+                                    racc 1.5.1
+                                    rdoc 6.3.0
+                                    readline 0.0.2
+                                    reline 0.2.0
+                                    resolv 0.2.0
+                                    resolv-replace 0.1.0
+                                    rinda 0.1.0
+                                    securerandom 0.1.0
+                                    set 1.0.1
+                                    shellwords 0.1.0
+                                    singleton 0.1.1
+                                    tempfile 0.1.1
+                                    time 0.1.0
+                                    timeout 0.1.1
+                                    tmpdir 0.1.1
+                                    tracer 0.1.1
+                                    tsort 0.1.0
+                                    un 0.1.0
+                                    uri 0.10.1
+                                    weakref 0.1.1
+                                    yaml 0.1.1
+installing default gems from ext:   /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0
+                                    bigdecimal 3.0.0
+                                    date 3.1.0
+                                    dbm 1.1.0
+                                    digest 3.0.0
+                                    etc 1.2.0
+                                    fcntl 1.0.0
+                                    fiddle 1.0.6
+                                    gdbm 2.1.0
+                                    io-console 0.5.6
+                                    io-nonblock 0.1.0
+                                    io-wait 0.1.0
+                                    json 2.5.1
+                                    nkf 0.1.0
+                                    openssl 2.2.0
+                                    pathname 0.1.0
+                                    psych 3.3.0
+                                    readline-ext 0.1.1
+                                    stringio 3.0.0
+                                    strscan 3.0.0
+                                    syslog 0.1.0
+                                    zlib 1.1.0
+installing bundled gems:            /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0
+                                    minitest 5.14.2
+                                    power_assert 1.2.0
+                                    rake 13.0.3
+                                    test-unit 3.3.7
+                                    rexml 3.2.4
+                                    rss 0.2.9
+                                    rbs 1.0.0
+                                    typeprof 0.11.0
+installing bundled gem cache:       /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0/cache

@@ -1,0 +1,17 @@
+[user]
+	email = jjbiggins@gitlab.biggins.one
+	name = Joe Biggins
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	ignorecase = false
+	excludesfile = ~/.gitignore_global
+[pull]
+	rebase = true
+[credential]
+	helper = osxkeychain
+[init]
+	defaultBranch = main

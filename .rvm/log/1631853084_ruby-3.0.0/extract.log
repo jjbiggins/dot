@@ -1,0 +1,76 @@
+[2021-09-16 23:31:24] __rvm_package_extract
+__rvm_package_extract () 
+{ 
+    rvm_debug __rvm_package_extract:$#: "$@";
+    \typeset __extract_src __extract_target __tempdir __path __file __return;
+    __extract_src="$1";
+    __extract_target="$2";
+    shift 2;
+    __return=0;
+    __tempdir="$( TMPDIR="${rvm_tmp_path}" mktemp -d -t rvm-tmp.XXXXXXXXX )";
+    __rvm_package_extract_run "$__extract_src" "$__tempdir" "$@" || __return=$?;
+    if (( __return == 0 )); then
+        for __path in "$__tempdir"/*;
+        do
+            __file="${__path##*/}";
+            if [[ -n "${__file}" && -e "$__extract_target/${__file}" ]]; then
+                \command \rm -rf "$__extract_target/${__file}" || __return=$?;
+            fi;
+            \command \mv -f "${__path}" "$__extract_target/" || __return=$?;
+        done;
+    fi;
+    if [[ -n "$__tempdir" ]]; then
+        \command \rm -rf "$__tempdir";
+    fi;
+    return $__return
+}
+current path: /Users/jjbiggins/.rvm/src
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0
+PATH=/opt/local/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/jjbiggins/.rvm/bin:/Users/jjbiggins/.rvm/bin
+command(3): __rvm_package_extract /Users/jjbiggins/.rvm/archives/ruby-3.0.0.tar.gz /Users/jjbiggins/.rvm/tmp/rvm_src_67806
+++ /scripts/functions/utility_package : __rvm_package_extract()  86 > rvm_debug __rvm_package_extract:2: /Users/jjbiggins/.rvm/archives/ruby-3.0.0.tar.gz /Users/jjbiggins/.rvm/tmp/rvm_src_67806
+++ /scripts/functions/logging : rvm_debug()  215 > ((  0  ))
+++ /scripts/functions/logging : rvm_debug()  215 > return 0
+++ /scripts/functions/utility_package : __rvm_package_extract()  87 > typeset __extract_src __extract_target __tempdir __path __file __return
+++ /scripts/functions/utility_package : __rvm_package_extract()  88 > __extract_src=/Users/jjbiggins/.rvm/archives/ruby-3.0.0.tar.gz
+++ /scripts/functions/utility_package : __rvm_package_extract()  89 > __extract_target=/Users/jjbiggins/.rvm/tmp/rvm_src_67806
+++ /scripts/functions/utility_package : __rvm_package_extract()  90 > shift 2
+++ /scripts/functions/utility_package : __rvm_package_extract()  91 > __return=0
++++ /scripts/functions/utility_package : __rvm_package_extract()  92 > TMPDIR=/Users/jjbiggins/.rvm/tmp
++++ /scripts/functions/utility_package : __rvm_package_extract()  92 > mktemp -d -t rvm-tmp.XXXXXXXXX
+++ /scripts/functions/utility_package : __rvm_package_extract()  92 > __tempdir=/var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b
+++ /scripts/functions/utility_package : __rvm_package_extract()  93 > __rvm_package_extract_run /Users/jjbiggins/.rvm/archives/ruby-3.0.0.tar.gz /var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  42 > typeset __extract_run_src __extract_run_target __exclude_elements
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  43 > __extract_run_src=/Users/jjbiggins/.rvm/archives/ruby-3.0.0.tar.gz
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  44 > __extract_run_target=/var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  45 > shift 2
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  46 > __exclude_elements=()
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  49 > [[    != *\ \-\-\n\o\-\s\a\m\e\-\o\w\n\e\r\ * ]]
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  50 > __rvm_tar --help
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  50 > __rvm_grep -- --no-same-owner
+++ /scripts/functions/support : __rvm_grep()  260 > GREP_OPTIONS=
+++ /scripts/functions/support : __rvm_grep()  260 > command grep -- --no-same-owner
+++ /scripts/functions/support : __rvm_grep()  260 > return 1
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  55 > [[ -d /var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b ]]
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  56 > case "$__extract_run_src" in
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  69 > __map_tar_excludes
+++ /scripts/functions/utility_package : __map_tar_excludes()  34 > typeset __exclude_element
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  70 > [[ -n '' ]]
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  72 > __rvm_tar -xzf /Users/jjbiggins/.rvm/archives/ruby-3.0.0.tar.gz -C /var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b
+++ /scripts/functions/support : __rvm_tar()  277 > tar -xzf /Users/jjbiggins/.rvm/archives/ruby-3.0.0.tar.gz -C /var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b
+++ /scripts/functions/utility_package : __rvm_package_extract_run()  79 > __rvm_fix_group_permissions /var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b/ruby-3.0.0
+++ /scripts/functions/utility_package : __rvm_fix_group_permissions()  6 > umask -S
+++ /scripts/functions/utility_package : __rvm_fix_group_permissions()  6 > __rvm_grep g=rw
+++ /scripts/functions/support : __rvm_grep()  260 > GREP_OPTIONS=
+++ /scripts/functions/support : __rvm_grep()  260 > command grep g=rw
+++ /scripts/functions/support : __rvm_grep()  260 > return 1
+++ /scripts/functions/utility_package : __rvm_package_extract()  95 > ((  __return == 0  ))
+++ /scripts/functions/utility_package : __rvm_package_extract()  97 > for __path in "$__tempdir"/*
+++ /scripts/functions/utility_package : __rvm_package_extract()  99 > __file=ruby-3.0.0
+++ /scripts/functions/utility_package : __rvm_package_extract()  101 > [[ -n ruby-3.0.0 ]]
+++ /scripts/functions/utility_package : __rvm_package_extract()  101 > [[ -e /Users/jjbiggins/.rvm/tmp/rvm_src_67806/ruby-3.0.0 ]]
+++ /scripts/functions/utility_package : __rvm_package_extract()  105 > command mv -f /var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b/ruby-3.0.0 /Users/jjbiggins/.rvm/tmp/rvm_src_67806/
+++ /scripts/functions/utility_package : __rvm_package_extract()  108 > [[ -n /var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b ]]
+++ /scripts/functions/utility_package : __rvm_package_extract()  109 > command rm -rf /var/folders/l0/71whk4dn7mg8zzrrz9sx7r7w0000gn/T/rvm-tmp.XXXXXXXXX.xqrAxb3b
+++ /scripts/functions/utility_package : __rvm_package_extract()  111 > return 0

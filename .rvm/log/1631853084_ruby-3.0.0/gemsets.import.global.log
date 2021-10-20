@@ -1,0 +1,600 @@
+[2021-09-16 23:33:35] gemset_import_list
+gemset_import_list () 
+{ 
+    case "${rvm_ruby_string}" in 
+        *jruby*)
+            \command \gem install "$@"
+        ;;
+        *)
+            \typeset line;
+            for line in "$@";
+            do
+                gem_install $line || rvm_error "there was an error installing gem $line";
+            done
+        ;;
+    esac
+}
+current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/opt/local/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+command(6): gemset_import_list gem-wrappers rubygems-bundler rake rvm bundler
+++ /scripts/functions/gemset : gemset_import_list()  251 > case "${rvm_ruby_string}" in
+++ /scripts/functions/gemset : gemset_import_list()  257 > typeset line
+++ /scripts/functions/gemset : gemset_import_list()  258 > for line in "$@"
+++ /scripts/functions/gemset : gemset_import_list()  259 > gem_install gem-wrappers
+++ /scripts/functions/gemset : gem_install()  146 > typeset gem_name gem_version version_check
+++ /scripts/functions/gemset : gem_install()  148 > gem_version=
+++ /scripts/functions/gemset : gem_install()  149 > __rvm_parse_gems_args gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  102 > typeset gem=gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  104 > __rvm_string_match gem-wrappers '*.gem$'
+++ /scripts/functions/support : __rvm_string_match()  35 > typeset _string
+++ /scripts/functions/support : __rvm_string_match()  36 > _string=gem-wrappers
+++ /scripts/functions/support : __rvm_string_match()  37 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  1  ))
+++ /scripts/functions/support : __rvm_string_match()  40 > case "${_string}" in
+++ /scripts/functions/support : __rvm_string_match()  43 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  0  ))
+++ /scripts/functions/support : __rvm_string_match()  45 > return 1
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  109 > gem_name=gem-wrappers
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  110 > case "$gem" in
+++ /scripts/functions/gemset : gem_install()  151 > [[ -z '' ]]
+++ /scripts/functions/gemset : gem_install()  152 > __rvm_db gem_gem-wrappers_version gem_version
+++ /scripts/functions/db : __rvm_db()  27 > typeset value key variable
+++ /scripts/functions/db : __rvm_db()  28 > key=gem_gem-wrappers_version
+++ /scripts/functions/db : __rvm_db()  29 > variable=gem_version
+++ /scripts/functions/db : __rvm_db()  30 > value=
+++ /scripts/functions/db : __rvm_db()  32 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db()  33 > __rvm_db_ /Users/jjbiggins/.rvm/user/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/user/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/user/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_gem-wrappers_version=# { s#^gem_gem-wrappers_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_gem-wrappers_version=# { s#^gem_gem-wrappers_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  33 > value=
+++ /scripts/functions/db : __rvm_db()  35 > [[ -z '' ]]
+++ /scripts/functions/db : __rvm_db()  35 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db()  36 > __rvm_db_ /Users/jjbiggins/.rvm/config/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/config/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/config/db gem_gem-wrappers_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_gem-wrappers_version=# { s#^gem_gem-wrappers_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_gem-wrappers_version=# { s#^gem_gem-wrappers_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  36 > value='>=1.4.0'
+++ /scripts/functions/db : __rvm_db()  38 > [[ -n >=1.4.0 ]]
+++ /scripts/functions/db : __rvm_db()  39 > [[ -n gem_version ]]
+++ /scripts/functions/db : __rvm_db()  40 > eval 'gem_version='\''>=1.4.0'\'''
++++ /scripts/functions/db : __rvm_db()  40 > gem_version='>=1.4.0'
+++ /scripts/functions/db : __rvm_db()  43 > true
+++ /scripts/functions/gemset : gem_install()  156 > ((  0 == 0  ))
+++ /scripts/functions/gemset : gem_install()  156 > is_gem_installed
+++ /scripts/functions/gemset : is_gem_installed()  127 > typeset gem_spec
+++ /scripts/functions/gemset : is_gem_installed()  128 > gem_spec='gem '\''gem-wrappers'\'''
+++ /scripts/functions/gemset : is_gem_installed()  130 > [[ -n >=1.4.0 ]]
+++ /scripts/functions/gemset : is_gem_installed()  132 > gem_spec+=', '\''>=1.4.0'\'''
+++ /scripts/functions/gemset : is_gem_installed()  133 > version_check=1.4.0
+++ /scripts/functions/gemset : is_gem_installed()  138 > __rvm_ls -ld /Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/gems/gem-wrappers-1.4.0
+++ /scripts/functions/gemset : is_gem_installed()  139 > /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin/ruby -rrubygems -e 'gem '\''gem-wrappers'\'', '\''>=1.4.0'\'''
+++ /scripts/functions/gemset : is_gem_installed()  140 > return 1
+++ /scripts/functions/gemset : gem_install()  161 > gem_install_force
+++ /scripts/functions/gemset : gem_install_force()  168 > typeset __available_gem
+++ /scripts/functions/gemset : gem_install_force()  169 > typeset -a install_params
+++ /scripts/functions/gemset : gem_install_force()  171 > install_params=()
++++ /scripts/functions/gemset : gem_install_force()  172 > __rvm_ls -v1 /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem
++++ /scripts/functions/gemset : gem_install_force()  172 > tail -n 1
+++ /scripts/functions/gemset : gem_install_force()  172 > __available_gem=/Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem
+++ /scripts/functions/gemset : gem_install_force()  174 > [[ -n /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem ]]
+++ /scripts/functions/gemset : gem_install_force()  175 > install_params+=(--local)
++++ /scripts/functions/gemset : gem_install_force()  180 > command gem --version
+++ /scripts/functions/gemset : gem_install_force()  180 > __rvm_version_compare 3.2.3 -ge 2.2
+++ /scripts/functions/utility : __rvm_version_compare()  161 > typeset first
++++ /scripts/functions/utility : __rvm_version_compare()  164 > command printf %b '3.2.3\n2.2\n'
++++ /scripts/functions/utility : __rvm_version_compare()  164 > __rvm_version_sort
++++ /scripts/functions/utility : __rvm_version_compare()  164 > command head -n1
++++ /scripts/functions/utility : __rvm_version_sort()  142 > command awk '-F[.-]' -v OFS=. '{                   # split on "." and "-", merge back with "."
+    original=$0                                        # save original to preserve it before the line is changed
+    for (n=1; n<10; n++) {                             # iterate through max 9 components of version
+      $n=tolower($n)                                   # ignore case for sorting
+      if ($n == "")                 $n="0"             # treat non existing parts as 0
+      if ($n ~ /^p[0-9]/)           $n=substr($n, 2)   # old ruby -p notation
+      if ($n ~ /^[0-9](rc|b)/)      $n=substr($n, 1, 1)". "substr($n, 2)   # old jruby 0RC1 notation
+      if (n == 1 && $n ~ /^[0-9]/)  $n="zzz."$n        # first group must be a string
+      if (n > 1 && $n ~ /^[a-z]/)   $n=" "$n           # names go before numbers thanks to space
+    }
+    print $0"\t"original                               # print the transformed version and original separated by \t
+                                                       # so we can extract original after sorting
+  }'
++++ /scripts/functions/utility : __rvm_version_sort()  155 > LC_ALL=C
++++ /scripts/functions/utility : __rvm_version_sort()  155 > sort -t. -k 1,1d -k 2,2n -k 3,3n -k 4,4n -k 5,5n -k 6,6n -k 7,7n -k 8,8n -k 9,9n
++++ /scripts/functions/utility : __rvm_version_sort()  156 > awk '-F\t' '{print $2}'
+++ /scripts/functions/utility : __rvm_version_compare()  164 > first=2.2
+++ /scripts/functions/utility : __rvm_version_compare()  166 > case "$2" in
+++ /scripts/functions/utility : __rvm_version_compare()  180 > [[ 2.2 == \h\e\a\d ]]
+++ /scripts/functions/utility : __rvm_version_compare()  182 > [[ 2.2 == \2\.\2 ]]
+++ /scripts/functions/utility : __rvm_version_compare()  202 > return 0
+++ /scripts/functions/gemset : gem_install_force()  181 > install_params+=(--no-document)
+++ /scripts/functions/gemset : gem_install_force()  198 > __rvm_log_command 'gem.install.gem-wrappers->=1.4.0' 'installing gem /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document' command gem install /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command()  46 > typeset name message _command_start _command_name
+++ /scripts/functions/utility_logging : __rvm_log_command()  47 > typeset -a _command
+++ /scripts/functions/utility_logging : __rvm_log_command()  49 > name='gem.install.gem-wrappers->=1.4.0'
+++ /scripts/functions/utility_logging : __rvm_log_command()  50 > message='installing gem /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document'
+++ /scripts/functions/utility_logging : __rvm_log_command()  51 > shift 2
+++ /scripts/functions/utility_logging : __rvm_log_command()  52 > _command=("$@")
+++ /scripts/functions/utility_logging : __rvm_log_command()  53 > _command_start=command
+++ /scripts/functions/utility_logging : __rvm_log_command()  54 > ((  6  ))
+++ /scripts/functions/utility_logging : __rvm_log_command()  54 > [[ command == *\=* ]]
+++ /scripts/functions/utility_logging : __rvm_log_command()  57 > _command_name=command
+++ /scripts/functions/utility_logging : __rvm_log_command()  59 > [[ command != *\=* ]]
+++ /scripts/functions/utility_logging : __rvm_log_command()  60 > __function_on_stack __rvm_log_command_internal
+++ /scripts/functions/support : __function_on_stack()  504 > __rvm_string_includes '__function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main' __rvm_log_command_internal
+++ /scripts/functions/support : __rvm_string_includes()  491 > typeset __search '__text=__function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main'
+++ /scripts/functions/support : __rvm_string_includes()  492 > shift
+++ /scripts/functions/support : __rvm_string_includes()  493 > for __search in "$@"
+++ /scripts/functions/support : __rvm_string_includes()  495 > [[  __function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main  == *\ \_\_\r\v\m\_\l\o\g\_\c\o\m\m\a\n\d\_\i\n\t\e\r\n\a\l\ * ]]
+++ /scripts/functions/support : __rvm_string_includes()  496 > return 0
+++ /scripts/functions/utility_logging : __rvm_log_command()  61 > __rvm_log_command_simple command gem install /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  81 > __rvm_log_command_debug
++++ /scripts/functions/utility_logging : __rvm_log_command_debug()  69 > __rvm_date '+%Y-%m-%d %H:%M:%S'
++++ /scripts/functions/support : __rvm_date()  277 > date '+%Y-%m-%d %H:%M:%S'
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  69 > printf %b '[2021-09-16 23:33:36] command\n'
+[2021-09-16 23:33:36] command
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  70 > is_a_function command
+++ /scripts/functions/support : is_a_function()  5 > typeset -f command
+++ /scripts/functions/support : is_a_function()  5 > return 1
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  73 > printf %b 'current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0\n'
+current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  74 > env
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  74 > __rvm_grep -E '^GEM_HOME=|^GEM_PATH=|^PATH='
+++ /scripts/functions/support : __rvm_grep()  260 > GREP_OPTIONS=
+++ /scripts/functions/support : __rvm_grep()  260 > command grep -E '^GEM_HOME=|^GEM_PATH=|^PATH='
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/opt/local/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  75 > printf %b 'command(6): command gem install /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document\n'
+command(6): command gem install /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  82 > rvm_log 'installing gem /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document'
+++ /scripts/functions/logging : rvm_log()  208 > [[ '' == 1 ]]
+++ /scripts/functions/logging : rvm_log()  210 > printf %b 'installing gem /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document\n'
+installing gem /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  83 > command gem install /Users/jjbiggins/.rvm/gem-cache/gem-wrappers-1.4.0.gem --local --no-document
+Building native extensions. This could take a while...
+Successfully installed gem-wrappers-1.4.0
+1 gem installed
+++ /scripts/functions/gemset : gem_install()  163 > true
+++ /scripts/functions/gemset : gemset_import_list()  258 > for line in "$@"
+++ /scripts/functions/gemset : gemset_import_list()  259 > gem_install rubygems-bundler
+++ /scripts/functions/gemset : gem_install()  146 > typeset gem_name gem_version version_check
+++ /scripts/functions/gemset : gem_install()  148 > gem_version=
+++ /scripts/functions/gemset : gem_install()  149 > __rvm_parse_gems_args rubygems-bundler
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  102 > typeset gem=rubygems-bundler
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  104 > __rvm_string_match rubygems-bundler '*.gem$'
+++ /scripts/functions/support : __rvm_string_match()  35 > typeset _string
+++ /scripts/functions/support : __rvm_string_match()  36 > _string=rubygems-bundler
+++ /scripts/functions/support : __rvm_string_match()  37 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  1  ))
+++ /scripts/functions/support : __rvm_string_match()  40 > case "${_string}" in
+++ /scripts/functions/support : __rvm_string_match()  43 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  0  ))
+++ /scripts/functions/support : __rvm_string_match()  45 > return 1
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  109 > gem_name=rubygems-bundler
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  110 > case "$gem" in
+++ /scripts/functions/gemset : gem_install()  151 > [[ -z '' ]]
+++ /scripts/functions/gemset : gem_install()  152 > __rvm_db gem_rubygems-bundler_version gem_version
+++ /scripts/functions/db : __rvm_db()  27 > typeset value key variable
+++ /scripts/functions/db : __rvm_db()  28 > key=gem_rubygems-bundler_version
+++ /scripts/functions/db : __rvm_db()  29 > variable=gem_version
+++ /scripts/functions/db : __rvm_db()  30 > value=
+++ /scripts/functions/db : __rvm_db()  32 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db()  33 > __rvm_db_ /Users/jjbiggins/.rvm/user/db gem_rubygems-bundler_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/user/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_rubygems-bundler_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/user/db gem_rubygems-bundler_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_rubygems-bundler_version=# { s#^gem_rubygems-bundler_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_rubygems-bundler_version=# { s#^gem_rubygems-bundler_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  33 > value=
+++ /scripts/functions/db : __rvm_db()  35 > [[ -z '' ]]
+++ /scripts/functions/db : __rvm_db()  35 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db()  36 > __rvm_db_ /Users/jjbiggins/.rvm/config/db gem_rubygems-bundler_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/config/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_rubygems-bundler_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/config/db gem_rubygems-bundler_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_rubygems-bundler_version=# { s#^gem_rubygems-bundler_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_rubygems-bundler_version=# { s#^gem_rubygems-bundler_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  36 > value=
+++ /scripts/functions/db : __rvm_db()  38 > [[ -n '' ]]
+++ /scripts/functions/db : __rvm_db()  38 > return 1
+++ /scripts/functions/gemset : gem_install()  156 > ((  0 == 0  ))
+++ /scripts/functions/gemset : gem_install()  156 > is_gem_installed
+++ /scripts/functions/gemset : is_gem_installed()  127 > typeset gem_spec
+++ /scripts/functions/gemset : is_gem_installed()  128 > gem_spec='gem '\''rubygems-bundler'\'''
+++ /scripts/functions/gemset : is_gem_installed()  130 > [[ -n '' ]]
+++ /scripts/functions/gemset : is_gem_installed()  135 > version_check='*([[:digit:]\.])'
+++ /scripts/functions/gemset : is_gem_installed()  138 > __rvm_ls -ld '/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/gems/rubygems-bundler-*([[:digit:]\.])'
+++ /scripts/functions/gemset : is_gem_installed()  139 > /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin/ruby -rrubygems -e 'gem '\''rubygems-bundler'\'''
+++ /scripts/functions/gemset : is_gem_installed()  140 > return 1
+++ /scripts/functions/gemset : gem_install()  161 > gem_install_force
+++ /scripts/functions/gemset : gem_install_force()  168 > typeset __available_gem
+++ /scripts/functions/gemset : gem_install_force()  169 > typeset -a install_params
+++ /scripts/functions/gemset : gem_install_force()  171 > install_params=()
++++ /scripts/functions/gemset : gem_install_force()  172 > __rvm_ls -v1 '/Users/jjbiggins/.rvm/gem-cache/rubygems-bundler-*([[:digit:]\.]).gem'
++++ /scripts/functions/gemset : gem_install_force()  172 > tail -n 1
+++ /scripts/functions/gemset : gem_install_force()  172 > __available_gem=
+++ /scripts/functions/gemset : gem_install_force()  174 > [[ -n '' ]]
+++ /scripts/functions/gemset : gem_install_force()  176 > [[ -n '' ]]
++++ /scripts/functions/gemset : gem_install_force()  180 > command gem --version
+++ /scripts/functions/gemset : gem_install_force()  180 > __rvm_version_compare 3.2.3 -ge 2.2
+++ /scripts/functions/utility : __rvm_version_compare()  161 > typeset first
++++ /scripts/functions/utility : __rvm_version_compare()  164 > command printf %b '3.2.3\n2.2\n'
++++ /scripts/functions/utility : __rvm_version_compare()  164 > __rvm_version_sort
++++ /scripts/functions/utility : __rvm_version_compare()  164 > command head -n1
++++ /scripts/functions/utility : __rvm_version_sort()  142 > command awk '-F[.-]' -v OFS=. '{                   # split on "." and "-", merge back with "."
+    original=$0                                        # save original to preserve it before the line is changed
+    for (n=1; n<10; n++) {                             # iterate through max 9 components of version
+      $n=tolower($n)                                   # ignore case for sorting
+      if ($n == "")                 $n="0"             # treat non existing parts as 0
+      if ($n ~ /^p[0-9]/)           $n=substr($n, 2)   # old ruby -p notation
+      if ($n ~ /^[0-9](rc|b)/)      $n=substr($n, 1, 1)". "substr($n, 2)   # old jruby 0RC1 notation
+      if (n == 1 && $n ~ /^[0-9]/)  $n="zzz."$n        # first group must be a string
+      if (n > 1 && $n ~ /^[a-z]/)   $n=" "$n           # names go before numbers thanks to space
+    }
+    print $0"\t"original                               # print the transformed version and original separated by \t
+                                                       # so we can extract original after sorting
+  }'
++++ /scripts/functions/utility : __rvm_version_sort()  155 > LC_ALL=C
++++ /scripts/functions/utility : __rvm_version_sort()  155 > sort -t. -k 1,1d -k 2,2n -k 3,3n -k 4,4n -k 5,5n -k 6,6n -k 7,7n -k 8,8n -k 9,9n
++++ /scripts/functions/utility : __rvm_version_sort()  156 > awk '-F\t' '{print $2}'
+++ /scripts/functions/utility : __rvm_version_compare()  164 > first=2.2
+++ /scripts/functions/utility : __rvm_version_compare()  166 > case "$2" in
+++ /scripts/functions/utility : __rvm_version_compare()  180 > [[ 2.2 == \h\e\a\d ]]
+++ /scripts/functions/utility : __rvm_version_compare()  182 > [[ 2.2 == \2\.\2 ]]
+++ /scripts/functions/utility : __rvm_version_compare()  202 > return 0
+++ /scripts/functions/gemset : gem_install_force()  181 > install_params+=(--no-document)
+++ /scripts/functions/gemset : gem_install_force()  198 > __rvm_log_command gem.install.rubygems-bundler 'installing gem rubygems-bundler --no-document' command gem install rubygems-bundler --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command()  46 > typeset name message _command_start _command_name
+++ /scripts/functions/utility_logging : __rvm_log_command()  47 > typeset -a _command
+++ /scripts/functions/utility_logging : __rvm_log_command()  49 > name=gem.install.rubygems-bundler
+++ /scripts/functions/utility_logging : __rvm_log_command()  50 > message='installing gem rubygems-bundler --no-document'
+++ /scripts/functions/utility_logging : __rvm_log_command()  51 > shift 2
+++ /scripts/functions/utility_logging : __rvm_log_command()  52 > _command=("$@")
+++ /scripts/functions/utility_logging : __rvm_log_command()  53 > _command_start=command
+++ /scripts/functions/utility_logging : __rvm_log_command()  54 > ((  5  ))
+++ /scripts/functions/utility_logging : __rvm_log_command()  54 > [[ command == *\=* ]]
+++ /scripts/functions/utility_logging : __rvm_log_command()  57 > _command_name=command
+++ /scripts/functions/utility_logging : __rvm_log_command()  59 > [[ command != *\=* ]]
+++ /scripts/functions/utility_logging : __rvm_log_command()  60 > __function_on_stack __rvm_log_command_internal
+++ /scripts/functions/support : __function_on_stack()  504 > __rvm_string_includes '__function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main' __rvm_log_command_internal
+++ /scripts/functions/support : __rvm_string_includes()  491 > typeset __search '__text=__function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main'
+++ /scripts/functions/support : __rvm_string_includes()  492 > shift
+++ /scripts/functions/support : __rvm_string_includes()  493 > for __search in "$@"
+++ /scripts/functions/support : __rvm_string_includes()  495 > [[  __function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main  == *\ \_\_\r\v\m\_\l\o\g\_\c\o\m\m\a\n\d\_\i\n\t\e\r\n\a\l\ * ]]
+++ /scripts/functions/support : __rvm_string_includes()  496 > return 0
+++ /scripts/functions/utility_logging : __rvm_log_command()  61 > __rvm_log_command_simple command gem install rubygems-bundler --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  81 > __rvm_log_command_debug
++++ /scripts/functions/utility_logging : __rvm_log_command_debug()  69 > __rvm_date '+%Y-%m-%d %H:%M:%S'
++++ /scripts/functions/support : __rvm_date()  277 > date '+%Y-%m-%d %H:%M:%S'
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  69 > printf %b '[2021-09-16 23:33:37] command\n'
+[2021-09-16 23:33:37] command
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  70 > is_a_function command
+++ /scripts/functions/support : is_a_function()  5 > typeset -f command
+++ /scripts/functions/support : is_a_function()  5 > return 1
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  73 > printf %b 'current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0\n'
+current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  74 > env
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  74 > __rvm_grep -E '^GEM_HOME=|^GEM_PATH=|^PATH='
+++ /scripts/functions/support : __rvm_grep()  260 > GREP_OPTIONS=
+++ /scripts/functions/support : __rvm_grep()  260 > command grep -E '^GEM_HOME=|^GEM_PATH=|^PATH='
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/opt/local/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  75 > printf %b 'command(5): command gem install rubygems-bundler --no-document\n'
+command(5): command gem install rubygems-bundler --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  82 > rvm_log 'installing gem rubygems-bundler --no-document'
+++ /scripts/functions/logging : rvm_log()  208 > [[ '' == 1 ]]
+++ /scripts/functions/logging : rvm_log()  210 > printf %b 'installing gem rubygems-bundler --no-document\n'
+installing gem rubygems-bundler --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  83 > command gem install rubygems-bundler --no-document
+Building native extensions. This could take a while...
+# In case of problems run the following command to update binstubs:
+    gem regenerate_binstubs
+Successfully installed executable-hooks-1.6.1
+Successfully installed bundler-unload-1.0.2
+Successfully installed rubygems-bundler-1.4.5
+3 gems installed
+++ /scripts/functions/gemset : gem_install()  163 > true
+++ /scripts/functions/gemset : gemset_import_list()  258 > for line in "$@"
+++ /scripts/functions/gemset : gemset_import_list()  259 > gem_install rake
+++ /scripts/functions/gemset : gem_install()  146 > typeset gem_name gem_version version_check
+++ /scripts/functions/gemset : gem_install()  148 > gem_version=
+++ /scripts/functions/gemset : gem_install()  149 > __rvm_parse_gems_args rake
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  102 > typeset gem=rake
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  104 > __rvm_string_match rake '*.gem$'
+++ /scripts/functions/support : __rvm_string_match()  35 > typeset _string
+++ /scripts/functions/support : __rvm_string_match()  36 > _string=rake
+++ /scripts/functions/support : __rvm_string_match()  37 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  1  ))
+++ /scripts/functions/support : __rvm_string_match()  40 > case "${_string}" in
+++ /scripts/functions/support : __rvm_string_match()  43 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  0  ))
+++ /scripts/functions/support : __rvm_string_match()  45 > return 1
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  109 > gem_name=rake
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  110 > case "$gem" in
+++ /scripts/functions/gemset : gem_install()  151 > [[ -z '' ]]
+++ /scripts/functions/gemset : gem_install()  152 > __rvm_db gem_rake_version gem_version
+++ /scripts/functions/db : __rvm_db()  27 > typeset value key variable
+++ /scripts/functions/db : __rvm_db()  28 > key=gem_rake_version
+++ /scripts/functions/db : __rvm_db()  29 > variable=gem_version
+++ /scripts/functions/db : __rvm_db()  30 > value=
+++ /scripts/functions/db : __rvm_db()  32 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db()  33 > __rvm_db_ /Users/jjbiggins/.rvm/user/db gem_rake_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/user/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_rake_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/user/db gem_rake_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_rake_version=# { s#^gem_rake_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_rake_version=# { s#^gem_rake_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  33 > value=
+++ /scripts/functions/db : __rvm_db()  35 > [[ -z '' ]]
+++ /scripts/functions/db : __rvm_db()  35 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db()  36 > __rvm_db_ /Users/jjbiggins/.rvm/config/db gem_rake_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/config/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_rake_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/config/db gem_rake_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_rake_version=# { s#^gem_rake_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_rake_version=# { s#^gem_rake_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  36 > value=
+++ /scripts/functions/db : __rvm_db()  38 > [[ -n '' ]]
+++ /scripts/functions/db : __rvm_db()  38 > return 1
+++ /scripts/functions/gemset : gem_install()  156 > ((  0 == 0  ))
+++ /scripts/functions/gemset : gem_install()  156 > is_gem_installed
+++ /scripts/functions/gemset : is_gem_installed()  127 > typeset gem_spec
+++ /scripts/functions/gemset : is_gem_installed()  128 > gem_spec='gem '\''rake'\'''
+++ /scripts/functions/gemset : is_gem_installed()  130 > [[ -n '' ]]
+++ /scripts/functions/gemset : is_gem_installed()  135 > version_check='*([[:digit:]\.])'
+++ /scripts/functions/gemset : is_gem_installed()  138 > __rvm_ls -ld /Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/gems/rake-13.0.3
+++ /scripts/functions/gemset : gem_install()  158 > rvm_log 'gem rake  is already installed'
+++ /scripts/functions/logging : rvm_log()  208 > [[ '' == 1 ]]
+++ /scripts/functions/logging : rvm_log()  210 > printf %b 'gem rake  is already installed\n'
+gem rake  is already installed
+++ /scripts/functions/gemset : gem_install()  159 > return 0
+++ /scripts/functions/gemset : gemset_import_list()  258 > for line in "$@"
+++ /scripts/functions/gemset : gemset_import_list()  259 > gem_install rvm
+++ /scripts/functions/gemset : gem_install()  146 > typeset gem_name gem_version version_check
+++ /scripts/functions/gemset : gem_install()  148 > gem_version=
+++ /scripts/functions/gemset : gem_install()  149 > __rvm_parse_gems_args rvm
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  102 > typeset gem=rvm
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  104 > __rvm_string_match rvm '*.gem$'
+++ /scripts/functions/support : __rvm_string_match()  35 > typeset _string
+++ /scripts/functions/support : __rvm_string_match()  36 > _string=rvm
+++ /scripts/functions/support : __rvm_string_match()  37 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  1  ))
+++ /scripts/functions/support : __rvm_string_match()  40 > case "${_string}" in
+++ /scripts/functions/support : __rvm_string_match()  43 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  0  ))
+++ /scripts/functions/support : __rvm_string_match()  45 > return 1
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  109 > gem_name=rvm
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  110 > case "$gem" in
+++ /scripts/functions/gemset : gem_install()  151 > [[ -z '' ]]
+++ /scripts/functions/gemset : gem_install()  152 > __rvm_db gem_rvm_version gem_version
+++ /scripts/functions/db : __rvm_db()  27 > typeset value key variable
+++ /scripts/functions/db : __rvm_db()  28 > key=gem_rvm_version
+++ /scripts/functions/db : __rvm_db()  29 > variable=gem_version
+++ /scripts/functions/db : __rvm_db()  30 > value=
+++ /scripts/functions/db : __rvm_db()  32 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db()  33 > __rvm_db_ /Users/jjbiggins/.rvm/user/db gem_rvm_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/user/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_rvm_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/user/db gem_rvm_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_rvm_version=# { s#^gem_rvm_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_rvm_version=# { s#^gem_rvm_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  33 > value=
+++ /scripts/functions/db : __rvm_db()  35 > [[ -z '' ]]
+++ /scripts/functions/db : __rvm_db()  35 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db()  36 > __rvm_db_ /Users/jjbiggins/.rvm/config/db gem_rvm_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/config/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_rvm_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/config/db gem_rvm_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_rvm_version=# { s#^gem_rvm_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_rvm_version=# { s#^gem_rvm_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  36 > value='>=1.11.3.9'
+++ /scripts/functions/db : __rvm_db()  38 > [[ -n >=1.11.3.9 ]]
+++ /scripts/functions/db : __rvm_db()  39 > [[ -n gem_version ]]
+++ /scripts/functions/db : __rvm_db()  40 > eval 'gem_version='\''>=1.11.3.9'\'''
++++ /scripts/functions/db : __rvm_db()  40 > gem_version='>=1.11.3.9'
+++ /scripts/functions/db : __rvm_db()  43 > true
+++ /scripts/functions/gemset : gem_install()  156 > ((  0 == 0  ))
+++ /scripts/functions/gemset : gem_install()  156 > is_gem_installed
+++ /scripts/functions/gemset : is_gem_installed()  127 > typeset gem_spec
+++ /scripts/functions/gemset : is_gem_installed()  128 > gem_spec='gem '\''rvm'\'''
+++ /scripts/functions/gemset : is_gem_installed()  130 > [[ -n >=1.11.3.9 ]]
+++ /scripts/functions/gemset : is_gem_installed()  132 > gem_spec+=', '\''>=1.11.3.9'\'''
+++ /scripts/functions/gemset : is_gem_installed()  133 > version_check=1.11.3.9
+++ /scripts/functions/gemset : is_gem_installed()  138 > __rvm_ls -ld /Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/gems/rvm-1.11.3.9
+++ /scripts/functions/gemset : is_gem_installed()  139 > /Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin/ruby -rrubygems -e 'gem '\''rvm'\'', '\''>=1.11.3.9'\'''
+++ /scripts/functions/gemset : is_gem_installed()  140 > return 1
+++ /scripts/functions/gemset : gem_install()  161 > gem_install_force
+++ /scripts/functions/gemset : gem_install_force()  168 > typeset __available_gem
+++ /scripts/functions/gemset : gem_install_force()  169 > typeset -a install_params
+++ /scripts/functions/gemset : gem_install_force()  171 > install_params=()
++++ /scripts/functions/gemset : gem_install_force()  172 > __rvm_ls -v1 /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem
++++ /scripts/functions/gemset : gem_install_force()  172 > tail -n 1
+++ /scripts/functions/gemset : gem_install_force()  172 > __available_gem=/Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem
+++ /scripts/functions/gemset : gem_install_force()  174 > [[ -n /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem ]]
+++ /scripts/functions/gemset : gem_install_force()  175 > install_params+=(--local)
++++ /scripts/functions/gemset : gem_install_force()  180 > command gem --version
+++ /scripts/functions/gemset : gem_install_force()  180 > __rvm_version_compare 3.2.3 -ge 2.2
+++ /scripts/functions/utility : __rvm_version_compare()  161 > typeset first
++++ /scripts/functions/utility : __rvm_version_compare()  164 > command printf %b '3.2.3\n2.2\n'
++++ /scripts/functions/utility : __rvm_version_compare()  164 > __rvm_version_sort
++++ /scripts/functions/utility : __rvm_version_compare()  164 > command head -n1
++++ /scripts/functions/utility : __rvm_version_sort()  142 > command awk '-F[.-]' -v OFS=. '{                   # split on "." and "-", merge back with "."
+    original=$0                                        # save original to preserve it before the line is changed
+    for (n=1; n<10; n++) {                             # iterate through max 9 components of version
+      $n=tolower($n)                                   # ignore case for sorting
+      if ($n == "")                 $n="0"             # treat non existing parts as 0
+      if ($n ~ /^p[0-9]/)           $n=substr($n, 2)   # old ruby -p notation
+      if ($n ~ /^[0-9](rc|b)/)      $n=substr($n, 1, 1)". "substr($n, 2)   # old jruby 0RC1 notation
+      if (n == 1 && $n ~ /^[0-9]/)  $n="zzz."$n        # first group must be a string
+      if (n > 1 && $n ~ /^[a-z]/)   $n=" "$n           # names go before numbers thanks to space
+    }
+    print $0"\t"original                               # print the transformed version and original separated by \t
+                                                       # so we can extract original after sorting
+  }'
++++ /scripts/functions/utility : __rvm_version_sort()  155 > LC_ALL=C
++++ /scripts/functions/utility : __rvm_version_sort()  155 > sort -t. -k 1,1d -k 2,2n -k 3,3n -k 4,4n -k 5,5n -k 6,6n -k 7,7n -k 8,8n -k 9,9n
++++ /scripts/functions/utility : __rvm_version_sort()  156 > awk '-F\t' '{print $2}'
+++ /scripts/functions/utility : __rvm_version_compare()  164 > first=2.2
+++ /scripts/functions/utility : __rvm_version_compare()  166 > case "$2" in
+++ /scripts/functions/utility : __rvm_version_compare()  180 > [[ 2.2 == \h\e\a\d ]]
+++ /scripts/functions/utility : __rvm_version_compare()  182 > [[ 2.2 == \2\.\2 ]]
+++ /scripts/functions/utility : __rvm_version_compare()  202 > return 0
+++ /scripts/functions/gemset : gem_install_force()  181 > install_params+=(--no-document)
+++ /scripts/functions/gemset : gem_install_force()  198 > __rvm_log_command 'gem.install.rvm->=1.11.3.9' 'installing gem /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document' command gem install /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command()  46 > typeset name message _command_start _command_name
+++ /scripts/functions/utility_logging : __rvm_log_command()  47 > typeset -a _command
+++ /scripts/functions/utility_logging : __rvm_log_command()  49 > name='gem.install.rvm->=1.11.3.9'
+++ /scripts/functions/utility_logging : __rvm_log_command()  50 > message='installing gem /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document'
+++ /scripts/functions/utility_logging : __rvm_log_command()  51 > shift 2
+++ /scripts/functions/utility_logging : __rvm_log_command()  52 > _command=("$@")
+++ /scripts/functions/utility_logging : __rvm_log_command()  53 > _command_start=command
+++ /scripts/functions/utility_logging : __rvm_log_command()  54 > ((  6  ))
+++ /scripts/functions/utility_logging : __rvm_log_command()  54 > [[ command == *\=* ]]
+++ /scripts/functions/utility_logging : __rvm_log_command()  57 > _command_name=command
+++ /scripts/functions/utility_logging : __rvm_log_command()  59 > [[ command != *\=* ]]
+++ /scripts/functions/utility_logging : __rvm_log_command()  60 > __function_on_stack __rvm_log_command_internal
+++ /scripts/functions/support : __function_on_stack()  504 > __rvm_string_includes '__function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main' __rvm_log_command_internal
+++ /scripts/functions/support : __rvm_string_includes()  491 > typeset __search '__text=__function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main'
+++ /scripts/functions/support : __rvm_string_includes()  492 > shift
+++ /scripts/functions/support : __rvm_string_includes()  493 > for __search in "$@"
+++ /scripts/functions/support : __rvm_string_includes()  495 > [[  __function_on_stack __rvm_log_command gem_install_force gem_install gemset_import_list __rvm_log_dotted __rvm_log_command_internal __rvm_log_command gemset_import gemset_initial __rvm_with gemset_create __rvm_initial_gemsets_create_gemsets __rvm_initial_gemsets_create __rvm_install_source ruby_install __rvm_install_ruby __rvm_manage_rubies source __rvm_run_wrapper __rvm_cli_install_ruby rvm main  == *\ \_\_\r\v\m\_\l\o\g\_\c\o\m\m\a\n\d\_\i\n\t\e\r\n\a\l\ * ]]
+++ /scripts/functions/support : __rvm_string_includes()  496 > return 0
+++ /scripts/functions/utility_logging : __rvm_log_command()  61 > __rvm_log_command_simple command gem install /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  81 > __rvm_log_command_debug
++++ /scripts/functions/utility_logging : __rvm_log_command_debug()  69 > __rvm_date '+%Y-%m-%d %H:%M:%S'
++++ /scripts/functions/support : __rvm_date()  277 > date '+%Y-%m-%d %H:%M:%S'
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  69 > printf %b '[2021-09-16 23:33:38] command\n'
+[2021-09-16 23:33:38] command
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  70 > is_a_function command
+++ /scripts/functions/support : is_a_function()  5 > typeset -f command
+++ /scripts/functions/support : is_a_function()  5 > return 1
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  73 > printf %b 'current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0\n'
+current path: /Users/jjbiggins/.rvm/src/ruby-3.0.0
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  74 > env
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  74 > __rvm_grep -E '^GEM_HOME=|^GEM_PATH=|^PATH='
+++ /scripts/functions/support : __rvm_grep()  260 > GREP_OPTIONS=
+++ /scripts/functions/support : __rvm_grep()  260 > command grep -E '^GEM_HOME=|^GEM_PATH=|^PATH='
+GEM_PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+GEM_HOME=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global
+PATH=/Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/bin:/Users/jjbiggins/.rvm/rubies/ruby-3.0.0/bin:/Users/jjbiggins/.rvm/bin:/opt/local/bin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/Volumes/mnt/bin:/Users/jjbiggins/bin:/Users/jjbiggins/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home/bin:/opt/gradle/gradle-7.1.1/bin:/usr/local/apache-ant-latest/bin:/usr/local/apache-maven-latest/bin:/Library/PostgreSQL/13/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/usr/local/zfs/bin:/opt/X11/bin:~/.dotnet/tools:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+++ /scripts/functions/utility_logging : __rvm_log_command_debug()  75 > printf %b 'command(6): command gem install /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document\n'
+command(6): command gem install /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  82 > rvm_log 'installing gem /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document'
+++ /scripts/functions/logging : rvm_log()  208 > [[ '' == 1 ]]
+++ /scripts/functions/logging : rvm_log()  210 > printf %b 'installing gem /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document\n'
+installing gem /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document
+++ /scripts/functions/utility_logging : __rvm_log_command_simple()  83 > command gem install /Users/jjbiggins/.rvm/gem-cache/rvm-1.11.3.9.gem --local --no-document
+Successfully installed rvm-1.11.3.9
+1 gem installed
+++ /scripts/functions/gemset : gem_install()  163 > true
+++ /scripts/functions/gemset : gemset_import_list()  258 > for line in "$@"
+++ /scripts/functions/gemset : gemset_import_list()  259 > gem_install bundler
+++ /scripts/functions/gemset : gem_install()  146 > typeset gem_name gem_version version_check
+++ /scripts/functions/gemset : gem_install()  148 > gem_version=
+++ /scripts/functions/gemset : gem_install()  149 > __rvm_parse_gems_args bundler
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  102 > typeset gem=bundler
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  104 > __rvm_string_match bundler '*.gem$'
+++ /scripts/functions/support : __rvm_string_match()  35 > typeset _string
+++ /scripts/functions/support : __rvm_string_match()  36 > _string=bundler
+++ /scripts/functions/support : __rvm_string_match()  37 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  1  ))
+++ /scripts/functions/support : __rvm_string_match()  40 > case "${_string}" in
+++ /scripts/functions/support : __rvm_string_match()  43 > shift
+++ /scripts/functions/support : __rvm_string_match()  38 > ((  0  ))
+++ /scripts/functions/support : __rvm_string_match()  45 > return 1
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  109 > gem_name=bundler
+++ /scripts/functions/gemset : __rvm_parse_gems_args()  110 > case "$gem" in
+++ /scripts/functions/gemset : gem_install()  151 > [[ -z '' ]]
+++ /scripts/functions/gemset : gem_install()  152 > __rvm_db gem_bundler_version gem_version
+++ /scripts/functions/db : __rvm_db()  27 > typeset value key variable
+++ /scripts/functions/db : __rvm_db()  28 > key=gem_bundler_version
+++ /scripts/functions/db : __rvm_db()  29 > variable=gem_version
+++ /scripts/functions/db : __rvm_db()  30 > value=
+++ /scripts/functions/db : __rvm_db()  32 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db()  33 > __rvm_db_ /Users/jjbiggins/.rvm/user/db gem_bundler_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/user/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_bundler_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/user/db gem_bundler_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/user/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_bundler_version=# { s#^gem_bundler_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_bundler_version=# { s#^gem_bundler_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  33 > value=
+++ /scripts/functions/db : __rvm_db()  35 > [[ -z '' ]]
+++ /scripts/functions/db : __rvm_db()  35 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db()  36 > __rvm_db_ /Users/jjbiggins/.rvm/config/db gem_bundler_version
++++ /scripts/functions/db : __rvm_db_()  77 > typeset __db __key __value
++++ /scripts/functions/db : __rvm_db_()  78 > __db=/Users/jjbiggins/.rvm/config/db
++++ /scripts/functions/db : __rvm_db_()  79 > __key=gem_bundler_version
++++ /scripts/functions/db : __rvm_db_()  80 > shift 2
++++ /scripts/functions/db : __rvm_db_()  81 > __value=
++++ /scripts/functions/db : __rvm_db_()  82 > case "${__value}" in
++++ /scripts/functions/db : __rvm_db_()  87 > __rvm_db_get /Users/jjbiggins/.rvm/config/db gem_bundler_version
++++ /scripts/functions/db : __rvm_db_get()  69 > [[ -f /Users/jjbiggins/.rvm/config/db ]]
++++ /scripts/functions/db : __rvm_db_get()  70 > __rvm_sed -n -e '\#^gem_bundler_version=# { s#^gem_bundler_version=##;; p; }' -e '/^$/d'
++++ /scripts/functions/support : __rvm_sed()  277 > sed -n -e '\#^gem_bundler_version=# { s#^gem_bundler_version=##;; p; }' -e '/^$/d'
+++ /scripts/functions/db : __rvm_db()  36 > value=
+++ /scripts/functions/db : __rvm_db()  38 > [[ -n '' ]]
+++ /scripts/functions/db : __rvm_db()  38 > return 1
+++ /scripts/functions/gemset : gem_install()  156 > ((  0 == 0  ))
+++ /scripts/functions/gemset : gem_install()  156 > is_gem_installed
+++ /scripts/functions/gemset : is_gem_installed()  127 > typeset gem_spec
+++ /scripts/functions/gemset : is_gem_installed()  128 > gem_spec='gem '\''bundler'\'''
+++ /scripts/functions/gemset : is_gem_installed()  130 > [[ -n '' ]]
+++ /scripts/functions/gemset : is_gem_installed()  135 > version_check='*([[:digit:]\.])'
+++ /scripts/functions/gemset : is_gem_installed()  138 > __rvm_ls -ld /Users/jjbiggins/.rvm/gems/ruby-3.0.0@global/gems/bundler-2.2.3
+++ /scripts/functions/gemset : gem_install()  158 > rvm_log 'gem bundler  is already installed'
+++ /scripts/functions/logging : rvm_log()  208 > [[ '' == 1 ]]
+++ /scripts/functions/logging : rvm_log()  210 > printf %b 'gem bundler  is already installed\n'
+gem bundler  is already installed
+++ /scripts/functions/gemset : gem_install()  159 > return 0
