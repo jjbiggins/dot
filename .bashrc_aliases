@@ -2,6 +2,8 @@
 # MacOS Default Commands {{{
 #--------------------------------------------------------
 
+
+
 # Hide/Unhide Desktop Icons
 alias hidedesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
 alias unhidedesk="default write com.apple.finder CreateDesktop true; killall Finder"

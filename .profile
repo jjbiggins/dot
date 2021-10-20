@@ -164,7 +164,7 @@ export PATH
 # Give some programs in /usr/local/bin/someprogram
 # precedence over /opt/local/bin/someprogram
 
-
+export PGPASSWORD="joneschuck"
 
 #export PATH=/install/prefix/bin:$PATH
 #export C_INCLUDE_PATH=/install/prefix/include:<OpenMP include path>:$C_INCLUDE_PATH

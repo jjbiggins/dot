@@ -6,6 +6,26 @@
 #
 ######################################################################
 
+#psql () {
+#    if [[ $# == 1 ]]; then
+#	cmd=$(/Library/PostgreSQL/13/bin/psql -U chuckjones -d $1)
+#    fi
+#    $cmd
+#}
+
+psql () {
+    if [[ $# == 1 ]]; then 
+	PGPASSWORD=$PGPASSWORD /Library/PostgreSQL/13/bin/psql -U chuckjones --password -d "$1"
+    else
+	CMD_ARGS=$@
+	if [[ "${CMD_ARGS[@]}" == "-U postgres" ]]; then
+	    export PGPASSWORD=postgres
+	else
+	    export PGPASSWORD=$PGPASSWORD
+	fi
+	PGPASSWORD=$PGPASSWORD /Library/PostgreSQL/13/bin/psql $@ --password
+    fi
+}
 
 Arduino () {
     Arduino=/Users/jjbiggins/Documents/Arduino
