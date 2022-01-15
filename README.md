@@ -27,6 +27,7 @@ Checkout the actual content from the bare repository to your $HOME:
 config checkout
 ```
 
+
 The step above might fail with a message like:
 ```
 error: The following untracked working tree files would be overwritten by checkout:
