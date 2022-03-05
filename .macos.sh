@@ -3,7 +3,7 @@
 # MacOS System Defaults
 
 #-------------------------------------------------------------
-# Intro {{{
+# Intro
 #-------------------------------------------------------------
 # Closed any open System Preferences panes, to prevent overriding
 osascript -e 'tell application "System Preferences" to quit'
@@ -13,17 +13,17 @@ sudo -v
 
 # Keep-aliveL update existing `sudo` time stamp untile `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-# }}}
+#
 
 #-----------------------------------------------------------------
 # General UI/UX {{{
 #-----------------------------------------------------------------
 # Set computer name
-sudo scutil --set ComputerName "home"
-sudo scutil --set HostName "home"
-sudo scutil --set LocalHostName "home"
+sudo scutil --set ComputerName "localhost"
+sudo scutil --set HostName "localhost.biggins.one"
+sudo scutil --set LocalHostName "localhost"
 
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "home"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "BIGGINS"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -42,7 +42,7 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Disable the over-the-top focus ring animation
- defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
+defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
 # Disable smooth scrolling
 # (Uncomment if you’re on an older Mac that messes up the animation)
@@ -69,7 +69,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+#/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -158,7 +158,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain KeyRepeat -int 3
 defaults write NSGlobalDomain InitialKeyRepeat -int 11
 
 # Set language and text formats
@@ -177,9 +177,9 @@ sudo systemsetup -settimezone "America/Chicago" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
-# }}}
+# 
 
-# Dock, Dashboard, etc {{{
+# Dock, Dashboard, etc 
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -233,4 +233,5 @@ defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 0
 # Enable/Disable SSHD ------------------------------------------------
 # - load :  load launchd to allow incoming ssh connections
 # - unload: unload launch to disable them.
-sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+#sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+defaults write com.apple.finder CreateDesktop false; killall Finder

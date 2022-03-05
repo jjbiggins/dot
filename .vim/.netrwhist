@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/opt/usr/bin'
+let g:netrw_dirhist_7='/usr/local/bin'
 let g:netrw_dirhist_6='/Library/PostgreSQL/13/data'
 let g:netrw_dirhist_5='/Library/PostgreSQL/13/scripts'
 let g:netrw_dirhist_4='/Volumes/mnt/Sebis/test'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_2='/private/etc/ppp'
 let g:netrw_dirhist_1='/private/etc/paths.d'
 let g:netrw_dirhist_0='/Library/Scripts/Folder Action Scripts'
 let g:netrw_dirhist_9='/Users/jjbiggins/Developer/Sebis/apps/southfield/data/southfield/data'
-let g:netrw_dirhist_8='/Users/jjbiggins/Developer/Sebis/apps/southfield/data/southfield/input'
-let g:netrw_dirhist_7='/Users/jjbiggins/Developer/Sebis/adhoc/programs/adhoc_app'

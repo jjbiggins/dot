@@ -1,5 +1,5 @@
 [user]
-	email = jjbiggins@gitlab.biggins.one
+	email = jjbiggins+github@biggins.tech
 	name = Joe Biggins
 [filter "lfs"]
 	clean = git-lfs clean -- %f

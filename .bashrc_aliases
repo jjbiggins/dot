@@ -1,17 +1,16 @@
-#--------------------------------------------------------
-# MacOS Default Commands {{{
-#--------------------------------------------------------
-
-# Hide/Unhide Desktop Icons
+#
+#
+#
+#
 alias hdesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
 alias uhdesk="default write com.apple.finder CreateDesktop true; killall Finder"
-# }}}
-#--------------------------------------------------------
 #
 #
-#--------------------------------------------------------
-# Directory Aliases {{{
-#--------------------------------------------------------
+#
+#
+#
+#
+#
 alias dl="cd ~/Downloads"
 alias dev="cd ~/Developer"
 alias docs="cd ~/Documents"
@@ -19,35 +18,35 @@ alias desk="cd ~/Desktop"
 alias ~="cd ~"
 alias vols="cd /Volumes"
 alias sites="cd ~/Sites"
-# }}}
-#--------------------------------------------------------
 #
-#--------------------------------------------------------
-# ls aliases {{{
-#--------------------------------------------------------
+#
+#
+#
+#
+#
 alias lh="ls -lt | head"
 alias lt="ls -lt"
-alias ls="gls --color=auto"
-alias l="gls --color=auto"
-alias ll="gls -lG --color=auto"
-#}}}
-#--------------------------------------------------------
+alias ls="ls -G"
+alias l="ls -G"
+alias ll="ls -lG"
 #
-#-------------------------------------------------------------
-# Common Aliases {{{
-#-------------------------------------------------------
+#
+#
+#
+#
+#
 alias vbashrc="vim ~/.bashrc"
 alias vbashp="vim ~/.bash_profile"
 alias sbp="source ~/.bash_profile"
 alias vvimrc="vim ~/.vimrc"
 alias valiases="vim ~/.aliases"
 alias reload="exec $SHELL; source ~/.bash_profile"
-# }}}
-#-------------------------------------------------------------
 #
-# ------------------------------------------------------------
-# git aliases {{{
-#---------------------------------------------------------
+#
+#
+#
+#
+#
 #
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
 alias gcl="git clone --recursive"
@@ -140,7 +139,7 @@ alias grbc='git rebase --continue'
 alias grbi='git rebase -i'
 alias grbm='git rebase master'
 alias grbs='git rebase --skip'
-alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias grep='grep  --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias grmv='git remote rename'
@@ -174,20 +173,20 @@ alias gupv='git pull --rebase -v'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
 alias gpfwl='git push --force-with-lease'
-# }}}
-# ------------------------------------------------------------
 #
-# ------------------------------------------------------------
-# Macports aliases {{{
-# ------------------------------------------------------------
+#
+#
+#
+#
+#
 #
 alias porti="sudo port install"
-# }}}
 #
 #
-#=============================================================
-# Alias gnubin to replace builtin macOS binaries {{{
-# ==================================================================
+#
+#
+#
+#
 if command -v port &> /dev/null; then
     echo "Sourcing macport aliases...."
     alias awk="/opt/local/bin/gawk"
@@ -211,7 +210,7 @@ if command -v port &> /dev/null; then
     alias dd="/opt/local/bin/gdd"
     alias df="/opt/local/bin/gdf"
     alias dir="/opt/local/bin/gdir"
-    #alias dircolors="/opt/local/bin/gdircolors"
+    #
     alias dirname="/opt/local/bin/gdirname"
     alias du="/opt/local/bin/gdu"
     alias echo="/opt/local/bin/gecho"
@@ -308,92 +307,68 @@ if command -v port &> /dev/null; then
     alias yes="/opt/local/bin/gyes"
     alias sed="/opt/local/bin/gsed"
 fi
-# }}}
 #
 #
 #
 #
-alias rm='rm -i'
+#
 alias cp='cp -i'
 alias mv='mv -i'
-# -> Prevents accidentally clobbering files.
+#
 alias mkdir='mkdir -p'
-
 alias h='history'
 alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
-
-# Pretty-print of some PATH variables:
+#
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
-
-
-alias du='du -kh'    # Makes a more readable output.
-alias df='df -kTh'
-
-# alias rm to my bash function rms. from ~/.bashrc 
-# so I don't accidentlly irreversibly delete file
-
-
-#-------------------------------------------------------------
-# The 'ls' family (this assumes you use a recent GNU ls).
-#-------------------------------------------------------------
-# Add colors for filetype and  human-readable sizes by default on 'ls':
-alias lx='ls -lXB'         #  Sort by extension.
-alias lk='ls -lSr'         #  Sort by size, biggest last.
-alias lt='ls -ltr'         #  Sort by date, most recent last.
-alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
-alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
-
-# The ubiquitous 'll': directories first, with alphanumeric sorting:
-alias lm='ll | more'        #  Pipe through 'more'
-alias lr='ll -R'           #  Recursive ls.
-alias la='ll -A'           #  Show hidden files.
-alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
-
+#
+#
+#
+#
+#
+#
+alias lx='ls -lXB'         #
+alias lk='ls -lSr'         #
+alias lt='ls -ltr'         #
+alias lc='ls -ltcr'        #
+alias lu='ls -ltur'        #
+#
+alias lm='ll | more'        #
+alias lr='ll -R'           #
+alias la='ll -A'           #
+alias tree='tree -Csuh'    #
 alias lldl="ll ~/Downloads"
 alias c='clear'
-#-------------------------------------------------------------
-# Tailoring 'less'
-#-------------------------------------------------------------
-
+#
+#
+#
 alias more='less'
-
-
-#-------------------------------------------------------------
-# Spelling typos - highly personnal and keyboard-dependent :-)
-#-------------------------------------------------------------
-
+#
+#
+#
 alias xs='cd'
 alias vf='cd'
 alias moer='more'
 alias moew='more'
 alias kk='ll'
-
-
-alias ls="ls --color=auto"
-alias ll="ls -l --color=auto"
-
-# --------------------------------------------------------------
-# App aliases
-# ==============================================================
+#
+#
+#
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias firefox='/Applications/Firefox.app/Contents/MacOS/Firefox'
-
-# ==============================================================
-# bind9
-# ==============================================================
+#
+#
+#
 alias unloadbind="sudo port unload bind9"
 alias loadbind="sudo port load bind9"
-
-# ==============================================================
-# postgres
-# ==============================================================
-# }}}
-
-# ==============================================================
-# Spelling {{{
-# ==============================================================
-alias ks="ls --color=auto"
+#
+#
+#
+#
+#
+#
+#
+alias ks="ls --color"
 alias pyhton="python"

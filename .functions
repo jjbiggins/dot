@@ -465,10 +465,8 @@ function ii()   # Get current host related info.
 
 function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
 
-flushdns ()
-{
-    cat $HOME/.passwd | grep $USER | cut -d ':' -f2 | sudo -S dscacheutil -flushcache; 
-    cat $HOME/.passwd | grep $USER | cut -d ':' -f2 | sudo -S killall -HUP mDNSResponder;
+flushdns () {
+    sudo dscacheutil -flushcache && killall -HUP mDNSResponder
 }
 
 
