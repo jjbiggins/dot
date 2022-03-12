@@ -1,1 +1,0 @@
-../../../.ext/include/x86_64-darwin20/rb_mjit_min_header-3.0.0.h
