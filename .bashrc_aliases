@@ -20,7 +20,9 @@ alias vols="cd /Volumes"
 alias sites="cd ~/Sites"
 #
 #
-#
+# APFS FileSystem
+alias apfsutil="sudo /System/Library/Filesystems/apfs.fs/Contents/Resources/apfs.util"
+
 #
 #
 #

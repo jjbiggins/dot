@@ -134,45 +134,13 @@ export PAGER=less
 
 
 # The original version is saved in .bash_profile.pysave
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home"
-export CATALINA_HOME="/Library/Tomcat"
-export PATH_TO_FX="$JAVA_HOME/lib/javafx-sdk-11.0.2/lib"
-#export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
-#export JBOSS_HOME="/Library/JBoss"
-export ANT_HOME="/usr/local/apache-ant-latest"
-export PGDATA="/Library/PostgreSQL/13/data"
-#export CLASSPATH="${CLASSPATH}:/opt/mysql-connector-java-8.0.17/mysql-connector-java-8.0.17.jar:/opt/tomcat/lib/websocket-api.jar"
-
-
-#PATH="/Libaray/Frameworks/Python.framework/Versions/3.9/bin:$PATH"
-#PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
-PATH="/Library/PostgreSQL/13/bin:$PATH"
-PATH="/usr/local/apache-maven-latest/bin:$PATH"
-PATH="${ANT_HOME}/bin:$PATH"
-PATH="/opt/gradle/gradle-7.1.1/bin:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-18.jdk/Contents/Home"
 PATH=$JAVA_HOME/bin:$PATH
-
-
-# Setting PATH for Python 3.9
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
-PYTHONPATH="/Library/Python/3.9/site-packages"
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:$PATH"
 export PATH
-
-
 # Give some programs in /usr/local/bin/someprogram
 # precedence over /opt/local/bin/someprogram
-
-export PGPASSWORD="joneschuck"
-
 #export PATH=/install/prefix/bin:$PATH
 #export C_INCLUDE_PATH=/install/prefix/include:<OpenMP include path>:$C_INCLUDE_PATH
 #export CPLUS_INCLUDE_PATH=/install/prefix/include:<OpenMP include path>:$CPLUS_INCLUDE_PATH
 #export LIBRARY_PATH=/install/prefix/lib:<OpenMP library path>:$LIBRARY_PATH
 #export LD_LIBRARY_PATH=/install/prefix/lib:<OpenMP library path>:$LD_LIBRARY_PATH
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

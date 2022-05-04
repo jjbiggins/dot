@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 
 [ -z "$PS1" ] && return
 
@@ -99,7 +102,18 @@ if [[ -f ~/.functions ]]; then
     source  ~/.functions
 fi
 
-export CLICOLORS=1
+PATH=$HOME/local/bin:$PATH
+PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
+
+GRADLE_HOME="/opt/gradle/gradle-7.4"
+PATH="$PATH:$GRADLE_HOME/bin"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 
 #export CERT_PATH=$(python3 -m certifi)
 #export SSL_CERT_FILE=${CERT_PATH}
@@ -108,3 +122,9 @@ export CLICOLORS=1
 # mode:shell-script
 # sh-shell:bash
 # End:
+export PATH=$HOME/local/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+PATH="$PATH:/Users/jjbiggins/Library/Python/3.10/bin"

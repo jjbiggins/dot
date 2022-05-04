@@ -169,8 +169,8 @@ if $COLORTERM == 'xterm-256color'
 endif
 
 " set color scheme, available schemes are in /usr/share/vim/vim82/colors
-colorscheme default
-set background=dark
+" colorscheme default
+" set background=dark
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -221,6 +221,13 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 " map <space> /
 " map <C-space> ?
+
+" map pagedown to space
+map <Space> 	   
+
+" map pageup to shift-space
+map <S-Space> 
+
 
 " Disable highlight when <leader><cr> is pressed
 " map <silent> <leader><cr> :noh<cr>
