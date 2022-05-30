@@ -8,6 +8,7 @@ if [ -f /etc/bashrc ]; then
       . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
+export EDITOR=vim
 
 
 # -------------------------------------------------------------
@@ -18,6 +19,7 @@ export HISTIGNORE="&:bg:fg:ll:h"
 export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000000
+
 
 #-------------------------------------------------------------
 # The Shopt Builtin
@@ -35,11 +37,9 @@ shopt -s extglob					# Enables globbing
 shopt -u mailwarn					# show Got mail warning 
 shopt -s extglob        # Necessary.
 
-set MAILCHECK        				# warn me of incoming mail.
 
 
 PROMPT_COMMAND="history -a"
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]\$ '
 
 export LESSCHARSET='utf-8'
 if type lesspipe.sh >/dev/null 2>&1; then
@@ -84,6 +84,10 @@ export GREP_OPTIONS='--color=always'
 #  so I kept those here as examples.
 #=========================================================================
 
+if [[ -f ~/.direnvvars ]]; then
+    source ~/.direnvvars
+fi
+
 if [ "${BASH_VERSION%.*}" \< "3.0" ]; then
     echo "You will need to upgrade to version 3.0 for full \
           programmable completion features"
@@ -91,30 +95,15 @@ if [ "${BASH_VERSION%.*}" \< "3.0" ]; then
 fi
 
 
-
-
-
-#eval $(dircolors ~/.colors/dircolors.256dark)
-if [[ -f ~/.colors/dircolors_linux ]]; then
-    eval $(dircolors ~/.colors/DIR_COLORS)
+if [[ -f ~/.functions ]]; then
+    source  ~/.functions
 fi
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
-export PATH_TO_FX="$JAVA_HOME/lib/javafx-sdk-11.0.2/lib"
-export PATH=$JAVA_HOME/bin:$PATH
+export CLICOLORS=1
 
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-export PATH
-export CERT_PATH=$(python3 -m certifi)
-export SSL_CERT_FILE=${CERT_PATH}
-export REQUESTS_CA_BUNDLE=${CERT_PATH}
-
+#export CERT_PATH=$(python3 -m certifi)
+#export SSL_CERT_FILE=${CERT_PATH}
+#export REQUESTS_CA_BUNDLE=${CERT_PATH}
 # Local Variables:
 # mode:shell-script
 # sh-shell:bash

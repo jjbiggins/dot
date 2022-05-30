@@ -6,61 +6,48 @@
 #                                                               #
 #################################################################
 
-# ====================================================================
-# User PATH Settings
+
+
+
+
+
 # ===================================================================
-PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-PATH="/opt/local/libexec/gnubin:$PATH"
-
-# Personal Script Binaries
-PATH="/Users/jjbiggins/bin:$PATH"
-
-# Setting PATH for Python 3.9
-# The original version is saved in .bash_profile.pysave
-
-
-# ----------------------------------------------------------------
-# Silences macOS warning about zsh not being shell
-# ----------------------------------------------------------------
-export BASH_SILENCE_DEPRECATION_WARNING=1
+# BASH SHELL FILES 
+# -------------------------------------------------------------------
+# SOURCES:
+#   1. ~/.bash_profile sources ~/.profile
+#   2. ~/.profile sources ~/.bashrc
+# 
+# ABOUT:
+#   ~/.bash_profile -- the driver, source all other shell init file
+#   ~/.profile -- sources ~/.bashrc if interactive, sets envvars
+#   ~/.bashrc -- sets PS1, shell options (shopts), etc.
+# ====================================================================
 
 
 
-# ===============================================================
-# Source other bash files
-# ===============================================================
-if [[ -f ~/.profile ]]; then
-	. ~/.profile
-fi
+if [ -r ~/.profile ]; then . ~/.profile; fi
 
 
-#if [[ -f ~/.bashrc ]]; then
-#    . ~/.bashrc
-#fi
+# Added by install_latest_perl_osx.pl
+#case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
 
 
 if [[ -f  ~/.bash_login ]]; then
     . ~/.bash_login
 fi
 
-if [[ -f ~/.functions ]]; then
-    source  ~/.functions
-fi
 
 if [[ -f ~/.iterm2_shell_integration.bash ]]; then
 	source ~/.iterm2_shell_integration.bash
 fi
 
-# --------------------------------------------------------------
-# Set Mail Directory
-# --------------------------------------------------------------
-export MAIL=/var/mail/jjbiggins		
 
+# source bash completeions
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
 
-# --------------------------------------------------------------
-# X11 window system
-# --------------------------------------------------------------
-#export DISPLAY=localhost.localdomain:0.0
 
 #============================================================
 #
@@ -77,17 +64,26 @@ if [ -f ~/.bashrc_aliases ]; then
     . ~/.bashrc_aliases
 fi
 
-
-export MANPATH=/opt/local/share/man:$MANPATH
-
-function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash" || true
-
-
 export PATH
+#export PATH=$HOME/bin:$PATH
+#export PATH=$HOME/bin:$PATH
+#export PATH=/Volumes/mnt/bin:$PATH
 
-# Setting PATH for Python 3.9
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
-export PATH
+
+
+
+## >>> conda initialize >>>
+## !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/opt/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/opt/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+## <<< conda initialize <<<
+

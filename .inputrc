@@ -1,8 +1,10 @@
 #!/bin/bash
 # INPUTRC settings
 
-#"\e[1~": beginning-of-line
-#"\e[4~": end-of-line
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+
+"\C-[[A": previous-history
 #"\e[5~": history-search-backward
 #"\e[6~": history-search-forward
 #"\e[3~": delete-char
@@ -12,13 +14,13 @@
 #"\e\e[C": forward-word
 #"\e\e[D": backward-word
 
-#set completion-ignore-case Off
+set completion-ignore-case off
 #set expand-tilde on
 #set convert-meta off
 #set input-meta on
 #set output-meta on
 #set show-all-if-ambiguous on
-#set visible-stats on
+set visible-stats on
 #set -o vi
 # Begin /etc/inputrc
 # Modified by Chris Lynn <roryo@roryo.dynup.net>
@@ -46,6 +48,9 @@ set bell-style none
 "\eOd": backward-word
 "\eOc": forward-word
 
+
+"\C-[OD"	    backward-char
+
 # for linux console
 "\e[1~": beginning-of-line
 "\e[4~": end-of-line
@@ -62,5 +67,4 @@ set bell-style none
 "\e[H": beginning-of-line
 "\e[F": end-of-line
 
-set show-all-if-ambiguous on
 # End /etc/inputrc
