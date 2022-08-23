@@ -31,6 +31,7 @@ alias lt="ls -lt"
 alias ls="ls -G"
 alias l="ls -G"
 alias ll="ls -lG"
+
 #
 #
 #
@@ -330,12 +331,15 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 #
 #
 #
+
 #
 alias lx='ls -lXB'         #
 alias lk='ls -lSr'         #
-alias lt='ls -ltr'         #
+alias ltr='ls -ltr'     #
+alias lt="ls -lt"
 alias lc='ls -ltcr'        #
 alias lu='ls -ltur'        #
+
 #
 alias lm='ll | more'        #
 alias lr='ll -R'           #

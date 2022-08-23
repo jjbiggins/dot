@@ -35,7 +35,6 @@ elif [ -d /opt/local/etc/profile.d ]; then
 fi
 
 # System-wide .bashrc file for interactive bash(1) shells.
-
 # To enable the settings / commands in this file for login shells as well,
 # this file has to be sourced in /etc/profile.
 
@@ -116,27 +115,26 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # --------------------------------------------------------------
 # X11 window system
 # --------------------------------------------------------------
-export DISPLAY=$(hostname):0.0
 
 
 # --------------------------------------------------------------
 # Set Mail Directory
 # --------------------------------------------------------------
 export MAIL=/var/mail/jjbiggins		
-export MBOX="$HOME/Mail/mbox"
+
 
 # ----------------------------------------------------------
 # Set EDITOR ENV
 # 
 export EDITOR=vim
 export VISUAL=vim
-export PAGER=less
+export PAGER="less -R"
+export TERM=xterm-256color
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-18.jdk/Contents/Home"
 
 
-# The original version is saved in .bash_profile.pysave
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-18.jdk/Contents/Home"
-PATH=$JAVA_HOME/bin:$PATH
-export PATH
+
+#PATH=$JAVA_HOME/bin:$PATH; export PATH
 # Give some programs in /usr/local/bin/someprogram
 # precedence over /opt/local/bin/someprogram
 #export PATH=/install/prefix/bin:$PATH

@@ -1,16 +1,3 @@
-#################################################################
-#                                                               #
-#   .bash_profile file                                          #
-#                                                               #
-#   Executed from the bash shell when you log in.               #
-#                                                               #
-#################################################################
-
-
-
-
-
-
 # ===================================================================
 # BASH SHELL FILES 
 # -------------------------------------------------------------------
@@ -43,10 +30,10 @@ if [[ -f ~/.iterm2_shell_integration.bash ]]; then
 fi
 
 
-# source bash completeions
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
-fi
+# OLD macports -- source bash completeions
+#if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+#    . /opt/local/etc/profile.d/bash_completion.sh
+#fi
 
 
 #============================================================
@@ -65,3 +52,13 @@ if [ -f ~/.bashrc_aliases ]; then
 fi
 
 
+# Developer Directory
+DEVELOPER_DIR="$(xcode-select --print-path)"; export DEVELOPER_DIR
+MACOS_SDK="$(xcrun --show-sdk-path)"; export MACOS_SDK
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+PATH="/opt/apache-maven-3.8.6/bin:$PATH"
+PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
+PATH="${MACOS_SDK}/usr/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+export PATH

@@ -13,6 +13,30 @@
 #    $cmd
 #}
 
+
+term_cwd () {
+    local url_path=''
+    {
+            # Use LC_CTYPE=C to process text byte-by-byte and
+            # LC_COLLATE=C to compare byte-for-byte. Ensure that
+            # LC_ALL and LANG are not set so they don't interfere.
+            local i ch hexch LC_CTYPE=C LC_COLLATE=C LC_ALL= LANG=
+            for ((i = 0; i < ${#PWD}; ++i)); do
+                ch="${PWD:i:1}"
+                if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
+                    url_path+="$ch"
+                else
+                    printf -v hexch "%02X" "'$ch"
+                    # printf treats values greater than 127 as
+                    # negative and pads with "FF", so truncate.
+                    url_path+="%${hexch: -2:2}"
+                fi
+            done
+    }
+    printf '\e]7;%s\a' "file://$HOSTNAME$url_path"
+}
+
+
 psql () {
     if [[ $# == 1 ]]; then 
 	PGPASSWORD=$PGPASSWORD /Library/PostgreSQL/13/bin/psql -U chuckjones --password -d "$1"
@@ -465,8 +489,21 @@ function ii()   # Get current host related info.
 
 function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
 
+EXIT_SUCCESS=0
+EXIT_FAILURE=1
+
 flushdns () {
-    sudo dscacheutil -flushcache && killall -HUP mDNSResponder
+    sudo dscacheutil -flushcache ; EXIT_CODE=$?
+    if [[ "${EXIT_CODE}" == "${EXIT_FAILURE}" ]]; then
+	echo "Error: 'sudo dscacheutil -flushcache' returned exit ${EXIT_CODE}"
+    fi
+	
+    sudo killall -HUP mDNSResponder; EXIT_CODE=$?
+    if [[ "$EXIT_CODE" == "$EXIT_FAILURE" ]]; then
+	echo "Error: 'sudo killall -HUP mDNSResponder' returned exit code ${EXIT_CODE}"
+    fi
+
+    echo "flushdns: 'sudo dscacheutil -flushcache ; sudo killall -HUP mDNSResponder;'  completed successfully" 
 }
 
 

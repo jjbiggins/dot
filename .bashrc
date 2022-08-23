@@ -29,21 +29,19 @@ export HISTSIZE=1000000
 #-------------------------------------------------------------
 # Enable options:
 shopt -s cdspell					# cd with minor spell err
-shopt -s cdable_vars				# auto cd vars 
+shopt -s cdable_vars					# auto cd vars 
 shopt -s checkhash					# check is hashed cmd exist
-shopt -s checkwinsize				# check window size 
+shopt -s checkwinsize					# check window size 
 shopt -s sourcepath					# path is same as cmd arg
-shopt -s no_empty_cmd_completion	# no completion when read line
+shopt -s no_empty_cmd_completion			# no completion when read line
 shopt -s cmdhist					# generates a cmd history
 shopt -s histappend					# cmds appended to history
 shopt -s extglob					# Enables globbing
 shopt -u mailwarn					# show Got mail warning 
-shopt -s extglob        # Necessary.
+shopt -s extglob					# Necessary.
 
 
-
-PROMPT_COMMAND="history -a"
-
+#PROMPT_COMMAND="history -a"
 export LESSCHARSET='utf-8'
 if type lesspipe.sh >/dev/null 2>&1; then
     export LESSOPEN='|lesspipe.sh %s'
@@ -51,13 +49,13 @@ fi
 
 # Use this if lesspipe.sh exists.
 export LESSOPEN='|/usr/local/bin/lesspipe.sh %s 2>&-'          
-
 export TERMINFO=/usr/share/terminfo
+
 
 # LESS man page colors (makes Man pages more readable).
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
-#export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
+export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
@@ -102,17 +100,20 @@ if [[ -f ~/.functions ]]; then
     source  ~/.functions
 fi
 
+
+
+
 PATH=$HOME/local/bin:$PATH
-PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
+#PATH="$PATH:/Users/jjbiggins/Library/Python/3.10/bin"
+
 
 GRADLE_HOME="/opt/gradle/gradle-7.4"
-PATH="$PATH:$GRADLE_HOME/bin"
+PATH="${PATH}:${GRADLE_HOME}/bin"
 
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 
 #export CERT_PATH=$(python3 -m certifi)
@@ -122,9 +123,3 @@ export NVM_DIR="$HOME/.nvm"
 # mode:shell-script
 # sh-shell:bash
 # End:
-export PATH=$HOME/local/bin:$PATH
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-PATH="$PATH:/Users/jjbiggins/Library/Python/3.10/bin"
