@@ -5,6 +5,8 @@
 alias hdesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
 alias uhdesk="default write com.apple.finder CreateDesktop true; killall Finder"
 #
+alias unhidefile="defaults write com.apple.Finder AppleShowAllFiles true"
+alias hidefile="defaults write com.apple.Finder AppleShowAllFiles false"
 #
 #
 #
