@@ -52,13 +52,3 @@ if [ -f ~/.bashrc_aliases ]; then
 fi
 
 
-# Developer Directory
-DEVELOPER_DIR="$(xcode-select --print-path)"; export DEVELOPER_DIR
-MACOS_SDK="$(xcrun --show-sdk-path)"; export MACOS_SDK
-export JAVA_HOME=$(/usr/libexec/java_home)
-
-PATH="/opt/apache-maven-3.8.6/bin:$PATH"
-PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
-PATH="${MACOS_SDK}/usr/bin:${PATH}"
-PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-export PATH

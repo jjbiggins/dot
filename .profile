@@ -130,7 +130,6 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER="less -R"
 export TERM=xterm-256color
-#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-18.jdk/Contents/Home"
 
 
 

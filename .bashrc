@@ -101,20 +101,31 @@ if [[ -f ~/.functions ]]; then
 fi
 
 
-
-
-PATH=$HOME/local/bin:$PATH
-#PATH="$PATH:/Users/jjbiggins/Library/Python/3.10/bin"
-
-
-GRADLE_HOME="/opt/gradle/gradle-7.4"
-PATH="${PATH}:${GRADLE_HOME}/bin"
-
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# Developer Directory
+DEVELOPER_DIR="$(xcode-select --print-path)"; export DEVELOPER_DIR
+
+# macOS SDK
+MACOS_SDK="$(xcrun --show-sdk-path)"; export MACOS_SDK
+
+# java_home
+JAVA_HOME=$(/usr/libexec/java_home)
+
+
+# PATH
+PATH="/opt/apache-maven-3.8.6/bin:$PATH"
+PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
+PATH="${MACOS_SDK}/usr/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+PATH="${PATH}:/sw/local/bin:/sw/local/sbin"
+
+# export everything
+export DEVELOPER_DIR
+export JAVA_HOME
+export PATH
 
 #export CERT_PATH=$(python3 -m certifi)
 #export SSL_CERT_FILE=${CERT_PATH}

@@ -27,7 +27,6 @@ set output-meta on
 #set show-all-if-ambiguous on
 set visible-stats on
 
-set -o vi
 # Begin /etc/inputrc
 # Modified by Chris Lynn <roryo@roryo.dynup.net>
 
