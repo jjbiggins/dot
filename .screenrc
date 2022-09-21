@@ -34,7 +34,8 @@ shelltitle "$ |sh"
 # ===============================================================
 # escape ^aa  # default
 # escape ^pp  # suggested binding for emacs users
-escape ``
+#
+#escape ``
 
 # ===============================================================
 # STARTUP of programs in an extra window:
@@ -53,13 +54,15 @@ escape ``
 # ===============================================================
   autodetach            on              # default: on
   crlf                  off             # default: off
-# deflogin              off             # default: on
+  deflogin		on             # default: on
 # defsilence            off             # default: off
-# hardcopy_append       on              # default: off
-# nethack               on              # default: off
-  startup_message       off             # default: on
-# termcap  xterm        'AF=\E[3%dm:AB=\E[4%dm'
-# terminfo xterm        'AF=\E[3%p1%dm:AB=\E[4%p1%dm'
+# hardcopy_append       off              # default: off
+# nethack               off              # default: off
+  startup_message       on             # default: on
+  termcap  xterm        'AF=\E[3%dm:AB=\E[4%dm'
+  terminfo xterm        'AF=\E[3%p1%dm:AB=\E[4%p1%dm'
+
+					     
 # Matthias Kopfermann  [020222]:
   termcapinfo linux "ve=\E[?25h\E[?17;0;64c" # red
   vbell                 on             # default: ???
@@ -68,7 +71,7 @@ escape ``
 # VARIABLES - Number values
 # ===============================================================
   defscrollback         3000            # default: 100
-# msgminwait            3               # default: 1
+  msgminwait            3               # default: 1
   silencewait           15              # default: 30
 #
 # ===============================================================
@@ -76,17 +79,18 @@ escape ``
 # ===============================================================
 # bufferfile:   The file to use for commands
 #               "readbuf" ('<') and  "writebuf" ('>'):
-# bufferfile            $HOME/.screen_exchange
+  bufferfile            $HOME/.screen_exchange
 #
 # hardcopydir:  The directory which contains all hardcopies.
-# hardcopydir           ~/.hardcopy
+  hardcopydir           ~/.hardcopy
   hardcopydir           ~/.screen
 #
 # shell:  Default process started in screen's windows.
 # Makes it possible to use a different shell inside screen
 # than is set as the default login shell.  Halleluja! :-)
-  shell                 zsh
-# shell                 bash
+					     
+# shell                 zsh
+  shell                 bash
 # shell                 ksh
 #
 # ===============================================================
@@ -122,22 +126,22 @@ escape ``
 # in addition to the hardstatus line.
 #
 # use caption to show window list:
-# caption always "%{= kw}%?%-Lw%?%{+b kw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
+ caption always "%{= kw}%?%-Lw%?%{+b kw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
 
 
-# caption always '%{= wb}%50=%n%f %t%{= wb}'
+ caption always '%{= wb}%50=%n%f %t%{= wb}'
 # this basically just shows the current window number and title
 # on its own; the "%50=" displays it in the middle of the line.
 #
-# caption always "%>%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?%<"
-# caption always "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
-# caption always "%?%F%{.RW}%?%3n %t%? [%h]%?"
-# caption always "%{rk}%H %{gk}%c %{yk}%M%d %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
+ caption always "%>%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?%<"
+ caption always "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+ caption always "%?%F%{.RW}%?%3n %t%? [%h]%?"
+ caption always "%{rk}%H %{gk}%c %{yk}%M%d %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
 #
-#  caption always "%{kG}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kG}%?%+Lw%?"
+  caption always "%{kG}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kG}%?%+Lw%?"
 #
-# "push right border: current time with seconds and current date"
-# caption always "%=%c:%s %Y-%m-%d"
+ "push right border: current time with seconds and current date"
+ caption always "%=%c:%s %Y-%m-%d"
 #
 # Prints the window names and highlight the current window in yellow.
 # On the right there is the time in green and the date in yellow.
@@ -155,10 +159,10 @@ escape ``
 # Prints the window names and highlight the current window in yellow.
 # On the right there is the time in green and the date in yellow.
 #
-#hardstatus alwayslastline "%?%{wk}%-Lw%?%{yK}%n*%f %t%?(%u)%?%?%{wk}%+Lw%? %{gk}%=%c %{yk}%d/%M/%Y"
+hardstatus alwayslastline "%?%{wk}%-Lw%?%{yK}%n*%f %t%?(%u)%?%?%{wk}%+Lw%? %{gk}%=%c %{yk}%d/%M/%Y"
 hardstatus alwayslastline "%{+b kr}[ %H ] %{ky} Load: %l %-=%{kb} %c  %d.%m.%Y"
 
-#hardstatus alwayslastline "%{+b kr}[ %H ] %{kw} Load: %l %-=%  %{kb} %c:%s  %d.%m.%Y "
+hardstatus alwayslastline "%{+b kr}[ %H ] %{kw} Load: %l %-=%  %{kb} %c:%s  %d.%m.%Y "
 
 
 # Colorize the "messages" and "text marking":
@@ -365,7 +369,8 @@ bind b focus bottom
 
 # I use the uppercase letters to start programs/services:
 #
- bind A title  # default!
+# bind A title  # default!
+
 #
 # BUUG - Berlin Unix User Group - read some news about Unix
 #  bind B screen -t 'buug' 4 links www.buug.de
@@ -428,7 +433,8 @@ bind b focus bottom
 # bind L screen -t 'WWW'  4 links http://www.mdlug.de/index.php/linuxtag2002/vortraege/v12.inc?menu=0|4|
 # bind L screen -t 'WWW'  4 links http://www.mdlug.de/index.php/linuxtag2002/programm.inc?menu=0|4|&nomfc=1
 #
- bind M monitor # default!
+bind M monitor # default!
+
 #
 # NN - newsreader
 # bind N screen -t 'nn'   3 nn

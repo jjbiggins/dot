@@ -43,7 +43,8 @@ syntax on
 
 " Enable filetype plugins
 filetype plugin on
-filetype indent on
+filetype plugin indent on
+
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -60,6 +61,7 @@ au FocusGained,BufEnter * checktime
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -169,8 +171,8 @@ if $COLORTERM == 'xterm-256color'
 endif
 
 " set color scheme, available schemes are in /usr/share/vim/vim82/colors
-colorscheme default
-set background=dark
+" colorscheme default
+" set background=dark
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -200,9 +202,8 @@ set directory=~/.vim/swapdir
 set nolinebreak
 
 "set autoindent
-set smartindent
 set cindent	
-set wrap
+set wrap    
 
 
 """"""""""""""""""""""""""""""
@@ -221,6 +222,13 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 " map <space> /
 " map <C-space> ?
+
+" map pagedown to space
+map <Space> 	   
+
+" map pageup to shift-space
+map <S-Space> 
+
 
 " Disable highlight when <leader><cr> is pressed
 " map <silent> <leader><cr> :noh<cr>
@@ -336,7 +344,7 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:
 setlocal indentexpr=GetGooglePythonIndent(v:lnum)
 
 let s:maxoff = 50 " maximum number of lines to look backwards.
-
+    
 function GetGooglePythonIndent(lnum)
 
   " Indent inside parens.
@@ -391,8 +399,50 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 "map <leader>pp :setlocal paste!<cr>
 
-au BufNewFile *.py 0r ~/.vim/header/py_header.temp
 au BufNewFile *.sh 0r ~/.vim/header/sh_header.temp
+
+function NewHTMLFile()
+    autocmd!
+    execute "0r ~/.vim/header/html_header.temp"
+    execute "13"
+endfunction
+
+function NewPythonFile()
+    autocmd!
+    execute "0r ~/.vim/header/py_header.temp"
+    execute "6"
+endfunction
+
+function NewCFile()
+    autocmd! 
+    execute "0r ~/.vim/header/c_header.temp"
+    execute "set cindent"
+    execute "2s/FILENAME/".expand('<afile>')"/g"
+    execute "3s/AUTHOR/Joe Biggins <joe@biggins.tech>/g"
+    execute "4s/CREATED/".strftime('%c')"/g"
+    execute "5s/MODIFIED/".strftime('%c')"/g"
+    execute "16"
+endfunction 
+
+
+augroup InitHTMLStuff
+    autocmd!
+    autocmd BufNewFile *.html call NewHTMLFile()
+augroup END
+
+augroup InitCStuff
+    autocmd!
+    autocmd BufNewFile *.c call NewCFile()
+augroup END
+
+augroup InitPythonStuff
+    autocmd!
+    autocmd BufNewFile *.py call NewPythonFile()
+augroup END
+
+
+
+
 " ================================================================
 " END OF FILE
 " =================================================================

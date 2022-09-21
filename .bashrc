@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 
 [ -z "$PS1" ] && return
 
@@ -26,21 +29,19 @@ export HISTSIZE=1000000
 #-------------------------------------------------------------
 # Enable options:
 shopt -s cdspell					# cd with minor spell err
-shopt -s cdable_vars				# auto cd vars 
+shopt -s cdable_vars					# auto cd vars 
 shopt -s checkhash					# check is hashed cmd exist
-shopt -s checkwinsize				# check window size 
+shopt -s checkwinsize					# check window size 
 shopt -s sourcepath					# path is same as cmd arg
-shopt -s no_empty_cmd_completion	# no completion when read line
+shopt -s no_empty_cmd_completion			# no completion when read line
 shopt -s cmdhist					# generates a cmd history
 shopt -s histappend					# cmds appended to history
 shopt -s extglob					# Enables globbing
 shopt -u mailwarn					# show Got mail warning 
-shopt -s extglob        # Necessary.
+shopt -s extglob					# Necessary.
 
 
-
-PROMPT_COMMAND="history -a"
-
+#PROMPT_COMMAND="history -a"
 export LESSCHARSET='utf-8'
 if type lesspipe.sh >/dev/null 2>&1; then
     export LESSOPEN='|lesspipe.sh %s'
@@ -48,13 +49,13 @@ fi
 
 # Use this if lesspipe.sh exists.
 export LESSOPEN='|/usr/local/bin/lesspipe.sh %s 2>&-'          
-
 export TERMINFO=/usr/share/terminfo
+
 
 # LESS man page colors (makes Man pages more readable).
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
-#export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
+export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
@@ -99,7 +100,32 @@ if [[ -f ~/.functions ]]; then
     source  ~/.functions
 fi
 
-export CLICOLORS=1
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Developer Directory
+DEVELOPER_DIR="$(xcode-select --print-path)"; export DEVELOPER_DIR
+
+# macOS SDK
+MACOS_SDK="$(xcrun --show-sdk-path)"; export MACOS_SDK
+
+# java_home
+JAVA_HOME=$(/usr/libexec/java_home)
+
+
+# PATH
+PATH="/opt/apache-maven-3.8.6/bin:$PATH"
+PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
+PATH="${MACOS_SDK}/usr/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+PATH="${PATH}:/sw/local/bin:/sw/local/sbin"
+
+# export everything
+export DEVELOPER_DIR
+export JAVA_HOME
+export PATH
 
 #export CERT_PATH=$(python3 -m certifi)
 #export SSL_CERT_FILE=${CERT_PATH}

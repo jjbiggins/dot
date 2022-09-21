@@ -1,6 +1,11 @@
 #!/bin/bash
 # INPUTRC settings
 
+
+
+# enable tab completion through symlinks
+set mark-symlinked-directories on
+
 "\e[1~": beginning-of-line
 "\e[4~": end-of-line
 
@@ -17,11 +22,11 @@
 set completion-ignore-case off
 #set expand-tilde on
 #set convert-meta off
-#set input-meta on
-#set output-meta on
+set input-meta on
+set output-meta on
 #set show-all-if-ambiguous on
 set visible-stats on
-#set -o vi
+
 # Begin /etc/inputrc
 # Modified by Chris Lynn <roryo@roryo.dynup.net>
 

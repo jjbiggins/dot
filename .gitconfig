@@ -1,6 +1,6 @@
 [user]
 	email = jjbiggins+github@biggins.tech
-	name = Joe Biggins
+	name = jjbiggins
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -9,6 +9,7 @@
 [core]
 	ignorecase = false
 	excludesfile = ~/.gitignore_global
+	precomposeUnicode = true
 [pull]
 	rebase = true
 [credential]
