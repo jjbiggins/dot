@@ -1,91 +1,5 @@
 .less-history-file:
 .search
-<<<<<<< HEAD
-"meta
-"bind
-=======
-"\-s
-"new-sess
-"windows
-"new-window
-"list session
-"sessions
-"escape seq
-"kill
-"new
-"html
-"iCloud
-"v
-"-v
-"unin
-"volume\ store
-"-n
-"path
-".plist
-"Recovery
-"MX
-"direc
-"open
-"net
-"my
-"hosts
-"insta
-"instaweb
-"server
-"ES
-"ES256
-"es256
-"\.timemachine
->>>>>>> macbook
-"mount
-"log
-"\/net
-"local
-"\/home
-"branch
-"local
-"Time
-"time
-"fstab
-"sw
-"-R
-"locale
-"time
-"net
-"locale
-"USB
-"local
-"local
-"limit
-"tag
-"ToUni
-"hide
-"hid
-"sign
-"user-id
-"gunzip
-"usb
-<<<<<<< HEAD
-"screen 
-"usbmo
-"tty.us
-"\"/dev/cu.*\"
-"bind ^k
-"bind k
-"\\
-"\/\
-"\\\
-"quit
-"ls
-"user
-"pathinfo
-"info
-"force
-"d
-"GET
-"--output
-"passive
-"dtd
 "-o
 "max
 "reco
@@ -128,7 +42,6 @@
 "Home
 "owner
 "auth
-=======
 "King
 "MMC
 "IOUSBDeviceConfigurator
@@ -170,6 +83,22 @@
 "list
 "flags
 "sun
+"port
+"pass
+"CVSROOT
+"conv
+"mail
+"biggins.tech
+"mail
+"FUCK
+"mail
+"Mail
+"FUCK
+"jor
+"joe
+"email
+"imap
+"mess
+"deco
 .shell
 "path
->>>>>>> macbook

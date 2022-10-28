@@ -12,17 +12,22 @@ if [ -f /etc/bashrc ]; then
 fi
 
 export EDITOR=vim
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
 
+LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN
 
 # -------------------------------------------------------------
 # Time and History settings
 # -------------------------------------------------------------
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
-export HISTIGNORE="&:bg:fg:ll:h"
+#export HISTIGNORE="&:bg:fg:ll:h"
 export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000000
-
+#export HISTFILE=$HOME/.history
+#export HISTFILESIZE=10000000000000
 
 #-------------------------------------------------------------
 # The Shopt Builtin

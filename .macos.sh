@@ -19,15 +19,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX
 #-----------------------------------------------------------------
 # Set computer name
-<<<<<<< HEAD
 sudo scutil --set ComputerName "master"
-sudo scutil --set HostName "mastewr.biggins.one"
-sudo scutil --set LocalHostName "localhost"
-=======
-#sudo scutil --set ComputerName "localhost"
-#sudo scutil --set HostName "localhost.biggins.tech#"
-#sudo scutil --set LocalHostName "localhost"
->>>>>>> macbook
+sudo scutil --set HostName "master.biggins.one"
+sudo scutil --set LocalHostName "master"
 
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "BIGGINS.TECH"
 

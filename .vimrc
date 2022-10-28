@@ -430,16 +430,18 @@ augroup InitHTMLStuff
     autocmd BufNewFile *.html call NewHTMLFile()
 augroup END
 
-augroup InitCStuff
-    autocmd!
-    autocmd BufNewFile *.c call NewCFile()
-augroup END
+"augroup InitCStuff
+"    autocmd!
+"    autocmd BufNewFile *.c call NewCFile()
+"augroup END
 
 augroup InitPythonStuff
     autocmd!
     autocmd BufNewFile *.py call NewPythonFile()
 augroup END
 
+" allow yank-paste to work across vim file being opened-closed-opened
+set clipboard=unnamed
 
 
 
