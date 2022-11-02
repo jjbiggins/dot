@@ -52,17 +52,21 @@ if [ -f ~/.bashrc_aliases ]; then
 fi
 
 
-
-##
-# Your previous /Users/jjbiggins/.bash_profile file was backed up as /Users/jjbiggins/.bash_profile.macports-saved_2022-09-21_at_03:27:38
-##
-
 # MacPorts Installer addition on 2022-09-21_at_03:27:38: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
-# Setting PATH for Python 3.10
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
+#PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 export PATH
+
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/jjbiggins/Library/Application Support/JetBrains/Toolbox/scripts"
+
+
+
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
+

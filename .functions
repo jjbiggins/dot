@@ -275,19 +275,19 @@ function get_xserver ()
 
 # Adds some text in the terminal frame (if applicable).
 
-function xtitle()
-{
-    case "$TERM" in
-    *term* | rxvt)
-        echo -en  "\e]0;$*\a" ;;
-    *)  ;;
-    esac
-}
+#function xtitle()
+#{
+#    case "$TERM" in
+#    *term* | rxvt)
+#        echo -en  "\e]0;$*\a" ;;
+#    *)  ;;
+#    esac
+#}
 
 
 # Aliases that use xtitle
-alias top='xtitle Processes on $HOST && top'
-alias make='xtitle Making $(basename $PWD) ; make'
+#alias top='xtitle Processes on $HOST && top'
+#alias make='xtitle Making $(basename $PWD) ; make'
 
 #command man g$
 #    for i ; do

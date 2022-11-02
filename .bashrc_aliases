@@ -1,7 +1,10 @@
 #
+alias python="python3"
 #
 #
 #
+alias wget="/usr/local/bin/wget2"
+
 alias hdesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
 alias uhdesk="default write com.apple.finder CreateDesktop true; killall Finder"
 #

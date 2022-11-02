@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/jjbiggins/Downloads/curl-7.86.0'
 let g:netrw_dirhist_9='/practice/ctci/arrays/check_permutation/C-program/src'
 let g:netrw_dirhist_8='/practice/ocw.mit.edu/computer_security_systems/resources/bin'
 let g:netrw_dirhist_7='/Users/jjbiggins/Downloads/cvs-1.11.23/src'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_4='/Users/jjbiggins/scripts'
 let g:netrw_dirhist_3='/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers'
 let g:netrw_dirhist_2='/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework'
 let g:netrw_dirhist_1='/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks'
-let g:netrw_dirhist_0='/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/DiskArbitration.framework'
