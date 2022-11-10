@@ -309,7 +309,7 @@ function te()  # wrapper around xemacs/gnuserv
     fi
 }
 
-function xpdf() { command xpdf "$@" & }
+#function xpdf() { command xpdf "$@" & }
 
 
 

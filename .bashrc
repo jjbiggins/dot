@@ -122,9 +122,8 @@ JAVA_HOME=$(/usr/libexec/java_home)
 
 # PATH
 #PATH="/opt/apache-maven-3.8.6/bin:$PATH"
-PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
+PATH="${PATH}:${DEVELOPER_DIR}/usr/bin"
 PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-#PATH="${PATH}:/sw/local/bin:/sw/local/sbin"
 
 # export everything
 export DEVELOPER_DIR
