@@ -25,7 +25,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=1000
-set nocompatible
 
 
 "--------------------------------------------------------------
@@ -35,15 +34,15 @@ set nocompatible
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab	    "enable/disable visual \t character
-" --------------------------------------------------------------
+set expandtab	    "enable visual $'\t' character
+
+" enable scrolling with trackpad
+set mouse=nicr
+
 
 " Enable syntax highlighting
 syntax on
 
-" Enable filetype plugins
-filetype plugin on
-filetype plugin indent on
 
 
 " Set to auto read when a file is changed from the outside
@@ -76,9 +75,9 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 " TODO: read through these and decide what to do with them
-" source $VIMRUNTIME/scripts.vim 
-" source $VIMRUNTIME/indent.vim
-" source $VIMRUNTIME/filetype.vim
+source $VIMRUNTIME/scripts.vim 
+source $VIMRUNTIME/indent.vim
+source $VIMRUNTIME/filetype.vim
 
 set runtimepath+='~/.vim'
 
@@ -201,9 +200,8 @@ set directory=~/.vim/swapdir
 " Linebreak on 78 characters
 set nolinebreak
 
-"set autoindent
-set cindent	
-set wrap    
+set autoindent
+filetype plugin indent on
 
 
 """"""""""""""""""""""""""""""
@@ -224,20 +222,17 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " map <C-space> ?
 
 " map pagedown to space
-map <Space> 	   
+noremap <Space> 	   
 
 " map pageup to shift-space
-map <S-Space> 
+noremap <S-Space> 
 
-
-" Disable highlight when <leader><cr> is pressed
-" map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+"noremap <C-j> <C-W>j
+"noremap <C-k> <C-W>k
+"noremap <C-h> <C-W>h
+"noremap <C-l> <C-W>l
 
 
 " Buffers --- Don't know what those are yet so comment out
@@ -247,16 +242,9 @@ map <C-l> <C-W>l
 " Close all the buffers
 "map <leader>ba :bufdo bd<cr>
 
-
-" Useful mappings for managing tabs
-"map <leader>tn :tabnew<cr>
-"map <leader>to :tabonly<cr>
-"map <leader>tc :tabclose<cr>
-"map <leader>tm :tabmove 
-"map <leader>t<leader> :tabnext 
-
 " Let 'tl' toggle between this and the last accessed tab
 "let g:lasttab = 1
+
 "nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 "au TabLeave * let g:lasttab = tabpagenr()
 
@@ -269,15 +257,19 @@ map <C-l> <C-W>l
 "map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers 
-"try
-"  set switchbuf=useopen,usetab,newtab
-"  set stal=2
-"catch
-"endtry
+try
+  set switchbuf=useopen,usetab,newtab
+  set stal=2
+catch
+endtry
 
+" NOT WORKING ANYMORE -- 
 " Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -317,9 +309,9 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:
 "    call setreg('/', old_query)
 "endfun
 
-"if has("autocmd")
-"    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.c,*.cpp :call CleanExtraSpaces()
-"endif
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.c,*.cpp :call CleanExtraSpaces()
+endif
 
 " STYLE GUIDES ------------------------------------------------
 " 

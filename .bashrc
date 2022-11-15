@@ -22,12 +22,14 @@ LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN
 # Time and History settings
 # -------------------------------------------------------------
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
+
+# History
 #export HISTIGNORE="&:bg:fg:ll:h"
+export HISTIGNORE="history*"
 export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
 export HISTCONTROL=ignoredups
-export HISTSIZE=1000000
+export HISTFILESIZE=10000000000000
 #export HISTFILE=$HOME/.history
-#export HISTFILESIZE=10000000000000
 
 #-------------------------------------------------------------
 # The Shopt Builtin
@@ -43,7 +45,6 @@ shopt -s cmdhist					# generates a cmd history
 shopt -s histappend					# cmds appended to history
 shopt -s extglob					# Enables globbing
 shopt -u mailwarn					# show Got mail warning 
-shopt -s extglob					# Necessary.
 
 
 #PROMPT_COMMAND="history -a"
@@ -71,11 +72,6 @@ if type pygmentize >/dev/null 2>&1; then
   export LESSCOLORIZER='pygmentize'
 fi
 
-
-# ----------------------------------------------------------------
-# grep
-# ----------------------------------------------------------------
-export GREP_OPTIONS='--color=always' 
 
 
 #=========================================================================
@@ -106,6 +102,10 @@ if [[ -f ~/.functions ]]; then
 fi
 
 
+# MacPorts Installer addition on 2022-09-21_at_03:27:38: adding an appropriate PATH variable for use with MacPorts.
+export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
+
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -117,11 +117,10 @@ DEVELOPER_DIR="$(xcode-select --print-path)"; export DEVELOPER_DIR
 MACOS_SDK="$(xcrun --show-sdk-path)"; export MACOS_SDK
 
 # java_home
-JAVA_HOME=$(/usr/libexec/java_home)
+JAVA_HOME=$(/usr/libexec/java_home); export JAVA_HOME
 
 
 # PATH
-#PATH="/opt/apache-maven-3.8.6/bin:$PATH"
 PATH="${PATH}:${DEVELOPER_DIR}/usr/bin"
 PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 
@@ -130,9 +129,11 @@ export DEVELOPER_DIR
 export JAVA_HOME
 export PATH
 
-#export CERT_PATH=$(python3 -m certifi)
-#export SSL_CERT_FILE=${CERT_PATH}
-#export REQUESTS_CA_BUNDLE=${CERT_PATH}
+export CERT_PATH=$(python3 -m certifi)
+export SSL_CERT_FILE=${CERT_PATH}
+export REQUESTS_CA_BUNDLE=${CERT_PATH}
+
+
 # Local Variables:
 # mode:shell-script
 # sh-shell:bash

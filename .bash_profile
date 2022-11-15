@@ -52,13 +52,7 @@ if [ -f ~/.bashrc_aliases ]; then
 fi
 
 
-# MacPorts Installer addition on 2022-09-21_at_03:27:38: adding an appropriate PATH variable for use with MacPorts.
-export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
 # Finished adapting your PATH environment variable for use with MacPorts.
-
-
-#PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
-export PATH
 
 
 # Added by Toolbox App
@@ -71,15 +65,7 @@ if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
 fi
 
 
-# Setting PATH for Python 3.10
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
-export PATH
 
-# Setting PATH for Python 3.11
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
-export PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -90,9 +76,13 @@ else
     if [ -f "/Users/jjbiggins/Applications/miniconda3/etc/profile.d/conda.sh" ]; then
         . "/Users/jjbiggins/Applications/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/jjbiggins/Applications/miniconda3/bin:$PATH"
+        PATH="$PATH:/Users/jjbiggins/Applications/miniconda3/bin"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+PATH="/opt/private/bin:$PATH"
+export PATH
 
