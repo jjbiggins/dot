@@ -16,3 +16,5 @@
 	helper = osxkeychain
 [init]
 	defaultBranch = main
+[safe]
+	directory = /opt/depot_tools
