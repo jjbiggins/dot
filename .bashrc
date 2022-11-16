@@ -12,17 +12,30 @@ if [ -f /etc/bashrc ]; then
 fi
 
 export EDITOR=vim
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
+
+LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN
 
 
+
+BCyan='\e[1;36m'
 # -------------------------------------------------------------
 # Time and History settings
 # -------------------------------------------------------------
-export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
-export HISTIGNORE="&:bg:fg:ll:h"
-export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
-export HISTCONTROL=ignoredups
-export HISTSIZE=1000000
 
+shopt -s histappend					# cmds appended to history
+
+PROMPT_COMMAND=""history -a; history -c; history -r; $PROMPT_COMMAND""
+
+export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
+#export HISTIGNORE="&:bg:fg:ll:h"
+export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m/%Y %H:%M:%S %Z]$(echo -e ${NC}) "
+#export HISTCONTROL=ignoredups
+export HISTSIZE=10000000000
+#export HISTFILE=$HOME/.history
+#export HISTFILESIZE=10000000000000
 
 #-------------------------------------------------------------
 # The Shopt Builtin
@@ -35,13 +48,11 @@ shopt -s checkwinsize					# check window size
 shopt -s sourcepath					# path is same as cmd arg
 shopt -s no_empty_cmd_completion			# no completion when read line
 shopt -s cmdhist					# generates a cmd history
-shopt -s histappend					# cmds appended to history
 shopt -s extglob					# Enables globbing
 shopt -u mailwarn					# show Got mail warning 
 shopt -s extglob					# Necessary.
 
 
-#PROMPT_COMMAND="history -a"
 export LESSCHARSET='utf-8'
 if type lesspipe.sh >/dev/null 2>&1; then
     export LESSOPEN='|lesspipe.sh %s'
@@ -101,20 +112,28 @@ if [[ -f ~/.functions ]]; then
 fi
 
 
-
-
-PATH=$HOME/local/bin:$PATH
-#PATH="$PATH:/Users/jjbiggins/Library/Python/3.10/bin"
-
-
-GRADLE_HOME="/opt/gradle/gradle-7.4"
-PATH="${PATH}:${GRADLE_HOME}/bin"
-
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# Developer Directory
+DEVELOPER_DIR="$(xcode-select --print-path)"; export DEVELOPER_DIR
+
+# macOS SDK
+MACOS_SDK="$(xcrun --show-sdk-path)"; export MACOS_SDK
+
+# java_home
+JAVA_HOME=$(/usr/libexec/java_home)
+#PATH="/opt/apache-maven-3.8.6/bin:${PATH}"
+
+
+PATH="${PATH}:${DEVELOPER_DIR}/usr/bin"
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+
+# export everything
+export DEVELOPER_DIR
+export JAVA_HOME
+export PATH
 
 #export CERT_PATH=$(python3 -m certifi)
 #export SSL_CERT_FILE=${CERT_PATH}

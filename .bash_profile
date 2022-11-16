@@ -52,13 +52,36 @@ if [ -f ~/.bashrc_aliases ]; then
 fi
 
 
-# Developer Directory
-DEVELOPER_DIR="$(xcode-select --print-path)"; export DEVELOPER_DIR
-MACOS_SDK="$(xcrun --show-sdk-path)"; export MACOS_SDK
-export JAVA_HOME=$(/usr/libexec/java_home)
+# MacPorts Installer addition on 2022-09-21_at_03:27:38: adding an appropriate PATH variable for use with MacPorts.
+export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
 
-PATH="/opt/apache-maven-3.8.6/bin:$PATH"
-PATH="${DEVELOPER_DIR}/usr/bin:$PATH"
-PATH="${MACOS_SDK}/usr/bin:${PATH}"
-PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/jjbiggins/Library/Application Support/JetBrains/Toolbox/scripts"
+
+
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
+
+
+
+PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
 export PATH
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/Users/jjbiggins/Applications/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/Users/jjbiggins/Applications/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/Users/jjbiggins/Applications/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/Users/jjbiggins/Applications/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+

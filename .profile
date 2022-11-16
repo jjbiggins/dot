@@ -126,6 +126,9 @@ export MAIL=/var/mail/jjbiggins
 # ----------------------------------------------------------
 # Set EDITOR ENV
 # 
+export TERM=xterm-256color
+export COLORS=256
+
 export EDITOR=vim
 export VISUAL=vim
 export PAGER="less -R"
