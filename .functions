@@ -6,187 +6,60 @@
 #
 ######################################################################
 
-#psql () {
-#    if [[ $# == 1 ]]; then
-#	cmd=$(/Library/PostgreSQL/13/bin/psql -U chuckjones -d $1)
-#    fi
-#    $cmd
-#}
 
-
-term_cwd () {
-    local url_path=''
-    {
-            # Use LC_CTYPE=C to process text byte-by-byte and
-            # LC_COLLATE=C to compare byte-for-byte. Ensure that
-            # LC_ALL and LANG are not set so they don't interfere.
-            local i ch hexch LC_CTYPE=C LC_COLLATE=C LC_ALL= LANG=
-            for ((i = 0; i < ${#PWD}; ++i)); do
-                ch="${PWD:i:1}"
-                if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
-                    url_path+="$ch"
-                else
-                    printf -v hexch "%02X" "'$ch"
-                    # printf treats values greater than 127 as
-                    # negative and pads with "FF", so truncate.
-                    url_path+="%${hexch: -2:2}"
-                fi
-            done
-    }
-    printf '\e]7;%s\a' "file://$HOSTNAME$url_path"
-}
-
-
-psql () {
-    if [[ $# == 1 ]]; then 
-	PGPASSWORD=$PGPASSWORD /Library/PostgreSQL/13/bin/psql -U chuckjones --password -d "$1"
-    else
-	CMD_ARGS=$@
-	if [[ "${CMD_ARGS[@]}" == "-U postgres" ]]; then
-	    export PGPASSWORD=postgres
-	else
-	    export PGPASSWORD=$PGPASSWORD
-	fi
-	PGPASSWORD=$PGPASSWORD /Library/PostgreSQL/13/bin/psql $@ --password
-    fi
-}
-
-Arduino () {
-    Arduino=/Users/jjbiggins/Documents/Arduino
-    echo $Arduino
-}
-
-
-# -------------------------------------------------------------------
 # function to print argument to screen and to a log file
-####################################################################
-prinnt () 
-{
-        
-        if [[ -f "$HOME/logs/$1" ]]; then
-            logfile="$HOME/logs/$1"
-        else
-            touch $HOME/logs/${1}.log
-        fi
-
-        echo "`date +'%a %D %T'`: $1" >> $logfile
+prinnt () {
+    if [[ -f "$HOME/logs/$1" ]]; then
+	logfile="$HOME/logs/$1"
+    else
+	touch $HOME/logs/${1}.log
+    fi
+    
+    echo "`date +'%a %D %T'`: $1" >> $logfile
 }
 
-function bad_exit  
-{
-	#prinnt $*
-        prinnt "Process DID NOT complete successfully."
-        prinnt "Process must be re-run."
-        exit 1
-}
 
-function good_exit
-{
-        prinnt "Process completed successfully."
-        process_mail
-        exit 0
-}
-
-function thoughts
-{
-    today=today=`date +"%Y-%m-%d"`
-    filename="thoughts-${today}.txt"
-    touch "$filename"
-    vim "$filename"
-}
-
-function call {
+call () {
     echo "`date +'%a %D %T'` --> $@" | tee -a $logfile
     "$@" 2>&1 | tee -a $logfile
     [ ${PIPESTATUS[0]} -ne 0 ] && bad_exit "Failed!"
 }
 
-function process_mail {
-    echo "process complete" | mailx 
-}
 
 # ----------------------------------------------------------------
 # Directory Functions
 # ----------------------------------------------------------------
 
 # Create dir and cd into it
-function mkcdir {
+mkcdir () {
     mkdir -p -- "$1" &&
       cd -P -- "$1"
 }
 
-function mkpub {
+# create public directory
+mkpub () {
     mkdir -p -- "$1";
     chmod 777 -R "$1";
 }
 
-# Create Archive
-function create_archive
-{
-        #       Define the archive prefix for this process and the number archives
-        archive_prefix="ar"
-        highest=1000
 
-        #       Create the next sequential archive directory name
-        cd $datapar
-        for object in $archive_prefix*
-        do
-                if [ -d $object ]
-                then
-                        if [ ${object#$archive_prefix} -gt $highest ]
-                        then
-                                highest=${object#$archive_prefix}
-                        fi
-                fi
-        done
-        new_direct=$((highest + 1))
+loadavg() {
+    # sysctl -n hw.loadavg -
+    #	Returns array of 3 vals
+    #	Representing loadavg during last 1-, 5-, and 15- min intervals
+    local SYSLOAD=$(sysctl -n hw.loadavg | cut -d ' ' -f2 | tr -d '.')
 
-        mkdir $datapar/$archive_prefix$new_direct
-}
-
-# Remove Archive
-function remove_archive
-{
-        old_enough=$1  ## Age of archive to delete in days
-
-        #       Print list of directory archives that will be deleted
-        cd $datapar
-        #prinnt "Removing Old Archives"
-        find . -mtime +$old_enough -type d -name "$archive_prefix*" -exec rm -rf {} \;
-}
-
-
-
-
-# function to check if 'oper' is the one who started this process
-####################################################################
-function check_user  
-{
-        who kicked me? | grep oper
-        if [ $? -ne 0 ]
-        then
-                prinnt "Only user oper is allowed to run this process."
-                prinnt "You are the user `who kicked me`"
-                bad_exit
-        fi
-}
-
-
-
-#------------------------------------------------------------------
-# Prompt / Colors
-#------------------------------------------------------------------
-# Returns system load as percentage, i.e., '40' rather than '0.40)'.
-function load()
-{
-    local SYSLOAD=$(cut -d " " -f1 /proc/loadavg | tr -d '.')
     # System load of the current host.
     echo $((10#$SYSLOAD))       # Convert to decimal.
 }
 
+
 # Returns a color indicating system load.
-function load_color()
-{
+load_color() {
+    BRead='\033[255;57;31m'
+    Red='\033[194;54;33m'
+    Green='\033[37;188;36m'
+
     local SYSLOAD=$(load)
     if [ ${SYSLOAD} -gt ${XLOAD} ]; then
         echo -en ${ALERT}
@@ -200,8 +73,12 @@ function load_color()
 }
 
 # Returns a color according to free disk space in $PWD.
-function disk_color()
-{
+disk_color() {
+    BRead='\033[255;57;31m'
+    Red='\033[194;54;33m'
+    Green='\033[37;188;36m'
+    Cyan='\033[51;187;200m'
+
     if [ ! -w "${PWD}" ] ; then
         echo -en ${Red}
         # No 'write' privilege in the current directory.
@@ -222,8 +99,10 @@ function disk_color()
 }
 
 # Returns a color according to running/suspended jobs.
-function job_color()
-{
+job_color() {
+    BRead='\033[255;57;31m'
+    BCyan='\033[20;235;240m'
+
     if [ $(jobs -s | wc -l) -gt "0" ]; then
         echo -en ${BRed}
     elif [ $(jobs -r | wc -l) -gt "0" ] ; then
@@ -231,15 +110,31 @@ function job_color()
     fi
 }
 
-# Adds some text in the terminal frame (if applicable).
 
 
-#---------------------------------------------------------------------
+missingcommand () {
+
+  # TODO: put this somewhere else
+  # if the command-not-found package is installed, use it
+
+  if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-not-found ]; then
+	  function command_not_found_handle {
+		  # check because c-n-f could've been removed in the meantime
+		  if [ -x /usr/lib/command-not-found ]; then
+		     /usr/lib/command-not-found -- "$1"
+		     return $?
+		  elif [ -x /usr/share/command-not-found/command-not-found ]; then
+		     /usr/share/command-not-found/command-not-found -- "$1"
+		     return $?
+		  else
+		     printf "%s: command not found\n" "$1" >&2
+		     return 127
+		  fi
+	  }
+  fi
+}
 
 
-# ------------------------------------------------------------------
-# Display
-# -----------------------------------------------------------------
 #--------------------------------------------------------------
 #  Automatic setting of $DISPLAY (if not set already).
 #  This works for me - your mileage may vary. . . .
@@ -248,11 +143,9 @@ function job_color()
 #+ troublesome) - however this code seems to work in a majority
 #+ of cases.
 #--------------------------------------------------------------
-
-function get_xserver ()
-{
+get_xserver () {
     case $TERM in
-        xterm )
+        xterm* )
             XSERVER=$(who am i | awk '{print $NF}' | tr -d ')''(' )
             # Ane-Pieter Wieringa suggests the following alternative:
             #  I_AM=$(who am i)
@@ -260,34 +153,25 @@ function get_xserver ()
             #  SERVER=${SERVER%*)}
             XSERVER=${XSERVER%%:*}
             ;;
-            aterm | rxvt)
+        
+	aterm | rxvt)
             # Find some code that works here. ...
             ;;
     esac
 }
 
-# ------------------------------------------------------------------
 
-
-#-------------------------------------------------------------
-# A few fun ones
-#-------------------------------------------------------------
-
-# Adds some text in the terminal frame (if applicable).
-
-function xtitle()
-{
+xtitle() {
     case "$TERM" in
-    *term* | rxvt)
-        echo -en  "\e]0;$*\a" ;;
-    *)  ;;
+	*term* | rxvt)
+	    echo -en  "\033[0;$*\a" 
+	    ;;
+	*)  
+	    ;;
     esac
 }
 
 
-# Aliases that use xtitle
-alias top='xtitle Processes on $HOST && top'
-alias make='xtitle Making $(basename $PWD) ; make'
 
 #command man g$
 #    for i ; do
@@ -295,41 +179,20 @@ alias make='xtitle Making $(basename $PWD) ; make'
 #       command man -a "$i"
 
 
-
-#-------------------------------------------------------------
-# Make the following commands run in background automatically
-#-------------------------------------------------------------
-
-function te()  # wrapper around xemacs/gnuserv
-{
-    if [ "$(gnuclient -batch -eval t 2>&-)" == "t" ]; then
-       gnuclient -q "$@";
-    else
-       ( xemacs "$@" &);
-    fi
-}
-
-function xpdf() { command xpdf "$@" & }
-
-
-
-
 #-------------------------------------------------------------
 # File & strings related functions:
 #-------------------------------------------------------------
 
-
 # Find a file with a pattern in name:
-function ff() { find . -type f -iname '*'"$*"'*' -ls ; }
+ff() { find . -type f -iname '*'"$*"'*' -ls ; }
 
 # Find a file with pattern $1 in name and Execute $2 on it:
-function fe() { find . -type f -iname '*'"${1:-}"'*' \
+fe() { find . -type f -iname '*'"${1:-}"'*' \
 -exec ${2:-file} {} \;  ; }
 
 #  Find a pattern in a set of files and highlight them:
 #+ (needs a recent version of egrep).
-function fstr()
-{
+fstr() {
     OPTIND=1
     local mycase=""
     local usage="fstr: find string in files.
@@ -348,25 +211,12 @@ Usage: fstr [-i] \"pattern\" [\"filename pattern\"] "
     fi
     find . -type f -name "${2:-*}" -print0 | \
 xargs -0 egrep --color=always -sn ${case} "$1" 2>&- | more
-
 }
 
 
-function swap()
-{ # Swap 2 filenames around, if they exist (from Uzi's bashrc).
-    local TMPFILE=tmp.$$
 
-    [ $# -ne 2 ] && echo "swap: 2 arguments needed" && return 1
-    [ ! -e $1 ] && echo "swap: $1 does not exist" && return 1
-    [ ! -e $2 ] && echo "swap: $2 does not exist" && return 1
+extract() {
 
-    mv "$1" $TMPFILE
-    mv "$2" "$1"
-    mv $TMPFILE "$2"
-}
-
-function extract()      # Handy Extract Program
-{
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xvjf $1     ;;
@@ -389,17 +239,16 @@ function extract()      # Handy Extract Program
 
 
 # Creates an archive (*.tar.gz) from given directory.
-function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
+maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 
 # Create a ZIP archive of a file or folder.
-function makezip() { zip -r "${1%%/}.zip" "$1" ; }
+makezip() { zip -r "${1%%/}.zip" "$1" ; }
 
 # Make your directories and files access rights sane.
-function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
+sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 
 # Replace spaces with underscore in file/dir name
-function spaces_to_underscores
-{
+spaces_to_underscores () {
     for x in *; do
         new_name=`echo "$x" | tr "[:blank:]" "_"`
     
@@ -414,14 +263,13 @@ function spaces_to_underscores
 #-------------------------------------------------------------
 # Process/system related functions:
 #-------------------------------------------------------------
+my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }
+pp() { my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }
 
 
-function my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }
-function pp() { my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }
+killps() {
+    # kill by process name
 
-
-function killps()   # kill by process name
-{
     local pid pname sig="-TERM"   # default signal
     if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
         echo "Usage: killps [-SIGNAL] pattern"
@@ -437,8 +285,10 @@ function killps()   # kill by process name
     done
 }
 
-function mydf()         # Pretty-print of 'df' output.
-{                       # Inspired by 'dfc' utility.
+mydf() {
+    # Pretty-print of 'df' output.
+    # Inspired by 'dfc' utility.
+
     for fs ; do
 
         if [ ! -d $fs ]
@@ -463,15 +313,16 @@ function mydf()         # Pretty-print of 'df' output.
 }
 
 
-function my_ip() # Get IP adress on ethernet.
-{
+my_ip() { # Get IP adress on ethernet.
+
     MY_IP=$(/sbin/ifconfig en0 | awk '/inet/ { print $2 } ' |
       sed -e s/addr://)
     echo ${MY_IP:-"Not connected"}
 }
 
-function ii()   # Get current host related info.
-{
+
+ii() {   # Get current host related info.
+
     echo -e "\nYou are logged on ${BRed}$HOST"
     echo -e "\n${BRed}Additionnal information:$NC " ; uname -a
     echo -e "\n${BRed}Users logged on:$NC " ; w -hs |
@@ -485,12 +336,6 @@ function ii()   # Get current host related info.
     echo
 }
 
-
-
-function gam() { "/Users/jjbiggins/bin/gam/gam" "$@" ; }
-
-EXIT_SUCCESS=0
-EXIT_FAILURE=1
 
 flushdns () {
     sudo dscacheutil -flushcache ; EXIT_CODE=$?
@@ -527,14 +372,6 @@ update_macports ()
 
 
 
-
-
-
-
-
-
-
-
 #  This is a 'universal' completion function - it works when commands have
 #+ a so-called 'long options' mode , ie: 'ls --all' instead of 'ls -a'
 #  Needs the '-o' option of grep
@@ -545,15 +382,13 @@ update_macports ()
 
 COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
 
-_get_longopts()
-{
+_get_longopts() {
   #$1 --help | sed  -e '/--/!d' -e 's/.*--\([^[:space:].,]*\).*/--\1/'| \
   #grep ^"$2" |sort -u ;
     $1 --help | grep -o -e "--[^[:space:].,]*" | grep -e "$2" |sort -u
 }
 
-_longopts()
-{
+_longopts() {
     local cur
     cur=${COMP_WORDS[COMP_CWORD]}
 
