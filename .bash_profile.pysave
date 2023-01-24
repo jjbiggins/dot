@@ -1,16 +1,3 @@
-#################################################################
-#                                                               #
-#   .bash_profile file                                          #
-#                                                               #
-#   Executed from the bash shell when you log in.               #
-#                                                               #
-#################################################################
-
-
-
-
-
-
 # ===================================================================
 # BASH SHELL FILES 
 # -------------------------------------------------------------------
@@ -26,26 +13,56 @@
 
 
 
-if [ -r ~/.profile ]; then . ~/.profile; fi
+#if [ -r ~/.profile ]; then . ~/.profile; fi
+
+PATH="${PATH}:/opt/apache-maven-3.8.6/bin"
+BRIGHT_GREEN=$'\033[01;32m'
+LIGHT_BLUE=$'\033[00;34m'
+NC=$'\033[00;00m'
+
+
+
+missingcommand () {
+
+  # TODO: put this somewhere else
+  # if the command-not-found package is installed, use it
+
+  if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-not-found ]; then
+	  function command_not_found_handle {
+		  # check because c-n-f could've been removed in the meantime
+		  if [ -x /usr/lib/command-not-found ]; then
+		     /usr/lib/command-not-found -- "$1"
+		     return $?
+		  elif [ -x /usr/share/command-not-found/command-not-found ]; then
+		     /usr/share/command-not-found/command-not-found -- "$1"
+		     return $?
+		  else
+		     printf "%s: command not found\n" "$1" >&2
+		     return 127
+		  fi
+	  }
+  fi
+}
+
+#if [[ -f  ~/.bash_login ]]; then . ~/.bash_login; fi
+
+
+
+
 
 
 # Added by install_latest_perl_osx.pl
 #case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
-
-
-if [[ -f  ~/.bash_login ]]; then
-    . ~/.bash_login
+if [[ -f ~/.bash_login ]]; then
+	. ~/.bash_login
 fi
 
+if [[ -f ~/.bashrc ]]; then
+    . ~/.bashrc
+fi
 
 if [[ -f ~/.iterm2_shell_integration.bash ]]; then
 	source ~/.iterm2_shell_integration.bash
-fi
-
-
-# source bash completeions
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
 fi
 
 
@@ -64,26 +81,91 @@ if [ -f ~/.bashrc_aliases ]; then
     . ~/.bashrc_aliases
 fi
 
+
+
+if [[ -f ~/.functions ]]; then
+    source  ~/.functions
+fi
+
+
+if ! [ -n "${SUDO_USER}" -a -n "${SUDO_PS1}" ]; then
+
+	echo "${SUDO_USER} ${SUDO_PS1}"
+	PS1_SUFFIX="\[ ${NC}\]:\[${LIGHT_BLUE}\]\W\[${NC}\]]\$ "
+	
+	if [ "$(uname -s)" == "Linux" ]; then 
+		LINUX_ONLY='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]' 
+	fi
+
+	if [ "$(hostname -s )" == "master" ]; then 
+		PS1_VARS='\h'
+	else 
+		PS1_VARS='\u@\h'
+	fi
+	
+	#
+	# Example PS1:
+	#PS1='[\033[01;32m\]\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]]$ '
+	#
+	PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]]\$ '
+	#PS1="[${BRIGHT_GREEN}\]${PS1_VARS}\[${NC}\]:\[${LIGHT_BLUE}\]\W\[${NC}\]]$ "
+
+fi
+
+
+
+
+case "$TERM_PROGRAM" in 
+	*Apple_Terminal*)
+		TERM=xterm
+		;;
+	*tmux*)
+		TERM=xterm
+		;;
+	*iTerm*)
+		TERM=xterm
+		;;
+	*)
+		TERM=vterm
+		;;
+esac
+
+
+# Commented out, don't overwrite xterm -T "title" -n "icontitle" by default.
+# If this is an xterm set the title to user@host:dir
+
+case "$TERM" in
+	*xterm*|rxvt*)
+	
+	# Xterm:
+	# ESC]0;stringBEL — Set icon name and window title to string
+	# ESC]1;stringBEL — Set icon name to string
+	# ESC]2;stringBEL — Set window title to strings 
+	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+	;;
+*tmux*)
+	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+	;;
+*)
+	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+	;;
+esac
+
+
+
+
+
+
 export PATH
-#export PATH=$HOME/bin:$PATH
-#export PATH=$HOME/bin:$PATH
-#export PATH=/Volumes/mnt/bin:$PATH
+export WASMTIME_HOME="$HOME/.wasmtime"
+PATH="$WASMTIME_HOME/bin:$PATH"
 
+# Setting PATH for Python 3.8
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+export PATH
 
-
-
-## >>> conda initialize >>>
-## !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/opt/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/opt/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-## <<< conda initialize <<<
-
+# Setting PATH for Python 3.9
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+export PATH
