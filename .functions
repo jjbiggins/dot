@@ -47,10 +47,18 @@ loadavg() {
     # sysctl -n hw.loadavg -
     #	Returns array of 3 vals
     #	Representing loadavg during last 1-, 5-, and 15- min intervals
-    local SYSLOAD=$(sysctl -n hw.loadavg | cut -d ' ' -f2 | tr -d '.')
+
+    if [[ $(uname -s) == "Darwin" ]]; then
+	local SYSLOAD=$(sysctl -n hw.loadavg | cut -d ' ' -f2 | tr -d '.')
+    elif [[ $(uname -s) == "Linux" ]]; then
+	local SYSLOAD=$(cut -d " " -f1 /proc/loadavg | tr -d '.')
+    fi
+
 
     # System load of the current host.
-    echo $((10#$SYSLOAD))       # Convert to decimal.
+    if [[ ! -z "${SYSLOAD}" ]]; then
+	echo $((10#$SYSLOAD))       # Convert to decimal.
+    fi
 }
 
 

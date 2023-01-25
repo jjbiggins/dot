@@ -115,7 +115,14 @@ else
     SU=${BCyan}         # User is normal (well ... most of us are).
 fi
 
-NCPU=$(sysctl -n hw.ncpu)	# Number of CPUs
+# Number of CPUs
+if [[ $(uname -s) == "Darwin" ]]; then
+    NCPU=$(sysctl -n hw.ncpu)	
+elif [[ $(uname -s) == "Linux" ]]; then
+    NCPU=$(grep 'cpu cores' /proc/cpuinfo | uniq | \
+	    cut -d':' -f2 | tr -d ' ')	
+fi 
+
 SLOAD=$(( 100*${NCPU} ))        # Small load
 MLOAD=$(( 200*${NCPU} ))        # Medium load
 XLOAD=$(( 400*${NCPU} ))        # Xlarge load
