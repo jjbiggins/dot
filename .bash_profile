@@ -13,7 +13,7 @@
 
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
-
+export PKG_CONFIG_PATH="/usr/local/share/pkgconfig:/opt/local/share/pkgconfig"
 
 # PS1 Colors
 BRIGHT_GREEN=$'\033[01;32m'

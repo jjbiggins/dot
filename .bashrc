@@ -4,6 +4,11 @@
 [ -z "$PS1" ] && return
 
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+        . /usr/share/bash-completion/bash_completion
+
+
 #-------------------------------------------------------------
 # source global definitions (if any)
 #-------------------------------------------------------------
@@ -36,7 +41,7 @@ shopt -s mailwarn					# show Got mail warning
 shopt -s extglob					# Necessary.
 
 shopt -s histappend					# cmds appended to history
-
+shopt -u progcomp
 
 
 # Color Definitions
@@ -137,16 +142,16 @@ export EDITOR=vim
 
 # pager configurations
 export PAGER=less
-export LESSCHARSET='utf-8'
-export LESSOPEN='|/usr/local/bin/lesspipe.sh %s 2>&-'
+export MANWIDTH=60
 
-export LESS='-i -N -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
+export LESSCHARSET='utf-8'
+export LESSOPEN='|lesspipe.sh %s'
+export LESS='-i -N --line-num-width=1 -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
     :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 
 # LESS man page colors (makes Man pages more readable).
 export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-#export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
+export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
