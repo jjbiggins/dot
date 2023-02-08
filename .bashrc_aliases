@@ -47,6 +47,9 @@ alias lh="ls -lt | head"
 alias lt="ls -lt"
 alias l="ls"
 alias ll="ls -l"
+alias ltr="ls -ltr"
+alias la="ls -la"
+alias ltra="ls -ltra"
 
 
 # cp aliases

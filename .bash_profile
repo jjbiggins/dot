@@ -123,21 +123,36 @@ esac
 
 
 
-# Setting PATH for Python 3.8
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+if [[ $(uname -s) == "Darwin" ]]; then
 
-# Setting PATH for Python 3.9
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+    PYTHON_VERS_DIR="/Library/Frameworks/Python.framework/Versions"
 
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+    
+    if [[ -d "${PYTHON_VERS_DIR}/3.8" ]]; then
+	# Setting PATH for Python 3.8
+	# The original version is saved in .bash_profile.pysave
+	PATH="${PYTHON_VERS_DIR}/3.8/bin:${PATH}"
+    fi
 
-# Setting PATH for Python 3.11
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
+
+    if [[ -d "${PYTHON_VERS_DIR}/3.9" ]]; then
+	# Setting PATH for Python 3.9
+	# The original version is saved in .bash_profile.pysave
+	PATH="${PYTHON_VERS_DIR}/3.9/bin:${PATH}"
+    fi
+
+    if [[ -d "${PYTHON_VERS_DIR}/3.7" ]]; then
+	# Setting PATH for Python 3.7
+	# The original version is saved in .bash_profile.pysave
+	PATH="${PYTHON_VERS_DIR}/3.7/bin:${PATH}"
+    fi
+   
+    if [[ -d "${PYTHON_VERS_DIR}/3.11" ]]; then
+       	# Setting PATH for Python 3.11
+	# The original version is saved in .bash_profile.pysave
+	PATH="${PYTHON_VERS_DIR}/3.11/bin:${PATH}"
+    fi
+fi
 
 
 # Setting PATH for gradle 7.6
@@ -158,9 +173,11 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 
 # Andriod home envvars
-if [[ $(uname -s) == "Darwin" ]]; then
+if [[ $(uname -s) == "Darwin" && -d "${HOME}/Library/Android" ]]; then
     ANDRIOD_HOME="${HOME}/Library/Android/sdk"
-    PATH="${PATH}:${ANDRIOD_HOME}/tools:${ANDRIOD_HOME}/tools/bin:${ANDRIOD_HOME}/platform-tools"
+    PATH="${PATH}:${ANDRIOD_HOME}/tools"
+    PATH="${PATH}:${ANDRIOD_HOME}/tools/bin"
+    PATH="${PATH}:${ANDRIOD_HOME}/platform-tools"
 fi
 
 
@@ -170,32 +187,28 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-
+PATH="$(yarn global bin):${PATH}"
 
 
 # set java_home
 if  [[ $(uname -s) == "Darwin" ]]; then
     JAVA_HOME="$(/usr/libexec/java_home)" 
 elif [[ $(uname -s) == "Linux" ]]; then
-    JAVA_HOME=$(readlink -f /etc/alternatives/java |sed -e 's/\/bin\/java//g')
+    JAVA_HOME=$(readlink -f /etc/alternatives/java |\ 
+	sed -e 's/\/bin\/java//g')
 fi
-
 
 # add JAVA_HOME/bin to PATH
 if [[ !  -z "${JAVA_HOME}" ]]; then
     PATH="${JAVA_HOME}/bin:${PATH}" 
 fi
 
-
-
-# add macports to path if installed
 if [[ -d '/opt/local' ]]; then 
+    # add macports to path if installed
     PATH="${PATH}:/opt/local/bin:/opt/local/sbin"
-
-# add pkgsrc to path if installed
 elif [[ -d '/opt/pkg' ]]; then
+    # add pkgsrc to path if installed
     PATH="${PATH}:/opt/pkg/bin:/opt/pkg/sbin"
-
 fi
 
 
@@ -206,6 +219,8 @@ if [ !  -z "$PYTHONPATH" ]; then
 	REQUESTS_CA_BUNDLE=${CERT_PATH}
 fi
 
+
+eval "$(rbenv init - bash)"
 
 
 export ANDRIOD_HOME
