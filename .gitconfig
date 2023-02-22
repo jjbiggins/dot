@@ -15,7 +15,5 @@
 	helper = osxkeychain
 [init]
 	defaultBranch = main
-[http]
-	sslcainfo = Cloudflare_CA.crt
 [safe]
 	directory = /srv/scm/git/repos
