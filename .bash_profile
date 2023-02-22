@@ -193,7 +193,7 @@ PATH="$(yarn global bin):${PATH}"
 
 # set java_home
 if  [[ $(uname -s) == "Darwin" ]]; then
-    JAVA_HOME="$(/usr/libexec/java_home)" 
+    JAVA_HOME="$(/usr/libexec/java_home -v 17)" 
 elif [[ $(uname -s) == "Linux" ]]; then
     JAVA_HOME=$(readlink -f /etc/alternatives/java |\ 
 	sed -e 's/\/bin\/java//g')
