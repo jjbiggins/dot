@@ -153,7 +153,9 @@ export MANWIDTH=60
 
 export LESSCHARSET='utf-8'
 export LESSOPEN='|lesspipe.sh %s'
-export LESS='-i -N --line-num-width=1 -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
+
+# add -N flag to enable line numbers in manpages
+export LESS='-i --line-num-width=1 -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
     :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 
 # LESS man page colors (makes Man pages more readable).

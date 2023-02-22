@@ -121,7 +121,8 @@ case "$TERM" in
 	;;
 esac
 
-
+USER_PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }${USER_PROMPT_COMMAND}"
 
 if [[ $(uname -s) == "Darwin" ]]; then
 
@@ -156,7 +157,7 @@ fi
 
 
 # Setting PATH for gradle 7.6
-PATH="/opt/gradle/gradle-7.6/bin:${PATH}"
+#PATH="/opt/gradle/gradle-7.6/bin:${PATH}"
 
 
 WASMTIME_HOME="$HOME/.wasmtime"
@@ -222,14 +223,14 @@ fi
 
 eval "$(rbenv init - bash)"
 
+source /Users/jjbiggins/.docker/init-bash.sh || true # Added by Docker Desktop
 
 export ANDRIOD_HOME
 export WASMTIME_HOME
 export JAVA_HOME
 #export PYTHONPATH
-#export CERT_PATH
-#export SSL_CERT_FILE
-#export REQUESTS_CA_BUNDLE
-#export DEVELOPER_DIR
+export CERT_PATH
+export SSL_CERT_FILE
+export REQUESTS_CA_BUNDLE
+export DEVELOPER_DIR
 export PATH
-

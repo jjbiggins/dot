@@ -1,5 +1,5 @@
 [user]
-	email = joe@biggins.tech
+	email = 39013135+jjbiggins@users.noreply.github.com
 	name = Joe Biggins
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -15,5 +15,7 @@
 	helper = osxkeychain
 [init]
 	defaultBranch = main
+[http]
+	sslcainfo = Cloudflare_CA.crt
 [safe]
-	directory = /opt/depot_tools
+	directory = /srv/scm/git/repos
