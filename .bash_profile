@@ -13,7 +13,7 @@
 
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export PKG_CONFIG_PATH="/usr/local/share/pkgconfig:/opt/local/share/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/opt/local/share/pkgconfig"
 
 # PS1 Colors
 BRIGHT_GREEN=$'\033[01;32m'
@@ -120,21 +120,19 @@ case "$TERM" in
 	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 	;;
 esac
-
 USER_PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }${USER_PROMPT_COMMAND}"
+
 
 if [[ $(uname -s) == "Darwin" ]]; then
 
     PYTHON_VERS_DIR="/Library/Frameworks/Python.framework/Versions"
-
     
     if [[ -d "${PYTHON_VERS_DIR}/3.8" ]]; then
 	# Setting PATH for Python 3.8
 	# The original version is saved in .bash_profile.pysave
 	PATH="${PYTHON_VERS_DIR}/3.8/bin:${PATH}"
     fi
-
 
     if [[ -d "${PYTHON_VERS_DIR}/3.9" ]]; then
 	# Setting PATH for Python 3.9
@@ -159,15 +157,22 @@ fi
 # Setting PATH for gradle 7.6
 #PATH="/opt/gradle/gradle-7.6/bin:${PATH}"
 
+if [[ -d "${HOME}/.wasmtime" ]]; then
+    WASMTIME_HOME="$HOME/.wasmtime"
+    PATH="$WASMTIME_HOME/bin:$PATH"
+fi
 
-WASMTIME_HOME="$HOME/.wasmtime"
-PATH="$WASMTIME_HOME/bin:$PATH"
-PATH="${PATH}:/opt/wasi-sdk-16.0/bin"
+
+if [[ -d "/opt/wasi-sdk" ]]; then
+    WASI_SDK_PATH="/opt/wasi-sdk"
+    PATH="${PATH}:${WASI_SDK_PATH}/bin"
+fi
 
 
 if [[ $(uname -s) == "Darwin" ]]; then
     PATH="${PATH}:${HOME}/.dat/releases/dat-14.0.2-macos-x64"
 fi
+
 
 if [[ $(uname -s) == "Darwin" ]]; then
     PATH="${PATH}:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts"
@@ -182,14 +187,17 @@ if [[ $(uname -s) == "Darwin" && -d "${HOME}/Library/Android" ]]; then
 fi
 
 
-# nvm path
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [[ -d "${HOME}/.nvm" ]]; then
+    # nvm path
+    export NVM_DIR="${HOME}/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 
-PATH="$(yarn global bin):${PATH}"
-
+if [[ -d "${HOME}/.yarn" || -f "${HOME}/.yarnrc" ]]; then
+    PATH="${PATH}:$(yarn global bin)"
+fi
 
 # set java_home
 if  [[ $(uname -s) == "Darwin" ]]; then
@@ -213,7 +221,6 @@ elif [[ -d '/opt/pkg' ]]; then
 fi
 
 
-
 if [ !  -z "$PYTHONPATH" ]; then
  	CERT_PATH=$(python3 -m certifi)
 	SSL_CERT_FILE=${CERT_PATH}
@@ -221,9 +228,32 @@ if [ !  -z "$PYTHONPATH" ]; then
 fi
 
 
-eval "$(rbenv init - bash)"
+if [[ -d "${HOME}/.rbenv" ]]; then
+    eval "$(rbenv init - bash)"
+fi
 
-source /Users/jjbiggins/.docker/init-bash.sh || true # Added by Docker Desktop
+
+if [[ -d "${HOME}/.docker" ]]; then
+    source "${HOME}/.docker/init-bash.sh" || true # Added by Docker Desktop
+fi
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/Users/jjbiggins/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/Users/jjbiggins/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/Users/jjbiggins/opt/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/Users/jjbiggins/opt/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+
+
 
 export ANDRIOD_HOME
 export WASMTIME_HOME
@@ -234,3 +264,5 @@ export SSL_CERT_FILE
 export REQUESTS_CA_BUNDLE
 export DEVELOPER_DIR
 export PATH
+
+
