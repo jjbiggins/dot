@@ -52,6 +52,7 @@ if [ -f ~/.bashrc_aliases ]; then
     . ~/.bashrc_aliases
 fi
 
+
 if [[ -f ~/.functions ]]; then
     source  ~/.functions
 fi
@@ -120,8 +121,11 @@ case "$TERM" in
 	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 	;;
 esac
+
+
 USER_PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }${USER_PROMPT_COMMAND}"
+
 
 
 if [[ $(uname -s) == "Darwin" ]]; then
@@ -186,7 +190,6 @@ if [[ $(uname -s) == "Darwin" && -d "${HOME}/Library/Android" ]]; then
     PATH="${PATH}:${ANDRIOD_HOME}/platform-tools"
 fi
 
-
 if [[ -d "${HOME}/.nvm" ]]; then
     # nvm path
     export NVM_DIR="${HOME}/.nvm"
@@ -203,14 +206,14 @@ fi
 if  [[ $(uname -s) == "Darwin" ]]; then
     JAVA_HOME="$(/usr/libexec/java_home -v 17)" 
 elif [[ $(uname -s) == "Linux" ]]; then
-    JAVA_HOME=$(readlink -f /etc/alternatives/java |\ 
-	sed -e 's/\/bin\/java//g')
+    JAVA_HOME=$(readlink -f /etc/alternatives/java | sed -e 's/\/bin\/java//g')
 fi
 
 # add JAVA_HOME/bin to PATH
 if [[ !  -z "${JAVA_HOME}" ]]; then
     PATH="${JAVA_HOME}/bin:${PATH}" 
 fi
+
 
 if [[ -d '/opt/local' ]]; then 
     # add macports to path if installed
@@ -227,11 +230,9 @@ if [ !  -z "$PYTHONPATH" ]; then
 	REQUESTS_CA_BUNDLE=${CERT_PATH}
 fi
 
-
 if [[ -d "${HOME}/.rbenv" ]]; then
     eval "$(rbenv init - bash)"
 fi
-
 
 if [[ -d "${HOME}/.docker" ]]; then
     source "${HOME}/.docker/init-bash.sh" || true # Added by Docker Desktop
