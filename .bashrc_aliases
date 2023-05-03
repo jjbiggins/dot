@@ -6,11 +6,17 @@ if [[ $(uname -s) == "Darwin" ]]; then
     # APFS FileSystem
     alias apfsutil="sudo /System/Library/Filesystems/apfs.fs/Contents/Resources/apfs.util"
 
+    alias showdotfiles="defaults write com.apple.Finder AppleShowAllFiles true"
+    alias showhiddenfiles="defaults write com.apple.Finder AppleShowAllFiles true"
+    alias unhidefiles="defaults write com.apple.Finder AppleShowAllFiles true"
+
+    alias hidedotfiles="defaults write com.apple.Finder AppleShowAllFiles true"
+    alias hidefiles="defaults write com.apple.Finder AppleShowAllFiles true"
 
     # tailscale
-    if [[ -d "/Applications/Tailscale.app" ]]; then
-	alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-    fi
+    #if [[ -d "/Applications/Tailscale.app" ]]; then
+    #	alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+    #fi
     
     # macports
     if command -v port 1>/dev/null; then
@@ -43,6 +49,9 @@ fi
 #}}}
 
 # Both OSX and Linux {{{
+
+# which
+alias which="type -a"
 
 # ls aliases
 alias lh="ls -lt | head"
