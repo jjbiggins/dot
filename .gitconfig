@@ -17,3 +17,5 @@
 	defaultBranch = main
 [safe]
 	directory = /srv/scm/git/repos
+[sendemail]
+	confirm = auto
