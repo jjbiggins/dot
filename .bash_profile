@@ -18,7 +18,7 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/opt
 # PS1 Colors
 BRIGHT_GREEN=$'\033[01;32m'
 LIGHT_BLUE=$'\033[00;34m'
-NC=$'\033[00;00m'
+NC=$'\033[01;00m'
 
 
 # Added by install_latest_perl_osx.pl
@@ -61,27 +61,20 @@ fi
 
 
 if ! [ -n "${SUDO_USER}" -a -n "${SUDO_PS1}" ]; then
-
-	echo "${SUDO_USER} ${SUDO_PS1}"
-	PS1_SUFFIX="\[ ${NC}\]:\[${LIGHT_BLUE}\]\W\[${NC}\]]\$ "
-	
-	if [ "$(uname -s)" == "Linux" ]; then 
-		LINUX_ONLY='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]' 
-	fi
-
-	PS1_VARS='\h'	
-	if [[ "${USER}" != "jjbiggins" || $(hostname -s) != "master" ]]; then
-	    PS1_USER=${PS1_USER:-'\u'}
-	fi
-
 	#
 	# Example PS1:
-	#PS1='[\033[01;32m\]\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]]$ '
-	#
-	#PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]]\$ '
-	echo ${PS1_USER}
-	PS1="[${PS1_USER}\${BRIGHT_GREEN}\]${PS1_VARS}\[${NC}\]:\[${LIGHT_BLUE}\]\W\[${NC}\]]$ "
-
+	# PS1='[\[\033[01;00m\]\u@\[\033[01;32m\]\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]]$ '
+	# PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]]\$ '
+	#	
+	PS1_USER=[${NC}\\]\\u
+	PS1_HOST=[${BRIGHT_GREEN}\\]\\h\\[${NC}\\]
+	PS1_CURDIR=[${LIGHT_BLUE}\\]\\W\\[${NC}\\]
+	
+	if [[ "${USER}" != "jjbiggins" || $(hostname -s) != "master" ]]; then
+	    PS1='[\'"${PS1_USER}"'@\'"${PS1_HOST}"':\'"${PS1_CURDIR}"']$ ' 
+	else
+	    PS1='[\'"${PS1_HOST}"':\'"${PS1_CURDIR}"']$ ' 
+	fi
 fi
 
 
