@@ -13,7 +13,6 @@
 
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/opt/local/share/pkgconfig"
 
 # PS1 Colors
 BRIGHT_GREEN=$'\033[01;32m'
@@ -21,17 +20,18 @@ LIGHT_BLUE=$'\033[00;34m'
 NC=$'\033[01;00m'
 
 
-# Added by install_latest_perl_osx.pl
-# case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
+
 
 if [[ -f ~/.bash_login ]]; then
 	. ~/.bash_login
 fi
 
+# Added by install_latest_perl_osx.pl
+case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
 
-if [[ -f ~/.bashrc ]]; then
-    . ~/.bashrc
-fi
+#if [[ -f ~/.bashrc ]]; then
+#    . ~/.bashrc
+#fi
 
 
 if [[ -f ~/.iterm2_shell_integration.bash ]]; then
@@ -80,20 +80,20 @@ fi
 
 
 
-case "$TERM_PROGRAM" in 
-	*Apple_Terminal*)
-		TERM=xterm
-		;;
-	*tmux*)
-		TERM=xterm
-		;;
-	*iTerm*)
-		TERM=xterm
-		;;
-	*)
-		TERM=xterm
-		;;
-esac
+##case "$TERM_PROGRAM" in 
+#	*Apple_Terminal*)
+#		TERM=xterm
+#		;;
+#	*tmux*)
+#		TERM=xterm
+#		;;
+#	*iTerm*)
+#		TERM=xterm
+#		;;
+#	*)
+#		TERM=xterm
+#		;;
+#esac
 
 
 # Commented out, don't overwrite xterm -T "title" -n "icontitle" by default.
@@ -137,12 +137,6 @@ if [[ $(uname -s) == "Darwin" ]]; then
 	PATH="${PYTHON_VERS_DIR}/3.9/bin:${PATH}"
     fi
 
-    if [[ -d "${PYTHON_VERS_DIR}/3.7" ]]; then
-	# Setting PATH for Python 3.7
-	# The original version is saved in .bash_profile.pysave
-	PATH="${PYTHON_VERS_DIR}/3.7/bin:${PATH}"
-    fi
-   
     if [[ -d "${PYTHON_VERS_DIR}/3.11" ]]; then
        	# Setting PATH for Python 3.11
 	# The original version is saved in .bash_profile.pysave
@@ -171,18 +165,6 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 
 
-if [[ $(uname -s) == "Darwin" ]]; then
-    PATH="${PATH}:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts"
-fi
-
-# Andriod home envvars
-if [[ $(uname -s) == "Darwin" && -d "${HOME}/Library/Android" ]]; then
-    ANDRIOD_HOME="${HOME}/Library/Android/sdk"
-    PATH="${PATH}:${ANDRIOD_HOME}/tools"
-    PATH="${PATH}:${ANDRIOD_HOME}/tools/bin"
-    PATH="${PATH}:${ANDRIOD_HOME}/platform-tools"
-fi
-
 if [[ -d "${HOME}/.nvm" ]]; then
     # nvm path
     export NVM_DIR="${HOME}/.nvm"
@@ -191,13 +173,10 @@ if [[ -d "${HOME}/.nvm" ]]; then
 fi
 
 
-if [[ -d "${HOME}/.yarn" || -f "${HOME}/.yarnrc" ]]; then
-    PATH="${PATH}:$(yarn global bin)"
-fi
 
 # set java_home
 if  [[ $(uname -s) == "Darwin" ]]; then
-    JAVA_HOME="$(/usr/libexec/java_home -v 17)" 
+    JAVA_HOME="$(/usr/libexec/java_home -v 19)" 
 elif [[ $(uname -s) == "Linux" ]]; then
     JAVA_HOME=$(readlink -f /etc/alternatives/java | sed -e 's/\/bin\/java//g')
 fi
@@ -223,35 +202,26 @@ if [ !  -z "$PYTHONPATH" ]; then
 	REQUESTS_CA_BUNDLE=${CERT_PATH}
 fi
 
-
+PATH="/opt/apache/maven/current/bin:${PATH}"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/jjbiggins/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#__conda_setup="$('/Users/jjbiggins/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 #if [ $? -eq 0 ]; then
 #    eval "$__conda_setup"
 #else
-#    if [ -f "/Users/jjbiggins/miniconda3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/jjbiggins/miniconda3/etc/profile.d/conda.sh"
+#    if [ -f "/Users/jjbiggins/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/Users/jjbiggins/anaconda3/etc/profile.d/conda.sh"
 #    else
-#        export PATH="/Users/jjbiggins/miniconda3/bin:$PATH"
+#        export PATH="/Users/jjbiggins/anaconda3/bin:$PATH"
 #    fi
 #fi
 #unset __conda_setup
 # <<< conda initialize <<<
 
+source ~/.keys
+PATH="${PATH}:/opt/homebrew/bin"; export PATH
 
-
-if [[ -d "${HOME}/.rbenv" ]]; then
-    eval "$(rbenv init - bash)"
-fi
-
-#if [[ -d "${HOME}/.docker" ]]; then
-#    source "${HOME}/.docker/init-bash.sh" || true # Added by Docker Desktop
-#fi
-
-
-export ANDRIOD_HOME
 export WASMTIME_HOME
 export JAVA_HOME
 #export PYTHONPATH
@@ -262,3 +232,19 @@ export DEVELOPER_DIR
 export PATH
 
 
+export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
+export PATH="/opt/homebrew/opt/libxslt/bin:$PATH"
+export PATH="/opt/homebrew/opt/libxslt/bin:$PATH"
+. "$HOME/.cargo/env"
+export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
+export PATH="/opt/homebrew/opt/libxslt/bin:$PATH"
+
+export XML2_CONFIG="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/xml2-config"
+export XML2_LIBS=$(/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/xml2-config --libs)
+export XML2_CFLAGS=$(/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/xml2-config --cflags)
+export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin:${PATH}"
+
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"

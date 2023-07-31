@@ -60,3 +60,4 @@ CLICOLOR=1; export CLICOLORS
 export COLORTERM
 
 #LS_COLORS=$( cat ~/.colors/RaspiberryPi_colors ) ; export LS_COLORS
+. "$HOME/.cargo/env"

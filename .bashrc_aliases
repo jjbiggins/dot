@@ -6,12 +6,12 @@ if [[ $(uname -s) == "Darwin" ]]; then
     # APFS FileSystem
     alias apfsutil="sudo /System/Library/Filesystems/apfs.fs/Contents/Resources/apfs.util"
 
-    alias showdotfiles="defaults write com.apple.Finder AppleShowAllFiles true"
-    alias showhiddenfiles="defaults write com.apple.Finder AppleShowAllFiles true"
-    alias unhidefiles="defaults write com.apple.Finder AppleShowAllFiles true"
+    alias showdotfiles="defaults write com.apple.Finder AppleShowAllFiles true; killall Finder"
+    alias showhiddenfiles="defaults write com.apple.Finder AppleShowAllFiles true; killall Finder"
+    alias unhidefiles="defaults write com.apple.Finder AppleShowAllFiles true; killall Finder"
 
-    alias hidedotfiles="defaults write com.apple.Finder AppleShowAllFiles true"
-    alias hidefiles="defaults write com.apple.Finder AppleShowAllFiles true"
+    alias hidedotfiles="defaults write com.apple.Finder AppleShowAllFiles false; killall Finder"
+    alias hidefiles="defaults write com.apple.Finder AppleShowAllFiles false; killall Finder"
 
     # tailscale
     #if [[ -d "/Applications/Tailscale.app" ]]; then

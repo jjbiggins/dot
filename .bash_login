@@ -11,3 +11,4 @@ echo ""
 w
 echo ""
 date
+. "$HOME/.cargo/env"

@@ -203,3 +203,6 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # mode:shell-script
 # sh-shell:bash
 # End:
+export SP_HOME=/Users/jjbiggins/streampipes
+export PATH=$PATH:$SP_HOME
+. "$HOME/.cargo/env"

@@ -7,6 +7,11 @@
 ######################################################################
 
 
+tailscale () {
+    sudo tailscale --socket /var/run/tailscaled.socket $@
+}
+
+
 # function to print argument to screen and to a log file
 prinnt () {
     if [[ -f "$HOME/logs/$1" ]]; then
