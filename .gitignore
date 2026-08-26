@@ -2,6 +2,10 @@
 !.*
 .*history
 
+# Cursor Cloud Agent environment (tracked)
+!.cursor/
+!.cursor/**
+
 .Trash
 .bash_history
 .zsh*
