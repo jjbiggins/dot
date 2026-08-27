@@ -1,453 +1,294 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Owner: 
-"       Joe Biggins
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Spell checking
-"    -> Misc
-"    -> Helper functions
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax highlighting		*syntax* *syntax-highlighting* *coloring*
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sets how many lines of history VIM has to remember
-set history=1000
-set nocompatible
-
-
-"--------------------------------------------------------------
-" TABS -- see https://www.reddit.com/r/vim/wiki/tabstop for more
-"--------------------------------------------------------------
-" TL;DR -- the following id what you want
-set tabstop=8
-set softtabstop=4
-set shiftwidth=4
-set noexpandtab	    "enable/disable visual \t character
-" --------------------------------------------------------------
-
-" Enable syntax highlighting
+" Syntax highlighting enables Vim to show parts of the text in another font or
+" color. Those parts can be specific keywords or text matching a pattern.
 syntax on
 
-" Enable filetype plugins
-filetype plugin on
-filetype plugin indent on
+
+"'tabstop' 'ts'		(default tabstop=8)
+
+"	Number of spaces that a <Tab> in the file counts for.
+
+"	Note: Setting 'tabstop' to any other value than 8 can make your file
+"	appear wrong in many places, e.g., when printing it.
+"	The value must be more than 0 and less than 10000.
+
+setlocal tabstop=8
+setlocal softtabstop=4
+setlocal shiftwidth=4
+"setlocal expandtab
 
 
-" Set to auto read when a file is changed from the outside
-set autoread
-au FocusGained,BufEnter * checktime
+" add C headers to path to enable Keyword completion
+setlocal path+=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+setlocal path+=/usr/local/include
+setlocal path+=/opt/homebrew/include
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-" let mapleader = ","
 
-" Fast saving
-" nmap <leader>w :w!<cr>
+" Change default colorscheme
+"colo twilight256
 
-" :W sudo saves the file 
-" (useful for handling the permission-denied error)
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+set backspace=indent,eol,start
 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+"'filetype' 'ft'	(default filetype "")
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+"	This option is normally set when the file type is detected.
 
-" Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
-set langmenu=en
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+"   To enable filetype auto-dectect, use the ":filetype on" command.
+"   To enable plugin per detected filetype, use ":filetype plugin on" command. 
+"   To enable per filetype indent settings, use ":filetype indent on".
+" filetype plugin indent on
 
-" TODO: read through these and decide what to do with them
-" source $VIMRUNTIME/scripts.vim 
-" source $VIMRUNTIME/indent.vim
-" source $VIMRUNTIME/filetype.vim
 
-set runtimepath+='~/.vim'
+" Configure vundle
+set nocompatible        " be iMproved, required
+filetype off            " required
 
-" Turn on the Wild menu
-set wildmenu
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
-
-"Always show current position
-set ruler
-
-" Height of the command bar
-set cmdheight=1
-
-" A buffer becomes hidden when it is abandoned
-set hidden
-
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-"set whichwrap+=<,>,h,l
-
-" Uncomment to ignore case when searching
-" set ignorecase
-
-" When searching try to be smart about cases 
-set smartcase
-
-" Highlight search results
+" Hightlight search results
 set hlsearch
 
-" Makes search act like search in modern browsers
-set incsearch 
-
-" Don't redraw while executing macros (good performance config)
-set lazyredraw 
-
-" For regular expressions turn magic on
-set magic
-
-" Show matching brackets when text indicator is over them
-set showmatch 
-
-" How many tenths of a second to blink when matching brackets
-set matchtime=2
 
 
-" Uncomment to show line nunbers
-" set number
+" source vim-plug
+" plugin manager to install vim plugins 
+call plug#begin('~/.vim/plugged')
+
+Plug 'preservim/nerdtree'       " file tree
+Plug 'tpope/vim-fugitive'       " git integration
+Plug 'morhetz/gruvbox'          " colorscheme
+" Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
 
 
-" when set novisualbell vim made sound
-" the following two lines enables 
-" visualbells and sets it to nothing
-" set novisualbell
-set visualbell
-set t_vb=
+" NerdTree Settings
+map <C-;> :NERDTreeToggle<CR>
 
-" No annoying sound on errors
-set noerrorbells
-set tm=500
-
-" Properly disable sound on errors on MacVim
-if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SHELL FILE SETTINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" since global vim settings fold my marker
-" we override that by ignoring globals using:
-set foldenable
-set foldcolumn=0
-set foldmethod=marker
-set foldlevel=0
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'xterm-256color'
-    set t_Co=256
-endif
-
-" set color scheme, available schemes are in /usr/share/vim/vim82/colors
-" colorscheme default
-" set background=dark
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,mac,dos
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup on, wb = writebackup
+" Coc.nvim settings
+"
+" Set encoding
+" May need for Vim (not Neovim) since coc.nvim calculates byte
+" utf-8 byte sequence
+set encoding=utf-8
+" some servers have issues with backup files, see #649
 set nobackup
-set nowb 
-set noswapfile
+set nowritebackup
 
-" set directory to save backups and swapfiles
-set backupdir=~/.vim/backups
-set undodir=~/.vim/undodir
-set directory=~/.vim/swapdir
+" Having longer updatetime (default is 4s) leads to n
+" delays and poor user experience
+set updatetime=300
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Always show the signcolumn, otherwise it would shift text
+" diagnostics appear/become resolved
+set signcolumn=yes
 
-" Linebreak on 78 characters
-set nolinebreak
+" User tab for trigger completion with characters ahead of navi
+" NOTE: there is always complete item selected by default,
+" no select by `"suggest.noselect" true` in your config
+" NOTE: User command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this in your config
+inoremap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#pum#next(1) :
+    \ CheckBackspace() ? "\<Tab>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-"set autoindent
-set cindent	
-set wrap    
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+	    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
 
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-"
-" TODO:
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+" User <c-space> to trigger completion
+if has('nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
+" Use `[g` and `lg` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics to current 
+" buffer in location list
+nmap <silent><nowait> [g <Plug>[coc-diagnostics-prev)
+nmap <silent><nowait> ]g <Plug>[coc-diagnostics-next)
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-" map <space> /
-" map <C-space> ?
+" GoTo code navigation
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
 
-" map pagedown to space
-map <Space> 	   
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
-" map pageup to shift-space
-map <S-Space> 
-
-
-" Disable highlight when <leader><cr> is pressed
-" map <silent> <leader><cr> :noh<cr>
-
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-
-" Buffers --- Don't know what those are yet so comment out
-" Close the current buffer
-"map <leader>bd :Bclose<cr>:tabclose<cr>gT
-
-" Close all the buffers
-"map <leader>ba :bufdo bd<cr>
-
-
-" Useful mappings for managing tabs
-"map <leader>tn :tabnew<cr>
-"map <leader>to :tabonly<cr>
-"map <leader>tc :tabclose<cr>
-"map <leader>tm :tabmove 
-"map <leader>t<leader> :tabnext 
-
-" Let 'tl' toggle between this and the last accessed tab
-"let g:lasttab = 1
-"nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-"au TabLeave * let g:lasttab = tabpagenr()
-
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-"map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-
-" Switch CWD to the directory of the open buffer
-"map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" Specify the behavior when switching between buffers 
-"try
-"  set switchbuf=useopen,usetab,newtab
-"  set stal=2
-"catch
-"endtry
-
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remap VIM 0 to first non-blank character
-"map 0 ^
-
-" Move a line of text using ALT+[jk] or Command+[jk] on mac
-"nmap <M-j> mz:m+<cr>`z
-"nmap <M-k> mz:m-2<cr>`z
-"vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-"vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-"if has("mac") || has("macunix")
-"  nmap <D-j> <M-j>
-"  nmap <D-k> <M-k>
-"  vmap <D-j> <M-j>
-"  vmap <D-k> <M-k>
-"endif
-
-" Delete trailing white space on save, useful for some filetypes ;)
-"fun! CleanExtraSpaces()
-"    let save_cursor = getpos(".")
-"    let old_query = getreg('/')
-"    silent! %s/\s\+$//e
-"    call setpos('.', save_cursor)
-"    call setreg('/', old_query)
-"endfun
-
-"if has("autocmd")
-"    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.c,*.cpp :call CleanExtraSpaces()
-"endif
-
-" STYLE GUIDES ------------------------------------------------
-" 
-" PYTHON : 
-" http://localhost/google.github.io/styleguide/google_python_style.vim
-" Copyright 2019 Google LLC
-"
-" Licensed under the Apache License, Version 2.0 (the "License");
-" you may not use this file except in compliance with the License.
-" You may obtain a copy of the License at
-"
-"    https://www.apache.org/licenses/LICENSE-2.0
-"
-" Unless required by applicable law or agreed to in writing, software
-" distributed under the License is distributed on an "AS IS" BASIS,
-" WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-" See the License for the specific language governing permissions and
-" limitations under the License.
-
-" Indent Python in the Google way.
-
-setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-
-let s:maxoff = 50 " maximum number of lines to look backwards.
-    
-function GetGooglePythonIndent(lnum)
-
-  " Indent inside parens.
-  " Align with the open paren unless it is at the end of the line.
-  " E.g.
-  "   open_paren_not_at_EOL(100,
-  "                         (200,
-  "                          300),
-  "                         400)
-  "   open_paren_at_EOL(
-  "       100, 200, 300, 400)
-  call cursor(a:lnum, 1)
-  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
-        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
-        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
-        \ . " =~ '\\(Comment\\|String\\)$'")
-  if par_line > 0
-    call cursor(par_line, 1)
-    if par_col != col("$") - 1
-      return par_col
-    endif
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
   endif
-
-  " Delegate the rest to the original function.
-  return GetPythonIndent(a:lnum)
-
 endfunction
 
-let pyindent_nested_paren="&sw*2"
-let pyindent_open_paren="&sw*2"
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
-"map <leader>ss :setlocal spell!<cr>
+" Highlight the symbol and its references when holding the cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Shortcuts using <leader>
-"map <leader>sn ]s
-"map <leader>sp [s
-"map <leader>sa zg
-"map <leader>s? z=
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s)
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+augroup end
+
+" Applying code actions to the selected code block
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>as  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+" Run the Code Lens action on the current line
+nmap <leader>cl  <Plug>(coc-codelens-action)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Remap <C-f> and <C-b> to scroll float windows/popups
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+" Use CTRL-S for selections ranges
+" Requires 'textDocument/selectionRange' support of language server
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" Add `:Fold` command to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings for CoCList
+" Show all diagnostics
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
+" Coc coc-explorer Settings
+nmap <space>e <Cmd>CocCommand explorer<CR>
 
-" Toggle paste mode on and off
-"map <leader>pp :setlocal paste!<cr>
+" set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 
-au BufNewFile *.sh 0r ~/.vim/header/sh_header.temp
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
 
-function NewHTMLFile()
-    autocmd!
-    execute "0r ~/.vim/header/html_header.temp"
-    execute "13"
-endfunction
+" let Vundle manage Vundle, required
+" Plugin 'VundleVim/Vundle.vim'
 
-function NewPythonFile()
-    autocmd!
-    execute "0r ~/.vim/header/py_header.temp"
-    execute "6"
-endfunction
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
 
-function NewCFile()
-    autocmd! 
-    execute "0r ~/.vim/header/c_header.temp"
-    execute "set cindent"
-    execute "2s/FILENAME/".expand('<afile>')"/g"
-    execute "3s/AUTHOR/Joe Biggins <joe@biggins.tech>/g"
-    execute "4s/CREATED/".strftime('%c')"/g"
-    execute "5s/MODIFIED/".strftime('%c')"/g"
-    execute "16"
-endfunction 
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" 
 
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
 
-augroup InitHTMLStuff
-    autocmd!
-    autocmd BufNewFile *.html call NewHTMLFile()
-augroup END
+" python-mode
+" turn vim into a python IDE
+" Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
-"augroup InitCStuff
-"    autocmd!
-"    autocmd BufNewFile *.c call NewCFile()
-"augroup END
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
 
-augroup InitPythonStuff
-    autocmd!
-    autocmd BufNewFile *.py call NewPythonFile()
-augroup END
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
 
-" allow yank-paste to work across vim file being opened-closed-opened
-set clipboard=unnamed
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" Install YouCompleteMe 
+" (default version of vim on macOS is NOT compiled with python3)
+" Plugin 'ycm-core/YouCompleteMe'
+
+" All of your Plugins must be added before the following line
+" call vundle#end()            " required
 
 
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
 
-" ================================================================
-" END OF FILE
-" =================================================================
-"
-"
-" vim: foldmethod=marker:foldlevel=0:
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+

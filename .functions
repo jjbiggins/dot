@@ -7,6 +7,18 @@
 ######################################################################
 
 
+
+load-privateaccess () {
+
+    sudo launchctl load /Library/LaunchDaemons/com.privateinternetaccess.vpn.daemon.plist
+}
+
+load-pia () {
+
+    sudo launchctl load /Library/LaunchDaemons/com.privateinternetaccess.vpn.daemon.plist
+}
+
+
 tailscale () {
     sudo tailscale --socket /var/run/tailscaled.socket $@
 }
@@ -351,35 +363,18 @@ ii() {   # Get current host related info.
 
 
 flushdns () {
-    sudo dscacheutil -flushcache ; EXIT_CODE=$?
-    if [[ "${EXIT_CODE}" == "${EXIT_FAILURE}" ]]; then
-	echo "Error: 'sudo dscacheutil -flushcache' returned exit ${EXIT_CODE}"
-    fi
+
+    EXIT_FAILURE=1
+
+    sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder
 	
-    sudo killall -HUP mDNSResponder; EXIT_CODE=$?
-    if [[ "$EXIT_CODE" == "$EXIT_FAILURE" ]]; then
+    if [[ $? == "$EXIT_FAILURE" ]]; then
 	echo "Error: 'sudo killall -HUP mDNSResponder' returned exit code ${EXIT_CODE}"
     fi
 
     echo "flushdns: 'sudo dscacheutil -flushcache ; sudo killall -HUP mDNSResponder;'  completed successfully" 
 }
 
-
-update_macports ()
-{
-    sudo_pass=`cat $HOME/.passwd | grep $USER | cut -d ':' -f2`;
-
-    echo "$sudo_pass" | sudo -S port -v selfupdate &
-    BACK_PID=$!;
-    prinnt "Starting macports selfupdate...";
-    wait $BACK_PID;
-    
-
-    echo "$sudo_pass" | sudo -S port upgrade outdated > /dev/null &
-    BACK_PID=$!;
-    prinnt "Updating outdated ports....";
-    wait $BACK_PID;
-}
 
 
 

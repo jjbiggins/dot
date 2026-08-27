@@ -2,22 +2,16 @@
 # BASH SHELL FILES 
 # -------------------------------------------------------------------
 # SOURCES:
-#   1. ~/.bash_profile sources ~/.profile
-#   2. ~/.profile sources ~/.bashrc
+#   1. ~/.bash_profile sources ~/.bashrc
 # 
 # ABOUT:
-#   ~/.bash_profile -- the driver, source all other shell init file
-#   ~/.profile -- sources ~/.bashrc if interactive, sets envvars
+#   ~/.bash_profile -- login shell only, source other shell files
 #   ~/.bashrc -- sets PS1, shell options (shopts), etc.
 # ====================================================================
 
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# PS1 Colors
-BRIGHT_GREEN=$'\033[01;32m'
-LIGHT_BLUE=$'\033[00;34m'
-NC=$'\033[01;00m'
 
 
 
@@ -32,6 +26,11 @@ case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
 #if [[ -f ~/.bashrc ]]; then
 #    . ~/.bashrc
 #fi
+
+
+
+# git autocomplete
+source ~/.git-completion.bash
 
 
 if [[ -f ~/.iterm2_shell_integration.bash ]]; then
@@ -59,23 +58,6 @@ fi
 
 
 
-
-if ! [ -n "${SUDO_USER}" -a -n "${SUDO_PS1}" ]; then
-	#
-	# Example PS1:
-	# PS1='[\[\033[01;00m\]\u@\[\033[01;32m\]\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]]$ '
-	# PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\]:\[\033[00;34m\]\W\[\033[00m\]]\$ '
-	#	
-	PS1_USER=[${NC}\\]\\u
-	PS1_HOST=[${BRIGHT_GREEN}\\]\\h\\[${NC}\\]
-	PS1_CURDIR=[${LIGHT_BLUE}\\]\\W\\[${NC}\\]
-	
-	if [[ "${USER}" != "jjbiggins" || $(hostname -s) != "master" ]]; then
-	    PS1='[\'"${PS1_USER}"'@\'"${PS1_HOST}"':\'"${PS1_CURDIR}"']$ ' 
-	else
-	    PS1='[\'"${PS1_HOST}"':\'"${PS1_CURDIR}"']$ ' 
-	fi
-fi
 
 
 
@@ -120,33 +102,10 @@ USER_PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }${USER_PROMPT_COMMAND}"
 
 
+PATH="${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin"
 
-if [[ $(uname -s) == "Darwin" ]]; then
+. "$HOME/.cargo/env"
 
-    PYTHON_VERS_DIR="/Library/Frameworks/Python.framework/Versions"
-    
-    if [[ -d "${PYTHON_VERS_DIR}/3.8" ]]; then
-	# Setting PATH for Python 3.8
-	# The original version is saved in .bash_profile.pysave
-	PATH="${PYTHON_VERS_DIR}/3.8/bin:${PATH}"
-    fi
-
-    if [[ -d "${PYTHON_VERS_DIR}/3.9" ]]; then
-	# Setting PATH for Python 3.9
-	# The original version is saved in .bash_profile.pysave
-	PATH="${PYTHON_VERS_DIR}/3.9/bin:${PATH}"
-    fi
-
-    if [[ -d "${PYTHON_VERS_DIR}/3.11" ]]; then
-       	# Setting PATH for Python 3.11
-	# The original version is saved in .bash_profile.pysave
-	PATH="${PYTHON_VERS_DIR}/3.11/bin:${PATH}"
-    fi
-fi
-
-
-# Setting PATH for gradle 7.6
-#PATH="/opt/gradle/gradle-7.6/bin:${PATH}"
 
 if [[ -d "${HOME}/.wasmtime" ]]; then
     WASMTIME_HOME="$HOME/.wasmtime"
@@ -159,12 +118,12 @@ if [[ -d "/opt/wasi-sdk" ]]; then
     PATH="${PATH}:${WASI_SDK_PATH}/bin"
 fi
 
-
 if [[ $(uname -s) == "Darwin" ]]; then
     PATH="${PATH}:${HOME}/.dat/releases/dat-14.0.2-macos-x64"
 fi
 
 
+# NVM (node version management)
 if [[ -d "${HOME}/.nvm" ]]; then
     # nvm path
     export NVM_DIR="${HOME}/.nvm"
@@ -173,18 +132,6 @@ if [[ -d "${HOME}/.nvm" ]]; then
 fi
 
 
-
-# set java_home
-if  [[ $(uname -s) == "Darwin" ]]; then
-    JAVA_HOME="$(/usr/libexec/java_home -v 19)" 
-elif [[ $(uname -s) == "Linux" ]]; then
-    JAVA_HOME=$(readlink -f /etc/alternatives/java | sed -e 's/\/bin\/java//g')
-fi
-
-# add JAVA_HOME/bin to PATH
-if [[ !  -z "${JAVA_HOME}" ]]; then
-    PATH="${JAVA_HOME}/bin:${PATH}" 
-fi
 
 
 if [[ -d '/opt/local' ]]; then 
@@ -195,56 +142,97 @@ elif [[ -d '/opt/pkg' ]]; then
     PATH="${PATH}:/opt/pkg/bin:/opt/pkg/sbin"
 fi
 
+# Homebrew
+HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-if [ !  -z "$PYTHONPATH" ]; then
- 	CERT_PATH=$(python3 -m certifi)
-	SSL_CERT_FILE=${CERT_PATH}
-	REQUESTS_CA_BUNDLE=${CERT_PATH}
+PATH="${PATH}:/opt/homebrew/bin"
+PATH="${PATH}:/opt/homebrew/sbin"
+
+# homebrew binutils
+if [[ -d "/opt/homebrew/opt/binutils" ]]; then
+    PATH="/opt/homebrew/opt/binutils/bin:${PATH}"
+    PATH="/opt/homebrew/opt/binutils/aarch64-apple-darwin22.4.0/bin:${PATH}"
 fi
 
-PATH="/opt/apache/maven/current/bin:${PATH}"
+
+if [[ $(uname -s) == "Darwin" ]]; then
+    DEVELOPER_DIR=$(xcode-select --print-path)
+    MACOSX_SDK_PATH=$(xcrun --show-sdk-path)
+    PATH="${MACOSX_SDK_PATH}/usr/bin:${PATH}"
+fi
+
+
+SSL_CERT_FILE=$(python3 -m certifi) 
+
+# anaconda
+#eval "$(register-python-argcomplete conda)"
+
+# Java now appears to come installed on macOS by default
+# JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# PATH="${JAVA_HOME}/bin:${PATH}"
+
+
+PATH="${PATH}:/opt/homebrew/opt/coreutils/libexec/gnubin"
+PATH="${PATH}:/opt/apache-maven-3.9.4/bin"; export PATH
+PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
+
+# Homebrew Envvars
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_NO_ANALYTICS=1
+
+# huggingface-cli environment variables
+export HF_HUB_DISABLE_TELEMETRY=1
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/jjbiggins/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/Users/jjbiggins/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/jjbiggins/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/Users/jjbiggins/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
-source ~/.keys
-PATH="${PATH}:/opt/homebrew/bin"; export PATH
+eval "$(rbenv init - bash)"
+
+# Setting PATH for Python 3.12
+# The original version is saved in .bash_profile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/jjbiggins/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
+
+# OpenXLA - StableHLO 
+# Set the LLVM_ENABLE_LLD shell variable depending on your preferences. 
+# We recommend setting it to ON on Linux and to OFF on macOS.
+[[ "$(uname)" != "Darwin" ]] && LLVM_ENABLE_LLD="ON" || LLVM_ENABLE_LLD="OFF"
+
 
 export WASMTIME_HOME
 export JAVA_HOME
-#export PYTHONPATH
 export CERT_PATH
 export SSL_CERT_FILE
 export REQUESTS_CA_BUNDLE
-export DEVELOPER_DIR
 export PATH
 
 
-export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
-export PATH="/opt/homebrew/opt/libxslt/bin:$PATH"
-export PATH="/opt/homebrew/opt/libxslt/bin:$PATH"
-. "$HOME/.cargo/env"
-export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
-export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
-export PATH="/opt/homebrew/opt/libxslt/bin:$PATH"
+. "$HOME/.local/bin/env"
 
-export XML2_CONFIG="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/xml2-config"
-export XML2_LIBS=$(/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/xml2-config --libs)
-export XML2_CFLAGS=$(/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/xml2-config --cflags)
-export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin:${PATH}"
+# Setting PATH for Python 3.14
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.14/bin:${PATH}"
 
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+# Added by Antigravity
+export PATH="/Users/jjbiggins/.antigravity/antigravity/bin:$PATH"
+
+export PATH

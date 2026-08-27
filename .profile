@@ -61,3 +61,9 @@ export COLORTERM
 
 #LS_COLORS=$( cat ~/.colors/RaspiberryPi_colors ) ; export LS_COLORS
 . "$HOME/.cargo/env"
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/jjbiggins/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
+
+. "$HOME/.local/bin/env"

@@ -8,14 +8,23 @@
 	required = true
 [core]
 	ignorecase = false
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/jjbiggins/.gitignore_global
 	precomposeUnicode = true
 [pull]
+        rebase = true
 [credential]
 	helper = osxkeychain
 [init]
 	defaultBranch = main
 [safe]
-	directory = /srv/scm/git/repos
+        directory = /srv/scm/git/repos
+[help]
+        autocorrect = -1
 [sendemail]
 	confirm = auto
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

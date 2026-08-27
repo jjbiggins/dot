@@ -1,2 +1,6 @@
 channels:
   - defaults
+  - conda-forge
+channel_priority: disabled
+override_channels_enabled: false
+default_python:
