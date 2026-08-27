@@ -1,6 +1,7 @@
 #!/bin/bash
 
-
+# test if $PS1 is unset
+# If shell is not interactive, stop processing this file
 [ -z "$PS1" ] && return
 
 
@@ -29,22 +30,39 @@ set -o noclobber
 set -o ignoreeof
 
 # The Shopt Builtin
-shopt -s cdspell					# cd with minor spell err
-shopt -s cdable_vars					# auto cd vars 
-shopt -s checkhash					# check is hashed cmd exist
-shopt -s checkwinsize					# check window size 
-shopt -s sourcepath					# path is same as cmd arg
-shopt -s no_empty_cmd_completion			# no completion when read line
-shopt -s cmdhist					# generates a cmd history
-shopt -s extglob					# Enables globbing
-shopt -s mailwarn					# show Got mail warning 
-shopt -s extglob					# Necessary.
+shopt -s cdspell	    # cd works with  minor spell errs
+			    # Ex: cd Documnts would work
+			    
+shopt -s cdable_vars	    # can set path to variable and cd into into
+			    # Ex: projects=~/work/projects; cd projects
 
-shopt -s histappend					# cmds appended to history
-shopt -u progcomp
+shopt -s checkhash	    # bash caches command locations
+			    # will check whether cached executable exists before using in
 
+shopt -s checkwinsize	    # automatically refreshes $LINES and $COLUMNS
+
+shopt -s sourcepath	    # allows source to search $PATH
+			    # source script.sh works would need source ./script.sh without it set
+
+shopt -s no_empty_cmd_completion    # TAB does nothing on empty line
+
+shopt -s cmdhist	    # store multi line cmds as single entry in history
+
+shopt -s extglob	    # Enables extended globbing. Powerful feature
+
+shopt -s mailwarn	    # warn if mail file changed but not read
+
+
+shopt -s histappend	    # cmds appended to history
+shopt -u progcomp	    # allows completion - extending completions
 
 # Color Definitions
+
+# PS1 Colors
+BRIGHT_GREEN=$'\033[01;32m'
+LIGHT_BLUE=$'\033[00;34m'
+NC=$'\033[01;00m'
+#NC=$'\e[0;00m'		 # Color reset
 
 # Normal Colors
 Black=$'\e[0;30m'        # Black
@@ -76,10 +94,23 @@ On_Purple=$'\e[45m'      # Purple
 On_Cyan=$'\e[46m'        # Cyan
 On_White=$'\e[47m'       # White
 
-NC=$'\e[0;00m'		 # Color reset
+# Bold White on red background
+ALERT=${BWhite}${On_Red} 
 
-ALERT=${BWhite}${On_Red} # Bold White on red background
 
+if ! [ -n "${SUDO_USER}" -a -n "${SUDO_PS1}" ]; then
+	#
+	# Example PS1:
+	PS1_USER=[${NC}\\]\\u
+	PS1_HOST=[${BRIGHT_GREEN}\\]\\h\\[${NC}\\]
+	PS1_CURDIR=[${LIGHT_BLUE}\\]\\W\\[${NC}\\]
+	
+	if [[ "${USER}" != "jjbiggins" || $(hostname -s) != "master" ]]; then
+	    PS1='[\'"${PS1_USER}"'@\'"${PS1_HOST}"':\'"${PS1_CURDIR}"']$ ' 
+	else
+	    PS1='[\'"${PS1_HOST}"':\'"${PS1_CURDIR}"']$ ' 
+	fi
+fi
 
 
 echo -e "${BCyan}This is BASH ${BRed}${BASH_VERSION%.*}${BCyan}\
@@ -198,11 +229,17 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+export SP_HOME=/Users/jjbiggins/streampipes
+export PATH=$PATH:$SP_HOME
+. "$HOME/.cargo/env"
+
+
+. "$HOME/.local/bin/env"
+eval "$(uv generate-shell-completion bash)"
+eval "$(uvx --generate-shell-completion bash)"
+
 
 # Local Variables:
 # mode:shell-script
 # sh-shell:bash
 # End:
-export SP_HOME=/Users/jjbiggins/streampipes
-export PATH=$PATH:$SP_HOME
-. "$HOME/.cargo/env"
